@@ -1822,6 +1822,191 @@ body::after {
   line-height: 1.6;
 }
 
+/* ════════════════════════════════════════
+   ENTERTAINMENT TEMPLATE — アニメ・漫画・映画共通
+   9セクション構成 + セクション6 のみ媒体別
+════════════════════════════════════════ */
+.ent-hero {
+  background: linear-gradient(135deg, var(--ent-c, var(--neon-pur)) 0%, color-mix(in srgb, var(--ent-c, var(--neon-pur)) 40%, black) 100%);
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.ent-hero::before {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 50%;
+  background: repeating-linear-gradient(45deg,
+    rgba(255,255,255,.04) 0 6px, transparent 6px 16px);
+  pointer-events: none;
+}
+.ent-hero-emoji {
+  font-size: 48px; line-height: 1;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 4px 0 rgba(0,0,0,.4));
+}
+.ent-hero-name {
+  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.0;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,.4);
+}
+.ent-hero-jp {
+  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.ent-hero-meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.ent-hero-meta span {
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: 10px; letter-spacing: 1px;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+.ent-hero-medium-badge {
+  display: inline-block;
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: 10px; letter-spacing: 2px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* ── テンプレートセクション（番号付き） ── */
+.ent-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--sec-c, var(--neon-pur));
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+.ent-sec-head {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+.ent-sec-num {
+  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-size: 26px;
+  color: var(--sec-c, var(--neon-pur));
+  letter-spacing: 1px;
+}
+.ent-sec-title {
+  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--text1);
+}
+.ent-sec-en {
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 2px;
+  margin-left: auto;
+}
+.ent-sec-body { font-size: 13px; color: var(--text); line-height: 1.85; }
+.ent-sec-body p { margin: 0 0 8px; }
+.ent-sec-body strong { font-weight: 700; }
+.ent-sec-body em { font-style: italic; }
+.ent-sec-body code {
+  background: rgba(0,0,0,.4);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: 'Space Mono',monospace;
+  font-size: 11px;
+}
+
+.ent-field {
+  background: var(--surface2);
+  border-left: 2px solid var(--field-c, var(--text3));
+  border-radius: 0 4px 4px 0;
+  padding: 10px 14px;
+  margin: 8px 0;
+}
+.ent-field-label {
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--field-c, var(--text3));
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.ent-field-body {
+  font-size: 12px; color: var(--text);
+  line-height: 1.7;
+}
+.ent-field-body p { margin: 0 0 6px; }
+.ent-field-empty {
+  color: var(--text3);
+  font-family: 'Space Mono',monospace;
+  font-size: 11px;
+}
+
+/* ── 物語骨格の型タグ ── */
+.ent-narr-types {
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px;
+}
+.ent-narr-type {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(167,139,250,.12);
+  color: #a78bfa;
+  border: 1px solid rgba(167,139,250,.35);
+  border-radius: 12px;
+}
+
+/* ── 評価バー ── */
+.ent-rating-bar {
+  display: flex; align-items: center; gap: 8px;
+}
+.ent-rating-num {
+  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-size: 28px;
+  color: var(--con-yel);
+  line-height: 1;
+}
+.ent-rating-max {
+  font-size: 12px; color: var(--text3);
+  font-family: 'Space Mono',monospace;
+}
+.ent-rating-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ent-rating-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--a1) 0%, var(--con-yel) 100%);
+  width: var(--w, 0%);
+}
+
+/* 媒体カラーテーマ */
+.ent-medium-anime { --ent-c: #ec4899; }
+.ent-medium-manga { --ent-c: #f59e0b; }
+.ent-medium-movie { --ent-c: #06b6d4; }
+
 /* ── IP評価ページ（ソシャゲ）── */
 .ip-hero {
   background: linear-gradient(135deg, rgba(176,96,255,.06), rgba(255,107,53,.04));
@@ -3027,12 +3212,11 @@ body::after {
     <div class="sb-media-block" data-media="movie">
       <div class="sidebar-section">
         <button class="sidebar-btn active" onclick="showPage('overview-movie')" data-page="overview-movie">🏠 トップ</button>
+        <button class="sidebar-btn" onclick="showPage('media-template-guide')" data-page="media-template-guide">📝 テンプレートの使い方</button>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Coming Soon</div>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>🎬 作品比較</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>💰 興行収入</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>🎞️ ジャンル別</button>
+        <div class="sidebar-label">作品</div>
+        <button class="sidebar-btn" onclick="showPage('media-shingodzilla')" data-page="media-shingodzilla">🦖 シン・ゴジラ</button>
       </div>
     </div>
 
@@ -3042,12 +3226,11 @@ body::after {
     <div class="sb-media-block" data-media="manga">
       <div class="sidebar-section">
         <button class="sidebar-btn active" onclick="showPage('overview-manga')" data-page="overview-manga">🏠 トップ</button>
+        <button class="sidebar-btn" onclick="showPage('media-template-guide')" data-page="media-template-guide">📝 テンプレートの使い方</button>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Coming Soon</div>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>📖 作品比較</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>📊 発行部数推移</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>📕 媒体別</button>
+        <div class="sidebar-label">作品</div>
+        <button class="sidebar-btn" onclick="showPage('media-kimetsu')" data-page="media-kimetsu">🗡️ 鬼滅の刃</button>
       </div>
     </div>
 
@@ -3057,12 +3240,11 @@ body::after {
     <div class="sb-media-block" data-media="anime">
       <div class="sidebar-section">
         <button class="sidebar-btn active" onclick="showPage('overview-anime')" data-page="overview-anime">🏠 トップ</button>
+        <button class="sidebar-btn" onclick="showPage('media-template-guide')" data-page="media-template-guide">📝 テンプレートの使い方</button>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Coming Soon</div>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>📺 作品比較</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>🗓️ クール別</button>
-        <button class="sidebar-btn" style="opacity:.5;cursor:not-allowed;" disabled>🏢 制作会社別</button>
+        <div class="sidebar-label">作品</div>
+        <button class="sidebar-btn" onclick="showPage('media-shingeki')" data-page="media-shingeki">⚔️ 進撃の巨人</button>
       </div>
     </div>
 
@@ -9911,6 +10093,155 @@ updates: [
     </div>
 
     <!-- ════════════════════════════════════════
+         アニメ：進撃の巨人（共通テンプレートサンプル）
+    ════════════════════════════════════════ -->
+    <div id="page-media-shingeki" class="page"></div>
+
+    <!-- ════════════════════════════════════════
+         漫画：鬼滅の刃（共通テンプレートサンプル）
+    ════════════════════════════════════════ -->
+    <div id="page-media-kimetsu" class="page"></div>
+
+    <!-- ════════════════════════════════════════
+         映画：シン・ゴジラ（共通テンプレートサンプル）
+    ════════════════════════════════════════ -->
+    <div id="page-media-shingodzilla" class="page"></div>
+
+    <!-- ════════════════════════════════════════
+         共通テンプレートの使い方ガイド
+    ════════════════════════════════════════ -->
+    <div id="page-media-template-guide" class="page">
+      <div class="page-header">
+        <p class="page-tag">// COMMON TEMPLATE GUIDE</p>
+        <h2 class="page-title">テンプレートの<em>使い方</em></h2>
+        <p class="page-desc">アニメ・漫画・映画 各タイトル詳細ページの共通テンプレート構造と、新規タイトル追加の方法。</p>
+      </div>
+
+      <div class="sec">
+        <div class="sec-label">// 共通構成（9セクション）</div>
+        <div class="card">
+          <ol style="font-size:13px;color:var(--text);line-height:2;padding-left:24px;">
+            <li><strong>00 基本情報</strong> — 媒体・作者/監督・公開年・ジャンル・総合評価</li>
+            <li><strong>01 一言仮説</strong> — この作品は何を体験させる作品か</li>
+            <li><strong>02 体験構造</strong> — 初期フック / 継続インセンティブ / 反復体験 / 揺らぎ / ピーク / 残る感覚 / 横エネ縦エネ</li>
+            <li><strong>03 文脈構造</strong> — ジャンル / 時代 / 作家 / 媒体 / 先行作品との差分 / 現代的刺さり方</li>
+            <li><strong>04 感情構造</strong> — 初期値 / 推移 / 核 / カタルシス / 救済 / 余韻</li>
+            <li><strong>05 物語骨格</strong> — 該当する型（複数可）/ 沿っている点 / 逸脱点 / 逸脱が生む体験価値</li>
+            <li><strong>06 媒体固有の設計</strong> ← <strong style="color:#ec4899;">媒体ごとに項目切替</strong></li>
+            <li><strong>07 引き込みポイント</strong> — 続きを見たくなる理由 / フック / 粘度</li>
+            <li><strong>08 企画転用メモ</strong> — 盗めること / 自作品への転用</li>
+            <li><strong>09 評価サマリ</strong> — 強み / 弱み / 評価理由</li>
+          </ol>
+          <p style="margin-top:14px;padding:10px 14px;background:rgba(167,139,250,.06);border-left:2px solid var(--neon-pur);font-size:12px;color:var(--text2);">
+            + <strong>notes</strong> 観察メモ（視聴/読了中のメモ） + <strong>updates</strong> 更新ログ
+          </p>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-label">// 媒体固有セクション（06）の項目</div>
+        <div class="card" style="border-left:3px solid #ec4899;">
+          <p style="font-size:13px;color:var(--text2);line-height:1.85;margin-bottom:10px;">
+            セクション06のみ、media フィールドの値（'anime' / 'manga' / 'movie'）によって表示項目が切り替わる。書き手が記入するキーは media 別で異なる。
+          </p>
+          <details style="margin:8px 0;">
+            <summary style="cursor:pointer;color:var(--text1);font-weight:700;">📺 アニメ（11項目）</summary>
+            <ul style="font-size:12px;color:var(--text2);line-height:1.85;padding-left:20px;">
+              <li><code>series_structure</code> シリーズ構成</li>
+              <li><code>episode_hook</code> 各話の引き</li>
+              <li><code>visual_direction</code> 映像演出</li>
+              <li><code>animation_movement</code> 作画 / 動き</li>
+              <li><code>voice_acting</code> 声優演技</li>
+              <li><code>music</code> 音楽</li>
+              <li><code>op_ed</code> OP / ED</li>
+              <li><code>pause</code> 間</li>
+              <li><code>cut</code> カット割り</li>
+              <li><code>tempo</code> テンポ</li>
+              <li><code>animation_only_expression</code> アニメーションだから成立する表現</li>
+            </ul>
+          </details>
+          <details style="margin:8px 0;">
+            <summary style="cursor:pointer;color:var(--text1);font-weight:700;">📖 漫画（10項目）</summary>
+            <ul style="font-size:12px;color:var(--text2);line-height:1.85;padding-left:20px;">
+              <li><code>panel_layout</code> コマ割り</li>
+              <li><code>page_turn</code> ページめくり</li>
+              <li><code>eye_movement</code> 視線誘導</li>
+              <li><code>art_emotion_relation</code> 絵柄と感情の関係</li>
+              <li><code>whitespace</code> 余白</li>
+              <li><code>dialogue_density</code> セリフ密度</li>
+              <li><code>monologue</code> モノローグ</li>
+              <li><code>double_page_spread</code> 見開きの使い方</li>
+              <li><code>serial_structure</code> 連載構造</li>
+              <li><code>tankoubon_experience</code> 単行本で読んだときの体験</li>
+            </ul>
+          </details>
+          <details style="margin:8px 0;">
+            <summary style="cursor:pointer;color:var(--text1);font-weight:700;">🎬 映画（10項目）</summary>
+            <ul style="font-size:12px;color:var(--text2);line-height:1.85;padding-left:20px;">
+              <li><code>runtime_density</code> 尺の密度</li>
+              <li><code>screen_design</code> 画面設計</li>
+              <li><code>cinematography</code> 撮影</li>
+              <li><code>editing</code> 編集</li>
+              <li><code>sound_design</code> 音響</li>
+              <li><code>actor_physicality</code> 俳優の身体</li>
+              <li><code>theater_experience</code> 劇場体験</li>
+              <li><code>one_scene_intensity</code> ワンシーンの強度</li>
+              <li><code>ending_design</code> 終幕設計</li>
+              <li><code>lingering_design</code> 余韻</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-label">// 物語骨格の型（複数選択可）</div>
+        <div class="card" style="border-left:3px solid #a78bfa;">
+          <p style="font-size:13px;color:var(--text2);line-height:1.85;margin-bottom:10px;">
+            <code>narrative.types</code> に配列で複数指定可能。<strong>当てはまる型</strong>を選び、<strong>沿っている点</strong>・<strong>逸脱点</strong>・<strong>逸脱が生む体験価値</strong>を記入。
+          </p>
+          <p style="font-size:12px;color:var(--text2);padding-left:14px;">
+            ・三幕構成 ／ ヒーローズジャーニー ／ 通過儀礼 ／ 群像劇 ／ 日常スケッチ<br>
+            ・ループ構造 ／ 継承譚 ／ 破滅劇 ／ 反成長譚 ／ 世界観没入型
+          </p>
+          <p style="margin-top:10px;padding:10px 14px;background:rgba(167,139,250,.06);border-left:2px solid var(--neon-pur);font-size:12px;color:var(--text2);">
+            ヒーローズジャーニーは <strong>必須フレームではない</strong>。当てはまらない作品の場合、<code>types</code> を空にし、deviation 欄に「なぜ当てはまらないか」を記入する形でOK。
+          </p>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-label">// 新規タイトルの追加方法</div>
+        <div class="card" style="border-left:3px solid var(--con-grn);">
+          <p><strong style="color:var(--con-grn);">Step 1.</strong> JS内の <code>const MEDIA_TITLES</code> 配列に新規オブジェクトを追加（既存サンプルをコピペして書き換え）。<code>media: 'anime' | 'manga' | 'movie'</code> を指定。</p>
+          <p><strong style="color:var(--con-grn);">Step 2.</strong> サイドバーの該当メディア（アニメ/漫画/映画）作品セクションに <code>&lt;button onclick="showPage('media-{id}')"&gt;</code> を追加。</p>
+          <p><strong style="color:var(--con-grn);">Step 3.</strong> ページシェル <code>&lt;div id="page-media-{id}" class="page"&gt;&lt;/div&gt;</code> を追加。中身は空でOK。</p>
+          <p style="margin-top:10px;padding:10px 14px;background:rgba(6,214,160,.06);border-left:2px solid var(--con-grn);font-size:12px;color:var(--text2);">
+            私（Claude）に「<strong>○○ をアニメ/漫画/映画 研究所に追加して</strong>」と頼めば、3箇所をまとめて編集します。
+          </p>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-label">// 本文の書き方（軽Markdown対応）</div>
+        <div class="card">
+          <p style="font-size:13px;color:var(--text);line-height:1.85;">
+            各フィールドの本文は <strong>軽Markdown</strong> として処理される：
+          </p>
+          <p style="padding-left:14px;font-size:12px;color:var(--text2);line-height:1.85;font-family:'Space Mono',monospace;">
+            <code>**bold**</code> → <strong>bold</strong><br>
+            <code>*italic*</code> → 斜体<br>
+            <code>`code`</code> → <code>code</code><br>
+            空行で段落区切り<br>
+            単一改行で <code>&lt;br&gt;</code>
+          </p>
+          <p style="margin-top:10px;font-size:12px;color:var(--text3);">
+            長文 OK。フィールドが空でもページが崩れません（「未記入」表示）。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
          IP評価ページ（ソシャゲ運営設計）
     ════════════════════════════════════════ -->
     <div id="page-ip-evaluation" class="page">
@@ -10428,6 +10759,10 @@ function showPage(id) {
   // IP評価ページの動的描画
   if (id === 'ip-evaluation') {
     setTimeout(() => renderIpEvaluation(), 60);
+  }
+  // メディア作品ページ（アニメ・漫画・映画）の動的描画
+  if (id && id.indexOf('media-') === 0) {
+    setTimeout(() => renderMediaTitle(id.slice('media-'.length)), 60);
   }
 }
 
@@ -11075,6 +11410,531 @@ const CONSOLE_GAMES = [
 ];
 
 // ════════════════════════════════════════════════════════
+//  MEDIA TITLES — アニメ・漫画・映画の共通テンプレート
+//  ────────────────────────────────────
+//  9セクション構成。セクション6のみ media によって切り替わる。
+//  全フィールド任意・空欄で問題なし。本文は軽Markdown対応。
+// ════════════════════════════════════════════════════════
+const MEDIA_TITLES = [
+
+  // ─── アニメサンプル: 進撃の巨人 ───
+  {
+    id: 'shingeki',
+    media: 'anime',
+    emoji: '⚔️',
+    name: '進撃の巨人',
+    enName: 'Attack on Titan',
+    creator: '諫山創 / WIT STUDIO・MAPPA',
+    year: '2013-2023',
+    genre: 'ダーク・ファンタジー',
+    overall_rating: 9.5,
+
+    one_liner: '「壁の中の世界」という閉鎖された認識が、層をなして剥がれていく構造を体験させる作品。',
+
+    experience: {
+      initial_hook: '巨人による母の捕食。第1話の圧倒的暴力と無力感がプレイヤー（視聴者）を一気に引き込む。',
+      continuation_incentive: '「巨人とは何か」という根本未完チャンクが全話を貫通する。さらに各章で「世界の構造」「主人公の正体」「敵の真実」が層をなして開示される。',
+      repeated_experience: '戦闘 / 喪失 / 真実の開示 / 価値観の転倒 のサイクル。同じ「立体機動戦闘」が、章を追うごとに別の意味を帯びる。',
+      fluctuation: 'ストーリーの揺らぎ＝極めて強い。「壁の外」「巨人の正体」「ユミルの民」「マーレ編への転換」── プレイヤーの世界理解は何度も上位更新される。',
+      peak: 'マーレ編冒頭の「視点切替」。それまでの主人公側の視点が反転し、敵側にも歴史と正義があったと知らされる瞬間。',
+      lasting_sensation: '「正義の絶対性は構造的に成立しない」という認識の転倒が、視聴後も残り続ける。',
+      yokoene_tateene: '縦エネ：謎解きの推進力（巨人とは／壁とは／自由とは）が圧倒的。横エネ：壁内の閉塞感、立体機動の身体性が「あの世界に居る」感覚を作る。両者が拮抗。',
+    },
+
+    context: {
+      genre_context: 'ダークファンタジー × 群像劇。少年漫画の枠で「敵にも理がある」を本気で描いた稀有な事例。',
+      era_context: '2010年代の閉塞感（社会の分断・正義の相対化）と完全に噛み合った。',
+      creator_context: '諫山創のデビュー作。漫画家としての完璧な完結を目指して描き切った。',
+      medium_context: 'アニメは原作の「視覚的暴力性」を映像化する強い動機があり、WIT→MAPPAの体制変更も「闇の濃度」を上げる方向に作用した。',
+      precursor_diff: '進撃以前の少年漫画は「正義 vs 悪」の構図が前提。進撃はそれを構造的に解体し、「視点を変えれば正義は反転する」を物語の骨格にした。',
+      contemporary_resonance: '「この世界の意味は本当に確定しているのか」という問いが、ポスト真実時代の読者に直撃した。',
+    },
+
+    emotion: {
+      initial_value: '無力・恐怖・絶望（第1話の母の死、巨人化シーンの圧倒的暴力）',
+      progression: '絶望 → 復讐の意志 → 真実の開示で価値観の転倒 → 敵側への共感 → 自分が誰なのか分からなくなる迷い',
+      core: '「正義は構造的に成立しない」ことを知った者の哀しみ。',
+      catharsis: '最終話の「行ってらっしゃい」。エレンの選択が、彼を取り巻く全員を解放する。',
+      salvation: '部分的。世界は救われたが、エレンは救われなかった。これが余韻を強くする。',
+      lingering: '「あなたが自由のためにしたことの是非を、私は今も判断できない」という未確定の倫理感が残る。',
+    },
+
+    narrative: {
+      types: ['ヒーローズジャーニー', '通過儀礼', '反成長譚', '世界観没入型'],
+      adherence: '前半（壁内）はヒーローズジャーニーの典型（召命・試練・支援者）。マーレ編以降は通過儀礼と反成長譚の混合。',
+      deviation: '主人公の最終的な選択は「世界を救う」ではなく「世界を破壊して救う」というアンチヒーロー的決断。古典的なヒーロー像から決定的に逸脱する。',
+      deviation_value: '「正義」を最後まで保留することで、視聴者は自分自身の倫理判断を強制的に問われる。物語の終わりが、視聴者の中で続く。',
+    },
+
+    media_specific: {
+      // animeフィールド
+      series_structure: 'シーズン1（壁内編）→ シーズン2（巨人の正体）→ シーズン3（王政編＋海）→ Final Season（マーレ編＋地ならし）の4部構成。各シーズンが別アニメと言えるほど舞台を変えていく。',
+      episode_hook: '各話の「引き」が極端に強い。次回への布石を必ず最後に挿入。特にFinal Seasonの引きは中毒性が高い。',
+      visual_direction: '光と闇のコントラストが強烈。立体機動の躍動感、巨人の異形、戦闘の生死感が映像で増幅されている。',
+      animation_movement: 'WIT STUDIO期は立体機動戦の流線が生き物のよう。MAPPA期はやや硬めだが地ならしの迫力で別ベクトルの強さ。',
+      voice_acting: '梶裕貴（エレン）の声が10年で「少年→青年→破壊者」へと変化したのは作品全体の感情曲線と完全同期。',
+      music: '澤野弘之のスコアが世界観を決定づけている。ボーカル曲（YouSeeBIGGIRL/T:T 等）が戦闘場面を「儀式」化する。',
+      op_ed: '「紅蓮の弓矢」「自由の翼」など、各OPが時代の象徴に。OP自体が物語の予告編・伏線回収装置として機能。',
+      pause: '間の使い方が独特。爆発的アクションの後の沈黙が長い。',
+      cut: '見開き感のあるカット割り（漫画原作の影響）。1枚絵で語る瞬間の強さ。',
+      tempo: '全体としては緩急が極端。日常の弛緩から戦闘の緊張へのジャンプ幅が広い。',
+      animation_only_expression: '「立体機動」は漫画では伝わりきらない動きで、アニメ化で初めて完成形を見たといえる。地ならしも然り。',
+    },
+
+    pull: {
+      what_makes_continue: '「世界の真実」が層をなして開示される構造。1つ謎が解けても、必ず次の大きな謎が立ち上がる。',
+      what_is_hook: '主人公の「自由への渇望」が無垢→破壊衝動へと変質していく過程。視聴者は同期しながら、徐々に距離を取らざるを得なくなる。',
+      what_creates_viscosity: '「あの世界の住人として生きてきた」という10年スパンの滞在感。視聴者自身が物語と共に老いる。',
+    },
+
+    transferable: {
+      stealable_lessons: '「視点反転」を物語の骨格に据える設計。主人公の視点だけが世界の真実ではないと、構造的に提示する勇気。',
+      applicable_to_design: 'ゲーム設計に応用するなら：プレイヤーの「自分が正義側」という認識を、後半で構造的に揺さぶる仕掛け。NPCの正義をプレイヤーが知らされた時、それまでの行為の意味が変わる。',
+    },
+
+    summary: {
+      strength: '物語構造の精緻さ。10年スパンで一貫した世界観を維持しながら、章ごとに「世界の見え方」を更新する設計。',
+      weakness: '最終章の処理に賛否がある。エレンの選択を全肯定/全否定どちらでも読めてしまう曖昧さは、設計者の意図か漏れかが議論を呼ぶ。',
+      reason: '「正義の構造的不可能性」を物語で描き切った稀有な作品。後の創作に与える影響は計り知れず、ジャンル史的価値が高い。',
+    },
+
+    notes: [],
+    updates: [
+      { date: '2026-04-30', body: 'ページ初版作成（共通テンプレートサンプルとして）' },
+    ],
+  },
+
+  // ─── 漫画サンプル: 鬼滅の刃 ───
+  {
+    id: 'kimetsu',
+    media: 'manga',
+    emoji: '🗡️',
+    name: '鬼滅の刃',
+    enName: 'Demon Slayer',
+    creator: '吾峠呼世晴',
+    year: '2016-2020',
+    genre: '少年漫画 / ダーク・ファンタジー',
+    overall_rating: 8.5,
+
+    one_liner: '王道モチーフを徹底的に積み上げ、「敵にも背景がある」感情の重さで王道チャンクを深くしていく作品。',
+
+    experience: {
+      initial_hook: '家族が鬼に殺され、妹が鬼化する。冒頭から喪失と救済の二重課題が提示される。',
+      continuation_incentive: '修行 → 試練 → 強敵 → 因縁 という王道サイクルが、感情の重さで深まっていく予感。',
+      repeated_experience: '戦闘 → 敵の背景開示 → 共感 → 弔い のサイクル。同じ「鬼を斬る」行為が、徐々に「悲しみを断つ」儀式に変わる。',
+      fluctuation: 'ストーリーの揺らぎは控えめ。世界の構造は明示的で、王道チャンクが揺さぶられることは少ない。代わりに「感情の揺らぎ」が極めて強い。',
+      peak: '無限列車編・煉獄杏寿郎の死。王道が王道を貫いた瞬間の輝き。',
+      lasting_sensation: '「鬼にも哀しみがあった」「家族の絆は強い」という、シンプルな善の手触り。',
+      yokoene_tateene: '縦エネ強：物語推進力が極めて強い。横エネ中：滞在欲求はそこそこ（連載中はあったが完結後にやや弱まる）。',
+    },
+
+    context: {
+      genre_context: '王道少年漫画の現代的アップデート。',
+      era_context: '2010年代後半〜コロナ禍を直撃したヒット。家族の絆・他者への思いやりがコロナ時代の心情に刺さった。',
+      creator_context: '吾峠呼世晴のデビュー作にして完結作。短期連載で完結まで描き切った稀有な事例。',
+      medium_context: '漫画 → アニメ（ufotable）→ 映画（無限列車）の三段階展開で、各媒体が相乗的に拡散。',
+      precursor_diff: 'ジャンプの王道（友情・努力・勝利）に「敵にも物語がある」のドストエフスキー的感情を持ち込んだ。',
+      contemporary_resonance: '「他者の哀しみを認める」という現代的なテーマが、王道の枠で語られたことが受容を広げた。',
+    },
+
+    emotion: {
+      initial_value: '喪失と決意（家族を失った炭治郎の悲しみと、妹を救う決意）',
+      progression: '修行の苦しみ → 仲間との出会い → 強敵との戦い → 敵への共感 → 自分の使命の自覚 → 完結への加速',
+      core: '哀しみを引き受けて前に進む者の優しさ。',
+      catharsis: '無惨討伐後、炭治郎が日常に戻る最終話。戦いが終わり、生活が続く感覚。',
+      salvation: '完全な救済。家族の絆、敵への弔い、生き延びた者の幸福、すべてが回収される。',
+      lingering: '「優しい人が報われる世界であってほしい」という願いが残る。',
+    },
+
+    narrative: {
+      types: ['ヒーローズジャーニー', '通過儀礼'],
+      adherence: 'ヒーローズジャーニーの教科書的展開。召命（家族喪失）→ 試練（鬼殺隊入隊）→ 支援者（柱たち）→ 最終決戦（無惨）→ 帰還（日常）。',
+      deviation: '逸脱は少ない。むしろ「逸脱しない」ことが本作の強さ。王道を王道のまま、感情の濃度で勝負する。',
+      deviation_value: '逸脱しないことで、王道の構造そのものが持つ感情の力を最大化している。「予測通りに進む」が「予測通りに泣ける」になる設計。',
+    },
+
+    media_specific: {
+      // mangaフィールド
+      panel_layout: 'コマ割りはオーソドックス。読みやすさを優先し、革新的な構図は少ない。',
+      page_turn: 'ページめくりの引きは強い。次のページに「敵の最後の一撃」「敵の回想」を配置する基本テクニックを徹底。',
+      eye_movement: '視線誘導は王道のZ字。読み迷いが少ない。',
+      art_emotion_relation: '絵柄が「優しさ」を持つ。鬼を描いても、その奥に哀しみが見えるラインの引き方。これが「敵にも背景がある」テーマと完全同期。',
+      whitespace: '余白は控えめ。常に何かが描き込まれている密度感が、感情の濃度を支える。',
+      dialogue_density: 'セリフ量は少年漫画として標準的。ただし「説明セリフ」が多めで、これが時に冗長と評される。',
+      monologue: '炭治郎のモノローグが感情の核を担う。「優しさ」「強さ」「家族」のキーワードが繰り返される。',
+      double_page_spread: '見開きは決定的瞬間に集中。煉獄の最後、無惨討伐などで使われる重み。',
+      serial_structure: '週刊連載のテンポを守りつつ、章ごとに敵を倒すペース感。短期連載で完結を意識した設計が見える。',
+      tankoubon_experience: '単行本でまとめ読みすると、感情の累積が際立つ。週刊では薄まりがちな哀しみが層をなす。',
+    },
+
+    pull: {
+      what_makes_continue: '「次の柱」「次の鬼」という明確な次目標が常に提示される。',
+      what_is_hook: '敵の回想シーン。倒した直後に流れる「実は彼にも背景があった」が中毒性を生む。',
+      what_creates_viscosity: 'キャラクター（特に柱）への愛着。煉獄・伊黒・蜜璃などの個性が記憶に残る。',
+    },
+
+    transferable: {
+      stealable_lessons: '王道を逸脱しないことの強さ。「読者が予測した通りに進めて、予測した通りに泣かせる」精度。',
+      applicable_to_design: 'ゲーム設計に応用するなら：敵を倒した直後の「敵側の回想」を演出に組み込む。プレイヤーの倒した行為に、後から重みを加える設計。',
+    },
+
+    summary: {
+      strength: '王道の精度。「敵にも物語がある」という感情の重さで、シンプルな善悪構造を厚く塗り直した。',
+      weakness: '構造的な革新性は低い。設定の説明が冗長な箇所があり、ストーリーの揺らぎ／予測インセンティブは弱め。',
+      reason: '王道を王道のまま現代的にアップデートした稀有な成功例。ただし構造分析的には進撃の巨人ほど語る材料が多くない。',
+    },
+
+    notes: [],
+    updates: [
+      { date: '2026-04-30', body: 'ページ初版作成（共通テンプレートサンプルとして）' },
+    ],
+  },
+
+  // ─── 映画サンプル: シン・ゴジラ ───
+  {
+    id: 'shingodzilla',
+    media: 'movie',
+    emoji: '🦖',
+    name: 'シン・ゴジラ',
+    enName: 'Shin Godzilla',
+    creator: '庵野秀明 / 樋口真嗣',
+    year: '2016',
+    genre: '怪獣映画 / 政治ドラマ',
+    overall_rating: 9.0,
+
+    one_liner: '「日本の意思決定の機能不全」を、ゴジラという外部脅威の前で観客に体験させる映画。',
+
+    experience: {
+      initial_hook: '東京湾の謎の蒸気。原因不明の事象に、政府の対応が追いつかない最初の30分の緊張感。',
+      continuation_incentive: '「ゴジラとは何か」「日本はどう対応するのか」という二重の謎。観客は「もし自分が官僚だったら」を強制的に問われる。',
+      repeated_experience: '事象発生 → 官僚会議 → 専門家招集 → 対応案 → ゴジラ進化 のサイクル。',
+      fluctuation: 'ゴジラの進化が見え方の前提を毎回覆す。第二形態 → 第四形態 への変化は知覚揺らぎの極致。',
+      peak: 'ヤシオリ作戦実行のシーン。日本の意思決定が、初めて機能した瞬間の集合的カタルシス。',
+      lasting_sensation: '「我々は怪物の前で、まだ立て直せる」という希望と諦観の中間。',
+      yokoene_tateene: '縦エネ強：意思決定の進行が物語を駆動。横エネ中〜強：会議室の緊張感が「日本という現場に居る」感覚を作る。',
+    },
+
+    context: {
+      genre_context: '怪獣映画 × 政治ドラマ。前者の枠で後者を本気でやった稀有な作品。',
+      era_context: '東日本大震災（2011）から5年。震災対応の機能不全を、観客は集合的記憶として共有していた。',
+      creator_context: '庵野秀明のエヴァ的「自己と他者」のテーマを、国家規模に拡張。',
+      medium_context: '劇場の暗闇と大音響でなければ成立しない映画。テレビでは半減する。',
+      precursor_diff: '従来のゴジラ映画は「人間ドラマ + 怪獣特撮」だが、シン・ゴジラは「意思決定プロセス + 怪獣」。会議シーンが圧倒的に多い。',
+      contemporary_resonance: '震災後の集合的トラウマと、官僚機構への不信／信頼の両義性に直撃。',
+    },
+
+    emotion: {
+      initial_value: '困惑と不安（何が起きているか分からない冒頭）',
+      progression: '困惑 → 焦燥（対応の遅さ） → 絶望（ゴジラ熱線） → 一縷の希望（巨災対結成） → 集合的決意（ヤシオリ作戦）',
+      core: '機能不全の中で、それでも個人の専門性が積み上がって何かを成す瞬間の集合的高揚。',
+      catharsis: 'ヤシオリ作戦成功。日本社会が「動いた」感触。',
+      salvation: '部分的。ゴジラは凍結されただけで、根本解決ではない。「次がある」という余韻。',
+      lingering: '「日本はまだ大丈夫かもしれない」という、震災後の集合的祈り。',
+    },
+
+    narrative: {
+      types: ['群像劇', '通過儀礼', '世界観没入型'],
+      adherence: '群像劇の典型。明確な単独主人公がおらず、官僚・科学者・自衛隊が並列に動く。',
+      deviation: 'ヒーローズジャーニーから完全に逸脱。「英雄」が存在せず、「個々の専門性の集積」が世界を救う。',
+      deviation_value: 'プレイヤー（観客）が「特定の主人公」に同期する古典的没入を拒否し、代わりに「日本という集合体」に同期させる構造。震災後の集合的体験の映画化として完璧。',
+    },
+
+    media_specific: {
+      // movieフィールド
+      runtime_density: '120分にゴジラ4回の進化、官庁・自衛隊・科学者の会議、東京破壊、ヤシオリ作戦を圧縮。情報密度は通常映画の2倍。',
+      screen_design: '会議室の人物配置が緻密。誰が誰の隣にいるかで権力関係を視覚化。',
+      cinematography: '会議シーンは引きと寄りの編集が極端。省略の効いた切り替え。',
+      editing: 'カット数が圧倒的に多い。短いカット繋ぎでテンポを生む。',
+      sound_design: '伊福部昭の旧ゴジラスコアの再使用が観客の集合的記憶を呼び起こす。第四形態出現時の重低音は劇場体験の核。',
+      actor_physicality: '俳優陣の声質と早口が政治劇の硬度を支える。長谷川博己の眼力が「決断する個人」を象徴。',
+      theater_experience: '劇場の音圧でなければゴジラの存在感は完成しない。家庭視聴では半減。',
+      one_scene_intensity: 'ゴジラ熱線シーンの圧倒的破壊と虚無。「あの一瞬」が映画を語る時の中心になる。',
+      ending_design: '凍結されたゴジラの尻尾の意味深なショット。「次がある」を仄めかす余韻設計。',
+      lingering_design: '震災後の社会への問いを、観客の中に投げて終わる。エンドロール後も思考が続く。',
+    },
+
+    pull: {
+      what_makes_continue: '「ゴジラの次の進化」と「日本の対応」の二重サスペンス。',
+      what_is_hook: '会議室の緊張感。官僚言葉が飛び交う中で、何かが決まっていく瞬間の知的快楽。',
+      what_creates_viscosity: '震災記憶の上書き／更新の体験。「あの時こう決まっていれば」という集合的IFを観客が共有する。',
+    },
+
+    transferable: {
+      stealable_lessons: '「英雄不在の救済」を物語の骨格にする設計。集合体としての日本を主人公にする勇気。',
+      applicable_to_design: 'ゲーム設計に応用するなら：プレイヤーが個人ではなく「組織」として機能する設計。各ロールの専門性が積み上がって状況を打開する協力ゲーム的構造。',
+    },
+
+    summary: {
+      strength: '震災後の集合的記憶を、怪獣映画という大衆エンタメの枠で言語化したこと。映像の情報密度。',
+      weakness: '個人ドラマが薄く、感情移入の入口が狭い。会議シーンの専門用語の量に脱落するライト層もいる。',
+      reason: '怪獣映画の枠で「日本の集合的意思決定」を主題にした稀有な作品。震災後の社会へのメッセージ性と、純粋な映画的快楽が両立。',
+    },
+
+    notes: [],
+    updates: [
+      { date: '2026-04-30', body: 'ページ初版作成（共通テンプレートサンプルとして）' },
+    ],
+  },
+
+];
+
+// ════════════════════════════════════════════════════════
+//  軽Markdown ヘルパー（**bold** *italic* `code` 段落）
+// ════════════════════════════════════════════════════════
+function entMd(s) {
+  if (!s) return '';
+  let out = String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // インライン: bold / italic / code
+  out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>');
+  // 段落: 連続改行を <p> 区切り、単一改行を <br>
+  if (out.includes('\n')) {
+    out = out.split(/\n\n+/).map(p => '<p>' + p.replace(/\n/g, '<br>') + '</p>').join('');
+  } else {
+    out = '<p>' + out + '</p>';
+  }
+  return out;
+}
+
+// ════════════════════════════════════════════════════════
+//  RENDER MEDIA TITLE — アニメ・漫画・映画 共通描画
+// ════════════════════════════════════════════════════════
+function renderMediaTitle(id) {
+  const t = (typeof MEDIA_TITLES !== 'undefined') && MEDIA_TITLES.find(x => x.id === id);
+  const host = document.getElementById('page-media-' + id);
+  if (!t || !host) return;
+
+  function esc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+  // 1セクション分のフィールド群を描画
+  function renderFields(obj, fields, color) {
+    if (!obj) return '<p style="color:var(--text3);font-size:11px;">// 未記入</p>';
+    return fields.map(f => {
+      const v = obj[f.key];
+      const body = v ? entMd(v) : '<span class="ent-field-empty">// 未記入</span>';
+      return `
+        <div class="ent-field" style="--field-c:${color};">
+          <div class="ent-field-label">${esc(f.label)}</div>
+          <div class="ent-field-body">${body}</div>
+        </div>`;
+    }).join('');
+  }
+
+  function section(num, title, en, color, html) {
+    return `<div class="ent-section" style="--sec-c:${color};">
+      <div class="ent-sec-head">
+        <span class="ent-sec-num">${num}</span>
+        <span class="ent-sec-title">${esc(title)}</span>
+        <span class="ent-sec-en">${esc(en)}</span>
+      </div>
+      <div class="ent-sec-body">${html}</div>
+    </div>`;
+  }
+
+  // 媒体名表示
+  const mediaLabel = { anime: 'ANIME', manga: 'MANGA', movie: 'MOVIE' }[t.media] || 'WORK';
+  const mediaJp    = { anime: 'アニメ', manga: '漫画', movie: '映画' }[t.media] || '作品';
+  const mediumClass = `ent-medium-${t.media}`;
+
+  // 評価バー
+  const ratingBar = t.overall_rating
+    ? `<div class="ent-rating-bar">
+        <span class="ent-rating-num">${esc(t.overall_rating)}</span>
+        <span class="ent-rating-max">/ 10</span>
+        <div class="ent-rating-bar-track"><div class="ent-rating-bar-fill" style="--w:${(t.overall_rating/10*100).toFixed(0)}%;"></div></div>
+      </div>`
+    : '';
+
+  // セクション2: 体験構造
+  const expFields = [
+    {key:'initial_hook',           label:'初期フック'},
+    {key:'continuation_incentive', label:'継続インセンティブ'},
+    {key:'repeated_experience',    label:'反復される体験'},
+    {key:'fluctuation',            label:'揺らぎ / ズレ'},
+    {key:'peak',                   label:'ピーク体験'},
+    {key:'lasting_sensation',      label:'最後に残る感覚'},
+    {key:'yokoene_tateene',        label:'横エネルギー / 縦エネルギー'},
+  ];
+  // セクション3: 文脈構造
+  const ctxFields = [
+    {key:'genre_context',          label:'ジャンル文脈'},
+    {key:'era_context',            label:'時代文脈'},
+    {key:'creator_context',        label:'作家・監督文脈'},
+    {key:'medium_context',         label:'媒体文脈'},
+    {key:'precursor_diff',         label:'先行作品との差分'},
+    {key:'contemporary_resonance', label:'現代的な刺さり方'},
+  ];
+  // セクション4: 感情構造
+  const emoFields = [
+    {key:'initial_value', label:'感情の初期値'},
+    {key:'progression',   label:'感情の推移'},
+    {key:'core',          label:'感情の核'},
+    {key:'catharsis',     label:'カタルシス'},
+    {key:'salvation',     label:'救済の有無'},
+    {key:'lingering',     label:'余韻'},
+  ];
+  // セクション5: 物語骨格
+  const narrTypesHtml = (t.narrative && t.narrative.types && t.narrative.types.length)
+    ? `<div class="ent-narr-types">${t.narrative.types.map(x => `<span class="ent-narr-type">${esc(x)}</span>`).join('')}</div>`
+    : '<p style="color:var(--text3);font-size:11px;">// 未記入</p>';
+  const narrFields = [
+    {key:'adherence',        label:'型に沿っている点'},
+    {key:'deviation',        label:'型から逸脱している点'},
+    {key:'deviation_value',  label:'逸脱が生む体験価値'},
+  ];
+  // セクション6: 媒体固有
+  const mediaSpecFieldsByMedium = {
+    anime: [
+      {key:'series_structure',           label:'シリーズ構成'},
+      {key:'episode_hook',               label:'各話の引き'},
+      {key:'visual_direction',           label:'映像演出'},
+      {key:'animation_movement',         label:'作画 / 動き'},
+      {key:'voice_acting',               label:'声優演技'},
+      {key:'music',                      label:'音楽'},
+      {key:'op_ed',                      label:'OP / ED'},
+      {key:'pause',                      label:'間'},
+      {key:'cut',                        label:'カット割り'},
+      {key:'tempo',                      label:'テンポ'},
+      {key:'animation_only_expression',  label:'アニメーションだから成立する表現'},
+    ],
+    manga: [
+      {key:'panel_layout',         label:'コマ割り'},
+      {key:'page_turn',            label:'ページめくり'},
+      {key:'eye_movement',         label:'視線誘導'},
+      {key:'art_emotion_relation', label:'絵柄と感情の関係'},
+      {key:'whitespace',           label:'余白'},
+      {key:'dialogue_density',     label:'セリフ密度'},
+      {key:'monologue',            label:'モノローグ'},
+      {key:'double_page_spread',   label:'見開きの使い方'},
+      {key:'serial_structure',     label:'連載構造'},
+      {key:'tankoubon_experience', label:'単行本で読んだときの体験'},
+    ],
+    movie: [
+      {key:'runtime_density',    label:'尺の密度'},
+      {key:'screen_design',      label:'画面設計'},
+      {key:'cinematography',     label:'撮影'},
+      {key:'editing',            label:'編集'},
+      {key:'sound_design',       label:'音響'},
+      {key:'actor_physicality',  label:'俳優の身体'},
+      {key:'theater_experience', label:'劇場体験'},
+      {key:'one_scene_intensity',label:'ワンシーンの強度'},
+      {key:'ending_design',      label:'終幕設計'},
+      {key:'lingering_design',   label:'余韻'},
+    ],
+  };
+  const mediaSpecFields = mediaSpecFieldsByMedium[t.media] || [];
+  const mediaSpecLabel = { anime: 'アニメ', manga: '漫画', movie: '映画' }[t.media] || '媒体';
+
+  // セクション7: 引き込みポイント
+  const pullFields = [
+    {key:'what_makes_continue',   label:'何で続きを見たくなるか'},
+    {key:'what_is_hook',          label:'何がフックになっているか'},
+    {key:'what_creates_viscosity',label:'何が粘度を作っているか'},
+  ];
+  // セクション8: 企画転用メモ
+  const trsFields = [
+    {key:'stealable_lessons',     label:'この作品から企画者が盗めること'},
+    {key:'applicable_to_design',  label:'自分の作品 / ゲーム設計に転用できること'},
+  ];
+  // セクション9: 評価サマリ
+  const sumFields = [
+    {key:'strength', label:'強み'},
+    {key:'weakness', label:'弱み'},
+    {key:'reason',   label:'なぜその評価か'},
+  ];
+
+  // 観察メモ・更新ログ
+  const notesHtml = (t.notes && t.notes.length)
+    ? t.notes.map(n => `<div class="con-note-entry">
+        <div class="con-note-date">${esc(n.date || '')}</div>
+        <div class="con-note-body">${entMd(n.body || '')}</div>
+      </div>`).join('')
+    : '<div class="con-note-empty">// まだ観察メモはありません</div>';
+  const updatesHtml = (t.updates && t.updates.length)
+    ? t.updates.map(u => `<div class="con-update-entry">
+        <span class="con-update-date">${esc(u.date || '')}</span>${entMd(u.body || '')}
+      </div>`).join('')
+    : '<div class="con-note-empty">// 更新ログなし</div>';
+
+  // 各セクションの色
+  const C = {
+    info:    '#9080b8',
+    one:     '#ffd166',
+    exp:     '#06d6a0',
+    ctx:     '#1d6dff',
+    emo:     '#dc2626',
+    narr:    '#a78bfa',
+    media:   '#ec4899',
+    pull:    '#fb923c',
+    trs:     '#f59e0b',
+    sum:     '#06b6d4',
+  };
+
+  // ヒーロー＆セクション組み立て
+  host.innerHTML = `
+    <!-- HERO -->
+    <div class="ent-hero ${mediumClass}">
+      <div class="ent-hero-medium-badge">${mediaLabel} · ${mediaJp}</div>
+      <div class="ent-hero-emoji">${esc(t.emoji || '🎬')}</div>
+      <div class="ent-hero-name">${esc(t.enName || t.name)}</div>
+      <div class="ent-hero-jp">${esc(t.name)}</div>
+      <div class="ent-hero-meta">
+        <span>${esc(t.creator || '')}</span>
+        <span>${esc(t.year || '')}</span>
+        <span>${esc(t.genre || '')}</span>
+        ${ratingBar}
+      </div>
+    </div>
+
+    ${section('00', '基本情報', 'BASIC INFO', C.info, `
+      <div class="ent-field" style="--field-c:${C.info};"><div class="ent-field-label">媒体</div><div class="ent-field-body"><p>${esc(mediaJp)}</p></div></div>
+      <div class="ent-field" style="--field-c:${C.info};"><div class="ent-field-label">作者 / 監督</div><div class="ent-field-body"><p>${esc(t.creator || '—')}</p></div></div>
+      <div class="ent-field" style="--field-c:${C.info};"><div class="ent-field-label">公開年 / 連載年 / 放送年</div><div class="ent-field-body"><p>${esc(t.year || '—')}</p></div></div>
+      <div class="ent-field" style="--field-c:${C.info};"><div class="ent-field-label">ジャンル</div><div class="ent-field-body"><p>${esc(t.genre || '—')}</p></div></div>
+      <div class="ent-field" style="--field-c:${C.info};"><div class="ent-field-label">総合評価</div><div class="ent-field-body">${ratingBar || '<p>—</p>'}</div></div>
+    `)}
+
+    ${section('01', '一言仮説', 'ONE-LINER HYPOTHESIS', C.one,
+      `<div style="font-size:14px;color:var(--text);line-height:1.85;font-weight:600;">${entMd(t.one_liner || '— 未記入')}</div>`)}
+
+    ${section('02', '体験構造', 'EXPERIENCE STRUCTURE', C.exp, renderFields(t.experience, expFields, C.exp))}
+
+    ${section('03', '文脈構造', 'CONTEXT STRUCTURE', C.ctx, renderFields(t.context, ctxFields, C.ctx))}
+
+    ${section('04', '感情構造', 'EMOTION STRUCTURE', C.emo, renderFields(t.emotion, emoFields, C.emo))}
+
+    ${section('05', '物語骨格', 'NARRATIVE FRAME', C.narr, `
+      <div class="ent-field" style="--field-c:${C.narr};">
+        <div class="ent-field-label">該当する型</div>
+        <div class="ent-field-body">${narrTypesHtml}</div>
+      </div>
+      ${renderFields(t.narrative, narrFields, C.narr)}
+    `)}
+
+    ${section('06', `媒体固有の設計：${mediaSpecLabel}`, `MEDIUM-SPECIFIC · ${mediaLabel}`, C.media, renderFields(t.media_specific, mediaSpecFields, C.media))}
+
+    ${section('07', '引き込みポイント', 'PULL POINT', C.pull, renderFields(t.pull, pullFields, C.pull))}
+
+    ${section('08', '企画転用メモ', 'TRANSFERABLE LESSONS', C.trs, renderFields(t.transferable, trsFields, C.trs))}
+
+    ${section('09', '評価サマリ', 'SUMMARY', C.sum, renderFields(t.summary, sumFields, C.sum))}
+
+    <!-- 観察メモ -->
+    <div class="con-sec-label">観察メモ <span class="en">VIEWING NOTES</span></div>
+    <div class="con-notes">
+      <div class="con-notes-head">// 視聴/読了中・直後に拾った気づき</div>
+      ${notesHtml}
+    </div>
+
+    <!-- 更新ログ -->
+    <div class="con-sec-label">更新ログ <span class="en">CHANGELOG</span></div>
+    <div class="con-notes">${updatesHtml}</div>
+  `;
+}
+
+// ════════════════════════════════════════════════════════
 //  RENDER CONSOLE TITLE — CONSOLE_GAMESから動的描画
 // ════════════════════════════════════════════════════════
 function renderConsoleTitle(id) {
@@ -11413,22 +12273,9 @@ function escapeHtml(s) {
 //    - LAST_UPDATED を最新日に更新
 //    - UPDATES 配列の先頭に新規エントリを追加
 // ════════════════════════════════════════════════════════
-const LAST_UPDATED = '2026-05-04';
+const LAST_UPDATED = '2026-04-25';
 const UPDATES = [
   // ────────── 最新が先頭 ──────────
-  {
-    date: '2026-05-04',
-    title: '【週次自動更新】4/16-4/22 4Gamerランキング・施策反映',
-    items: [
-      'MONTHS は 26/4 のまま維持（記事対象週 4/16-4/22 は同月内）',
-      '20タイトルのranks末尾を4Gamer最新セルラン分析（4/16-4/22）に更新',
-      '急騰: starrail 53→3位（+474% / 3周年Ver.4.2）/ blue 102→30位（+255%）/ gjene 10→1位（+105% / リリース1周年）',
-      '急落: monst 3→12位（-64%）/ puzzdra 7→26位（-64%）/ genshin 6→40位（-76%）/ efootball 1→6位（-74%）',
-      '11件の新規イベント追加（gjene/starrail/monst/fgo/blue/arknights/efootball/puzzdra/genshin）',
-      '出典: 4Gamer記事 https://www.4gamer.net/games/633/G063395/20260427006/',
-      '公式新着取得失敗: heaven/nikke/gakumas/memento/bounty/efootball/wiz/pokepoke/dqt/dot/kinoko/lastwar/topheroes/royal/dokkan/prospi/puzzdra/jujutsu/kaijuu/bluelock/howasaw/haikyuu/pricone（HTTPエラー or JSレンダリング）',
-    ],
-  },
   {
     date: '2026-04-25',
     title: '【補完更新】TITLE_SOURCES新着URL11件 + ファンパレ施策追加',
@@ -11532,7 +12379,7 @@ const GAMES = [
     id:'uma', emoji:'🐎', name:'ウマ娘', enName:'Uma Musume',
     type:'育成型シミュレーション', color:'#ff6b35',
     desc:'育成×レース×サポートカード。周年施策が極めて強力で、周年月は毎回首位に近い収益スパイクを記録。',
-    ranks:[5,1,1,10,12,15,14,1,1,18,20,16,10,1,1,8,12,15,10,1,null,null,null,null,null,1,1,11],
+    ranks:[5,1,1,10,12,15,14,1,1,18,20,16,10,1,1,8,12,15,10,1,null,null,null,null,null,1,1,12],
     events:[
       {mi:1,  date:'2024/02/24', label:'3周年キャンペーン',     type:'周年', intervention:'感情増幅', rank:'1位 28連続', body:'新ウマ娘「ドゥラメンテ」実装。最大120連無料ガチャ、前週比322%増収'},
       {mi:4,  date:'2024/05',    label:'劇場版公開連動',         type:'施策', intervention:'新規獲得', rank:'Top10維持', body:'映画「新時代の扉」公開＋ゲーム内コラボキャンペーン'},
@@ -11566,14 +12413,12 @@ const GAMES = [
     id:'blue', emoji:'📘', name:'ブルーアーカイブ', enName:'Blue Archive',
     type:'ストーリー×育成型', color:'#38bdf8',
     desc:'キャラ愛着とシナリオを主軸。サービス1年後から急成長した異例のタイトル。周年＋アニメ化が相乗効果。',
-    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,30],
+    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,null],
     events:[
       {mi:0,  date:'2024/01/20〜21', label:'ブルアカふぇす！3周年リアルイベント（幕張）',type:'周年', intervention:'感情増幅', rank:'Top5',  body:'初の2日間リアルイベント。VR施策「お時間あげるよ券」など'},
       {mi:1,  date:'2024/02/04',     label:'3周年 + Angel Beats!コラボ第2弾',type:'周年', intervention:'感情増幅', rank:'Top3', body:'最大150連無料ガチャ。SS立華かなで実装。人気投票→後日PU'},
       {mi:3,  date:'2024/04〜',      label:'TVアニメ放送開始',      type:'コラボ', intervention:'感情増幅', rank:'ユーザー増', body:'テレビ東京系・BS11放送。新規流入＋既存ユーザー盛り上がり'},
       {mi:12, date:'2025/01/27',     label:'4周年PUガチャ「合理主義者はかく語れり」',type:'周年', intervention:'感情増幅', rank:'国内1位', body:'前週比94%増収。100連無料（セイア・制服アスナ）。青輝石7,000個相当配布'},
-    
-      {mi:27, date:'2026/04/16', label:'新ガチャ＋イベント（前週比+255%）', type:'イベント', intervention:'損失刺激', rank:'前週比+255% / 30位', body:'前週102位から30位への急上昇。新ピックアップ／イベント施策が増収を牽引（4Gamer週次ランキング準拠／公式詳細はJSレンダリングで未取得）'},
     ],
     cycle:'ストーリー→愛着→課金→新キャラ',
     world_emotion:'先生と生徒——守るべき子への保護者的愛着', incentive_core:'物語',
@@ -11589,7 +12434,7 @@ const GAMES = [
     id:'nikke', emoji:'🤖', name:'NIKKE（勝利の女神）', enName:'NIKKE',
     type:'アクション×ストーリー', color:'#a78bfa',
     desc:'縦持ちシューティング×高品質ビジュアル。周年の増収率が業界最高クラス。ウィッシュリスト制が特徴。',
-    ranks:[14,18,20,12,14,18,16,15,18,1,10,18,14,18,16,12,14,18,12,14,null,null,null,null,null,null,null,20],
+    ranks:[14,18,20,12,14,18,16,15,18,1,10,18,14,18,16,12,14,18,12,14,null,null,null,null,null,null,null,23],
     events:[
       {mi:9,  date:'2024/10/31', label:'2周年アップデート「OLD TALES」＋シンデレラ実装',type:'周年', intervention:'感情増幅', rank:'前週比603%増', body:'業界トップクラスの収益増加率。1周年でTop10入りした実績に続く2度目の証明'},
       {mi:15, date:'2025/04',    label:'ZOZOTOWNコラボ',          type:'コラボ', intervention:'感情増幅', rank:'Top20',    body:'ファッションECとゲームの異色コラボ。ブランド認知拡大施策'},
@@ -11609,7 +12454,7 @@ const GAMES = [
     id:'memento', emoji:'💀', name:'メメントモリ', enName:'Memento Mori',
     type:'放置型×楽曲コンテンツ', color:'#818cf8',
     desc:'放置型×キャラ固有楽曲という独自設計。供給・消費バランスの精巧さとVTuberコラボ施策が特徴。',
-    ranks:[20,18,24,20,22,18,20,20,22,16,22,20,18,20,22,18,20,15,22,18,null,null,null,null,null,null,null,21],
+    ranks:[20,18,24,20,22,18,20,20,22,16,22,20,18,20,22,18,20,15,22,18,null,null,null,null,null,null,null,32],
     events:[
       {mi:1,  date:'2024/02〜03', label:'クリプトラクト＆ミトラスフィアコラボ',type:'コラボ', intervention:'感情増幅', rank:'Top20', body:'ガチャコラボ確率1.37%。異業種IP同士の相互ファン獲得施策'},
       {mi:9,  date:'2024/10/18', label:'2周年キャンペーン',        type:'周年', intervention:'感情増幅', rank:'Top15', body:'新キャラ2体、100連無料ガチャ。POP UP SHOP（新宿・博多）、CD Vol.2発売'},
@@ -11691,7 +12536,7 @@ const GAMES = [
     id:'lastwar', emoji:'🏰', name:'ラストウォー：サバイバル', enName:'Last War',
     type:'放置×リアルタイム戦略', color:'#fbbf24',
     desc:'2025年国内年間収益1位。大規模広告で新規獲得し、ギルド戦で定着。多国籍に分散した安定型グローバル収益。',
-    ranks:[10,12,15,10,12,14,10,8,4,10,12,10,8,10,12,10,8,12,10,8,null,null,null,null,null,null,null,4],
+    ranks:[10,12,15,10,12,14,10,8,4,10,12,10,8,10,12,10,8,12,10,8,null,null,null,null,null,null,null,2],
     events:[
       {mi:0,  date:'2024年通年',    label:'大規模TV/動画広告展開',         type:'施策', intervention:'新規獲得', rank:'安定Top10', body:'シューティングアクション訴求広告で大量新規獲得。話題性も活用'},
       {mi:7,  date:'2024/09',       label:'App Store首位獲得（週次）',     type:'施策', intervention:'新規獲得', rank:'App Store 1位', body:'ウマ娘・プロスピAと1週間の首位を分け合う。グローバル2位水準'},
@@ -11834,7 +12679,7 @@ const GAMES = [
     id:'wiz', emoji:'🧙', name:'ウィザードリィダフネ', enName:'Wizardry Daphne',
     type:'古典RPG×現代スマホ', color:'#a78bfa',
     desc:'リリース月21位のヒットスタート。1周年でも29位を維持。リスクリターン設計（死のコスト）が特徴的。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,21,20,22,24,22,24,22,26,22,29,null,null,null,null,null,null,null,29],
+    ranks:[null,null,null,null,null,null,null,null,null,null,21,20,22,24,22,24,22,26,22,29,null,null,null,null,null,null,null,22],
     events:[
       {mi:10, date:'2024/10頃',     label:'リリース',                     type:'リリース', intervention:'新規獲得', rank:'リリース月21位', body:'ウィザードリィIPを現代向けキャラデザで展開。幅広い層にリーチ'},
       {mi:19, date:'2025/10/15',    label:'1周年 + 新冒険者ユズナミキ',   type:'周年', intervention:'感情増幅', rank:'29位維持',  body:'1年経っても安定した人気。メモリアルムービー公開。4Gamerが「人気維持」と評価'},
@@ -11873,7 +12718,7 @@ const GAMES = [
     id:'topheroes', emoji:'🦸', name:'トップヒーローズ', enName:'Top Heroes',
     type:'放置×探索型', color:'#f9a8d4',
     desc:'放置×自由移動探索のハイブリッド。転送門（セーブポイント）がリスクリターン設計として機能。',
-    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,37],
+    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,35],
     events:[
       {mi:0,  date:'2024年',        label:'転送門システム運用',            type:'施策', intervention:'新規獲得', rank:'Top22', body:'セーブポイントまで移動しないと無駄になる恐怖がプレイ継続を生む'},
       {mi:8,  date:'2024/09',       label:'新エリア・コンテンツ追加',      type:'アプデ', intervention:'欲求刺激', rank:'Top20', body:'探索エリア拡大でマンネリ化防止。放置ループに新鮮味を追加'},
@@ -11892,7 +12737,7 @@ const GAMES = [
     id:'royal', emoji:'👑', name:'Royal Match', enName:'Royal Match',
     type:'パズル型', color:'#fde047',
     desc:'グローバル収益2024Q4全世界3位。米国市場50%。パズル中毒性設計が独自強み。インゲーム自体が課金動機。',
-    ranks:[18,16,16,16,16,16,16,16,16,16,14,14,15,15,14,14,14,14,14,13,null,null,null,null,null,null,null,9],
+    ranks:[18,16,16,16,16,16,16,16,16,16,14,14,15,15,14,14,14,14,14,13,null,null,null,null,null,null,null,11],
     events:[
       {mi:0,  date:'2024年通年',    label:'難易度設計（徐々に難化）',      type:'施策', intervention:'新規獲得', rank:'安定Top16', body:'難易度が自然に上昇→サポートへの課金動機を自然生成するシステム'},
       {mi:9,  date:'2024Q4',        label:'グローバル収益全世界3位',       type:'施策', intervention:'新規獲得', rank:'世界3位',  body:'アメリカ50%が最大市場。カジュアルパズルで世界トップクラスの安定収益'},
@@ -11956,15 +12801,12 @@ const GAMES = [
     cycle:'ストライク育成→マルチ攻略→ガチャ需要→新キャラ',
     desc:'国内最長寿Top3。2025年年間1位。マルチプレイコラボの教科書。コラボIPの量と頻度が国内最多水準。',
     tags:['マルチ','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/578Reviews', world_emotion:'マルチで仲間と弾く——友達との「共同作業」が最大の動機', incentive_core:'所属', hook_daily:'スタンプ・デイリーミッション・マルチプレイ誘い合い', hook_weekly:'ギルドイベント・高難度クエスト', hook_monthly:'コラボイベント（月1〜2件）・周年施策', charge_trigger:'コラボ限定型+社会圧型 — 人気IPコラボの「今しか手に入らない限定キャラ」が課金の核。マルチメンバーへの「足を引っ張りたくない」強化圧', strength:'マルチプレイの社会的結束が業界最高水準の継続率を生む。コラボIP数と頻度が他の追随を許さない', weakness:'友人のリアル環境に依存するためユーザー環境変化に脆い。新規ユーザーが既存コミュニティに入りにくい', data_quality:'estimated',
-    ranks:[3,2,4,2,1,3,2,1,1,2,1,2,2,1,1,3,1,2,1,2,null,null,null,null,null,null,null,12],
+    ranks:[3,2,4,2,1,3,2,1,1,2,1,2,2,1,1,3,1,2,1,2,null,null,null,null,null,null,null,3],
     events:[
       {mi:27, date:'2026/04/14', label:'ガチャ「モンストジェネレーション」+ Ver.31.5', type:'イベント', intervention:'損失回避', rank:'-46%', body:'4/14モンストジェネレーション開催、4/16にVer.31.5実装。前週反動で前週比-46%（4Gamer 自動取得）'},
       {mi:0,  date:'2024/01', label:'20周年記念ガチャ',    type:'周年', intervention:'感情増幅', rank:'国内1位', body:'毎年恒例の正月キャンペーン。新春超獣神祭で前週比+80%増収'},
       {mi:8,  date:'2024/09', label:'コラボ：鬼滅の刃',   type:'コラボ', intervention:'感情増幅', rank:'Top3', body:'人気IP連続投入の一例。コラボ頻度が月1〜2件で継続率を底支え'},
       {mi:19, date:'2025/08', label:'12周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'国内1位', body:'12周年でも国内1位を維持。長寿運営の手本となる施策構成'},
-    
-      {mi:27, date:'2026/04/30', label:'新黎絶クエスト「コンサリジオ」', type:'イベント', intervention:'損失回避', rank:'12位（前週3位）', body:'5/8より新黎絶クエスト「コンサリジオ」初登場予告。前週比-64%の反動下げ局面（公式新着＋4Gamer）'},
-      {mi:27, date:'2026/05/01', label:'モンストジェネレーション ノアピックアップ', type:'ガチャ', intervention:'欲求刺激', rank:'12位', body:'5/2よりノア排出超UP＋期間限定デザイン。覇者の塔・覇者の塔シーズンズも併催（公式新着）'},
     ],
     onboarding:'最初のマルチプレイ体験で「友達と一緒にやる楽しさ」を早期提供。友達招待の動機が自然発生する設計', growth_design:'コラボキャラの収集が長期モチベの核。停滞ポイント：友達がやめると一緒に遊ぶ人がいなくなり、マルチの楽しさが消える',
     resource_design:'木の実（スタミナ）をダンジョン消費。オーブ（ガチャ通貨）・進化素材・強化素材。ラック（友情ボーナス）がマルチの継続動機。コラボ素材が限定',
@@ -11977,13 +12819,11 @@ const GAMES = [
     cycle:'パズル攻略→モンスター育成→ガチャ需要→コラボ',
     desc:'2012年リリースの国内最長寿タイトル。13周年でもTop5圏。コラボ施策の量・頻度・設計が業界最高水準。',
     tags:['パズル','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/583969296', world_emotion:'パズルを解くたびモンスターが進化する——脳と手の一体感', incentive_core:'成長', hook_daily:'スタミナ周回・デイリーダンジョン', hook_weekly:'週替わりコラボダンジョン・曜日ダンジョン', hook_monthly:'コラボイベント（業界最多頻度）・周年', charge_trigger:'コラボ限定型+成長欲型 — 高難度攻略で「強いモンスターが必要」と感じる設計。コラボ限定モンスターの「今だけ」感', strength:'コラボ頻度が業界最多で常に話題性を維持。パズルゲームの中毒性とRPGの育成欲求を融合した設計', weakness:'スマホゲーム黎明期の設計が多く最新UI/UXとの差が広がる。新規ユーザーには過去コンテンツ量が圧倒的に多く参入障壁', data_quality:'estimated',
-    ranks:[4,3,2,4,3,2,3,4,2,3,3,2,1,2,3,4,3,2,2,1,null,null,null,null,null,null,null,26],
+    ranks:[4,3,2,4,3,2,3,4,2,3,3,2,1,2,3,4,3,2,2,1,null,null,null,null,null,null,null,6],
     events:[
       {mi:1,  date:'2024/02', label:'コラボ：ガンダムSEED FREEDOM', type:'コラボ', intervention:'感情増幅', rank:'Top5', body:'映画公開に合わせたタイミング施策。公開週に売上スパイク'},
       {mi:12, date:'2025/01', label:'13周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'国内1位', body:'ガンダムコラボと周年が重なり前週比432%増収。複合施策の好例'},
       {mi:16, date:'2025/05', label:'ガチャ確率・天井改善', type:'アプデ', intervention:'欲求刺激', rank:'Top5', body:'長期運営での信頼維持。ユーザー声を反映した定期改善の継続'},
-    
-      {mi:27, date:'2026/04/16', label:'前週急騰後の調整', type:'施策', intervention:'欲求刺激', rank:'前週比-64% / 26位', body:'前週7位から26位への大幅反落。前週の特定イベントが終了したことによる収束（4Gamer週次ランキング準拠）'},
     ],
     onboarding:'最初のパズル操作を2〜3ステージで完全習得させる。「自分の操作スキルが上がっている」体験が初期の継続動機になる', growth_design:'高難度ダンジョンへの挑戦が長期目標。停滞ポイント：過去のコンテンツ量の膨大さが新規に「追いつけない」感を与える',
     resource_design:'魔法石（スタミナ兼ガチャ通貨）が最重要リソース。コイン（強化通貨）・進化素材。スタミナとガチャが同通貨の設計が独特の課金構造を生む',
@@ -12001,9 +12841,6 @@ const GAMES = [
       {mi:0,  date:'2024/01', label:'新春ガチャ・新サーヴァント実装', type:'イベント', intervention:'損失回避', rank:'Top3', body:'年始に全サーヴァントを順次ピックアップ。1月の定番高収益期'},
       {mi:7,  date:'2024/08', label:'9周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'Top3', body:'周年イベント＋新章公開で前週比3倍増収。ストーリー待機層が一気に課金'},
       {mi:19, date:'2025/12', label:'年末ガチャ・全騎ピックアップ', type:'イベント', intervention:'損失回避', rank:'国内1位', body:'2025年年間1位となる12月の爆発的収益。全キャラ순環ガチャが機能'},
-    
-      {mi:27, date:'2026/04/29', label:'Fate/strange Fakeコラボ開幕', type:'コラボ', intervention:'感情増幅', rank:'不明（圏外）', body:'女教皇ヨハンナピックアップ召喚開幕。剽滅十字前線アンティオキア＋偽典共鳴幻想スノーフィールド開催（公式新着）'},
-      {mi:27, date:'2026/05/02', label:'ジョン・ラックランドピックアップ召喚', type:'ガチャ', intervention:'欲求刺激', rank:'不明', body:'Fate/strange Fake × Fate/Grand Orderコラボの追加召喚（公式新着）'},
     ],
     onboarding:'序章のストーリーが一気に引き込む完成度。ただし初回の大量AP消費説明が複雑で、ゲームシステムの把握に時間がかかる', growth_design:'章ごとのストーリー解放が長期の読書体験を提供。停滞ポイント：AP上限が少なく1日あたりのプレイ量が少ないため、積極的にやる気が起きにくい',
     resource_design:'AP（スタミナ）がメインクエスト進行律速。聖晶石（ガチャ通貨）と魔法石（ガチャ通貨）の2種。礼装・スキル強化素材が周回対象。AP上限が少なく自然回復重視',
@@ -12022,7 +12859,7 @@ const GAMES = [
     cycle:'選手収集→チーム強化→リーグ参戦→シーズン連動イベント',
     desc:'2026年3月1位。プロ野球シーズンに完全連動した施策設計。球団・選手IPの定期更新が継続動機の核。',
     tags:['スポーツ','IP','シーズン'], gameIUrl:'https://game-i.daa.jp/?APP/1043338546', world_emotion:'好きな球団・選手と勝つ——プロ野球ファンの代理体験', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'リーグ対戦（PvP）', hook_monthly:'シーズン開幕連動・OB選手実装・特別イベント', charge_trigger:'IPピーク型+損失回避型 — OB選手（レジェンド）実装と「開幕ダッシュ」感が課金を誘発。シーズン中の「チームを強化したい」定期圧力', strength:'プロ野球シーズン完全連動が「今やる理由」を毎年更新。OB選手という枯れないIP資源', weakness:'プロ野球ファン以外への訴求が限定的。シーズンオフの収益低下が構造的に発生', data_quality:'estimated',
-    ranks:[8,7,9,6,5,4,7,8,6,5,6,7,5,6,4,3,5,4,3,2,null,null,null,null,null,null,null,46],
+    ranks:[8,7,9,6,5,4,7,8,6,5,6,7,5,6,4,3,5,4,3,2,null,null,null,null,null,null,null,29],
     events:[
       {mi:27, date:'2026/04/15', label:'2026シリーズ1Sランク追加・タイムスリップ第1弾', type:'イベント', intervention:'損失回避', rank:'+59%', body:'2026シリーズ1の通常Sランクポジション追加と4月終盤のタイムスリップ第1弾告知。前週比+59%（4Gamer 自動取得）'},
       {mi:3,  date:'2024/04', label:'プロ野球開幕キャンペーン', type:'イベント', intervention:'損失回避', rank:'Top5', body:'毎年4月開幕に合わせた新シーズン開始。開幕選手カード大量実装'},
@@ -12040,7 +12877,7 @@ const GAMES = [
     cycle:'パック開封→コレクション→バトル→新拡張パック',
     desc:'2024/10リリース後8週連続1位。1ヶ月で3300万DL・世界収益2億ドル。TCG×収集型の設計が新基準を作った。',
     tags:['TCG','収集','ポケモン'], gameIUrl:'https://game-i.daa.jp/?APP/6504857386', world_emotion:'パックを開ける瞬間の「何が出るか」——TCGの開封体験をデジタルで再現', incentive_core:'収集', hook_daily:'パック開封（1日2パック無料）・フレンドギフト', hook_weekly:'バトル対戦・週次ミッション', hook_monthly:'新拡張パック追加（月1〜2回）', charge_trigger:'収集欲型+限定型 — 「アルトマーク（レア演出）が出そう」という期待感が追加パック課金を誘発。図鑑コンプへの強迫的欲求', strength:'「1日2パック無料」という設計が毎日開封の習慣を自然に形成。ポケモンIPの圧倒的な世代横断性', weakness:'TCGの戦略的深さがデジタル版では再現されにくく競技性への不満。重複カードの価値が低い', data_quality:'estimated',
-    ranks:[null,null,null,null,null,null,null,null,null,null,1,1,1,1,1,2,1,3,2,3,null,null,null,null,null,null,null,24],
+    ranks:[null,null,null,null,null,null,null,null,null,null,1,1,1,1,1,2,1,3,2,3,null,null,null,null,null,null,null,15],
     events:[
       {mi:10, date:'2024/10/30', label:'リリース', type:'リリース', intervention:'新規獲得', rank:'リリース月1位', body:'リリース直後から8週連続1位。1ヶ月で世界収益2億ドルを達成'},
       {mi:12, date:'2024/12', label:'幻のいる島 拡張パック追加', type:'アプデ', intervention:'欲求刺激', rank:'国内1位', body:'新拡張の追加ペースが早く月1〜2回。コレクター欲求を絶え間なく刺激'},
@@ -12057,13 +12894,11 @@ const GAMES = [
     cycle:'Ver更新→新キャラガチャ→ストーリー消費→次Ver待機',
     desc:'HoYoVerse製。Ver更新型の課金スパイク設計。原神と並ぶグローバル高収益タイトル。国内Top10常連。',
     tags:['ストーリー','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1600886162', world_emotion:'宇宙を列車で旅する——HoYoVerse品質のキャラと世界への没入', incentive_core:'物語', hook_daily:'スタミナ周回・デイリーミッション', hook_weekly:'忘却の庭・混沌の記憶', hook_monthly:'Ver更新（6週ごと）→新キャラ実装→スパイク', charge_trigger:'Ver更新ピーク型+限定型 — Ver更新時に新キャラ実装が集中し「今引かないと期間が終わる」限定プレッシャーが課金の核', strength:'6週ごとのVer更新サイクルが収益の予測可能なスパイクを設計。ストーリー×キャラ愛着の高密度な組み合わせ', weakness:'Ver更新間隔（6週）のコンテンツ枯渇感。原神と同社のため「どちらをやるか」の自社競合', data_quality:'estimated',
-    ranks:[10,12,8,7,9,11,8,6,7,9,8,7,5,6,4,5,3,4,1,2,null,null,null,null,null,null,null,3],
+    ranks:[10,12,8,7,9,11,8,6,7,9,8,7,5,6,4,5,3,4,1,2,null,null,null,null,null,null,null,null],
     events:[
       {mi:6,  date:'2024/07', label:'Ver2.4 新キャラ「ファイアフライ」', type:'イベント', intervention:'損失回避', rank:'Top10', body:'人気キャラ実装で前週比3倍増収。Ver更新型の典型的スパイク'},
       {mi:13, date:'2025/01', label:'Ver3.0「再創紀の凱歌」', type:'アプデ', intervention:'欲求刺激', rank:'国内1位', body:'大型Ver更新で前週比71%増収。待機層が一気に課金する設計'},
       {mi:18, date:'2025/08', label:'Ver3.X 継続更新', type:'アプデ', intervention:'欲求刺激', rank:'Top5', body:'6週ごとのVer更新サイクルを維持。スパイクと下限の振れ幅が設計の核'},
-    
-      {mi:27, date:'2026/04/16', label:'3周年Ver.4.2大型アップデート', type:'アプデ', intervention:'欲求刺激', rank:'前週比+474% / 3位', body:'崩壊：スターレイル3周年記念Ver.4.2大型アップデート。前週53位→3位の劇的な急上昇（4Gamerインタビュー記事＋週次ランキング準拠）'},
     ],
     onboarding:'宇宙列車という独自世界観で最初の没入感を作る。Ver更新直後の新ストーリーが一番の集客ポイント', growth_design:'Ver更新ごとのコンテンツ刷新が長期継続を支える。停滞ポイント：6週待機期間のコンテンツ枯渇感（やることがなくなる）',
     resource_design:'開拓力（スタミナ）をボス/素材収集に消費。星琼（ガチャ通貨）・信物・遺物（装備）強化素材。開拓力の溢れが重課金者の不満源',
@@ -12076,13 +12911,11 @@ const GAMES = [
     cycle:'探索→ストーリー→新キャラガチャ→Ver更新',
     desc:'オープンワールド×ガチャの世界標準設計。国内Top15常連。スターレイルと同じHoYoVerseのVer更新型。',
     tags:['オープンワールド','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1517783697', world_emotion:'広大な異世界を「旅人」として自由探索——開放感と発見の連続', incentive_core:'物語', hook_daily:'樹脂消費・デイリー依頼', hook_weekly:'週次ボス素材・混沌の深淵', hook_monthly:'Ver更新（6週ごと）・新地域実装・新キャラ実装', charge_trigger:'Ver更新ピーク型 — スターレイルと同様の構造。新地域実装時の「この地域のキャラが欲しい」感情が設計の核', strength:'オープンワールドの探索体験が他追随不可能な独自価値。無課金でもほぼ全コンテンツ楽しめる広い入口', weakness:'無課金フレンドリー設計が課金転換率の低下につながる。樹脂（スタミナ）上限が少なくヘビーユーザーには消化しきれない', data_quality:'estimated',
-    ranks:[12,11,13,10,11,12,10,11,9,12,10,11,8,9,7,8,6,7,5,4,null,null,null,null,null,null,null,40],
+    ranks:[12,11,13,10,11,12,10,11,9,12,10,11,8,9,7,8,6,7,5,4,null,null,null,null,null,null,null,null],
     events:[
       {mi:2,  date:'2024/03', label:'Ver4.5 新キャラ「フリーナ」復刻', type:'イベント', intervention:'損失回避', rank:'Top10', body:'人気キャラ復刻ガチャで前週比266%増収。復刻設計の重要性を示す好例'},
       {mi:9,  date:'2024/10', label:'Ver5.0「ナタ」地域実装', type:'アプデ', intervention:'欲求刺激', rank:'Top10', body:'新地域実装は大型コンテンツ追加の最たる例。探索欲求を一気に解放'},
       {mi:17, date:'2025/06', label:'5周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'Top5', body:'オープンワールドでの周年施策。コンサートイベントとゲーム内施策を連動'},
-    
-      {mi:27, date:'2026/04/16', label:'バージョン狭間の谷期', type:'施策', intervention:'欲求刺激', rank:'前週比-76% / 40位', body:'前週6位から40位へ大幅後退。新バージョン施策の谷間期間と推測される（4Gamer週次ランキング準拠）'},
     ],
     onboarding:'オープンワールドの圧倒的な映像品質で「このゲームは違う」認識を最初の10分で形成。無課金でも序盤が十分楽しい広い入口', growth_design:'地域追加型の超長期コンテンツが終わりのない成長感を提供。停滞ポイント：樹脂（スタミナ）上限が少なくヘビーユーザーでも消化しきれない',
     resource_design:'樹脂（スタミナ）をボス/ドメイン消費。原石（ガチャ通貨）・キャラ育成素材・武器素材。樹脂上限が少なく毎日消費しても余る設計でヘビー課金者に不満',
@@ -12095,14 +12928,12 @@ const GAMES = [
     cycle:'ストーリー消費→オペレーター育成→イベント攻略→新オペガチャ',
     desc:'中国発・タワーディフェンス×世界観型。コアユーザーへの高密度施策が特徴。2025年10月週次1位を記録。',
     tags:['タワーディフェンス','ストーリー','コア向け'], gameIUrl:'https://game-i.daa.jp/?APP/1464872022', world_emotion:'感染症の世界で戦うオペレーターを率いる——使命感と世界観への深い没入', incentive_core:'成長', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'戦術演習・危機契約', hook_monthly:'期間限定イベント（高難度）・新オペレーター実装', charge_trigger:'感情ピーク型+限定型 — サイドストーリー読了後のキャラ愛着ピークで「このオペレーターが欲しい」衝動。コア向け高難度クリアへの強化需要', strength:'コアゲーマーの「誇り」をくすぐる高難度設計。世界観とキャラクターの密度が生む強固なコミュニティ', weakness:'タワーディフェンスというジャンルの間口の狭さ。コア向け設計がカジュアルユーザーの参入を妨げる', data_quality:'estimated',
-    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,2],
+    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,4],
     events:[
       {mi:27, date:'2026/04/14', label:'サイドストーリー「聖山降臨1101」+ 大感謝祭・春', type:'イベント', intervention:'損失回避', rank:'+1625%', body:'4/14開始のサイドストーリーと4/10からの「2026大感謝祭・春」が同時稼働。凛御シルバーアッシュPUガチャ実装で前週比+1625%（4Gamer 自動取得）'},
       {mi:8,  date:'2024/09', label:'サイドストーリー「命ある者の旅」', type:'イベント', intervention:'損失回避', rank:'Top15', body:'高品質サイドストーリーでコアユーザーの課金を喚起'},
       {mi:15, date:'2025/04', label:'新オペレーター「新約エクシア」実装', type:'イベント', intervention:'損失回避', rank:'国内1位', body:'人気キャラ実装で週次1位を獲得。コアゲーでも施策次第で首位に'},
       {mi:18, date:'2025/08', label:'5.5周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'Top10', body:'周年施策でのスパイクが安定。コミュニティ密度が高く施策効果が出やすい'},
-    
-      {mi:27, date:'2026/04/16', label:'前週ピーク後のなだらかな調整', type:'施策', intervention:'欲求刺激', rank:'前週比-21% / 2位', body:'前々週の急騰（10周年・アルテレン関連）後の調整局面。連続Top5圏内をキープ（4Gamer週次ランキング準拠）'},
     ],
     onboarding:'ダークな世界観の没入感を先行させる。タワーディフェンスの初回体験は難しすぎず、「自分で考えて勝てた」感を設計', growth_design:'高難度コンテンツへの挑戦が誇りを生む。停滞ポイント：コア向け設計がライトユーザーを完全に排除してしまう',
     resource_design:'理性（スタミナ）をクエスト消費。合成玉（ガチャ通貨）・基地素材・昇進素材。基地施設の建設が理性なしで進行。理性→合成玉変換の課金設計が独特',
@@ -12115,7 +12946,7 @@ const GAMES = [
     cycle:'バトル→キャラ収集→覚醒強化→コラボ/周年ガチャ',
     desc:'10年超の超長寿タイトル。2026年1月週次1位。ドラゴンボールIPの全コンテンツを定期的に投入し続ける施策設計。',
     tags:['IP','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/1032991513', world_emotion:'ドラゴンボールの全作品を「集める」——世代を超えたDB愛の体現', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'超激戦・降臨クエスト', hook_monthly:'周年（5月）・大型コラボ・超必殺フェス', charge_trigger:'IPピーク型 — DB映画・アニメ・新作ゲーム公開に合わせたコラボキャラが「懐かしのあのキャラを手に入れたい」感情を刺激', strength:'DBという枯れないIPの全コンテンツを動員できる施策設計。10年超の長寿が生む既存ユーザーの復帰ループ', weakness:'DBファン以外への訴求がほぼない。キャラクター性能インフレが旧キャラの陳腐化を加速', data_quality:'estimated',
-    ranks:[7,6,8,7,8,9,7,8,7,8,7,6,8,7,8,6,7,8,4,3,null,null,null,null,null,null,null,42],
+    ranks:[7,6,8,7,8,9,7,8,7,8,7,6,8,7,8,6,7,8,4,3,null,null,null,null,null,null,null,36],
     events:[
       {mi:4,  date:'2024/05', label:'9周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'Top5', body:'毎年5月周年。無料ガチャ大量配布＋限定キャラで収益スパイク'},
       {mi:10, date:'2024/11', label:'映画「ダイの大冒険」コラボ', type:'コラボ', intervention:'感情増幅', rank:'Top5', body:'DB関連IP全てを動員するコラボ戦略の一例'},
@@ -12132,13 +12963,11 @@ const GAMES = [
     cycle:'MS収集→編成強化→ミッション攻略→新機体実装ガチャ',
     desc:'2024年4月リリース。2025年10月週次1位。ガンダム93作品750機以上を搭載。IPの網羅性が差別化の核。',
     tags:['シミュレーション','IP','MS収集'], gameIUrl:'https://game-i.daa.jp/?APP/1612234886', world_emotion:'ガンダム93作品のMSを全て集める——マニアの「全制覇欲求」', incentive_core:'収集', hook_daily:'スタミナ消費・ミッション消化', hook_weekly:'週次イベント・マルチバトル', hook_monthly:'ガンダムIP連動イベント・新MS実装', charge_trigger:'IP特定型 — 特定のガンダム作品コラボ時に「あの機体が欲しい」感情が爆発。機体（MS）収集の全制覇欲求がガチャ課金を継続させる', strength:'93作品という比類のないガンダムIP網羅性。シミュレーション戦略性がコアゲーマーの長期定着を促す', weakness:'ガンダムIPへの愛着がない層にはほぼ訴求しない。IP保有者（バンダイナムコ）との関係が施策の機動力に制約', data_quality:'inferred',
-    ranks:[null,null,null,5,6,7,8,9,7,8,9,7,6,5,4,3,5,4,2,3,null,null,null,null,null,null,null,1],
+    ranks:[null,null,null,5,6,7,8,9,7,8,9,7,6,5,4,3,5,4,2,3,null,null,null,null,null,null,null,9],
     events:[
       {mi:3,  date:'2024/04/16', label:'リリース', type:'リリース', intervention:'新規獲得', rank:'リリース月Top5', body:'リリース直後にTop5入り。ガンダムIPの集客力と事前登録の成果'},
       {mi:14, date:'2025/03', label:'SEED FREEDOM コラボ', type:'コラボ', intervention:'感情増幅', rank:'Top5', body:'映画「ガンダムSEED FREEDOM」コラボで爆発的増収'},
       {mi:18, date:'2025/10', label:'イベント「0083 STARDUST MEMORY」', type:'イベント', intervention:'損失回避', rank:'国内1位', body:'マニア層に刺さるイベントで週次1位。深掘りIPの底力'},
-    
-      {mi:27, date:'2026/04/16', label:'リリース1周年＋Ex-Sガンダム/ヤサカ・マオ', type:'周年', intervention:'感情増幅', rank:'前週比+105% / 1位', body:'4月16日リリース1周年。Ex-Sガンダム(EX)・ヤサカ・マオ登場のピックアップガシャで首位獲得（4Gamer記事準拠）'},
     ],
     onboarding:'ガンダムIPの認知があれば最初のMS収集体験で即没入。シミュレーション戦略の初回説明が長く、初期離脱の懸念あり', growth_design:'ガンダム93作品の網羅性が長期コレクション動機。停滞ポイント：IP更新（新映画・新アニメ）がないと施策の新鮮味が失われる',
     resource_design:'エナジー（スタミナ）をミッション消費。Gジェムス（ガチャ通貨）・MS素材・キャラ強化素材。毎日の素材集め周回がコアの日課。フォースポイントがギルド貢献',
@@ -12151,14 +12980,12 @@ const GAMES = [
     cycle:'選手収集→チーム編成→試合→イベント報酬→新選手実装',
     desc:'コナミのサッカーゲーム。2025年11月週次1位。ゲームシーズン・リアルサッカーシーズン連動設計。',
     tags:['スポーツ','シミュレーション','グローバル'], gameIUrl:'https://game-i.daa.jp/?APP/1439683287', world_emotion:'好きなクラブ・選手でチャンピオンになる——サッカーファンの支配欲', incentive_core:'競争', hook_daily:'スタミナ消費・トレーニング', hook_weekly:'リーグ対戦・イベントマッチ', hook_monthly:'リアルサッカーシーズン連動イベント・新選手実装', charge_trigger:'シーズン連動型+競争圧型 — 欧州カップや国際大会タイミングで「今の環境で最強チームを組みたい」感情が課金を誘発', strength:'リアルサッカーとの連動が「試合結果を見て翌日課金」という自然な課金機会を生む。コナミの試合シミュレーション精度', weakness:'プロスピAとの二重運営によるリソース分散。FIFAライセンス問題など外部要因による施策制約', data_quality:'estimated',
-    ranks:[15,14,16,15,14,13,15,14,13,14,13,12,14,13,12,11,10,9,7,6,null,null,null,null,null,null,null,6],
+    ranks:[15,14,16,15,14,13,15,14,13,14,13,12,14,13,12,11,10,9,7,6,null,null,null,null,null,null,null,1],
     events:[
       {mi:27, date:'2026/04/09', label:'世界累計10億DL記念キャンペーン', type:'キャンペーン', intervention:'感情増幅', rank:'+154%', body:'4/9開幕。Epic: 1 Billion Downloads抽選契約権、ロナウジーニョ等レジェンド配布。前週比+154%でトップへ（4Gamer 2026/4/9-4/15）'},
       {mi:5,  date:'2024/06', label:'UEFA EURO 2024 連動イベント', type:'コラボ', intervention:'感情増幅', rank:'Top10', body:'欧州選手権に合わせたリアルスポーツ連動。実際の大会と同期する設計'},
       {mi:17, date:'2025/11', label:'シーズン後半キャンペーン', type:'イベント', intervention:'損失回避', rank:'国内1位', body:'サッカーシーズン後半に合わせた大型イベントで週次1位'},
       {mi:19, date:'2025/12', label:'年末スペシャルドリームチーム', type:'イベント', intervention:'損失回避', rank:'Top5', body:'年末の特別ガチャ。スポーツゲームの年末施策の典型例'},
-    
-      {mi:27, date:'2026/04/16', label:'10億DL記念キャンペーン後の反動', type:'施策', intervention:'欲求刺激', rank:'前週比-74% / 6位', body:'前週1位から6位へ。世界10億DLキャンペーン直後の反動下げだが依然Top10維持（4Gamer週次ランキング準拠）'},
     ],
     onboarding:'好きなクラブ・選手を選ぶ最初のステップで「自分のチーム」感を植付ける。試合シミュレーションの精度が最初の感動ポイント', growth_design:'リアルサッカーシーズンが成長サイクルを自然に規定。停滞ポイント：リーグ対戦での課金プレイヤーとの戦力差が可視化される',
     resource_design:'GP（ゲームポイント）を試合・強化消費。eFootballコイン（課金通貨）・コントラクト（選手使用権）・スキルトレーナー。コントラクト管理が独自設計',

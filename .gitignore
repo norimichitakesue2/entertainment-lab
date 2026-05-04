@@ -1,0 +1,12 @@
+# 一次観察メモは公開しない
+notes.md
+
+# macOS / エディタ
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Cowork が作る作業残骸（将来出てきたら）
+*.tmp
+*.bak

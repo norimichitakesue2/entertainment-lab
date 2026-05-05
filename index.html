@@ -17501,7 +17501,16 @@ const GAMES = [
     strength:'キャラへの深い愛着がコア離脱を抑える。フルボイス高品質シナリオが「読みたい」動機を持続的に生成', weakness:'シナリオ依存のため制作コストが高い。新規ユーザーには既存シナリオ量が参入障壁になりやすい', data_quality:'estimated',
     onboarding:'序章シナリオの完成度で「続きが読みたい」動機を先行植付け。最初の無料ガチャでキャラへの愛着形成を先行させてからバトル説明に入る順序設計', growth_design:'メインシナリオとキャラクエストの二軸でコンテンツを提供。停滞ポイント：総力戦の対人ランキング圧力がライトユーザーの疲弊源',
     resource_design:'AP（体力）をクエスト消費。ピロシキ（AP回復）・宝石（ガチャ通貨）・装備強化素材。カフェ収益が石の定期源。総力戦チケットが週次管理',
-    design_if:'絆ストーリーのアーカイブ制度をより積極的に告知することで、復帰ユーザーの「取り残れた感」を解消できる', design_drop:'新キャラ実装ペースが速すぎると「課金が追いつかない」焦燥感を生む。コアユーザーほど消耗する設計に注意'
+    design_if:'絆ストーリーのアーカイブ制度をより積極的に告知することで、復帰ユーザーの「取り残れた感」を解消できる', design_drop:'新キャラ実装ペースが速すぎると「課金が追いつかない」焦燥感を生む。コアユーザーほど消耗する設計に注意',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'モシモシガチャ', category:'課金接点', purpose_primary:'生徒愛着の起点', purpose_secondary:['新キャラPUごとの感情ピーク', '戦力バリエーション拡張'], mechanism:'ピックアップガチャ / 200連天井 / 青輝石消費', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'欲求の収束点：シナリオで形成された愛着がここに流入する' },
+      { name:'AP（行動力）', category:'進行制御', purpose_primary:'1日のリズム制御', purpose_secondary:['キャラ育成素材回収', 'AP回復薬の課金口実'], mechanism:'最大AP / 6分1回復 / カフェ報酬・AP薬で補充', axis_link:['hook_daily'], boosts:['キャラクエスト'], boost_reason:'AP消費の口実が育成サイクルを回し続ける' },
+      { name:'カフェ（ホーム）', category:'演出・没入', purpose_primary:'生徒との日常体験', purpose_secondary:['青輝石の定期源', 'タッチ演出による親密度形成'], mechanism:'AFK報酬蓄積 / 招待生徒は無償交流 / 模様替えでテーマ感', axis_link:['world_emotion'], boosts:['モシモシガチャ'], boost_reason:'カフェで愛着が育った生徒へのガチャ動機が強まる' },
+      { name:'絆ストーリー（メモリアル）', category:'演出・没入', purpose_primary:'生徒個別の物語による愛着深化', purpose_secondary:['キャラを「お迎え」する強い動機', 'フルボイス読書体験'], mechanism:'絆Lv上昇で各話解放 / AP消費なしで読書可能', axis_link:['world_emotion', 'onboarding'], boosts:['モシモシガチャ'], boost_reason:'読みたい絆ストーリーがある生徒は手に入れたくなる' },
+      { name:'総力戦', category:'社会機能', purpose_primary:'週次の編成パズル＆社会圧', purpose_secondary:['コア層の腕試し', 'ランキング報酬'], mechanism:'週次切替 / レイドボス / プラチナ〜ルーキーの段位制', axis_link:['hook_weekly'], boosts:['モシモシガチャ'], boost_reason:'相性キャラが必要なボスが新規ガチャ需要を生む' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'物語没入の核', purpose_secondary:['長期継続動機', '設定知識の蓄積'], mechanism:'章立て / 完全フルボイス / 一部映像演出', axis_link:['world_emotion'], boosts:[], boost_reason:'物語に没入することがブルアカ全体への愛着を作る' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17521,7 +17530,16 @@ const GAMES = [
     strength:'まとめて殲滅の時短設計が多忙プレイヤーの継続を支援。解放コンテンツが他にない独自性を持つ', weakness:'ストーリーがバトルに連動しにくく、課金動機のシナリオ→ガチャ変換率が低い。グローバル設計のため国内施策が薄い', data_quality:'inferred',
     onboarding:'チュートリアルが短く、最初の「まとめて殲滅」を早期に体験させる設計。NIKKEの個別ボイスで最初のキャラ愛着形成を促す', growth_design:'まとめて殲滅（8時間放置）が日課の中心。停滞ポイント：コア層向けの迎撃戦は参加基準が高く、ライト層が置いてきぼりになる',
     resource_design:'戦闘データ（スタミナ）は実質廃止→まとめて殲滅で8h放置。コアダスト・シンクロデバイス（強化素材）・宝石。スキンは課金専用',
-    design_if:'NIKKEのエピソード（面談機能）をもっと日課に組み込めれば、キャラ愛着が深まり課金転換率が上がる', design_drop:'グローバル向け設計のため国内施策が薄い。日本市場固有の施策タイミング（周年・コラボ）への対応速度が弱点'
+    design_if:'NIKKEのエピソード（面談機能）をもっと日課に組み込めれば、キャラ愛着が深まり課金転換率が上がる', design_drop:'グローバル向け設計のため国内施策が薄い。日本市場固有の施策タイミング（周年・コラボ）への対応速度が弱点',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'リクルートガチャ', category:'課金接点', purpose_primary:'NIKKE収集の動機', purpose_secondary:['限定NIKKEへの感情ピーク', '編成バリエーション'], mechanism:'200連天井 / 限定/恒常分離 / ウィッシュリスト制', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'物語と射撃で生まれた愛着がここで需要に変わる' },
+      { name:'まとめて殲滅', category:'進行制御', purpose_primary:'多忙プレイヤーの継続支援', purpose_secondary:['素材の安定回収', 'スタミナ実質撤廃'], mechanism:'8時間放置で報酬蓄積 / クリア済み戦闘の自動報酬', axis_link:['hook_daily'], boosts:[], boost_reason:'時短設計が日課のハードルを下げ、長期継続を支える' },
+      { name:'方舟（拠点）', category:'演出・没入', purpose_primary:'NIKKEとの日常生活演出', purpose_secondary:['面談での親密度上昇', '拠点の模様替え'], mechanism:'NIKKEとの個別対話 / 表情・声・モーション演出', axis_link:['world_emotion'], boosts:['リクルートガチャ'], boost_reason:'方舟での親密度がNIKKEを「もっと欲しい」感情を作る' },
+      { name:'解放（衣装スキン）', category:'課金接点', purpose_primary:'ビジュアル課金の独自性', purpose_secondary:['NIKKEの新しい一面の表現', 'コア課金者の収集欲'], mechanism:'ジェムでスキン購入 / モーション・特殊台詞付き', axis_link:['charge_trigger'], boosts:[], boost_reason:'他ゲームにない独自の課金接点として継続収益' },
+      { name:'ユニオンレイド', category:'社会機能', purpose_primary:'週次社会圧の発生源', purpose_secondary:['ユニオン所属の意味付け', '編成最適化動機'], mechanism:'週1ボス / ユニオン全体協力 / ランキング報酬', axis_link:['hook_weekly'], boosts:['リクルートガチャ'], boost_reason:'高難度ボスへの貢献欲が強NIKKE需要を生む' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'シネマティックな物語体験', purpose_secondary:['設定理解', '長期継続動機'], mechanism:'章立て / Live2D + 静止画 / 高品質シナリオ', axis_link:['world_emotion'], boosts:[], boost_reason:'物語没入がNIKKE世界全体への投資意欲を支える' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17543,7 +17561,16 @@ const GAMES = [
     strength:'精霊ごとの固有音楽・セリフが他ゲームにない没入体験。報酬のだぶつかない絶妙なバランス設計', weakness:'メインループの中でキャラへの内的関心が湧くきっかけが少ない。定型作業化しやすいサイクル構造', data_quality:'inferred',
     onboarding:'最初の精霊ボイスと固有楽曲で他ゲームにない没入感を先行体験させる。放置報酬の「既に貯まっている」演出で早期の進捗感を提供', growth_design:'放置型のため「継続している感」が数値増加で可視化される。停滞ポイント：コロシアム（PvP）で課金者との格差が顕在化すると離脱',
     resource_design:'魂の輝き（スタミナ）を周回に消費。コイン・ルーン・魂の欠片（強化素材）。VIPLv課金でスタミナ上限拡大。ギルドコイン→ショップ交換',
-    design_if:'精霊固有の楽曲とストーリーの連動をより深くすることで「この精霊を持っていたい」保有欲求が強まる', design_drop:'デイリーが定型作業化しやすい。ルーティン化すると「惰性でやっている感」が増し、感情的な課金動機が薄れる'
+    design_if:'精霊固有の楽曲とストーリーの連動をより深くすることで「この精霊を持っていたい」保有欲求が強まる', design_drop:'デイリーが定型作業化しやすい。ルーティン化すると「惰性でやっている感」が増し、感情的な課金動機が薄れる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'精霊ガチャ', category:'課金接点', purpose_primary:'限定精霊への課金動機', purpose_secondary:['キャラ固有楽曲の獲得', '編成バリエーション'], mechanism:'天井あり / SSR4% / コラボピックアップ', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'楽曲・物語の没入で生まれた愛着が需要に変わる' },
+      { name:'放置報酬', category:'進行制御', purpose_primary:'手間のかからない継続装置', purpose_secondary:['「貯まっている」可視化', 'ログイン口実'], mechanism:'最大8時間 / 経験値・素材・通貨を蓄積', axis_link:['hook_daily'], boosts:[], boost_reason:'放置でも進行する安心感が長期継続を支える' },
+      { name:'精霊固有楽曲（楽曲MV）', category:'演出・没入', purpose_primary:'他ゲームにない没入体験', purpose_secondary:['キャラ親密度の核', 'SNS拡散素材'], mechanism:'各精霊が固有の楽曲を持つ / Live2D MV', axis_link:['world_emotion'], boosts:['精霊ガチャ'], boost_reason:'楽曲を聴けるのは持っている人だけ→所有欲を強く刺激' },
+      { name:'コロシアム', category:'社会機能', purpose_primary:'PvP社会圧', purpose_secondary:['週次ランキング報酬', '編成最適化動機'], mechanism:'自動戦闘 / 段位制 / 週次集計', axis_link:['hook_weekly'], boosts:['精霊ガチャ'], boost_reason:'対人勝利のための強精霊需要を生む' },
+      { name:'デイリーミッション', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['通貨・素材の安定供給'], mechanism:'毎日6項目 / 報酬は経験値・通貨', axis_link:['hook_daily'], boosts:[], boost_reason:'毎日の習慣化が他施策のベースを作る' },
+      { name:'メインストーリー（紋章）', category:'演出・没入', purpose_primary:'世界観への没入', purpose_secondary:['設定の蓄積', '読み物としての満足'], mechanism:'章立て / フルボイス / イラスト演出', axis_link:['world_emotion'], boosts:[], boost_reason:'世界観への愛着が継続課金の土台になる' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17562,7 +17589,16 @@ const GAMES = [
     strength:'カード選択型育成のランダム性がリプレイ性を高める。プロデュース完了の達成感が明確', weakness:'シナリオの繰り返しによる飽きが早い。ランダム要素への依存で「意図した育成」が難しく挫折率が高い', data_quality:'estimated',
     onboarding:'最初のプロデュース1周が丁寧にガイドされ、コンテスト入賞の達成感を初回に体験させる。チュートリアル後の自由度が高い', growth_design:'カード選択のランダム性がリプレイ性を生む。停滞ポイント：サポートカードの組み合わせ理解の壁が高く、初心者が「なぜ負けたかわからない」',
     resource_design:'スタミナ（AP）をプロデュースと素材収集に使用。ジュエル（ガチャ通貨）・プロデュースPt・サポカ強化素材。コンテスト参加は無料',
-    design_if:'コンテスト後のフィードバック（何が弱かったか）をもっと具体的に示すことで、課金動機（サポカを強化したい）に繋げやすくなる', design_drop:'シナリオの繰り返し消費による飽き。新シーズンでのリフレッシュ感がないと、同じプロデュースへの新鮮味が失われる'
+    design_if:'コンテスト後のフィードバック（何が弱かったか）をもっと具体的に示すことで、課金動機（サポカを強化したい）に繋げやすくなる', design_drop:'シナリオの繰り返し消費による飽き。新シーズンでのリフレッシュ感がないと、同じプロデュースへの新鮮味が失われる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'プロデュースガチャ', category:'課金接点', purpose_primary:'プロデュース成果の質向上', purpose_secondary:['限定アイドル/カードへの感情ピーク'], mechanism:'天井あり / SSR3% / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'プロデュース体験で生まれた所有欲がここに流入' },
+      { name:'プロデュース（育成）', category:'演出・没入', purpose_primary:'デッキ構築の戦略性', purpose_secondary:['アイドル個別の成長物語', '再育成サイクル'], mechanism:'デッキ式育成 / 1周20-40分 / カードドラフト', axis_link:['growth_design', 'hook_daily'], boosts:['プロデュースガチャ'], boost_reason:'良いカードで育成したい欲求が新ガチャ需要に変換' },
+      { name:'コミュ（個別ストーリー）', category:'演出・没入', purpose_primary:'アイドル愛着形成', purpose_secondary:['親愛度・ファン数増加', 'キャラ理解の深化'], mechanism:'親愛度Lv上昇で解放 / フルボイス', axis_link:['world_emotion'], boosts:['プロデュースガチャ'], boost_reason:'コミュで愛着が育ったアイドルへの所有欲を生む' },
+      { name:'コンテスト', category:'社会機能', purpose_primary:'プロデュース成果のアウトプット', purpose_secondary:['ランキング報酬', '編成最適化動機'], mechanism:'非同期PvP / 週次集計 / 段位制', axis_link:['hook_weekly'], boosts:['プロデュースガチャ'], boost_reason:'勝つための強デッキ欲求が新カード需要に' },
+      { name:'スタミナ（AP）', category:'進行制御', purpose_primary:'プロデュース回数の制御', purpose_secondary:['ジュエル消費の口実'], mechanism:'最大AP / 時間回復 / ジュエル課金で補充', axis_link:['hook_daily'], boosts:[], boost_reason:'プロデュース1周のリズムを支える' },
+      { name:'真のステージ（楽曲）', category:'演出・没入', purpose_primary:'育成の儀式化', purpose_secondary:['MV演出によるカタルシス', 'SNS拡散素材'], mechanism:'プロデュース完了で楽曲MV / アイドル別演出', axis_link:['world_emotion'], boosts:[], boost_reason:'楽曲MVが育成の達成感を最大化する' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17583,7 +17619,16 @@ const GAMES = [
     strength:'アーカイブ制度で過去イベントが永続プレイ可能。Key×ライフライン×スマホの高品質演出が類似品のない体験', weakness:'ストーリー制作コストが高くアップデート速度に制約。コンテンツ消化型のため「やることがなくなる」リスク', data_quality:'estimated',
     onboarding:'Key脚本の冒頭から感情的な引力を作り、「このキャラたちの続きが見たい」動機を先行形成してからシステム説明に入る', growth_design:'アーカイブ制度が復帰を容易にする。停滞ポイント：ストーリーのコンテンツ追加が遅いと「やることがなくなる」空白期が生じる',
     resource_design:'スタミナ（BP）をバトルに消費。輝石（ガチャ通貨）・キャラ強化素材・装備素材。アーカイブ解放は消費なし。絆Lv上昇で輝石獲得',
-    design_if:'アーカイブ解放の告知と復帰導線をより強化することで、離脱者の呼び戻しサイクルが設計できる', design_drop:'高品質シナリオへの依存は制作コストが高い。更新頻度を落とさざるを得ない時期のつなぎコンテンツの設計が弱い'
+    design_if:'アーカイブ解放の告知と復帰導線をより強化することで、離脱者の呼び戻しサイクルが設計できる', design_drop:'高品質シナリオへの依存は制作コストが高い。更新頻度を落とさざるを得ない時期のつなぎコンテンツの設計が弱い',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'スタイルガチャ', category:'課金接点', purpose_primary:'限定スタイルの獲得', purpose_secondary:['キャラ個別の戦闘バリエーション'], mechanism:'天井あり / 限定PU / 周年で確率UP', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'シナリオで生まれた愛着がここに流入' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'物語没入の核', purpose_secondary:['キャラ愛着形成', '長期継続動機'], mechanism:'章立て / フルボイス / 麻枝准の脚本', axis_link:['world_emotion', 'onboarding'], boosts:['スタイルガチャ'], boost_reason:'物語の感動が「もっとこの世界にいたい」需要に変換' },
+      { name:'クォーツ（スタミナ）', category:'進行制御', purpose_primary:'1日のリズム制御', purpose_secondary:['ガチャ通貨の定期源'], mechanism:'時間回復 / イベント・配布で補充', axis_link:['hook_daily'], boosts:[], boost_reason:'クォーツの蓄積がガチャ動機を支える' },
+      { name:'絆エピソード', category:'演出・没入', purpose_primary:'キャラ個別の物語', purpose_secondary:['ガチャの後押し'], mechanism:'スタイル所持で解放 / 個別シナリオ', axis_link:['world_emotion'], boosts:['スタイルガチャ'], boost_reason:'読みたい絆ストーリーがあるキャラへの欲求を生む' },
+      { name:'スコアアタック', category:'社会機能', purpose_primary:'戦闘システムのやり込み', purpose_secondary:['編成最適化', 'ランキング報酬'], mechanism:'高難度ボス / スコア制 / 期間限定', axis_link:['hook_weekly'], boosts:['スタイルガチャ'], boost_reason:'特定ボス対策スタイル需要が生まれる' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材・通貨の安定供給'], mechanism:'毎日数項目 / 報酬は強化素材', axis_link:['hook_daily'], boosts:[], boost_reason:'毎日の習慣化が継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17603,7 +17648,16 @@ const GAMES = [
     strength:'クランバトルによるギルド義務感が高い継続率を生む。安定した月次スケジュールがプレイヤーの生活リズムに定着', weakness:'クランバトルへの依存度が高く、クラン環境によって体験格差が大きい。新規参入者へのキャッチアップコストが高い', data_quality:'estimated',
     onboarding:'コミカルなストーリーで軽い入口を作りつつ、クランバトルの「クランに入って一緒に戦おう」という社会的誘引を早期に植付ける', growth_design:'月次クランバトルが成長の評価軸。停滞ポイント：クランの強さに依存するため、クラン環境が悪いと体験格差が大きい',
     resource_design:'スタミナをノーマルとハードクエストに分けて消費。マナ（強化通貨）・宝石（ガチャ通貨）・装備素材。クランコイン→装備交換が重要',
-    design_if:'クランバトルの参加ハードルを下げる仕組み（初心者クラン推薦等）があれば、新規の早期定着率が上がる', design_drop:'クランバトルへの過度な依存。クランを離れると継続動機が激減する設計は、コミュニティ変化に脆弱'
+    design_if:'クランバトルの参加ハードルを下げる仕組み（初心者クラン推薦等）があれば、新規の早期定着率が上がる', design_drop:'クランバトルへの過度な依存。クランを離れると継続動機が激減する設計は、コミュニティ変化に脆弱',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ガチャ', category:'課金接点', purpose_primary:'キャラ収集と戦力強化', purpose_secondary:['限定キャラへの感情ピーク', '編成バリエーション'], mechanism:'プリンセスフェス / 天井 / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'クラバトやストーリーで生まれた需要がここに流入' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'1日の周回リズム', purpose_secondary:['ジュエル消費口実'], mechanism:'時間回復 / ジュエル補充', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'クランバトル', category:'社会機能', purpose_primary:'月次の社会圧', purpose_secondary:['編成最適化動機', 'クラン所属の意味付け'], mechanism:'月1回 / 5日間 / クラン全体貢献', axis_link:['hook_monthly'], boosts:['ガチャ'], boost_reason:'クラバトの順位上げに新キャラが必要になる' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'キャラ愛着の形成', purpose_secondary:['アニメ調演出', '長期継続動機'], mechanism:'章立て / フルボイス / アニメ演出', axis_link:['world_emotion'], boosts:['ガチャ'], boost_reason:'物語で愛着が育ったキャラへの所有欲を生む' },
+      { name:'ダンジョン', category:'達成可視化', purpose_primary:'装備強化の中核', purpose_secondary:['ジュエル獲得', '育成進捗の可視化'], mechanism:'階層制 / 週次リセット / 装備ドロップ', axis_link:['growth_design'], boosts:[], boost_reason:'装備を揃える達成感が継続を支える' },
+      { name:'キャラクエスト', category:'演出・没入', purpose_primary:'キャラ個別の物語', purpose_secondary:['親愛度上昇', 'ボイス解放'], mechanism:'親愛度Lvで解放 / 個別エピソード', axis_link:['world_emotion'], boosts:['ガチャ'], boost_reason:'読みたいエピソードがあるキャラへの所有欲を作る' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17623,7 +17677,16 @@ const GAMES = [
     strength:'同盟システムが強制的な社会的コミットメントを生み継続率を高める。TV広告の規模が新規流入量で他を圧倒', weakness:'同盟圧力が離脱障壁にも課金疲れにもなる諸刃。Pay-to-Winの度合いが高く無課金継続が困難', data_quality:'estimated',
     onboarding:'最初の建設加速チュートリアルで「加速材を使う気持ちよさ」を先行体験させる。同盟加入への誘導が初期定着の最重要ポイント', growth_design:'建設時間の短縮が常に目前にある成長感。停滞ポイント：同盟戦争での課金格差が顕在化すると無課金プレイヤーが脱落',
     resource_design:'体力（AP）が建設/訓練の速度短縮に影響。鋼鉄・食料・石油・金が生産リソース。召集令（ガチャ通貨）。加速材の有無が進捗を決定',
-    design_if:'同盟内の役割分担（偵察・支援・攻撃特化）をより深めることで、無課金でも「自分の役割がある」感が生まれる', design_drop:'強制的なPvP構造。同盟への義務感が強すぎると課金疲れと離脱を同時に生む。Pay-to-Win度の高さは長期的にユーザーを消耗させる'
+    design_if:'同盟内の役割分担（偵察・支援・攻撃特化）をより深めることで、無課金でも「自分の役割がある」感が生まれる', design_drop:'強制的なPvP構造。同盟への義務感が強すぎると課金疲れと離脱を同時に生む。Pay-to-Win度の高さは長期的にユーザーを消耗させる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ヒーローガチャ', category:'課金接点', purpose_primary:'戦力強化', purpose_secondary:['指揮官バリエーション拡張'], mechanism:'天井あり / レアリティ別ピックアップ', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'PvPで生まれた強さ欲求がここに流入' },
+      { name:'同盟戦争', category:'社会機能', purpose_primary:'PvPの中核', purpose_secondary:['同盟所属の意味付け', '長期戦の社会圧'], mechanism:'シーズン制 / 領地占領 / 全同盟参加', axis_link:['hook_weekly', 'hook_monthly'], boosts:['ヒーローガチャ', 'VIP課金'], boost_reason:'勝つための戦力需要が継続課金を駆動' },
+      { name:'資源（食料・鉄）', category:'進行制御', purpose_primary:'建設・育成の基盤', purpose_secondary:['課金時短の口実'], mechanism:'時間回復 / 略奪可能 / 課金加速', axis_link:['hook_daily'], boosts:[], boost_reason:'資源の枯渇が課金時短を促す' },
+      { name:'VIP課金', category:'課金接点', purpose_primary:'継続課金の主軸', purpose_secondary:['多機能の解放', '時短アイテム'], mechanism:'VIPLv制 / 累積課金で恒久ボーナス', axis_link:['charge_trigger'], boosts:[], boost_reason:'長期継続を保証する課金構造' },
+      { name:'デイリーチャレンジ', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['資源・経験値の供給'], mechanism:'毎日複数項目 / 報酬は資源・スピードアップ', axis_link:['hook_daily'], boosts:[], boost_reason:'毎日の習慣化が継続の土台' },
+      { name:'生存者ミニゲーム', category:'演出・没入', purpose_primary:'広告対策と差別化', purpose_secondary:['カジュアル要素の追加'], mechanism:'広告で見たステージのプレイ可能', axis_link:['onboarding'], boosts:[], boost_reason:'広告と本編のギャップを埋め、新規参入を促進' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17643,7 +17706,16 @@ const GAMES = [
     strength:'リアルタイム4v4の臨場感がIP体験を強化。原作IP進行と連動した施策がコアファンの継続動機を持続', weakness:'IP依存のため原作人気に引きずられる。PvP環境のインフレが新規参入の壁を高め続ける', data_quality:'estimated',
     onboarding:'ワンピースIPの既存ファンへの「あの技・あのキャラ」の再会体験を早期に提供。リアルタイムバトルの操作感覚を最初のミッションで即体験', growth_design:'シーズン制リーグでの対人競争が中心。停滞ポイント：課金プレイヤーとの戦力差がPvPで直接見えるため、無課金の挫折ポイントになる',
     resource_design:'BPを試合・ダンジョン消費。ベリー（強化通貨）・ジェム（ガチャ通貨）・スキル玉。超スゴフェスが主要ガチャ。キャラの限界突破素材が希少',
-    design_if:'原作の最新展開（週刊連載）との連動タイミングをより精密にすることで、ファン感情のピーク時に課金施策を重ねられる', design_drop:'IP依存の脆さ。原作の人気が落ちると連動して収益が落ちる構造。IP以外の独自価値（ゲームシステム）が弱い'
+    design_if:'原作の最新展開（週刊連載）との連動タイミングをより精密にすることで、ファン感情のピーク時に課金施策を重ねられる', design_drop:'IP依存の脆さ。原作の人気が落ちると連動して収益が落ちる構造。IP以外の独自価値（ゲームシステム）が弱い',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'キャラ獲得ガチャ', category:'課金接点', purpose_primary:'限定キャラ獲得', purpose_secondary:['限定衣装・新形態への感情ピーク'], mechanism:'天井あり / レジェンド確率 / アニバ強化', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'バウンティラッシュ（PvP）', category:'社会機能', purpose_primary:'リアルタイムPvPの核', purpose_secondary:['編成最適化', 'ランキング報酬'], mechanism:'4v4 / リアルタイム / 段位制', axis_link:['hook_weekly'], boosts:['キャラ獲得ガチャ'], boost_reason:'勝つための強キャラ需要を生む' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト周回制御', purpose_secondary:['ジュエル消費口実'], mechanism:'時間回復 / 課金補充', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'メダルカスタマイズ', category:'達成可視化', purpose_primary:'キャラ強化の戦略性', purpose_secondary:['育成進捗の可視化'], mechanism:'メダル装着で能力カスタマイズ', axis_link:['growth_design'], boosts:[], boost_reason:'カスタマイズの試行錯誤が継続を支える' },
+      { name:'IPコラボ', category:'揺らぎ生成', purpose_primary:'新規流入と既存盛り上げ', purpose_secondary:['アニメ放映期との連動'], mechanism:'限定キャラ実装 / 期間限定イベント', axis_link:['charge_trigger'], boosts:['キャラ獲得ガチャ'], boost_reason:'コラボ期は感情ピークを作りガチャ需要を最大化' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['通貨・素材の供給'], mechanism:'毎日数項目 / 報酬は強化素材・ジュエル', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17663,7 +17735,16 @@ const GAMES = [
     strength:'育成サイクルが短く（5分/周）スキマ時間でも遊べる。サッカーIP＋実在選手コラボの認知拡大力', weakness:'育成シナリオの繰り返し感が早い。ランクインフレがPvP環境の公平性を損なう', data_quality:'inferred',
     onboarding:'育成の最初の一周が短く（約5分）、早期に「育てた選手が活躍する」体験を届ける。リーグバトルへの参加誘導が序盤に組み込まれている', growth_design:'短い育成サイクルが反復を促す。停滞ポイント：選手シナリオの繰り返し感が早く、同じキャラを何度も育てることへの飽き',
     resource_design:'エナジー（スタミナ）を育成・試合に消費。コイン・セレクションコイン（強化通貨）・スカウトチケット。EXピースが育成の主要希少素材',
-    design_if:'選手の育成結果がリーグバトルでどう機能するかのフィードバックを明確にすることで、「次はこう育てよう」の動機が強化される', design_drop:'ランクインフレの加速。強いキャラが次々実装されると、過去の育成努力が陳腐化し「また最初から」という徒労感が生まれる'
+    design_if:'選手の育成結果がリーグバトルでどう機能するかのフィードバックを明確にすることで、「次はこう育てよう」の動機が強化される', design_drop:'ランクインフレの加速。強いキャラが次々実装されると、過去の育成努力が陳腐化し「また最初から」という徒労感が生まれる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'プレイヤーガチャ', category:'課金接点', purpose_primary:'選手獲得', purpose_secondary:['限定選手への感情ピーク'], mechanism:'天井あり / SSR確率 / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'PvPマッチ', category:'社会機能', purpose_primary:'対人試合', purpose_secondary:['編成最適化', 'ランキング'], mechanism:'リアルタイムor非同期 / 段位制', axis_link:['hook_weekly'], boosts:['プレイヤーガチャ'], boost_reason:'勝つための強選手欲求を生む' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'試合・周回制御', purpose_secondary:['ジュエル消費口実'], mechanism:'時間回復 / 課金補充', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'選手育成', category:'達成可視化', purpose_primary:'戦力可視化', purpose_secondary:['育成進捗の達成感'], mechanism:'レベル・スキル・装備強化', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げが継続を支える' },
+      { name:'ストーリーモード', category:'演出・没入', purpose_primary:'IP没入', purpose_secondary:['原作再現', 'キャラ愛着'], mechanism:'章立て / アニメ調演出', axis_link:['world_emotion'], boosts:['プレイヤーガチャ'], boost_reason:'原作再現が選手への愛着を作る' },
+      { name:'デイリーチャレンジ', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材・通貨の供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17683,7 +17764,16 @@ const GAMES = [
     strength:'英雄ごとの個別ストーリーがラストウォーとの差別化。雪原サバイバルの世界観が没入感を強化', weakness:'ラストウォーとのシステム的類似が高く差別化が弱い。Pay-to-Win度の高さが無課金継続を困難に', data_quality:'inferred',
     onboarding:'ラストウォーとほぼ同じ構造。英雄ストーリーで最初のキャラ愛着形成を行い、基地建設の加速材消費を自然に教える', growth_design:'雪原サバイバルの世界観で建設進捗を可視化。停滞ポイント：ラストウォーと同様のPay-to-Win圧力',
     resource_design:'ラストウォーと同構造。食料・木材・鉄鋼・硬貨が生産リソース。英雄トークン（ガチャ通貨）。英雄の評価（星上げ素材）が進捗律速',
-    design_if:'ラストウォーとの差別化としての「英雄ストーリー」をより深くすることが、ゲームの独自価値を高める唯一の方向性', design_drop:'ラストウォーとの類似が高すぎる。独自性の核がないと、より広告費を投じているラストウォーに常に競り負ける'
+    design_if:'ラストウォーとの差別化としての「英雄ストーリー」をより深くすることが、ゲームの独自価値を高める唯一の方向性', design_drop:'ラストウォーとの類似が高すぎる。独自性の核がないと、より広告費を投じているラストウォーに常に競り負ける',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ヒーローガチャ', category:'課金接点', purpose_primary:'戦力強化', purpose_secondary:['ヒーローバリエーション'], mechanism:'天井あり / レアリティ別', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'PvPでの強さ欲求がここに流入' },
+      { name:'拠点建設', category:'達成可視化', purpose_primary:'進捗の可視化', purpose_secondary:['VIP・課金時短の口実'], mechanism:'時間制建設 / VIP・課金で短縮', axis_link:['growth_design'], boosts:['VIP課金'], boost_reason:'建設待ちのストレスがVIP需要を生む' },
+      { name:'同盟戦争', category:'社会機能', purpose_primary:'PvPの核', purpose_secondary:['同盟所属の意味付け', '長期戦の社会圧'], mechanism:'シーズン制 / 領地占領', axis_link:['hook_weekly', 'hook_monthly'], boosts:['ヒーローガチャ', 'VIP課金'], boost_reason:'勝利のための戦力需要を最大化' },
+      { name:'VIP課金', category:'課金接点', purpose_primary:'継続課金の主軸', purpose_secondary:['機能解放', '時短アイテム'], mechanism:'VIPLv制 / 累積課金', axis_link:['charge_trigger'], boosts:[], boost_reason:'長期継続を保証' },
+      { name:'寒さ管理', category:'演出・没入', purpose_primary:'世界観の独自性', purpose_secondary:['資源戦略の駆動'], mechanism:'温度システム / 燃料消費', axis_link:['world_emotion'], boosts:[], boost_reason:'独自の世界観が他SLGとの差別化' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['資源供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17702,7 +17792,16 @@ const GAMES = [
     strength:'DQ IPの圧倒的な国内認知度と愛着。バトルロードの自由度高い周回設計', weakness:'ドラクエ既存ファン以外への訴求力が弱い。IP更新（新作ゲーム）のペースに依存する施策設計', data_quality:'estimated',
     onboarding:'ドラクエIPの懐かしのモンスター・BGMで最初の感情的接触を演出。タクティクスシステムの説明は親切だが量が多い', growth_design:'バトルロード（APなし）で毎日の進捗感を維持。停滞ポイント：IP更新に依存するため、新作DQリリースがないと施策の新鮮味が失われる',
     resource_design:'MP（スタミナ）をクエスト消費。GOLDとジェム（強化・ガチャ通貨）。バトルロードはMPなし。ゴールドダンジョン（土日）でGOLD大量確保',
-    design_if:'DQ IPの歴代作品を横断したストーリーイベントをより多く実装することで、特定世代への懐古感情を繰り返し喚起できる', design_drop:'DQ既存ファン以外への訴求の弱さ。IP外の新規獲得施策が限られており、ユーザー層の固定化・高齢化が進む'
+    design_if:'DQ IPの歴代作品を横断したストーリーイベントをより多く実装することで、特定世代への懐古感情を繰り返し喚起できる', design_drop:'DQ既存ファン以外への訴求の弱さ。IP外の新規獲得施策が限られており、ユーザー層の固定化・高齢化が進む',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'モンスターガチャ', category:'課金接点', purpose_primary:'モンスター収集', purpose_secondary:['限定モンスターへの感情ピーク'], mechanism:'天井あり / SSランク確率 / 期間限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'DQファンの愛着が需要に変換' },
+      { name:'闘技場（PvP）', category:'社会機能', purpose_primary:'対人戦の核', purpose_secondary:['編成最適化', 'ランキング'], mechanism:'非同期PvP / 段位制 / 週次集計', axis_link:['hook_weekly'], boosts:['モンスターガチャ'], boost_reason:'勝利のための強モンスター需要' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'モンスター育成', category:'達成可視化', purpose_primary:'戦力強化の中核', purpose_secondary:['育成進捗の可視化'], mechanism:'レベル・スキルパネル・転生', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げが継続を支える' },
+      { name:'IPコラボ', category:'揺らぎ生成', purpose_primary:'DQシリーズ間の連携', purpose_secondary:['新規流入', '既存ファン盛り上げ'], mechanism:'限定モンスター実装', axis_link:['charge_trigger'], boosts:['モンスターガチャ'], boost_reason:'IP連携が感情ピークを作る' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'DQ世界没入', purpose_secondary:['長期継続動機'], mechanism:'章立て', axis_link:['world_emotion'], boosts:[], boost_reason:'DQらしい物語が継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17721,7 +17820,16 @@ const GAMES = [
     strength:'多彩なミニゲームが飽き防止。ギルド協力コンテンツの多さが離脱障壁を高める', weakness:'定型作業化しやすいデイリーサイクル。コラボIPの質がゲーム体験に大きく依存', data_quality:'inferred',
     onboarding:'報酬受け取り場所の多さで「最初から何かもらえる」充足感を演出。最初のギルド加入誘導が初期定着の鍵', growth_design:'バックバトルとギルドコンテンツで毎日の義務感を設計。停滞ポイント：デイリーの定型作業化が進むと「惰性でログインしている感」が増す',
     resource_design:'スタミナを周回・PvPに消費。ダイヤ（ガチャ通貨）・チャレンジコイン・装備強化素材。バックバトルで放置中も素材収集。ギルドコイン交換',
-    design_if:'ミニゲームの多様性を活かして「今日は違うことをする」バリエーションを設計できれば、マンネリ感を防げる', design_drop:'コラボIPの質への依存。弱いIPでのコラボは全体の雰囲気を下げる。コラボ頻度を上げると希少性が失われる'
+    design_if:'ミニゲームの多様性を活かして「今日は違うことをする」バリエーションを設計できれば、マンネリ感を防げる', design_drop:'コラボIPの質への依存。弱いIPでのコラボは全体の雰囲気を下げる。コラボ頻度を上げると希少性が失われる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'勇者ガチャ', category:'課金接点', purpose_primary:'勇者収集', purpose_secondary:['編成バリエーション'], mechanism:'天井あり', axis_link:['incentive_core'], boosts:[], boost_reason:'プレイで生まれた戦力欲求がここに流入' },
+      { name:'放置報酬', category:'進行制御', purpose_primary:'手間のかからない継続', purpose_secondary:['「貯まっている」可視化'], mechanism:'AFK報酬蓄積', axis_link:['hook_daily'], boosts:[], boost_reason:'放置で進行する安心感' },
+      { name:'PvPアリーナ', category:'社会機能', purpose_primary:'対人戦', purpose_secondary:['編成最適化'], mechanism:'非同期PvP', axis_link:['hook_weekly'], boosts:['勇者ガチャ'], boost_reason:'勝利のための強勇者需要' },
+      { name:'勇者育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・装備・スキル', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+      { name:'ステージ進行', category:'達成可視化', purpose_primary:'進捗の可視化', purpose_secondary:['ストーリー解放'], mechanism:'ステージ制 / クリアで開放', axis_link:['growth_design'], boosts:[], boost_reason:'進捗の達成感が継続を支える' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17747,6 +17855,15 @@ const GAMES = [
     ip_emotional_anchor: 'キャラへの愛着は原作で完結している。ソシャゲ側で「新たな感情の置き場」を作る設計がなく、原作ファンに依存。',
     ip_unfinished: '低い未完性。原作が完結しており、世界の意味も回収済み。「居続ける」ことが許される未完性が薄い。',
     ip_borrowed_feel: '<strong>高い借り物感</strong>。原作の名シーン再現＋限定キャラ実装という「縦エネ再消費」型のソシャゲ化に終始しており、IP横エネ自走の構造を作れていない。書き手のメモ「日本IP起点ソシャゲの典型的失敗パターン」に該当。これは作品の質ではなく <strong>「IPの横エネ形式」と「ソシャゲ要求形式」の噛み合わなさ</strong>が原因。',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'選手スカウト', category:'課金接点', purpose_primary:'選手獲得', purpose_secondary:['限定選手への感情ピーク'], mechanism:'天井あり / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'試合（PvP）', category:'社会機能', purpose_primary:'対人試合', purpose_secondary:['編成最適化'], mechanism:'リアルタイムor非同期', axis_link:['hook_weekly'], boosts:['選手スカウト'], boost_reason:'勝利のための強選手需要' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'試合制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'選手育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・装備・特訓', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'ストーリーモード', category:'演出・没入', purpose_primary:'原作没入', purpose_secondary:['キャラ愛着'], mechanism:'章立て / 原作再現', axis_link:['world_emotion'], boosts:['選手スカウト'], boost_reason:'原作再現が選手愛着を作る' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17765,7 +17882,16 @@ const GAMES = [
     strength:'キャラ死亡リスクが他ゲームにない緊張感を生む。クラシックRPGファンに刺さる世界観の希少性', weakness:'コア向け設計が新規ユーザーの間口を狭める。死のリスクが継続の障壁になる可能性', data_quality:'inferred',
     onboarding:'ダンジョン探索の緊張感と死のリスクを最初のプレイで体験させる。「本格RPGだ」という差別化認識を序盤に形成', growth_design:'キャラの成長と装備厳選が長期モチベを支える。停滞ポイント：死亡コストが高すぎると新規ユーザーが萎縮して離脱する',
     resource_design:'探索AP（スタミナ）をダンジョンに消費。GOLD・宝石（ガチャ通貨）・装備素材。死亡で蘇生コストが発生→課金圧。ラックが宝箱ドロップに影響',
-    design_if:'死のリスクをソーシャル要素と組み合わせる（ギルドメンバーの蘇生等）ことで、緊張感を社会的な連帯感に転換できる', design_drop:'コア向け設計の間口の狭さ。新規参入障壁が高く、リリース後の自然減少を補う新規獲得が難しい'
+    design_if:'死のリスクをソーシャル要素と組み合わせる（ギルドメンバーの蘇生等）ことで、緊張感を社会的な連帯感に転換できる', design_drop:'コア向け設計の間口の狭さ。新規参入障壁が高く、リリース後の自然減少を補う新規獲得が難しい',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'冒険者ガチャ', category:'課金接点', purpose_primary:'冒険者収集', purpose_secondary:['職業バリエーション'], mechanism:'天井あり', axis_link:['incentive_core'], boosts:[], boost_reason:'ダンジョン攻略の欲求がここに流入' },
+      { name:'ダンジョン探索', category:'演出・没入', purpose_primary:'探索の核体験', purpose_secondary:['迷宮の手応え', '危機感'], mechanism:'階層制 / リアルタイム探索 / 全滅で死亡', axis_link:['world_emotion'], boosts:['冒険者ガチャ'], boost_reason:'攻略困難なダンジョンが冒険者需要を生む' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'探索回数制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'探索のリズムを支える' },
+      { name:'冒険者育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['転職システム'], mechanism:'レベル・装備・転職', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げが継続を支える' },
+      { name:'マルチプレイ', category:'社会機能', purpose_primary:'協力プレイ', purpose_secondary:['コミュニティ形成'], mechanism:'パーティ募集 / リアルタイム協力', axis_link:['hook_weekly'], boosts:[], boost_reason:'協力プレイが継続のフックになる' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17785,7 +17911,16 @@ const GAMES = [
     strength:'全サバ進捗報酬というコミュニティ連帯感の設計が独自。農場・採掘など生活系放置コンテンツの幅', weakness:'放置ゲームは「ログインしなくてもいい」と感じやすく離脱率が上がりやすい。単調さが長期継続の障壁', data_quality:'inferred',
     onboarding:'最初のランプ磨きで「放置しても進む」快感を即体験させる。農場・採掘などの多様な放置コンテンツへの誘導が初期の回遊を生む', growth_design:'全サバ進捗報酬というコミュニティ連帯感が独自の継続動機。停滞ポイント：放置ゲームは「ログインしなくてもいい」と気づいた瞬間に離脱',
     resource_design:'魔法石（スタミナ）をダンジョンに消費。コイン・ランプ磨き素材・仲間強化石。放置報酬（最大8h）の上限が課金で拡大。全サバ素材が協力要素',
-    design_if:'全サバ進捗報酬の貢献度可視化をより強化することで、「自分が貢献している」実感が継続動機になる', design_drop:'単調さの加速。放置の気持ちよさは最初のうちだけで、長期になると義務感に変わるリスクが高い'
+    design_if:'全サバ進捗報酬の貢献度可視化をより強化することで、「自分が貢献している」実感が継続動機になる', design_drop:'単調さの加速。放置の気持ちよさは最初のうちだけで、長期になると義務感に変わるリスクが高い',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'装備ガチャ', category:'課金接点', purpose_primary:'装備強化', purpose_secondary:['ステータス強化への感情ピーク'], mechanism:'天井あり', axis_link:['incentive_core'], boosts:[], boost_reason:'PvPでの強さ欲求がここに流入' },
+      { name:'放置報酬', category:'進行制御', purpose_primary:'手間のかからない継続', purpose_secondary:['「貯まっている」可視化'], mechanism:'AFK報酬蓄積', axis_link:['hook_daily'], boosts:[], boost_reason:'放置で進行する安心感' },
+      { name:'PvPアリーナ', category:'社会機能', purpose_primary:'対人戦', purpose_secondary:['編成最適化'], mechanism:'非同期PvP / ランキング', axis_link:['hook_weekly'], boosts:['装備ガチャ'], boost_reason:'勝利のための強装備需要' },
+      { name:'スキル合成', category:'達成可視化', purpose_primary:'戦闘の戦略性', purpose_secondary:['編成バリエーション'], mechanism:'スキル組み合わせ / ランダム合成', axis_link:['growth_design'], boosts:[], boost_reason:'スキル試行錯誤が継続を支える' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+      { name:'ステージ進行', category:'達成可視化', purpose_primary:'進捗の可視化', purpose_secondary:['新ステージ解放への期待'], mechanism:'ステージ制', axis_link:['growth_design'], boosts:[], boost_reason:'進捗の達成感' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17804,7 +17939,16 @@ const GAMES = [
     strength:'バックバトル（探索中も戦闘継続）の独自設計。探索とバトルの同時進行がセッション効率を高める', weakness:'競合放置RPGとの差別化が薄い。世界観のオリジナリティが弱くIPコラボに依存しがち', data_quality:'inferred',
     onboarding:'バックバトル（探索中も戦闘継続）の効率感を序盤に体験させる。マップ探索の「まだ先がある」感が初期の回遊を促進', growth_design:'施設強化とヒーロー育成の二軸で成長感を維持。停滞ポイント：バトルパスの段階的報酬は課金を促す一方、無課金の進行速度との格差を可視化する',
     resource_design:'スタミナ（体力）を探索・バトルに消費。ゴールド・ダイヤ（ガチャ通貨）・英雄の欠片（合成素材）。バトルパス課金で素材入手効率が上昇',
-    design_if:'ヒーローの組み合わせ（チームシナジー）の深さを増すことで、「次はこの編成を試したい」という探索動機が強化される', design_drop:'世界観のオリジナリティの弱さ。競合放置RPGと差別化できる独自コアがないと、広告費競争に巻き込まれるだけ'
+    design_if:'ヒーローの組み合わせ（チームシナジー）の深さを増すことで、「次はこの編成を試したい」という探索動機が強化される', design_drop:'世界観のオリジナリティの弱さ。競合放置RPGと差別化できる独自コアがないと、広告費競争に巻き込まれるだけ',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ヒーローガチャ', category:'課金接点', purpose_primary:'戦力強化', purpose_secondary:['ヒーローバリエーション'], mechanism:'天井あり', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'PvPでの強さ欲求がここに流入' },
+      { name:'拠点建設', category:'達成可視化', purpose_primary:'進捗の可視化', purpose_secondary:['課金時短口実'], mechanism:'時間制建設 / 課金で短縮', axis_link:['growth_design'], boosts:['VIP課金'], boost_reason:'建設待ちがVIP需要を生む' },
+      { name:'同盟戦争', category:'社会機能', purpose_primary:'PvPの核', purpose_secondary:['同盟所属の意味付け'], mechanism:'シーズン制', axis_link:['hook_weekly', 'hook_monthly'], boosts:['ヒーローガチャ'], boost_reason:'勝利のための戦力需要' },
+      { name:'VIP課金', category:'課金接点', purpose_primary:'継続課金の主軸', purpose_secondary:['機能解放', '時短'], mechanism:'VIPLv制', axis_link:['charge_trigger'], boosts:[], boost_reason:'長期継続を保証' },
+      { name:'ヒーロー育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・スキル・装備', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['資源供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17824,7 +17968,16 @@ const GAMES = [
     strength:'カジュアルパズルの中毒性と達成感の設計が世界最高水準。ブースターコンボの爽快感が独自の強み', weakness:'難易度上昇による意図的フラストレーション設計がユーザー批判を受けやすい。PvP要素が薄くコアゲーマーへの訴求が弱い', data_quality:'estimated',
     onboarding:'最初のステージ群が意図的に簡単で「自分は上手い」錯覚を作る。城のリフォーム達成感を超早期に提供する設計', growth_design:'新しい部屋・新エリアの解放が長期の目標を提供。停滞ポイント：難易度の急上昇によるフラストレーションが意図的な課金転換設計',
     resource_design:'手（手数）がステージ消費リソース。コイン（ブースター購入）・ライフ（失敗復活）。追加手数が主要課金ポイント。チームイベントトークン交換',
-    design_if:'チームイベントの協力感をより強化することで、「チームのために続ける」社会的継続動機が生まれる', design_drop:'難易度の意図的な操作に気づかれること。「わざと難しくしてお金を取ろうとしている」と感じさせると信頼を失う'
+    design_if:'チームイベントの協力感をより強化することで、「チームのために続ける」社会的継続動機が生まれる', design_drop:'難易度の意図的な操作に気づかれること。「わざと難しくしてお金を取ろうとしている」と感じさせると信頼を失う',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ステージ進行', category:'達成可視化', purpose_primary:'パズル進捗の可視化', purpose_secondary:['ストーリーアンロック'], mechanism:'ステージ制 / 数千レベル', axis_link:['growth_design'], boosts:[], boost_reason:'進捗の積み上げが継続の核' },
+      { name:'ライフ', category:'進行制御', purpose_primary:'1日の遊び方制御', purpose_secondary:['課金時短口実'], mechanism:'最大5 / 30分1回復 / 課金で補充', axis_link:['hook_daily'], boosts:[], boost_reason:'パズル失敗時の課金口実' },
+      { name:'ブースター', category:'課金接点', purpose_primary:'難ステージ攻略の課金', purpose_secondary:['コア課金者の継続支援'], mechanism:'コインで購入 / ガチャ要素なし', axis_link:['charge_trigger'], boosts:[], boost_reason:'壁ステージで課金欲求を生む' },
+      { name:'王様救出ストーリー', category:'演出・没入', purpose_primary:'進行のメタ的フック', purpose_secondary:['広告での印象作り'], mechanism:'ステージクリアで物語進行 / アニメ調演出', axis_link:['world_emotion'], boosts:[], boost_reason:'物語が「次のステージへ」の動機を強化' },
+      { name:'チームイベント', category:'社会機能', purpose_primary:'協力イベント', purpose_secondary:['チーム所属の意味付け'], mechanism:'チーム協力 / 報酬は限定', axis_link:['hook_weekly'], boosts:[], boost_reason:'協力での貢献感が継続を支える' },
+      { name:'デイリーチャレンジ', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['コイン・ブースター供給'], mechanism:'毎日課題', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17846,7 +17999,16 @@ const GAMES = [
     strength:'イベントマラソン（複数イベント並行でSSR確定チケット）が継続モチベを高める独自設計。五条悟演出の圧倒的インパクト', weakness:'原作進行のネタバレ管理が難しい。IPストーリー終了後の運営継続設計が課題', data_quality:'estimated',
     onboarding:'五条悟の圧倒的な演出で最初の感情ピークを作る。原作ファンなら「あのシーン」の再現で即座に没入させる', growth_design:'イベントマラソンでSSR確定チケットへの道筋を提示する。停滞ポイント：複数イベント並行の「義務感」が疲弊を生む',
     resource_design:'AP（スタミナ）をクエスト・イベントに消費。呪霊の欠片（強化素材）・交換チケット・輝石（ガチャ通貨）。イベントマラソンでの交換素材が重要',
-    design_if:'限定キャラの「今引かないと復刻なし」構造はFGOの炎上事例を踏まえて、一定の復刻設計を入れることでユーザー信頼が高まる', design_drop:'原作IP終了後の設計。呪術廻戦の連載終了後も運営を続けるためのIP依存からの脱却設計が必要'
+    design_if:'限定キャラの「今引かないと復刻なし」構造はFGOの炎上事例を踏まえて、一定の復刻設計を入れることでユーザー信頼が高まる', design_drop:'原作IP終了後の設計。呪術廻戦の連載終了後も運営を続けるためのIP依存からの脱却設計が必要',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'呪具ガチャ', category:'課金接点', purpose_primary:'装備（呪具）獲得', purpose_secondary:['限定呪具への感情ピーク'], mechanism:'天井あり / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'原作再現の核', purpose_secondary:['キャラ愛着', '長期継続動機'], mechanism:'章立て / アニメ再現演出', axis_link:['world_emotion'], boosts:['呪具ガチャ'], boost_reason:'原作再現がキャラ・装備への愛着を作る' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'キャラ育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・術式・装備', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'対人戦', category:'社会機能', purpose_primary:'PvP', purpose_secondary:['編成最適化'], mechanism:'非同期PvP', axis_link:['hook_weekly'], boosts:['呪具ガチャ'], boost_reason:'勝利のための強装備需要' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17865,7 +18027,16 @@ const GAMES = [
     strength:'耐性破壊→核露出→追撃の独自バトルシステムが他にない共闘感。Steam対応のクロスプレイが珍しい', weakness:'2025年リリースの新作のため長期継続設計の実績が未検証。ユニパーツ厳選の煩雑さが離脱要因になりうる', data_quality:'inferred',
     onboarding:'アニメレベルの演出で最初の戦闘シーンを圧倒的に見せる。ユニパーツシステムの説明は複雑で初期離脱の原因になりうる', growth_design:'耐性破壊→核露出→追撃の独自バトルが成長の実感を作る。停滞ポイント：ユニパーツのランダム能力値厳選が「良いものが出ない」フラストレーションを生む',
     resource_design:'スタミナを討伐遠征に消費。ユニパーツ（装備素材・ランダム能力値）・強化素材・防衛隊コイン。ユニパーツ厳選のランダム性が課金圧を生む',
-    design_if:'Steam対応クロスプレイという強みを活かしたPC向けコンテンツ（大画面での共闘等）を設計できれば差別化が明確になる', design_drop:'新規タイトルのため長期継続設計の検証が未完。ユニパーツ厳選のランダム性が課金疲れを招くリスクに注意'
+    design_if:'Steam対応クロスプレイという強みを活かしたPC向けコンテンツ（大画面での共闘等）を設計できれば差別化が明確になる', design_drop:'新規タイトルのため長期継続設計の検証が未完。ユニパーツ厳選のランダム性が課金疲れを招くリスクに注意',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'隊員ガチャ', category:'課金接点', purpose_primary:'キャラ獲得', purpose_secondary:['限定隊員への感情ピーク'], mechanism:'天井あり', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'ストーリーモード', category:'演出・没入', purpose_primary:'原作没入', purpose_secondary:['キャラ愛着'], mechanism:'章立て', axis_link:['world_emotion'], boosts:['隊員ガチャ'], boost_reason:'原作再現が愛着を作る' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'隊員育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・スキル', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'PvP', category:'社会機能', purpose_primary:'対人戦', purpose_secondary:['編成最適化'], mechanism:'非同期PvP', axis_link:['hook_weekly'], boosts:['隊員ガチャ'], boost_reason:'勝利のための強隊員需要' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
 
   // ──────────────────────────────────
@@ -17884,7 +18055,16 @@ const GAMES = [
     ],
     onboarding:'最初のマルチプレイ体験で「友達と一緒にやる楽しさ」を早期提供。友達招待の動機が自然発生する設計', growth_design:'コラボキャラの収集が長期モチベの核。停滞ポイント：友達がやめると一緒に遊ぶ人がいなくなり、マルチの楽しさが消える',
     resource_design:'木の実（スタミナ）をダンジョン消費。オーブ（ガチャ通貨）・進化素材・強化素材。ラック（友情ボーナス）がマルチの継続動機。コラボ素材が限定',
-    design_if:'マルチプレイのオンライン化（リアルタイム不要）を強化することで、友人の引退後も継続できる設計にできる', design_drop:'リアルの友人ネットワークへの依存。友人全員がやめると継続動機が一気に消失する構造的な脆さ'
+    design_if:'マルチプレイのオンライン化（リアルタイム不要）を強化することで、友人の引退後も継続できる設計にできる', design_drop:'リアルの友人ネットワークへの依存。友人全員がやめると継続動機が一気に消失する構造的な脆さ',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'モンスターガチャ', category:'課金接点', purpose_primary:'モンスター獲得', purpose_secondary:['限定モンスへの感情ピーク', '超究極攻略の戦力'], mechanism:'天井あり / 限定獣神祭 / コラボPU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'クエスト攻略の欲求がここに流入' },
+      { name:'マルチプレイ', category:'社会機能', purpose_primary:'4人協力プレイの核', purpose_secondary:['友達・コミュニティ形成', '貸し借り体験'], mechanism:'リアルタイム4人 / オーブ消費なし参加', axis_link:['hook_weekly'], boosts:['モンスターガチャ'], boost_reason:'高難度マルチでの強モンス需要' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['オーブ消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'IPコラボ', category:'揺らぎ生成', purpose_primary:'新規流入と既存盛り上げ', purpose_secondary:['限定モンス実装'], mechanism:'年複数回 / 限定キャラ実装', axis_link:['charge_trigger'], boosts:['モンスターガチャ'], boost_reason:'コラボ期は感情ピークを最大化' },
+      { name:'禁忌の獄／超究極', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['攻略難度の高さ', '編成最適化'], mechanism:'高難度クエスト / 期間限定', axis_link:['growth_design'], boosts:['モンスターガチャ'], boost_reason:'攻略のための強モンス需要' },
+      { name:'モンスター育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['進化・神化・獣神化'], mechanism:'レベル・進化系統', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17901,7 +18081,16 @@ const GAMES = [
     ],
     onboarding:'最初のパズル操作を2〜3ステージで完全習得させる。「自分の操作スキルが上がっている」体験が初期の継続動機になる', growth_design:'高難度ダンジョンへの挑戦が長期目標。停滞ポイント：過去のコンテンツ量の膨大さが新規に「追いつけない」感を与える',
     resource_design:'魔法石（スタミナ兼ガチャ通貨）が最重要リソース。コイン（強化通貨）・進化素材。スタミナとガチャが同通貨の設計が独特の課金構造を生む',
-    design_if:'新規向けの「フレンドに教えてもらう」仕組みを強化することで、既存ユーザーのメンター化と新規定着を同時に実現できる', design_drop:'黎明期設計の古さ。UIとUXが最新スマホゲームと比べて陳腐化しており、グラフィックと操作感の更新が必要'
+    design_if:'新規向けの「フレンドに教えてもらう」仕組みを強化することで、既存ユーザーのメンター化と新規定着を同時に実現できる', design_drop:'黎明期設計の古さ。UIとUXが最新スマホゲームと比べて陳腐化しており、グラフィックと操作感の更新が必要',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'魔法石ガチャ', category:'課金接点', purpose_primary:'モンスター獲得', purpose_secondary:['限定モンスへの感情ピーク', 'コラボキャラの収集'], mechanism:'天井（最近実装） / フェス確率UP / 大量コラボ', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'攻略・収集欲求がここに流入' },
+      { name:'パズル操作', category:'演出・没入', purpose_primary:'核ゲーム体験', purpose_secondary:['プレイヤースキルの可視化'], mechanism:'ドロップ操作 / コンボシステム', axis_link:['world_emotion'], boosts:[], boost_reason:'操作の上達が他全機能の体験を底上げ' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['魔法石消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'高難度ダンジョン', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['編成最適化'], mechanism:'裏修羅・降臨ダンジョン', axis_link:['growth_design'], boosts:['魔法石ガチャ'], boost_reason:'攻略のための強キャラ需要' },
+      { name:'IPコラボ', category:'揺らぎ生成', purpose_primary:'新規流入と既存盛り上げ', purpose_secondary:['限定モンス実装'], mechanism:'頻繁なコラボ', axis_link:['charge_trigger'], boosts:['魔法石ガチャ'], boost_reason:'コラボ期は感情ピーク最大化' },
+      { name:'モンスター育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['進化系統'], mechanism:'レベル・進化・潜在覚醒', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17925,6 +18114,15 @@ const GAMES = [
     ip_emotional_anchor: 'サーヴァントが「感情の置き場」として機能。型月は元々キャラの掘り下げが深く、各サーヴァントに固有の物語と価値観があるため、感情を反復的に置き続けても壊れない。',
     ip_unfinished: '高い未完性。型月世界は奈須きのこの著作群（月姫・空の境界・FGO本編）が部分的にしか繋がっておらず、世界の全貌は永遠に開示されない。プレイヤーは仮説を立て続ける構造。',
     ip_borrowed_feel: '低い。FGOは「Fate/stay night の続編」ではなく「型月世界の運用インフラ」として設計されており、原作の名シーン再演ではなく <strong>新規シナリオで横エネを継続生成</strong>している点が秀逸。日本IPとしては稀有な「ソシャゲが本編」のIP化成功例。',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'呼符・聖晶石ガチャ', category:'課金接点', purpose_primary:'サーヴァント獲得', purpose_secondary:['限定サーヴァントへの感情ピーク', '歴史上の人物への愛着'], mechanism:'天井あり / 限定PU / 福袋', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'シナリオで生まれた愛着がここに流入' },
+      { name:'メインシナリオ', category:'演出・没入', purpose_primary:'物語没入の核', purpose_secondary:['長期継続の中核動機', '設定知識の蓄積'], mechanism:'章立て / 数百万字の長尺 / フルボイス（一部）', axis_link:['world_emotion'], boosts:['呼符・聖晶石ガチャ'], boost_reason:'物語愛着が登場サーヴァント需要に変換' },
+      { name:'AP', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['聖晶石消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'幕間・強化クエスト', category:'演出・没入', purpose_primary:'サーヴァント個別の物語', purpose_secondary:['霊基再臨後の追加体験'], mechanism:'霊基Lv上昇で解放', axis_link:['world_emotion'], boosts:['呼符・聖晶石ガチャ'], boost_reason:'幕間が読みたいサーヴァントへの所有欲を生む' },
+      { name:'高難度クエスト', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['編成最適化'], mechanism:'高難度ボス / 限定報酬', axis_link:['growth_design'], boosts:['呼符・聖晶石ガチャ'], boost_reason:'攻略のための強サーヴァント需要' },
+      { name:'マスターミッション', category:'進行制御', purpose_primary:'週次ログイン定着', purpose_secondary:['聖晶石の定期供給'], mechanism:'週次更新 / 報酬は聖晶石', axis_link:['hook_weekly'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17942,7 +18140,16 @@ const GAMES = [
     ],
     onboarding:'プロ野球ファンであれば最初の選手収集体験だけで没入できる。非ファンには世界観理解のコストが高い', growth_design:'プロ野球シーズンという外部イベントが成長サイクルを規定。停滞ポイント：シーズンオフは施策の新鮮味が失われ、収益が構造的に低下',
     resource_design:'スタミナを試合・訓練に消費。トレーニングポイント・ガチャSPメダル（ガチャ通貨）・強化素材。シーズン毎のリセットで蓄積が周期的にリセットされる',
-    design_if:'OBカードの年代ごとの「私が見ていた時代の選手」訴求をよりパーソナライズすることで、課金動機のピンポイント化ができる', design_drop:'プロ野球ファン以外への完全な無力。IPに縛られすぎており、競技人気の衰退と直結するリスクを抱える'
+    design_if:'OBカードの年代ごとの「私が見ていた時代の選手」訴求をよりパーソナライズすることで、課金動機のピンポイント化ができる', design_drop:'プロ野球ファン以外への完全な無力。IPに縛られすぎており、競技人気の衰退と直結するリスクを抱える',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'スカウト（ガチャ）', category:'課金接点', purpose_primary:'選手獲得', purpose_secondary:['新シリーズ選手への感情ピーク'], mechanism:'天井あり / シリーズ別 / リアタイ向けPU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'プロ野球ファンの愛着が需要に変換' },
+      { name:'リアルタイム対戦', category:'社会機能', purpose_primary:'PvPの核', purpose_secondary:['編成最適化', 'ランキング'], mechanism:'リアルタイム1v1 / シリーズ別', axis_link:['hook_weekly'], boosts:['スカウト（ガチャ）'], boost_reason:'勝利のための強選手需要' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'試合制御', purpose_secondary:['エナジー消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'試合のリズムを支える' },
+      { name:'選手育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗の可視化'], mechanism:'レベル・特訓・限界突破', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'リーグ', category:'社会機能', purpose_primary:'長期戦の社会圧', purpose_secondary:['チーム所属の意味付け'], mechanism:'シーズン制', axis_link:['hook_monthly'], boosts:['スカウト（ガチャ）'], boost_reason:'勝利のための戦力需要' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17959,7 +18166,16 @@ const GAMES = [
     ],
     onboarding:'1日2パック無料開封という設計が「今日も開けよう」習慣を初日から自動形成。ポケモンIPで説明不要の認知がある', growth_design:'図鑑コンプへの収集欲が長期動機。停滞ポイント：重複カードの扱い（価値が低い）が「無駄引き感」を生む',
     resource_design:'パック開封ポイント（1日2回無料）が主要リソース。砂時計（回復アイテム）・ゴールド。レアカードの重複が価値低く「開けたが損」感が課金圧に',
-    design_if:'友達との交換機能を充実させることで「持っているものを渡す」社会的コミュニケーションが生まれ、コミュニティが強化される', design_drop:'TCGとしての戦略的深さの不足。本格TCGプレイヤーから「浅い」と見られることで、競技コミュニティへの訴求ができない'
+    design_if:'友達との交換機能を充実させることで「持っているものを渡す」社会的コミュニケーションが生まれ、コミュニティが強化される', design_drop:'TCGとしての戦略的深さの不足。本格TCGプレイヤーから「浅い」と見られることで、競技コミュニティへの訴求ができない',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'パック開封', category:'課金接点', purpose_primary:'カード収集の核体験', purpose_secondary:['新パックへの感情ピーク', 'レアカードへの渇望'], mechanism:'砂時計で1日2パック / 課金で追加', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'コレクション欲求がここに流入' },
+      { name:'砂時計', category:'進行制御', purpose_primary:'1日のリズム制御', purpose_secondary:['課金時短口実'], mechanism:'12時間1回復 / 最大2', axis_link:['hook_daily'], boosts:[], boost_reason:'パック開封のリズムを作る' },
+      { name:'対戦', category:'社会機能', purpose_primary:'PvPの核', purpose_secondary:['編成最適化', 'ランキング'], mechanism:'非同期 / シーズン制', axis_link:['hook_weekly'], boosts:['パック開封'], boost_reason:'勝利のための強カード需要' },
+      { name:'コレクション図鑑', category:'達成可視化', purpose_primary:'収集の可視化', purpose_secondary:['コンプリート欲求'], mechanism:'カードリスト / コンプ報酬', axis_link:['growth_design'], boosts:['パック開封'], boost_reason:'コンプ欲求がパック開封需要を生む' },
+      { name:'ソロバトル', category:'達成可視化', purpose_primary:'戦闘練習', purpose_secondary:['CPUとの対戦'], mechanism:'CPU戦 / 報酬は通貨', axis_link:['onboarding'], boosts:[], boost_reason:'初心者の戦闘習得' },
+      { name:'デイリーミッション', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['通貨の供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17976,7 +18192,16 @@ const GAMES = [
     ],
     onboarding:'宇宙列車という独自世界観で最初の没入感を作る。Ver更新直後の新ストーリーが一番の集客ポイント', growth_design:'Ver更新ごとのコンテンツ刷新が長期継続を支える。停滞ポイント：6週待機期間のコンテンツ枯渇感（やることがなくなる）',
     resource_design:'開拓力（スタミナ）をボス/素材収集に消費。星琼（ガチャ通貨）・信物・遺物（装備）強化素材。開拓力の溢れが重課金者の不満源',
-    design_if:'待機期間中のサブコンテンツ（キャラ個別エピソード等）を充実させることでVer間の離脱を防げる', design_drop:'原神との自社競合。同じ会社の似たゲームを並行プレイするコストをユーザーに強いる構造'
+    design_if:'待機期間中のサブコンテンツ（キャラ個別エピソード等）を充実させることでVer間の離脱を防げる', design_drop:'原神との自社競合。同じ会社の似たゲームを並行プレイするコストをユーザーに強いる構造',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'光円錐・キャラガチャ', category:'課金接点', purpose_primary:'キャラ・武器獲得', purpose_secondary:['限定キャラへの感情ピーク'], mechanism:'天井あり / 限定PU / 確率UP', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'物語・探索で生まれた愛着がここに流入' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'物語没入の核', purpose_secondary:['長期継続動機', '設定の蓄積'], mechanism:'章立て / フルボイス / シネマティック演出', axis_link:['world_emotion'], boosts:['光円錐・キャラガチャ'], boost_reason:'物語愛着がキャラ需要に変換' },
+      { name:'開拓力（スタミナ）', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['星玉消費口実'], mechanism:'時間回復 / 240上限', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'忘却の庭', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['編成最適化', '12層攻略'], mechanism:'シーズン制 / 高難度', axis_link:['hook_monthly'], boosts:['光円錐・キャラガチャ'], boost_reason:'攻略のための強キャラ需要' },
+      { name:'シミュレートユニバース', category:'演出・没入', purpose_primary:'ローグライク要素', purpose_secondary:['ビルド試行錯誤', '遺物獲得'], mechanism:'ステージ毎の選択 / バフ蓄積', axis_link:['growth_design'], boosts:[], boost_reason:'試行錯誤の楽しさが継続を支える' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['星玉の定期供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -17993,7 +18218,16 @@ const GAMES = [
     ],
     onboarding:'オープンワールドの圧倒的な映像品質で「このゲームは違う」認識を最初の10分で形成。無課金でも序盤が十分楽しい広い入口', growth_design:'地域追加型の超長期コンテンツが終わりのない成長感を提供。停滞ポイント：樹脂（スタミナ）上限が少なくヘビーユーザーでも消化しきれない',
     resource_design:'樹脂（スタミナ）をボス/ドメイン消費。原石（ガチャ通貨）・キャラ育成素材・武器素材。樹脂上限が少なく毎日消費しても余る設計でヘビー課金者に不満',
-    design_if:'無課金フレンドリーな設計を保ちつつ、課金者への「ゲームの外」価値（コンサート・グッズ等）を提供することで課金転換できる', design_drop:'無課金フレンドリー設計の副作用。「お金を払う理由がない」と感じさせやすく、課金転換率が低い'
+    design_if:'無課金フレンドリーな設計を保ちつつ、課金者への「ゲームの外」価値（コンサート・グッズ等）を提供することで課金転換できる', design_drop:'無課金フレンドリー設計の副作用。「お金を払う理由がない」と感じさせやすく、課金転換率が低い',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'祈願（ガチャ）', category:'課金接点', purpose_primary:'キャラ・武器獲得', purpose_secondary:['限定キャラへの感情ピーク'], mechanism:'天井90 / 限定PU / 確率UP', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'探索・物語で生まれた愛着がここに流入' },
+      { name:'オープンワールド探索', category:'演出・没入', purpose_primary:'世界没入の核', purpose_secondary:['長期継続動機', '宝箱・任務発見'], mechanism:'広大なマップ / シームレス探索', axis_link:['world_emotion'], boosts:['祈願（ガチャ）'], boost_reason:'探索の楽しさがゲームへの投資意欲を支える' },
+      { name:'樹脂（スタミナ）', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['原石消費口実'], mechanism:'時間回復 / 160上限', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'深境螺旋', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['編成最適化', '12層攻略'], mechanism:'シーズン制 / 高難度', axis_link:['hook_monthly'], boosts:['祈願（ガチャ）'], boost_reason:'攻略のための強キャラ需要' },
+      { name:'メインストーリー（魔神任務）', category:'演出・没入', purpose_primary:'物語没入', purpose_secondary:['国別の文化体験', '設定の蓄積'], mechanism:'章立て / フルボイス', axis_link:['world_emotion'], boosts:[], boost_reason:'物語愛着が登場キャラ需要に変換' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['原石の定期供給'], mechanism:'毎日4項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -18011,7 +18245,16 @@ const GAMES = [
     ],
     onboarding:'ダークな世界観の没入感を先行させる。タワーディフェンスの初回体験は難しすぎず、「自分で考えて勝てた」感を設計', growth_design:'高難度コンテンツへの挑戦が誇りを生む。停滞ポイント：コア向け設計がライトユーザーを完全に排除してしまう',
     resource_design:'理性（スタミナ）をクエスト消費。合成玉（ガチャ通貨）・基地素材・昇進素材。基地施設の建設が理性なしで進行。理性→合成玉変換の課金設計が独特',
-    design_if:'コア層の「世界観深掘り」欲求をWeb小説・外伝マンガ等の外部展開で満たすことで、ゲーム外でもIPへの愛着を維持できる', design_drop:'タワーディフェンスという間口の狭さ。新規獲得に限界があり、既存コアユーザーの維持だけに依存するリスク'
+    design_if:'コア層の「世界観深掘り」欲求をWeb小説・外伝マンガ等の外部展開で満たすことで、ゲーム外でもIPへの愛着を維持できる', design_drop:'タワーディフェンスという間口の狭さ。新規獲得に限界があり、既存コアユーザーの維持だけに依存するリスク',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'公開求人・スカウト', category:'課金接点', purpose_primary:'オペレーター獲得', purpose_secondary:['限定オペへの感情ピーク'], mechanism:'天井（限定PU） / レアリティ別', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'戦闘の戦略性で生まれた需要がここに流入' },
+      { name:'戦闘（タワーディフェンス）', category:'演出・没入', purpose_primary:'戦略性の核', purpose_secondary:['編成・配置の試行錯誤'], mechanism:'TD型 / オペ配置 / リアルタイム', axis_link:['world_emotion'], boosts:[], boost_reason:'戦略の楽しさが継続を支える' },
+      { name:'理性（スタミナ）', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['源石消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'ローグライク', category:'演出・没入', purpose_primary:'コア層のやり込み', purpose_secondary:['ビルド試行錯誤'], mechanism:'季節更新 / ランダム性', axis_link:['growth_design'], boosts:[], boost_reason:'試行錯誤の楽しさ' },
+      { name:'メインストーリー', category:'演出・没入', purpose_primary:'物語没入', purpose_secondary:['設定の重厚さ'], mechanism:'章立て / 一部ボイス', axis_link:['world_emotion'], boosts:['公開求人・スカウト'], boost_reason:'物語愛着がオペ需要に変換' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -18028,7 +18271,16 @@ const GAMES = [
     ],
     onboarding:'DBファンなら最初のキャラ収集体験だけで没入。ドッカン覚醒のアニメーション演出が最初の「おおっ」体験を作る', growth_design:'覚醒・限界突破の積み上げが成長の可視化。停滞ポイント：キャラ性能インフレが激しく、以前集めたキャラが急速に陳腐化する',
     resource_design:'体力（スタミナ）をクエスト消費。龍石（ガチャ通貨）・ザコ敵キャラ（強化素材）・種（ステータス上昇）。体力→龍石変換の課金設計。周年で大量龍石配布',
-    design_if:'DBの「歴代名シーン再現」イベントをVR的な没入感で体験できる演出にすることで、懐古感情の強度を上げられる', design_drop:'インフレの加速。新キャラが強すぎると旧コンテンツが無意味になり、「集め続ける意味」が薄れる'
+    design_if:'DBの「歴代名シーン再現」イベントをVR的な没入感で体験できる演出にすることで、懐古感情の強度を上げられる', design_drop:'インフレの加速。新キャラが強すぎると旧コンテンツが無意味になり、「集め続ける意味」が薄れる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ガチャ', category:'課金接点', purpose_primary:'キャラ獲得', purpose_secondary:['限定キャラへの感情ピーク', 'フェス確率UP'], mechanism:'天井（最近実装） / フェス', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'DBファンの愛着が需要に変換' },
+      { name:'スゴロク（双六）', category:'演出・没入', purpose_primary:'核ゲーム体験', purpose_secondary:['属性連鎖の楽しさ'], mechanism:'スゴロク型バトル / 属性タップ', axis_link:['world_emotion'], boosts:[], boost_reason:'操作の上達が他全機能を底上げ' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'1日の周回制御', purpose_secondary:['龍石消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'伝説の極限ZバトルEvent', category:'達成可視化', purpose_primary:'コア層のやり込み', purpose_secondary:['編成最適化'], mechanism:'限定イベント / 高難度', axis_link:['growth_design'], boosts:['ガチャ'], boost_reason:'攻略のための強キャラ需要' },
+      { name:'キャラ覚醒', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['進化系統'], mechanism:'覚醒メダル消費 / Z覚醒', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'デイリーミッション', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['龍石の供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -18045,7 +18297,16 @@ const GAMES = [
     ],
     onboarding:'ガンダムIPの認知があれば最初のMS収集体験で即没入。シミュレーション戦略の初回説明が長く、初期離脱の懸念あり', growth_design:'ガンダム93作品の網羅性が長期コレクション動機。停滞ポイント：IP更新（新映画・新アニメ）がないと施策の新鮮味が失われる',
     resource_design:'エナジー（スタミナ）をミッション消費。Gジェムス（ガチャ通貨）・MS素材・キャラ強化素材。毎日の素材集め周回がコアの日課。フォースポイントがギルド貢献',
-    design_if:'ガンダムIPの「作品ごとの熱量差」を活かし、特定作品ファン向けの深掘りイベントを設計することで確実な課金スパイクを作れる', design_drop:'ガンダムIPへの完全依存。ガンダムを知らない層への訴求がゼロ。IP衰退リスクと直結'
+    design_if:'ガンダムIPの「作品ごとの熱量差」を活かし、特定作品ファン向けの深掘りイベントを設計することで確実な課金スパイクを作れる', design_drop:'ガンダムIPへの完全依存。ガンダムを知らない層への訴求がゼロ。IP衰退リスクと直結',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'ユニットガチャ', category:'課金接点', purpose_primary:'モビルスーツ・キャラ獲得', purpose_secondary:['シリーズ別MSへの感情ピーク'], mechanism:'天井あり / シリーズPU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'ガンダムファンの愛着が需要に変換' },
+      { name:'ステージ進行', category:'達成可視化', purpose_primary:'シリーズ再現', purpose_secondary:['ステージクリア進捗'], mechanism:'各シリーズ章立て', axis_link:['world_emotion'], boosts:['ユニットガチャ'], boost_reason:'各シリーズの再現が該当MS需要を生む' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'ユニット開発・改造', category:'達成可視化', purpose_primary:'シリーズ独自要素', purpose_secondary:['育成の戦略性'], mechanism:'ユニット派生・強化', axis_link:['growth_design'], boosts:[], boost_reason:'シリーズ独自の楽しみで継続を支える' },
+      { name:'PvP', category:'社会機能', purpose_primary:'対人戦', purpose_secondary:['編成最適化'], mechanism:'非同期PvP', axis_link:['hook_weekly'], boosts:['ユニットガチャ'], boost_reason:'勝利のための強MS需要' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -18063,7 +18324,16 @@ const GAMES = [
     ],
     onboarding:'好きなクラブ・選手を選ぶ最初のステップで「自分のチーム」感を植付ける。試合シミュレーションの精度が最初の感動ポイント', growth_design:'リアルサッカーシーズンが成長サイクルを自然に規定。停滞ポイント：リーグ対戦での課金プレイヤーとの戦力差が可視化される',
     resource_design:'GP（ゲームポイント）を試合・強化消費。eFootballコイン（課金通貨）・コントラクト（選手使用権）・スキルトレーナー。コントラクト管理が独自設計',
-    design_if:'リアルの試合観戦後すぐにゲームで「あのゴールシーン」を再現できる仕組みがあれば、リアルとゲームの連動体験が強化される', design_drop:'FIFAライセンス問題等の外部要因への脆弱性。権利関係の変化が一夜で差別化要素を消す可能性'
+    design_if:'リアルの試合観戦後すぐにゲームで「あのゴールシーン」を再現できる仕組みがあれば、リアルとゲームの連動体験が強化される', design_drop:'FIFAライセンス問題等の外部要因への脆弱性。権利関係の変化が一夜で差別化要素を消す可能性',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'契約（ガチャ）', category:'課金接点', purpose_primary:'選手獲得', purpose_secondary:['限定選手への感情ピーク'], mechanism:'eFootballコイン / シリーズPU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'対戦での強さ欲求がここに流入' },
+      { name:'リアルタイム対戦', category:'社会機能', purpose_primary:'PvPの核', purpose_secondary:['ランキング', '編成最適化'], mechanism:'リアルタイム1v1 / シーズン制', axis_link:['hook_weekly'], boosts:['契約（ガチャ）'], boost_reason:'勝利のための強選手需要' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'試合制御', purpose_secondary:['コイン消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'試合のリズム' },
+      { name:'選手育成・継承', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'継承システム / レベル', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'シーズン', category:'揺らぎ生成', purpose_primary:'長期戦の社会圧', purpose_secondary:['シーズン報酬'], mechanism:'シーズン制 / 報酬段階', axis_link:['hook_monthly'], boosts:['契約（ガチャ）'], boost_reason:'シーズン上位入りのため強選手需要' },
+      { name:'デイリーチャレンジ', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['コイン供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
   // ──────────────────────────────────
   {
@@ -18080,7 +18350,16 @@ const GAMES = [
     ],
     onboarding:'まどかIPの既存ファンへの「あの世界が帰ってきた」体験を最初に提供。旧作「マギアレコード」からの移行ユーザーへの配慮', growth_design:'まどかIPの続きを「読み進める」体験が継続動機。停滞ポイント：旧作ファン以外の新規獲得設計が弱く、ユーザー層の更新が難しい',
     resource_design:'マギアクリスタル（スタミナ兼ガチャ通貨）が中心リソース。メモリア・魔法少女強化素材。アニプレックス製らしい丁寧な供給設計。イベント素材の交換効率が重要',
-    design_if:'まどかIPの「新作映画・アニメ」との連動タイミングを最大限活用することで、IP熱量のピーク時に課金施策を重ねられる', design_drop:'旧作ユーザー依存の危うさ。マギアレコードの記憶が薄れていくにつれ、この移行設計の効果は経時的に弱まる'
+    design_if:'まどかIPの「新作映画・アニメ」との連動タイミングを最大限活用することで、IP熱量のピーク時に課金施策を重ねられる', design_drop:'旧作ユーザー依存の危うさ。マギアレコードの記憶が薄れていくにつれ、この移行設計の効果は経時的に弱まる',
+    // ────── 機能 × 目的マップ ──────
+    features: [
+      { name:'魔法少女ガチャ', category:'課金接点', purpose_primary:'魔法少女獲得', purpose_secondary:['限定魔法少女への感情ピーク'], mechanism:'天井あり / 限定PU', axis_link:['incentive_core', 'charge_trigger'], boosts:[], boost_reason:'IPファンの愛着が需要に変換' },
+      { name:'ストーリーモード', category:'演出・没入', purpose_primary:'IP没入', purpose_secondary:['キャラ愛着'], mechanism:'章立て', axis_link:['world_emotion'], boosts:['魔法少女ガチャ'], boost_reason:'物語が愛着を作る' },
+      { name:'スタミナ', category:'進行制御', purpose_primary:'クエスト制御', purpose_secondary:['ジェム消費口実'], mechanism:'時間回復', axis_link:['hook_daily'], boosts:[], boost_reason:'素材回収のベース' },
+      { name:'魔法少女育成', category:'達成可視化', purpose_primary:'戦力強化', purpose_secondary:['育成進捗'], mechanism:'レベル・スキル', axis_link:['growth_design'], boosts:[], boost_reason:'育成の積み上げ' },
+      { name:'PvP', category:'社会機能', purpose_primary:'対人戦', purpose_secondary:['編成最適化'], mechanism:'非同期PvP', axis_link:['hook_weekly'], boosts:['魔法少女ガチャ'], boost_reason:'勝利のための強キャラ需要' },
+      { name:'デイリー任務', category:'進行制御', purpose_primary:'ログイン定着', purpose_secondary:['素材供給'], mechanism:'毎日数項目', axis_link:['hook_daily'], boosts:[], boost_reason:'継続の土台' },
+    ],
   },
 ]
 ;

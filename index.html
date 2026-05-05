@@ -3203,6 +3203,15 @@ body::after {
         <div class="sidebar-label">作品</div>
         <button class="sidebar-btn" onclick="showPage('console-elden')" data-page="console-elden">🌅 ELDEN RING</button>
         <button class="sidebar-btn" onclick="showPage('console-ff16')" data-page="console-ff16">🔥 FINAL FANTASY XVI</button>
+        <button class="sidebar-btn" onclick="showPage('console-death-stranding')" data-page="console-death-stranding">📦 DEATH STRANDING</button>
+        <button class="sidebar-btn" onclick="showPage('console-disco-elysium')" data-page="console-disco-elysium">🕵️ Disco Elysium</button>
+        <button class="sidebar-btn" onclick="showPage('console-bg3')" data-page="console-bg3">🐉 Baldur's Gate 3</button>
+        <button class="sidebar-btn" onclick="showPage('console-13kihei')" data-page="console-13kihei">🤖 十三機兵防衛圏</button>
+        <button class="sidebar-btn" onclick="showPage('console-citizen-sleeper')" data-page="console-citizen-sleeper">🎲 Citizen Sleeper</button>
+        <button class="sidebar-btn" onclick="showPage('console-returnal')" data-page="console-returnal">🌌 Returnal</button>
+        <button class="sidebar-btn" onclick="showPage('console-blue-prince')" data-page="console-blue-prince">🏛️ Blue Prince</button>
+        <button class="sidebar-btn" onclick="showPage('console-clair-obscur')" data-page="console-clair-obscur">🎨 Clair Obscur: Expedition 33</button>
+        <button class="sidebar-btn" onclick="showPage('console-metaphor')" data-page="console-metaphor">🦊 メタファー：リファンタジオ</button>
       </div>
     </div>
 
@@ -9955,6 +9964,15 @@ updates: [
          コンシューマ：FINAL FANTASY XVI
     ════════════════════════════════════════ -->
     <div id="page-console-ff16" class="page"></div>
+    <div id="page-console-death-stranding" class="page"></div>
+    <div id="page-console-disco-elysium" class="page"></div>
+    <div id="page-console-bg3" class="page"></div>
+    <div id="page-console-13kihei" class="page"></div>
+    <div id="page-console-citizen-sleeper" class="page"></div>
+    <div id="page-console-returnal" class="page"></div>
+    <div id="page-console-blue-prince" class="page"></div>
+    <div id="page-console-clair-obscur" class="page"></div>
+    <div id="page-console-metaphor" class="page"></div>
 
     <!-- ════════════════════════════════════════
          About / 研究所の主張（共通）
@@ -11525,6 +11543,1257 @@ const CONSOLE_GAMES = [
 
     updates: [
       { date: '2026-04-28', body: 'ページ初版作成（書き手メモを元に Claude が16観点 + features に整形）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  DEATH STRANDING
+  // ──────────────────────────────────────────
+  {
+    id: 'death-stranding',
+    emoji: '📦',
+    name: 'DEATH STRANDING',
+    enName: 'Death Stranding',
+    developer: 'コジマプロダクション',
+    year: '2019',
+    platform: 'PS4/PS5/PC',
+    genre: 'ストランドゲーム（運搬アクション）',
+    color: '#6ec0a8',
+    tagline: '荷物を運ぶことが、孤独な世界を「人と人で繋ぎ直す」横エネ体験になる',
+
+    immersion_structure: '地形そのものが敵。荷物のバランス、足場の選択、雨と時雨の侵食、BTの気配 — それら全てを <strong>身体で処理しながら歩く</strong>。歩くという最も原始的な行為に、世界全体の重みが乗ることで、プレイヤーは「ただ歩くこと」だけで世界に滞在し続けられる。さらに非同期マルチで他プレイヤーの設置物（梯子・橋・道路）が突然視界に現れることで、孤独の中に「他者の痕跡」が薄く広く編み込まれる。',
+    emotional_core: '荒野の孤独と、そこに薄く重なる他者の存在感。「自分一人では到達できない場所に、誰かが残してくれた橋がある」という感触が、感情の核を作る。怒りや復讐ではなく、静かな繋がりへの肯定。',
+
+    cycle: {
+      instant: '地形を読む→荷物の重心を調整→一歩踏み出す。0.5〜2秒の連続的な身体判断。',
+      play: 'ある拠点から別の拠点へ配達。装備選択→ルート決定→走破→納品。30分〜2時間。',
+      phase: '新エリアの開拓→国道整備→新拠点の発見→評価上昇→次のエリアへ。数時間〜十数時間。',
+      whole: 'アメリカ大陸を東から西へ繋ぎ直す巡礼。サムが「個人の運び屋」から「世界を繋ぐ存在」へと変質していく大ループ。',
+    },
+
+    incentive: '「あの山を越えた先には何があるか」「ここに梯子を置けば誰かが助かるか」という二重の引力。前者は探索欲、後者は <strong>非同期の利他</strong> インセンティブ。さらに自分の設置物にイイネが付くことで、孤独な行為に外部からの肯定が遅れて返ってくる。',
+    play_structure: 'オープンワールド × 運搬アクション × 非同期マルチ（設置物の共有とイイネ）。直接対戦せず、互いの構築物だけが世界に残る独自の交流形態。',
+    story_mechanics: '物語は <strong>世界観の謎</strong>（時雨・BT・対消滅）と、<strong>サムの個人史</strong>（家族・喪失・繋がり）が並走する二重構造。配達という機械的行為が、世界観への問いを蓄積させていく。「歩く＝物語を読む」のだが、その読み方が極めて緩やかで瞑想的。',
+    music_direction: 'Low Roar、Silent Poets らアンビエント／ポストロックが、視界が開けた瞬間に突然立ち上がる。歩いている時は環境音と荷物のきしみだけで、音楽は <strong>ご褒美</strong> として機能する。視覚的にもアイスランド的な荒野の壮絶な美しさで、自然そのものが演出の主役。',
+
+    fluctuation: {
+      difficulty: '地形・荷重・天候の三重プレッシャー。同じルートでも荷物の偏りや雨の有無で別ゲームになる。',
+      perception: 'マップを覚えた頃に時雨や新エリアが出現し、見知った景色が違う場所に変わる。設置物が他プレイヤーで増減することも知覚揺らぎ。',
+      meaning: '「ただの配達」が「世界を繋ぐ行為」へ意味化されていく。最序盤は雑用感が強いが、中盤以降にその意味が遡及的に書き換わる。',
+      story: '時雨・BT・対消滅という現象の背景理論が、ボイスログ・ムービー・対話で徐々に開示される。世界の根本構造が複数回更新される強い物語の揺らぎ。',
+    },
+
+    chunks: {
+      operation: '荷物を担ぐ→坂で重心を倒す→ロープ・梯子で地形を越える。身体性の操作単位。',
+      judgment: 'この坂は走破可能か／時雨の中を突っ切るかルート変更するか／梯子をここに置くべきか。判断単位。',
+      meaning: '「歩くこと自体が世界を繋ぐ行為である」「BTから逃げる緊張は、生と死の対消滅の縮図である」という意味化。',
+    },
+
+    yokoene: {
+      physical: '荷重を感じながら地形を読み、足場を選び、ロープと梯子を使い分ける── この複合身体行為が、いつしか「世界を歩いている」感覚に統合される。コントローラのL2/R2でバランスを取り続ける入力が「振る舞い」になっていく。',
+      contextual: '他プレイヤーが設置した梯子や道路が、自分の旅を <strong>誰かが繋いでくれた感触</strong> に変える。自分の設置物にイイネが付くことで、自分の行為も誰かの旅を支えていた、と気付く。配達という機械的行為が <strong>互助</strong> として再定義される。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマと等しい）。「繋ぐ」というテーマが、配達・梯子設置・道路建設・イイネ送信といった全ての行為と完全同期している。歩くこと自体がメッセージになる稀有な構造。',
+    },
+
+    transformation: {
+      start: 'ただの配達。荷物は商品で、地形は障害物。BTは敵で、雨は迷惑。',
+      mid: '配達は「世界を繋ぐ作業」に。BTは「対消滅の縮図」に。設置物は「他者への贈り物」に変わる。',
+      end: '大陸を繋ぎ終えた頃には、配達は <strong>儀式</strong> になり、孤独は <strong>誰かと共有された静けさ</strong> に変質している。',
+      trigger: '初めて他プレイヤーの設置物に救われた瞬間／自分の設置物にイイネが大量に付いた瞬間／時雨と対消滅の真相が開示された瞬間。',
+    },
+
+    viscosity: '<strong>中〜高粘度</strong>。ストーリー駆動が強く、配達ループ自体は瞑想的。クリア後も「あのルートをもう一度歩きたい」という滞在欲が続く。賛否が分かれる作品で、合う人には極めて深く刺さる。',
+    ending: 'マルチエンドではないが、エンディング後の余韻が長い。「繋ぐ」というテーマが個人の家族史と世界史の両方で回収される。プレイ後しばらく、他人への小さな手助けに対して感受性が変わる体験を残す。',
+
+    strength: '「歩く」という最も原始的なメカニクスを、世界観の主題と完全同期させた設計。非同期マルチでの利他誘発は他に類を見ない。横エネの最高峰の一つ。',
+    weakness: '序盤の数時間が単調に感じられやすく、離脱率が高い。物語が抽象的・形而上的で、好みが分かれる。アクション要素を求める層には合わない。',
+    if_designed: '序盤の「これは何のゲームか」が掴めない時間帯への導線をもう少し優しくしたい。最初の数配達で「他者の痕跡」を意図的に出会わせる演出を入れると、横エネが早期に立ち上がる。',
+
+    time_structure: '線形（章立てだが進行は緩やか）',
+    spatial_structure: '開放（広大な荒野・地形が主役）',
+    others_presence: '非同期（設置物とイイネのみ・直接交流なし）',
+
+    energy_body: {
+      tension: { level: 'medium', note: 'BTやミュールの遭遇で局所的にスパイクするが、基本は瞑想的な歩行の緊張。' },
+      temperature: { level: 'cold', note: '荒野の冷たさ、雪、雨、灰色の世界。時折Sam-tan の温かさが差す。' },
+      rhythm: { level: 'slow', note: '歩行の遅い拍が基本。時折BTや戦闘で速くなるが、すぐに歩きに戻る。' },
+      density: { level: 'medium', note: '地形・天候・荷物の重みが密に交錯。情報量は多いが、過密ではない。' },
+      breathing: { level: 'deep', note: '荷物を降ろして休む時間が深い呼吸点。山頂や拠点への到達が大きな息継ぎ。' },
+    },
+
+    features: [
+      {
+        name: '荷物バランス（L2/R2）', category: '演出・没入',
+        purpose_primary: '歩くこと自体をゲーム化',
+        purpose_secondary: ['身体性の獲得', '地形の意味化'],
+        mechanism: '重心を傾けながら左右ボタンで補正 / 過積載で転倒',
+        axis_link: ['チャンク', '横エネ'],
+        boosts: [],
+        boost_reason: '全ての他機能の前提となる身体感覚を作る',
+      },
+      {
+        name: '設置物（梯子・ロープ・道路）', category: '社会機能',
+        purpose_primary: '非同期の利他',
+        purpose_secondary: ['他者の痕跡を世界に残す', '共有される互助'],
+        mechanism: 'プレイヤーが配置 / 他プレイヤーのワールドにも出現 / イイネで評価',
+        axis_link: ['横エネ', '感情の核'],
+        boosts: ['配達評価'],
+        boost_reason: '他者を助ける行為が自分の評価に返ってくる',
+      },
+      {
+        name: 'BT遭遇', category: '揺らぎ生成',
+        purpose_primary: '緊張のスパイク',
+        purpose_secondary: ['世界観の不気味さ', '対消滅というメカニクスの体感'],
+        mechanism: '時雨で出現 / 呼吸を止めて回避or血液弾で対抗',
+        axis_link: ['揺らぎ', 'チャンク'],
+        boosts: [],
+        boost_reason: '通常の歩行リズムを破壊し緊張を再起動する',
+      },
+      {
+        name: '配達評価（プレッパーズ）', category: '達成可視化',
+        purpose_primary: '繋がりの可視化',
+        purpose_secondary: ['ストーリー解放', '装備のアンロック'],
+        mechanism: '納品で星評価 / 評価で繋がり強化',
+        axis_link: ['意味変容'],
+        boosts: [],
+        boost_reason: '「ただの配達」が「人を繋ぐ行為」として可視化される',
+      },
+      {
+        name: 'イイネシステム', category: '社会機能',
+        purpose_primary: '非同期の正のフィードバック',
+        purpose_secondary: ['孤独の緩和', '設置動機の強化'],
+        mechanism: '他プレイヤーの設置物にイイネを送る / 自分も受け取る',
+        axis_link: ['横エネ', '感情の核'],
+        boosts: ['設置物'],
+        boost_reason: 'イイネが届くと設置のモチベーションが循環する',
+      },
+      {
+        name: '時雨・地形システム', category: '演出・没入',
+        purpose_primary: '世界の主役を地形にする',
+        purpose_secondary: ['探索の重み', 'ルート選択の意味'],
+        mechanism: '時間で物質が老朽化 / 雨で重荷が溶ける',
+        axis_link: ['揺らぎ', '横エネ'],
+        boosts: [],
+        boost_reason: '世界が常に変化しているため歩く行為に意味が出る',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Disco Elysium
+  // ──────────────────────────────────────────
+  {
+    id: 'disco-elysium',
+    emoji: '🕵️',
+    name: 'Disco Elysium',
+    enName: 'Disco Elysium',
+    developer: 'ZA/UM',
+    year: '2019（決定版2021）',
+    platform: 'PC/PS4/PS5/Switch/Xbox',
+    genre: 'RPG（テキスト主導）',
+    color: '#a78bfa',
+    tagline: '記憶を失った刑事の <strong>内面そのもの</strong> がゲームのメカニクスになっているテキストRPG',
+
+    immersion_structure: '主人公の頭の中の <strong>24個のスキル人格</strong> が常に話しかけてくる。論理／共感／野生／百科事典／インランド・エンパイア（妄想力）など、それぞれが「あなたはこう考えるはずだ」と提案してくる。プレイヤーは「自分が誰になるか」を会話の選択ごとに更新し続ける。世界の没入は <strong>外</strong> ではなく <strong>内</strong> に向かう。',
+    emotional_core: '破綻した自己の再構築。記憶も誇りも失った刑事が、「それでも自分は何者になれるか」を選び直していく感触。哀しみと滑稽さと尊厳が同居する稀有な感情の核。',
+
+    cycle: {
+      instant: '対話の選択肢を読む→スキルチェックを試みる→結果を引き受ける。1選択あたり10〜60秒。',
+      play: '1つの聞き込みや調査現場を巡る。会話・観察・思考・選択。30分〜2時間。',
+      phase: '1日（昼〜夜）の捜査ループ。複数NPCを巡り、新しい仮説を立て、夜に休む。数時間。',
+      whole: '殺人事件の解決と、それと並行する <strong>自分自身の再発見</strong> の二重ループ。プレイ全体で40〜60時間。',
+    },
+
+    incentive: '「次に誰と話すと事件が動くか」「自分のあのスキルを試したらどう答えるか」「思考キャビネットでこの仮説を内面化したらどう変わるか」── 行動の駆動力が <strong>内面の探究</strong> と <strong>事件の進展</strong> で常に二重駆動する。',
+    play_structure: 'テキスト主導のRPG × 内面の対話 × スキルベースの判定。戦闘はほぼ存在せず、全ての衝突は <strong>言葉</strong> で起きる。ボードゲーム的な思考キャビネット（思想を内面化することで能力修正）が独自。',
+    story_mechanics: '事件の真相は最後まで明かされるが、それ以上に <strong>自分が何者になったか</strong> が物語の本体。同じ事件でも、共産主義者・ファシスト・自由主義者・モラリストのどれを選ぶかで世界の見え方が完全に変わる。物語は <strong>プレイヤーの自己解釈の堆積</strong> として立ち上がる。',
+    music_direction: 'Sea Power（旧British Sea Power）のメランコリックなアンビエント。霧のかかったマルティネーズ地区の景色と完全同期。立ち止まって聞き入りたくなる音楽。視覚は手描き風の油絵調で、全てが少し滲んで見える独特の色調。',
+
+    fluctuation: {
+      difficulty: 'スキルチェックの判定で大きく分岐。失敗が物語を豊かにすることもあり、「失敗すべき場面」が存在する稀有な設計。',
+      perception: 'スキル人格が常に違う解釈を提案してくる。同じ証拠が、論理では「無関係」、インランドでは「決定的」と読まれることがある。世界の <strong>見え方</strong> がプレイヤーの内側で常に揺らぐ。',
+      meaning: '序盤は「ただの酔っ払い刑事」だった主人公が、選択を重ねるうちに「特定の信条を持つ人間」に変質していく。同じ会話の意味が中盤・終盤で全く違って読める。',
+      story: '事件の真相、過去の自分の正体、世界の歴史（革命と戦争）が、会話のすき間から断片的に漏れる。確定的な説明はなく、プレイヤーが思想として組み立てる。',
+    },
+
+    chunks: {
+      operation: '選択肢を読む→スキルチェックを試行→結果に応じて思考を進める。テキスト読解の単位。',
+      judgment: 'どのスキルでチェックするか／嘘を見抜くか／正直に答えるか／思想を内面化するか。判断の単位。',
+      meaning: '「自分は誰か」を選び続けることがゲームそのものである、という意味化。',
+    },
+
+    yokoene: {
+      physical: 'テキストを読み、選択肢を選ぶという最小限の身体行為。ただし、選択ごとに「自分の中の何かが決まる」感触がある。',
+      contextual: '事件捜査と内面探究の両方が常に並走している。証拠を一つ拾うことが、自分の思想を一つ選ぶことに重なる。世界の出来事と内面が <strong>同じ運動</strong> として体感される。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマそのもの）。「あなたは誰か」というテーマが、選択肢を選ぶ行為と完全に同期している。プレイ＝主題。',
+    },
+
+    transformation: {
+      start: '記憶喪失で「自分が誰か分からない」。スキルの提案も雑音。',
+      mid: 'スキル人格との対話に慣れ、自分の思想の傾向が見え始める。事件と自分が並走する。',
+      end: '事件は解決するが、それ以上に <strong>自分が誰になったか</strong> が中心に残る。「ヒーロー」「皮肉屋」「壊れた人」など、プレイヤー自身が選んだ自己像が静かに固まる。',
+      trigger: '思想の内面化が完了した瞬間／自分の過去（飲酒の理由・元恋人・キャリア）が明かされる瞬間／決定的な選択（殺人・告発・降伏）の瞬間。',
+    },
+
+    viscosity: '<strong>極めて高粘度</strong>。一周40-60時間でも「あのスキルを上げて違う自分でもう一度」と複数周プレイされやすい。クリア後も自分の選択が頭に残り続ける。',
+    ending: 'マルチエンディング（思想・捜査結果・人間関係で分岐）。明確な勝利ではなく、自分が「どんな人間として終わったか」を引き受ける構造。',
+
+    strength: 'テキスト主導でこれだけの没入を作り上げた設計の精緻さ。スキル人格と思考キャビネットというメカニクスが、内面そのものをゲーム化している。',
+    weakness: 'テキスト量が膨大で、英語・日本語訳の品質に左右される。アクション・ビジュアル重視の層には極めて合わない。',
+    if_designed: '思想の内面化と取り消しの可逆性をもう少し可視化したい。誤って取った思想を「振り返って書き直す」体験があれば、自己解釈の運動がさらに深まる。',
+
+    time_structure: '線形（5日間程度の捜査）',
+    spatial_structure: '閉鎖的なマルティネーズ地区',
+    others_presence: 'NPC・スキル人格（内面の他者）',
+
+    energy_body: {
+      tension: { level: 'medium', note: '物理的緊張は弱いが、選択の重みが常に内面を引き絞る。' },
+      temperature: { level: 'cold', note: '霧と雨と灰色のマルティネーズ。時折ユーモアの暖かさが差す。' },
+      rhythm: { level: 'slow', note: '会話の遅い拍。読書のような呼吸。' },
+      density: { level: 'high', note: 'テキスト密度・スキル人格・思想・証拠が同時に流入する。' },
+      breathing: { level: 'deep', note: '宿に戻って眠る瞬間が深い呼吸点。1日が終わる感覚。' },
+    },
+
+    features: [
+      {
+        name: '24スキル人格', category: '演出・没入',
+        purpose_primary: '内面そのものをメカニクス化',
+        purpose_secondary: ['会話の解釈の幅', '自己選択の駆動'],
+        mechanism: '各スキルがLv制 / 高Lvで人格の声が頻繁に',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: [],
+        boost_reason: '全ての対話・観察・思考の前提となる仕組み',
+      },
+      {
+        name: '思考キャビネット', category: '達成可視化',
+        purpose_primary: '思想の内面化',
+        purpose_secondary: ['能力修正', '自己定義'],
+        mechanism: '思考スロットに思想をセット / 一定時間で完了 / 効果が永続',
+        axis_link: ['意味変容', '感情の核'],
+        boosts: ['24スキル人格'],
+        boost_reason: '思想がスキル傾向を強化し、自己の方向性が固まる',
+      },
+      {
+        name: 'スキルチェック（白／赤）', category: '揺らぎ生成',
+        purpose_primary: '選択の不確実性',
+        purpose_secondary: ['失敗の物語化', 'スキル投資の動機'],
+        mechanism: '2d6 + スキル + 修正値 / 白は再挑戦可・赤は1回限り',
+        axis_link: ['揺らぎ', 'チャンク'],
+        boosts: ['24スキル人格'],
+        boost_reason: 'スキル投資が判定確率に直結する',
+      },
+      {
+        name: '対話システム', category: '演出・没入',
+        purpose_primary: '物語と内面の重なり',
+        purpose_secondary: ['NPC理解', '自己解釈'],
+        mechanism: '選択肢分岐 / スキル要件 / 過去の選択が反映',
+        axis_link: ['没入構造', '意味変容'],
+        boosts: [],
+        boost_reason: '全ての行為が対話を経由する核機能',
+      },
+      {
+        name: '1日サイクル', category: '進行制御',
+        purpose_primary: '物語のリズム',
+        purpose_secondary: ['休息と再起', 'イベント発火'],
+        mechanism: '時間進行で日が変わる / 朝・昼・夕・夜のNPC行動変化',
+        axis_link: ['サイクル'],
+        boosts: [],
+        boost_reason: '日付経過が物語の段階を決める',
+      },
+      {
+        name: '思想ヴィジョン', category: '演出・没入',
+        purpose_primary: '思想の内的体験',
+        purpose_secondary: ['自己定義の劇化'],
+        mechanism: '思考完了時に幻視シーン / 思想ごとに固有演出',
+        axis_link: ['感情の核'],
+        boosts: ['思考キャビネット'],
+        boost_reason: '思想が単なる数値ではなく体感として定着する',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Baldur's Gate 3
+  // ──────────────────────────────────────────
+  {
+    id: 'bg3',
+    emoji: '🐉',
+    name: 'Baldur\'s Gate 3',
+    enName: 'Baldur\'s Gate 3',
+    developer: 'Larian Studios',
+    year: '2023',
+    platform: 'PC/PS5/Xbox/macOS',
+    genre: 'CRPG',
+    color: '#dc2626',
+    tagline: '選択・偶然・関係性・システム反応の厚みで <strong>自分の物語</strong> が立ち上がるD&D 5e準拠CRPG',
+
+    immersion_structure: '選択肢が常に複数開かれている。説得・脅迫・嘘・暗殺・盗み・誘惑・無視 ── あらゆる行為がゲームに組み込まれており、ほぼ全てに <strong>システム的反応</strong> が返ってくる。さらに仲間NPCとの恋愛・友情・対立が並走し、世界が「自分の選択を見ている」感触が常にある。',
+    emotional_core: '偶然と選択が織りなす <strong>自分だけの物語</strong> への愛着。マルチプレイで友人と選択を共有することで、その物語が共有体験になる感動。',
+
+    cycle: {
+      instant: 'ターン制戦闘の1アクション／会話の1選択肢。数秒〜30秒。',
+      play: '1ロケーション（村・洞窟・砦）の探索と対話。1〜3時間。',
+      phase: '3幕構成の各幕（1幕：荒野・2幕：影の地・3幕：バルダーズ・ゲート市）。各15〜30時間。',
+      whole: '全3幕で60-100時間（マルチプレイで200時間+）。仲間との関係、敵との因縁、自分のキャラの過去が同時に進行する大ループ。',
+    },
+
+    incentive: '「この選択をしたらどう転がるか」が常に予測不能。「説得失敗したら戦闘？それとも別ルート？」という分岐の <strong>幅</strong> が次の行動への引力を作る。さらに仲間との会話・恋愛イベントが「もっと知りたい」動機を駆動する。',
+    play_structure: 'D&D 5e準拠のターン制戦闘 × 大規模CRPG × マルチプレイ協力。サイコロの結果が物語を変え、戦闘外でも <strong>判定</strong> が常に存在する。',
+    story_mechanics: 'メインクエストとは別に、各仲間のサブストーリーが厚く編まれており、それぞれが独立した小説1冊分の重みを持つ。プレイヤーの選択が仲間の運命を決め、エンディングで <strong>その選択の総和</strong> が結末として返ってくる。',
+    music_direction: 'ボリス・サルチョフのオーケストラ＆ファンタジー楽曲。戦闘は重厚、対話は静謐。視覚はLarian独自の高解像度3Dで、ロケーションごとの個性が強い。',
+
+    fluctuation: {
+      difficulty: 'サイコロ判定で結果が大きく変動。低確率の成功が物語を一変させる。',
+      perception: '仲間NPCの過去が章ごとに開示され、序盤の「ただの仲間」が中盤で「重い秘密を抱えた人」に変質する。',
+      meaning: '善悪の選択が、後の章で全く違う意味を持って返ってくる。「あの時殺さなかった敵が再登場する」など、選択の意味が時間差で書き換わる。',
+      story: '世界の歴史（脳食らい・古代神・大公）が複層的に開示され、自分のキャラの正体（タール墓所の異形寄生など）も並行して掘り下げられる。',
+    },
+
+    chunks: {
+      operation: 'ターン制戦闘の1アクション選択／会話判定の試行／環境ギミックの活用。',
+      judgment: '戦闘前の高所取り／隠密での先制／NPCに対する善悪判定／仲間の好感度を考慮した選択。',
+      meaning: '「サイコロが物語を作る」「自分の選択が仲間を救うor壊す」という意味化。',
+    },
+
+    yokoene: {
+      physical: 'ターン制なので物理的な身体性は弱め。ただし「サイコロを振る」緊張は強い。',
+      contextual: '全ての行為が <strong>関係性</strong> と <strong>世界の運動</strong> に接続される。仲間と話すことが恋愛イベントに繋がり、敵を見逃すことが後の章で報われる／復讐される。世界が常に「あなたを見ている」感触。',
+      story_action_level: 2,
+      story_action_note: 'Lv2（行為が物語の状況を表す）。選択と関係性が物語の運動を作るが、「行為そのものが主題」というLv3には届かない。CRPGの伝統的構造。',
+    },
+
+    transformation: {
+      start: '脳食らいに寄生された主人公として、ただ生き延びるための旅。',
+      mid: '仲間との関係が深まり、世界の闇が見えてくる。脳食らいの真の目的、古代神の動き。',
+      end: 'バルダーズ・ゲートを救うか破壊するか、自分は何者になるかの最終選択。仲間の運命、街の運命が一挙に決定。',
+      trigger: '各仲間のサブストーリーの完結／3幕への突入／アブソリュート・ライブ・パパとの邂逅。',
+    },
+
+    viscosity: '<strong>極めて高粘度</strong>。1周100時間級でも「別の選択でもう一度」が成立する設計。マルチプレイで友人と物語を共有する体験は他で得難い。',
+    ending: 'マルチエンディング。仲間の運命・街の運命・自分の運命が複層的に分岐する。エンディングのバリエーションは数十種に及ぶ。',
+
+    strength: '選択の <strong>幅と反応の厚み</strong> がCRPG史の到達点。サイコロが物語を作る快感を最大化。マルチプレイ対応も革新的。',
+    weakness: '100時間級のボリュームで、ライト層には敷居が高い。3幕の処理が重く、ロード時間や挙動の不安定さが指摘される。',
+    if_designed: '3幕後半の情報密度をもう少し整理したい。物語の濃度は最高だが、新規プレイヤーが置いていかれやすい瞬間がある。',
+
+    time_structure: '線形（3幕構成だが各幕内は自由）',
+    spatial_structure: '接続（複数の大ロケーション）',
+    others_presence: 'NPC・仲間（深い関係性）・マルチプレイ協力',
+
+    energy_body: {
+      tension: { level: 'high', note: 'サイコロ判定と選択の重みが常に張り詰める。' },
+      temperature: { level: 'warm', note: 'ファンタジー世界の暖かさ、仲間との対話の人間味。時折暗黒の冷たさが差す。' },
+      rhythm: { level: 'irregular', note: 'ターン制戦闘の遅い拍と、会話の高速ラリーが混在。' },
+      density: { level: 'high', note: '選択肢・キャラ関係・世界設定・サブクエが密に絡む。' },
+      breathing: { level: 'deep', note: 'キャンプ（休息）が深い呼吸点。仲間との対話と長休息で日が進む。' },
+    },
+
+    features: [
+      {
+        name: 'ターン制戦闘（D&D 5e）', category: '演出・没入',
+        purpose_primary: '戦略性とサイコロの快感',
+        purpose_secondary: ['ビルド試行', '地形活用'],
+        mechanism: '1d20 + 修正値 / クラスごとの呪文・能力',
+        axis_link: ['チャンク', '揺らぎ'],
+        boosts: ['仲間関係'],
+        boost_reason: '戦闘での仲間活用が関係性を深める',
+      },
+      {
+        name: '対話判定（説得・脅迫・欺瞞）', category: '揺らぎ生成',
+        purpose_primary: '対話の不確実性',
+        purpose_secondary: ['物語分岐', 'スキル投資の意味'],
+        mechanism: '1d20 + 修正値 / 失敗で物語が変わる',
+        axis_link: ['揺らぎ', '意味変容'],
+        boosts: [],
+        boost_reason: '対話そのものがゲーム化される',
+      },
+      {
+        name: '仲間関係（恋愛・好感度）', category: '社会機能',
+        purpose_primary: '関係性の深化',
+        purpose_secondary: ['仲間サブクエの開放', 'エンディング分岐'],
+        mechanism: '好感度パラメータ / 会話・選択で増減 / イベント発火',
+        axis_link: ['感情の核', '横エネ'],
+        boosts: ['対話判定'],
+        boost_reason: '対話が関係を作り、関係が物語を作る',
+      },
+      {
+        name: '長休息・短休息', category: '進行制御',
+        purpose_primary: '時間と物語のリズム',
+        purpose_secondary: ['呪文回復', '仲間対話発火'],
+        mechanism: '短休息はその場で / 長休息でキャンプ・物語進行',
+        axis_link: ['サイクル'],
+        boosts: ['仲間関係'],
+        boost_reason: '休息ごとに仲間との対話が発生する',
+      },
+      {
+        name: 'マルチプレイ協力', category: '社会機能',
+        purpose_primary: '物語の共有体験',
+        purpose_secondary: ['友人との偶然の出来事', '役割分担'],
+        mechanism: '最大4人 / 各プレイヤーがキャラ操作 / 別行動も可',
+        axis_link: ['横エネ', '感情の核'],
+        boosts: [],
+        boost_reason: '共同で物語を作る稀有な体験',
+      },
+      {
+        name: 'クラス・サブクラス', category: '達成可視化',
+        purpose_primary: 'ビルドの戦略性',
+        purpose_secondary: ['ロールプレイの基盤'],
+        mechanism: '12クラス / マルチクラス可 / Lv12まで成長',
+        axis_link: ['チャンク', '成長'],
+        boosts: ['ターン制戦闘'],
+        boost_reason: 'ビルドが戦闘の選択肢を作る',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  十三機兵防衛圏
+  // ──────────────────────────────────────────
+  {
+    id: '13kihei',
+    emoji: '🤖',
+    name: '十三機兵防衛圏',
+    enName: '13 Sentinels: Aegis Rim',
+    developer: 'ヴァニラウェア',
+    year: '2019',
+    platform: 'PS4/Switch',
+    genre: 'アドベンチャー＋RTS',
+    color: '#06d6a0',
+    tagline: '13人の主人公・5つの時代・100以上の情報チャンクが、最後に <strong>一斉に意味として回収される</strong> 構造の快感',
+
+    immersion_structure: '時系列・主人公・舞台が完全にバラバラに提示される。プレイヤーは小さな違和感を「機械部品」のように集め続け、ある瞬間にそれらが <strong>一気に組み立つ</strong>。「世界の構造を理解する」というメタ的体験そのものが没入の本体。',
+    emotional_core: '断片を抱え続けた者だけが感じる <strong>構造への驚嘆</strong>。ループ・タイムリープ・SFジャンルの引用を通して、最終的に「友情と愛と犠牲」という極めて素朴な感情に着地する。複雑な構造の先に <strong>シンプルな核</strong> がある。',
+
+    cycle: {
+      instant: '1キャラの1シーン（5〜15分）。会話・移動・思考クラウドの選択。',
+      play: '1主人公の物語が一区切りつくまで（30分〜1時間）。新しい時代・新しい関係性が開示される。',
+      phase: '3パート（追想編・崩壊編・究明編）の進行。各5〜10時間。',
+      whole: '全13キャラ × 5時代の物語が交錯し、最終的に1つの <strong>巨大な構造</strong> に統合される。25〜35時間。',
+    },
+
+    incentive: '「この情報はあのキャラの話と繋がるのか？」「この時代設定の違和感は何を示しているのか？」── プレイヤーが <strong>仮説を立てて確認する</strong> サイクルが連続する。さらに「次のキャラのストーリーを早く読みたい」感情が並走する。',
+    play_structure: 'アドベンチャー（追想編）+ RTS（崩壊編）+ アーカイブ閲覧（究明編）の三層構造。プレイヤーは自分の <strong>進行順</strong> を選べる（一部条件あり）。',
+    story_mechanics: '物語は時系列・視点・舞台を意図的にバラバラに提示し、プレイヤーが <strong>能動的に組み立てる</strong> 設計。SF映画・アニメ・ゲームのオマージュが大量に散りばめられ、「あの作品の引用？」を見つける楽しみも並走する。',
+    music_direction: '崎元仁の楽曲が時代と感情に合わせて切替わる。70-80年代の時代描写には当時のフォーク調、近未来パートには電子音楽。視覚はヴァニラウェアの2Dアートで、キャラ・背景の質感が極めて高い。',
+
+    fluctuation: {
+      difficulty: 'RTSパートの難度は控えめ。アドベンチャーパートは「正しい選択肢」を見つけるパズル要素。',
+      perception: '時代設定が次々更新される。1980年代と思っていた風景が、実は別の時代の再現だと判明する瞬間など、見え方の前提が何度も覆る。',
+      meaning: '「あのキャラの言葉の意味」が後の章で書き換わる経験が頻発。プレイヤーの記憶に残った断片が、後で意味を持って戻ってくる。',
+      story: '世界そのものの構造（時間ループ・人類保管・AI）が層をなして開示される。最終盤の連続的な真相提示は、ゲーム史でも稀な感情体験。',
+    },
+
+    chunks: {
+      operation: '思考クラウドの選択／会話の選択／RTSの部隊配置。',
+      judgment: 'どのキャラから攻略するか／どの情報をどのキャラに繋げるか／RTSの優先目標。',
+      meaning: '「断片を集めることで構造が見える」というメタ的意味化。',
+    },
+
+    yokoene: {
+      physical: 'RTSパートでの戦闘指揮以外は身体性は弱い。ただし「断片を抱え続ける」精神的負荷は大きい。',
+      contextual: '13人のキャラの物語を <strong>同時並行で抱える</strong> ことで、世界全体が頭の中に立体的に組み上がる。物語が <strong>記憶のネットワーク</strong> として体感される。',
+      story_action_level: 2,
+      story_action_note: 'Lv2（行為が物語の状況を表す）。プレイヤーが情報を集める行為が物語進行と同期するが、「行為そのものが主題」のLv3には届かない。',
+    },
+
+    transformation: {
+      start: '13人のバラバラな日常。各キャラが「ただの高校生」または「ただの軍人」に見える。',
+      mid: '時代を跨ぐ違和感、別の時代の同じキャラ、機兵の存在意義への疑問が積み重なる。',
+      end: '全ての断片が一気に意味を持ち、世界の構造が開示される。プレイヤーの記憶の中で全てが <strong>同時に光る</strong> 瞬間。',
+      trigger: '究明編で複数の重要事実が連続開示される瞬間／自分が立てた仮説が裏打ちされる瞬間。',
+    },
+
+    viscosity: '<strong>中粘度</strong>。物語の構造を体感した後の余韻が強い。クリア後に「もう一度頭から見直したい」とリプレイする層が多い。',
+    ending: '全キャラ・全時代が統合された後の余韻。明確な勝利でも敗北でもなく、「全てが繋がった」という構造体験そのものがエンディング。',
+
+    strength: '時系列バラバラ提示×情報チャンク回収という構造の精緻さ。膨大なキャラの数を捌きながら、最終的に綺麗に統合する設計力。SF引用の遊びも豊か。',
+    weakness: '序盤〜中盤の情報量が多く、追いきれずに離脱する層がいる。RTSパートが他要素と独立気味で評価が分かれる。',
+    if_designed: '中盤の情報整理を支援するUIをもう一段強化したい。アーカイブ機能はあるが、「自分の仮説」を書き留められるメモ機能があれば没入が更に深まる。',
+
+    time_structure: '非順序（複数時代×複数視点を自由順）',
+    spatial_structure: '接続（複数舞台が時代を跨ぐ）',
+    others_presence: '13人の主人公（互いがNPCにも）',
+
+    energy_body: {
+      tension: { level: 'medium', note: '構造への疑問が常に頭を引き絞るが、激しい緊張ではない。' },
+      temperature: { level: 'warm-cold', note: '70-80年代の暖かさとSFディストピアの冷たさが交錯。' },
+      rhythm: { level: 'irregular', note: 'キャラごと時代ごとに拍が変わる。' },
+      density: { level: 'high', note: '情報密度が極めて高い。' },
+      breathing: { level: 'medium', note: 'キャラ完了ごとに呼吸点。RTSが一段落するごとにも。' },
+    },
+
+    features: [
+      {
+        name: '追想編（13キャラの物語）', category: '演出・没入',
+        purpose_primary: '断片の提示',
+        purpose_secondary: ['キャラ愛着', '仮説の駆動'],
+        mechanism: '13主人公をプレイヤーが選んで進める / 一部条件付きロック',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: ['究明編'],
+        boost_reason: '追想で得た情報が究明で意味として回収される',
+      },
+      {
+        name: '崩壊編（RTS）', category: '揺らぎ生成',
+        purpose_primary: '緊張のスパイク',
+        purpose_secondary: ['機兵バトル体験', '戦闘経験値'],
+        mechanism: 'マップごとの侵略防衛 / 13機兵を配置',
+        axis_link: ['チャンク'],
+        boosts: [],
+        boost_reason: 'テンションを変えて構造体感の合間にする',
+      },
+      {
+        name: '究明編（アーカイブ）', category: '達成可視化',
+        purpose_primary: '情報の回収と統合',
+        purpose_secondary: ['仮説の確認', '構造の可視化'],
+        mechanism: 'イベント・キーワード・キャラのデータベース',
+        axis_link: ['意味変容', '感情の核'],
+        boosts: [],
+        boost_reason: '欲求の終着点：構造が組み上がる場所',
+      },
+      {
+        name: '思考クラウド', category: '演出・没入',
+        purpose_primary: '選択の駆動',
+        purpose_secondary: ['対話分岐', '物語進行'],
+        mechanism: 'キーワードを選択して相手に問う',
+        axis_link: ['チャンク'],
+        boosts: ['追想編'],
+        boost_reason: '思考の見える化が物語を進める',
+      },
+      {
+        name: '時代切替', category: '演出・没入',
+        purpose_primary: '時系列バラバラ提示',
+        purpose_secondary: ['違和感の演出', 'SF引用'],
+        mechanism: '5時代を行き来 / 服装・小物・音楽で表現',
+        axis_link: ['揺らぎ', '意味変容'],
+        boosts: [],
+        boost_reason: '構造体験の前提を作る',
+      },
+      {
+        name: 'メタスコア（解禁条件）', category: '進行制御',
+        purpose_primary: '進行のリズム',
+        purpose_secondary: ['情報過多の防止', '物語のテンポ'],
+        mechanism: '追想編進行で崩壊編・究明編が解禁',
+        axis_link: ['サイクル'],
+        boosts: [],
+        boost_reason: '3パートのバランスを管理する',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Citizen Sleeper
+  // ──────────────────────────────────────────
+  {
+    id: 'citizen-sleeper',
+    emoji: '🎲',
+    name: 'Citizen Sleeper',
+    enName: 'Citizen Sleeper',
+    developer: 'Jump Over the Age',
+    year: '2022',
+    platform: 'PC/Switch/PS5/Xbox',
+    genre: 'ナラティブRPG（テーブルトーク風）',
+    color: '#fb923c',
+    tagline: '身体の欠損を抱えたデジタル意識が、サイコロと選択で <strong>生活そのもの</strong> を続けようとする',
+
+    immersion_structure: '1日のサイクル。サイコロが振られ、5つほどの賽を <strong>各タスクに振り分ける</strong>。食事、薬、労働、人間関係、修理、隠れること ── 「生活を続ける」ことそのものがゲームの本体。身体は壊れ続け、リソースは常に足りない。',
+    emotional_core: '欠損した身体と限られた選択肢の中で <strong>誰かと繋がろうとする</strong> 静かな尊厳。SFディストピアの中で、生活の細部に光を見出す感触。',
+
+    cycle: {
+      instant: '1サイクル（1日）の中での1賽の振り分け。10〜30秒。',
+      play: '1サイクル全体（5-10分）。タスク選択→結果→次の日へ。',
+      phase: 'ある人物との関係を完結させるか、ある目標を達成するまで。1〜3時間。',
+      whole: 'ステーション・エリンを生きる旅。どのエンディングを目指すか、何を諦めるか。15〜25時間。',
+    },
+
+    incentive: '「次の日のための薬代」「壊れた賽を買い直す資金」「あの人との約束を果たす時間」── 全てが <strong>生存のリソース配分</strong> に直結する。日々の小さな選択が、長期の自己定義を作る。',
+    play_structure: 'サイコロ式タスク管理 × ナラティブテキスト × 時計（イベントタイマー）。アクションも戦闘もなく、全てが「賽を振り分ける」と「テキストを読む」で成立する。',
+    story_mechanics: '大きな冒険ではなく、ステーションの住人たちとの <strong>小さな繋がり</strong> の積み重ねが物語の本体。各キャラのストーリーが時計（タイマー）として並走し、プレイヤーは「どのストーリーを優先するか」を選び続ける。',
+    music_direction: 'Amos Roddy のチルでメランコリックなアンビエント。視覚はミニマルなUI＋イラスト。賽の音、タスクが完了した時の小さな効果音だけが響く。',
+
+    fluctuation: {
+      difficulty: '序盤は薬代・食事代に追われ、生存ギリギリ。中盤以降は安定するが、新たな問題（記憶・追跡・関係）が生まれる。',
+      perception: 'ステーションの住人の素性が徐々に明かされる。「いい人」と思っていた相手の闇、警戒していた相手の優しさ。',
+      meaning: '「ただの労働」が「自分の人生を生き直す行為」として意味化されていく。Sleeper（自分）の存在の意味も問い直される。',
+      story: 'ステーションの構造（企業の支配、難民、AI、革命の兆し）が断片的に開示される。プレイヤーの行動で歴史が小さく動く。',
+    },
+
+    chunks: {
+      operation: '1賽の振り分け／タスクの選択／会話の選択。',
+      judgment: '薬を優先すべきか労働か／このNPCに賽を使うか／壊れた身体を修理するか。',
+      meaning: '「生活そのものがゲーム」「サイコロが運命だが選び方は自分」という意味化。',
+    },
+
+    yokoene: {
+      physical: '物理的身体性は弱いが、「身体の欠損」が常にメカニクスに刻まれている。賽が壊れる・能力が低下する。',
+      contextual: '1日1日の選択が、ステーション全体・住人全員と緩やかに接続される。自分の労働が誰かの生活を支え、誰かの選択が自分の運命を決める。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマと等しい）。「生き続ける」というテーマが、賽の振り分け・薬の購入・労働といった全行為と完全同期。',
+    },
+
+    transformation: {
+      start: '追跡から逃れた壊れたSleeperとして、ただ生き延びるための日々。',
+      mid: 'ステーションの住人と関係ができ、自分の存在に意味が出てくる。',
+      end: '幾つかのストーリーを完結させ、自分が <strong>誰と共に生きるか</strong> を選ぶ。完璧な解決はないが、小さな尊厳が残る。',
+      trigger: '重要NPCのサイクルが完了する瞬間／賽が壊れて生存が危ぶまれる瞬間／追跡者が現れる瞬間。',
+    },
+
+    viscosity: '<strong>中粘度</strong>。短時間プレイでも「次の日も続けたい」感触を生む。クリア後にDLCで物語が拡張される。',
+    ending: 'マルチエンディング。どのキャラを優先したか、どのリスクを引き受けたかで結末が分岐。完璧な勝利エンドはなく、「自分が選んだ生き方」が残る。',
+
+    strength: 'シンプルなメカニクス（サイコロとテキスト）で、生活そのものをゲーム化した発想の鋭さ。SFディストピアの中の小さな尊厳の描写が秀逸。',
+    weakness: 'アクション要素ゼロ、ビジュアル控えめ、テキスト主導。ライト層には物足りない可能性。短編志向の作品で、プレイ時間は短め。',
+    if_designed: '後半にやることが減る瞬間がある。中盤以降の追加タスクが時計型でもう少し賑やかだと、終盤の没入が強化される。',
+
+    time_structure: '線形（日付制サイクル）',
+    spatial_structure: '閉鎖（ステーション・エリン）',
+    others_presence: 'NPC（複数の濃い住人）',
+
+    energy_body: {
+      tension: { level: 'medium', note: '生存への緊張は常にあるが、瞑想的な静けさが基調。' },
+      temperature: { level: 'cold-warm', note: '宇宙ステーションの冷たさ、住人との会話の暖かさ。' },
+      rhythm: { level: 'slow', note: '1日のゆっくりした拍。時計（タイマー）で時間が動く。' },
+      density: { level: 'medium', note: '情報密度は中程度。テキストはコンパクト。' },
+      breathing: { level: 'deep', note: '1日の終わりが深い呼吸点。次の日への移行。' },
+    },
+
+    features: [
+      {
+        name: 'サイコロ振り分け', category: '進行制御',
+        purpose_primary: '1日のリズムと選択',
+        purpose_secondary: ['身体性のメカニクス化', 'リソース管理'],
+        mechanism: '毎日5賽 / タスクに割り振り / 値で成功確率',
+        axis_link: ['チャンク', 'サイクル'],
+        boosts: [],
+        boost_reason: '全ての行為の前提',
+      },
+      {
+        name: 'クロック（時計）システム', category: '揺らぎ生成',
+        purpose_primary: 'イベントの並走管理',
+        purpose_secondary: ['物語のテンポ', '選択の優先順位'],
+        mechanism: '各イベントが時計形式 / タスクで進める / 期限あり',
+        axis_link: ['揺らぎ', '感情の核'],
+        boosts: ['サイコロ振り分け'],
+        boost_reason: '時計が選択を強制し物語を動かす',
+      },
+      {
+        name: 'エナジー・ヘルス管理', category: '演出・没入',
+        purpose_primary: '身体の欠損の表現',
+        purpose_secondary: ['生存リスク', '薬・修理需要'],
+        mechanism: '毎日減少 / 食事・薬で回復 / 0で深刻な状態',
+        axis_link: ['チャンク', '感情の核'],
+        boosts: [],
+        boost_reason: '欠損した身体がゲームの中核に常駐する',
+      },
+      {
+        name: 'NPCドライブ（関係）', category: '社会機能',
+        purpose_primary: '物語の駆動',
+        purpose_secondary: ['キャラ愛着', 'エンディング分岐'],
+        mechanism: '重要NPCに固有のドライブ（時計）',
+        axis_link: ['感情の核', '横エネ'],
+        boosts: ['クロック'],
+        boost_reason: '関係性が時計で並走し選択を迫る',
+      },
+      {
+        name: 'スキル', category: '達成可視化',
+        purpose_primary: '賽の修正',
+        purpose_secondary: ['タスク成功率', '専門化'],
+        mechanism: '経験で上昇 / タスクごとに異なるスキルが要求',
+        axis_link: ['チャンク'],
+        boosts: ['サイコロ振り分け'],
+        boost_reason: 'スキルが賽の効率を決める',
+      },
+      {
+        name: '通貨・装備', category: '進行制御',
+        purpose_primary: '生存リソースの管理',
+        purpose_secondary: ['労働の意味', '選択肢の拡張'],
+        mechanism: 'クレジットでアイテム購入 / 装備で能力修正',
+        axis_link: ['サイクル'],
+        boosts: [],
+        boost_reason: '生活の物理的基盤',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Returnal
+  // ──────────────────────────────────────────
+  {
+    id: 'returnal',
+    emoji: '🌌',
+    name: 'Returnal',
+    enName: 'Returnal',
+    developer: 'Housemarque',
+    year: '2021',
+    platform: 'PS5/PC',
+    genre: 'ローグライク・サードパーソン・シューター',
+    color: '#7c3aed',
+    tagline: '死に戻りを <strong>キャラクターの実存</strong> に組み込んだローグライクシューター',
+
+    immersion_structure: '異星に墜落したパイロット・セレーネが、死ぬたびに最初の墜落地点に戻される。1ループは1〜2時間、装備も能力もリセット。プレイヤーは <strong>自分の身体</strong> でステージとボスのパターンを覚え、毎ループで上達していく。',
+    emotional_core: '反復の中で蓄積される <strong>記憶の重み</strong>。母性・トラウマ・死・帰還の主題が、ループごとに少しずつ開示される。プレイヤーの操作上達と、キャラクターの心理的傷の深化が並走する。',
+
+    cycle: {
+      instant: 'ダッジ→射撃→グレネード→近接攻撃。0.5〜2秒の戦闘ループ。',
+      play: '1サイクル（墜落〜死亡）約30分〜2時間。装備拾得→敵遭遇→ボス挑戦→死亡 or 突破。',
+      phase: '1バイオーム（地域）の攻略。各3〜5サイクル。新エリアの解放、新ボス発見、新装備獲得。',
+      whole: '全6バイオームの攻略。セレーネの過去の真相を追う大ループ。20〜30時間（複数周も視野）。',
+    },
+
+    incentive: '「次のループでは違うビルドを試す」「新発見した部屋が次に何を生むか」「セレーネの記憶の続きを見たい」── 戦闘上達と物語進行が同時駆動する。',
+    play_structure: 'ローグライク × サードパーソンシューター × 物語駆動。Housemarqueのアーケード的な戦闘設計と、心理的な物語の融合。',
+    story_mechanics: '物語は <strong>サイクルごとの断片開示</strong>。家、母、息子、キャリア、宇宙の墜落 ── これらの断片が、ループのどこかで突然挿入される。プレイヤーは戦闘の合間に物語を <strong>拾う</strong>。',
+    music_direction: 'Bobby Krlic（The Haxan Cloak）の電子音楽と環境音。緊張を煽るのではなく、瞑想的に <strong>異質さ</strong> を提示する。視覚はサイケデリックで、現実と幻覚が混じる。',
+
+    fluctuation: {
+      difficulty: 'ローグライク特有の高難度。1サイクル1〜2時間の重み。死亡で大量の進捗が消える設計（部分的にチェックポイント有）。',
+      perception: 'エリアのレイアウトが毎ループ変わる。固定要素と変動要素の混在で、馴染んだ場所が違って見える。',
+      meaning: '「ただのローグライク」が、セレーネの記憶開示によって「彼女の心理的反復」に意味化される。死に戻りはゲームメカニクスでもあり物語のテーマでもある。',
+      story: 'セレーネの過去（家・母・息子）が、ループの中で断片的に開示される。最終的に「彼女がなぜ墜落したか」「なぜループしているか」が複層的に明かされる。',
+    },
+
+    chunks: {
+      operation: 'ダッジ→射撃→近接攻撃→グレネード。シューター操作の単位。',
+      judgment: 'このアイテムを取るか／このバイオフォーム（マイナス効果）を受け入れるか／このボスに今挑むか戻るか。',
+      meaning: '「死に戻りはセレーネの心理の縮図」「ループは反復強迫の表現」という意味化。',
+    },
+
+    yokoene: {
+      physical: 'シューターの身体性は極めて強い。コントローラの振動、アダプティブトリガー（PS5）でセレーネの呼吸まで感じる。',
+      contextual: '戦闘の上達が <strong>セレーネの心理的成長／崩壊</strong> と並走する。プレイヤーが操作で覚えた感覚が、キャラクターの記憶と接続する。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマと等しい）。「死に戻り」というメカニクスが、セレーネの心理（反復・喪失・帰還）と完全同期。プレイ＝主題。',
+    },
+
+    transformation: {
+      start: 'ただのシューターとしての反復。死は失敗で、装備リセットは苦痛。',
+      mid: 'エリアと敵パターンが身体に染み付き、ループが瞑想的な行為になる。物語の断片が記憶と接続。',
+      end: 'セレーネの過去の真相が開示され、ループそのものが彼女の心の表現だったと判明。プレイヤーの操作上達が、彼女の心理的整理と重なる。',
+      trigger: '物語上の重要シーン（家のシーケンス）／新バイオーム到達／決定的なボス突破。',
+    },
+
+    viscosity: '<strong>中〜高粘度</strong>。1ループの重みが大きい分、突破した時の達成感も大きい。エンディング後もチャレンジモードや別エンディングで続く。',
+    ending: 'メインエンディング後にエピローグあり。物語の真相が複層的に明かされ、セレーネの心理が完成する。',
+
+    strength: 'ローグライクメカニクスとキャラクターの心理を完全同期させた設計。Housemarqueのシューター職人技と物語性の融合。PS5機能（DualSense）の活用も秀逸。',
+    weakness: '1ループ1〜2時間の重さで、ライト層には敷居が高い。物語が抽象的・心理的で、好みが分かれる。',
+    if_designed: '1ループの中盤でセーブできる仕様（後にパッチ追加された）の前から、もう少し復帰しやすい設計があれば、離脱率が下がったはず。',
+
+    time_structure: 'ループ（死に戻り）',
+    spatial_structure: '変動（バイオームのレイアウトが変わる）',
+    others_presence: 'NPC（限定的）・敵',
+
+    energy_body: {
+      tension: { level: 'high', note: 'シューターの戦闘緊張、死亡のリスク。' },
+      temperature: { level: 'cold', note: '異星の冷たさ、心理的な孤独。' },
+      rhythm: { level: 'fast', note: 'シューターの速い拍が基調。' },
+      density: { level: 'high', note: '視覚情報・敵情報・装備管理が密。' },
+      breathing: { level: 'shallow', note: '常にフル稼働で深い呼吸点が少ない。' },
+    },
+
+    features: [
+      {
+        name: 'ローグライクループ', category: '揺らぎ生成',
+        purpose_primary: '反復による身体化',
+        purpose_secondary: ['物語の断片開示', '装備試行'],
+        mechanism: '死亡で装備リセット / 一部進捗は永続',
+        axis_link: ['チャンク', '感情の核'],
+        boosts: [],
+        boost_reason: '全ての他機能の前提',
+      },
+      {
+        name: 'バイオフォーム（マイナス効果）', category: '揺らぎ生成',
+        purpose_primary: 'リスクとリワードのジレンマ',
+        purpose_secondary: ['ビルド多様性'],
+        mechanism: 'アイテム使用時にランダムでデバフ付与',
+        axis_link: ['揺らぎ', 'チャンク'],
+        boosts: [],
+        boost_reason: '選択の重みを増やす',
+      },
+      {
+        name: 'アダプティブトリガー（DualSense）', category: '演出・没入',
+        purpose_primary: '身体性の拡張',
+        purpose_secondary: ['射撃モードの切替', '緊張の体感'],
+        mechanism: '半押しでエイム・押し込みで強撃',
+        axis_link: ['チャンク', '横エネ'],
+        boosts: [],
+        boost_reason: 'プレイヤーの身体とゲームの境界を曖昧にする',
+      },
+      {
+        name: '記憶シーケンス（家）', category: '演出・没入',
+        purpose_primary: '物語の断片提示',
+        purpose_secondary: ['キャラクター心理の開示'],
+        mechanism: '特定地点で1人称シーケンスに切替',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: [],
+        boost_reason: '戦闘とは異質な空間で物語を浸透させる',
+      },
+      {
+        name: 'アーティファクト（装備カテゴリ）', category: '達成可視化',
+        purpose_primary: 'ビルド試行',
+        purpose_secondary: ['ループの差別化'],
+        mechanism: '様々な能力修正アイテム / ループ内で蓄積',
+        axis_link: ['チャンク'],
+        boosts: ['ローグライクループ'],
+        boost_reason: '毎ループで違う体験を作る',
+      },
+      {
+        name: 'ボス戦', category: '達成可視化',
+        purpose_primary: '上達の証',
+        purpose_secondary: ['物語進行'],
+        mechanism: 'バイオームごとのボス / 突破で進行',
+        axis_link: ['感情の核'],
+        boosts: ['ローグライクループ'],
+        boost_reason: 'ループの蓄積が報われる場所',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Blue Prince
+  // ──────────────────────────────────────────
+  {
+    id: 'blue-prince',
+    emoji: '🏛️',
+    name: 'Blue Prince',
+    enName: 'Blue Prince',
+    developer: 'Dogubomb',
+    year: '2025',
+    platform: 'PC/Xbox/PS5/Switch',
+    genre: 'パズルアドベンチャー（ロームライク）',
+    color: '#1d6dff',
+    tagline: '毎日違う部屋を <strong>ドラフトしながら</strong> 屋敷を探索する、未完チャンクの教科書',
+
+    immersion_structure: '屋敷の各扉の先には複数の部屋候補があり、プレイヤーが <strong>選んで配置</strong> する。1日の探索枠は限られ、夜が来ると屋敷はリセットされる。プレイヤーは「次に何の部屋を引くか」と「どの部屋を維持するか」を毎日 <strong>編成</strong> する。',
+    emotional_core: '探索と発見の知的興奮。謎が解けることへの欲求と、解けないままの未完チャンクが頭に残る感覚の同居。',
+
+    cycle: {
+      instant: '扉を開く→部屋候補から選択→入る。10〜30秒。',
+      play: '1日の探索（朝〜夜）。15〜45分。',
+      phase: 'ある謎の解明、ある部屋の特殊条件達成。1〜3時間。',
+      whole: '屋敷の全部屋発見、最終目標（46番の部屋）達成。15〜30時間。',
+    },
+
+    incentive: '「次に何の部屋が引けるか」のドラフト的興奮 ＋「あの部屋の謎の答えは何か」の探究欲。さらに「日ごとの更新でどんな新しい組み合わせができるか」の試行錯誤。',
+    play_structure: 'ロームライク（部屋ドラフト） × パズル × 探索アドベンチャー。プレイヤーが <strong>屋敷自体を再構成</strong> しながら謎を解く。',
+    story_mechanics: '物語は <strong>部屋の中の手紙・本・暗号</strong> で断片的に語られる。叔父の屋敷に残されたメッセージ、家族の歴史、46番の部屋の意味 ── これらをプレイヤーが組み立てる。',
+    music_direction: 'アンビエント＋ピアノの静謐な楽曲。視覚はカートゥーン調の温かみのあるアート。',
+
+    fluctuation: {
+      difficulty: 'パズル難度は中〜高。ヒントは部屋の中に散らばっており、能動的な観察が必要。',
+      perception: '毎日違う部屋配置で同じ屋敷が違う場所に見える。慣れた部屋の組み合わせも、新しい部屋の発見で意味が変わる。',
+      meaning: '「ただの部屋探索」が、家族の歴史と父の遺志を読み解く行為に変質していく。',
+      story: '叔父・父・主人公の関係、屋敷の秘密、46番の意味が断片的に開示される。確定的説明がなく、プレイヤーが組み立てる。',
+    },
+
+    chunks: {
+      operation: '扉開く→ドラフト→部屋を選ぶ→探索→アイテム拾得。',
+      judgment: 'どの部屋を引くか／資源の配分／次の日に何を残すか／謎の優先順位。',
+      meaning: '「屋敷を編成する」「日ごとに新しい組み合わせを試す」という意味化。',
+    },
+
+    yokoene: {
+      physical: '物理的身体性は弱め。歩く・読む・選ぶ。',
+      contextual: '毎日の探索が、屋敷全体・家族の歴史と緩やかに接続される。1日の探索が <strong>家族の謎を1ピース解く</strong> ことになる。',
+      story_action_level: 2,
+      story_action_note: 'Lv2（行為が物語の状況を表す）。部屋の編成と探索が物語の進行と同期するが、Lv3には届かない。',
+    },
+
+    transformation: {
+      start: 'ただの部屋ドラフト。パズルとアイテム集め。',
+      mid: '屋敷の構造、家族の秘密、特殊な部屋の存在意義が見えてくる。',
+      end: '46番の部屋を見つけ、家族の物語を完結させる。屋敷自体が <strong>父からの長い手紙</strong> だったと判明。',
+      trigger: '重要な部屋（地下室・天文台等）の発見／特殊条件の達成／46番への接近。',
+    },
+
+    viscosity: '<strong>高粘度</strong>。日ごとに新しい組み合わせがあるため、「もう1日プレイしたい」感覚が継続する。クリア後も「未発見部屋」を求めて続く。',
+    ending: 'マルチエンディング（46番の到達条件で分岐）。家族の物語の完結。',
+
+    strength: '部屋ドラフトという独自のメカニクスでパズルアドベンチャーを再発明。「未完チャンク」の教材として極めて優秀。',
+    weakness: 'ドラフトの運要素が強く、特定の組み合わせを引けないと進めない瞬間がある。物語の薄さを感じる層もいる。',
+    if_designed: 'ドラフトの偏りを軽減する仕様（特定部屋の引きやすさ）をもう少し細かくチューニングできるとライト層も入りやすい。',
+
+    time_structure: 'ループ（日ごとリセット）',
+    spatial_structure: '変動（部屋ドラフト）',
+    others_presence: 'NPC（手紙のみ）',
+
+    energy_body: {
+      tension: { level: 'medium', note: 'パズルと選択の知的緊張。' },
+      temperature: { level: 'warm', note: '屋敷の温かみ、家族の歴史の懐かしさ。' },
+      rhythm: { level: 'slow', note: '探索の遅い拍。' },
+      density: { level: 'medium', note: 'パズル情報・部屋効果・物語断片が中密度で。' },
+      breathing: { level: 'deep', note: '夜（リセット）が深い呼吸点。' },
+    },
+
+    features: [
+      {
+        name: '部屋ドラフト', category: '揺らぎ生成',
+        purpose_primary: '探索の組み合わせを毎日変える',
+        purpose_secondary: ['再プレイ性', '戦略性'],
+        mechanism: '扉を開くと3つの部屋候補から選択 / 拒否で別候補',
+        axis_link: ['チャンク', '揺らぎ'],
+        boosts: [],
+        boost_reason: '全ての他機能の前提',
+      },
+      {
+        name: '1日サイクル', category: '進行制御',
+        purpose_primary: '探索のリズム',
+        purpose_secondary: ['資源の希少性', '選択の重み'],
+        mechanism: '朝〜夜 / 夜になるとリセット',
+        axis_link: ['サイクル'],
+        boosts: ['部屋ドラフト'],
+        boost_reason: '時間制限がドラフトの判断を強制する',
+      },
+      {
+        name: 'アイテム・資源', category: '達成可視化',
+        purpose_primary: '永続的進捗',
+        purpose_secondary: ['日を跨ぐ蓄積', '部屋アンロック'],
+        mechanism: '一部資源は永続 / 鍵・コイン・薬',
+        axis_link: ['成長'],
+        boosts: [],
+        boost_reason: '永続資源が長期動機を作る',
+      },
+      {
+        name: 'パズル', category: '演出・没入',
+        purpose_primary: '探究の核体験',
+        purpose_secondary: ['物語の解明', '部屋の特殊条件'],
+        mechanism: '部屋ごとに固有のパズル / 暗号・配置',
+        axis_link: ['チャンク', '感情の核'],
+        boosts: [],
+        boost_reason: '探索の知的快感',
+      },
+      {
+        name: '手紙・本（物語断片）', category: '演出・没入',
+        purpose_primary: '物語の蓄積',
+        purpose_secondary: ['家族の歴史', '謎の手がかり'],
+        mechanism: '部屋の中で発見 / 読み物アーカイブ',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: [],
+        boost_reason: '断片が家族の物語を組み上げる',
+      },
+      {
+        name: '46番の部屋', category: '達成可視化',
+        purpose_primary: '最終目標',
+        purpose_secondary: ['長期動機'],
+        mechanism: '屋敷の最深部 / 特殊条件で到達',
+        axis_link: ['感情の核'],
+        boosts: [],
+        boost_reason: '欲求の終着点',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  Clair Obscur: Expedition 33
+  // ──────────────────────────────────────────
+  {
+    id: 'clair-obscur',
+    emoji: '🎨',
+    name: 'Clair Obscur: Expedition 33',
+    enName: 'Clair Obscur: Expedition 33',
+    developer: 'Sandfall Interactive',
+    year: '2025',
+    platform: 'PC/PS5/Xbox',
+    genre: 'ターン制RPG',
+    color: '#ff5db1',
+    tagline: '毎年「33歳の世代」が消える世界で、リアクティブターン制と美術と音楽が <strong>感情の核</strong> を直撃する',
+
+    immersion_structure: '世界では毎年「絵描き女」が数字を1つ減らし、その年齢の人が消える。今は33。プレイヤーは33歳の世代の遠征隊として、絵描き女を倒す旅に出る。19世紀フランス的な世界観、ターン制戦闘 ＋ リアルタイム反応（QTE的な防御・反撃）の独自設計。',
+    emotional_core: '避けられない死を背負った若者たちの、それでも前に進む尊厳。美術・音楽・物語が三位一体で「死を意識した者の尊さ」を描く。',
+
+    cycle: {
+      instant: 'ターン制の1アクション＋リアクティブな防御／反撃のタイミング。3〜10秒。',
+      play: '1戦闘 or 1探索区域。15〜30分。',
+      phase: '章ごとの大ボス・新エリア。3〜5時間。',
+      whole: '絵描き女の本拠地に至る大遠征。30〜50時間。',
+    },
+
+    incentive: '「次のキャラの過去が知りたい」「次の絵描き女との対峙はどうなるか」「新しい武器・スキルを試したい」── ターン制の戦略性と物語の重みが同時駆動する。',
+    play_structure: 'ターン制RPG × リアクティブQTE × 美術・音楽演出。戦闘は静かなターンと激しい反応の交錯。',
+    story_mechanics: '絵描き女の正体、世界の崩壊の理由、各キャラの過去 ── これらが章を追うごとに開示。「死を運命づけられた者の物語」が複層的に編まれる。',
+    music_direction: 'Lorien Testard のオーケストラ＆コーラス。19世紀フランス的な格調と現代的な激情が混在。視覚は油絵調の異世界で、章ごとに色彩が変わる。',
+
+    fluctuation: {
+      difficulty: 'リアクティブQTEの精度で戦闘が大きく変わる。タイミングの上達が体感できる設計。',
+      perception: '絵描き女の数字が下がるたびに世界が変わる。33歳が消えた後は32歳の世界に。',
+      meaning: '「ただの戦闘」が「死に向かう者の尊厳」へと意味化される。',
+      story: '絵描き女の正体、世界の歴史、遠征隊の過去が複層的に開示。',
+    },
+
+    chunks: {
+      operation: 'ターン制の選択＋リアクティブQTE。',
+      judgment: 'どの仲間で攻めるか／どのスキルを温存するか／QTEのタイミング。',
+      meaning: '「死を背負った戦闘」「美しさへの応答」という意味化。',
+    },
+
+    yokoene: {
+      physical: 'QTEで戦闘に身体性が戻る。ターン制でも反応速度が問われる。',
+      contextual: '世界の崩壊と仲間の運命と自分の死が常に並走する。戦闘の一手が <strong>死との対話</strong> として体感される。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマと等しい）。死を意識して戦うことが、物語の主題（死の尊厳）と完全同期。',
+    },
+
+    transformation: {
+      start: 'ただの遠征隊員として戦う。死は避けたいリスク。',
+      mid: '仲間の過去、絵描き女の正体、世界の崩壊が見えてくる。死は受け入れるべき運命に。',
+      end: '絵描き女との最終対峙で、自分の運命と仲間の運命を選択する。明確な勝利ではなく、何を残すかの選択。',
+      trigger: '重要キャラの死／絵描き女との初対面／世界の崩壊の真相開示。',
+    },
+
+    viscosity: '<strong>高粘度</strong>。物語の重みと戦闘の手応えで「もう1章進めたい」感覚が続く。クリア後の余韻が極めて長い。',
+    ending: 'マルチエンディング（選択で分岐）。絵描き女と世界の関係、遠征隊の運命がそれぞれ違う形で着地。',
+
+    strength: 'ターン制 ＋ リアクティブQTEの独自設計。美術・音楽・物語の三位一体演出。2025年のRPGの代表格。',
+    weakness: 'QTEの精度が要求され、リアルタイム反応が苦手な層には敷居が高い。物語が暗鬱で重い。',
+    if_designed: 'QTE難度のアシスト機能をもう少し細かく分けたい。物語を楽しみたいが反応速度に自信のない層が拾えるように。',
+
+    time_structure: '線形（章立て）',
+    spatial_structure: '接続（章ごとの異なる地域）',
+    others_presence: '仲間（遠征隊）・NPC',
+
+    energy_body: {
+      tension: { level: 'high', note: '戦闘の緊張、死の運命の重み。' },
+      temperature: { level: 'warm-cold', note: '19世紀フランスの暖かさと、死を背負う冷たさが交錯。' },
+      rhythm: { level: 'irregular', note: 'ターン制の遅い拍とQTEの瞬発が交互。' },
+      density: { level: 'high', note: '物語・戦闘・美術・音楽が密に重なる。' },
+      breathing: { level: 'deep', note: '章の合間が深い呼吸点。' },
+    },
+
+    features: [
+      {
+        name: 'ターン制 ＋ リアクティブQTE', category: '演出・没入',
+        purpose_primary: '戦闘の身体性復活',
+        purpose_secondary: ['戦略と反応の融合'],
+        mechanism: 'ターン選択＋防御／反撃QTE / タイミングで結果変化',
+        axis_link: ['チャンク', '揺らぎ'],
+        boosts: [],
+        boost_reason: '全ての他機能の前提',
+      },
+      {
+        name: '絵描き女システム', category: '演出・没入',
+        purpose_primary: '世界観の核',
+        purpose_secondary: ['年齢消失の演出', '死の運命'],
+        mechanism: '毎年数字が減り、その年齢の人が消える / 物語進行と連動',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: [],
+        boost_reason: '世界全体に死の重みを与える',
+      },
+      {
+        name: '画材・武器システム', category: '達成可視化',
+        purpose_primary: '戦闘の戦略多様性',
+        purpose_secondary: ['ビルド試行'],
+        mechanism: '画材を集めて武器を作成 / 各キャラごとに固有スキル',
+        axis_link: ['チャンク'],
+        boosts: [],
+        boost_reason: '戦闘の選択肢を作る',
+      },
+      {
+        name: '美術スタイル', category: '演出・没入',
+        purpose_primary: '世界没入の核',
+        purpose_secondary: ['章ごとの色彩変化'],
+        mechanism: '油絵調 / 章ごとに色彩が変わる',
+        axis_link: ['没入構造'],
+        boosts: [],
+        boost_reason: '世界観そのものを支える',
+      },
+      {
+        name: '仲間ストーリー', category: '演出・没入',
+        purpose_primary: 'キャラ愛着',
+        purpose_secondary: ['過去の開示', 'エンディング分岐'],
+        mechanism: '章進行で過去が明かされる',
+        axis_link: ['感情の核'],
+        boosts: [],
+        boost_reason: '仲間の運命への投資を作る',
+      },
+      {
+        name: '音楽（Lorien Testard）', category: '演出・没入',
+        purpose_primary: '感情の核を直撃',
+        purpose_secondary: ['シーンの演出'],
+        mechanism: 'オーケストラ＋コーラス / シーンごとに固有曲',
+        axis_link: ['感情の核', '横エネ'],
+        boosts: [],
+        boost_reason: '物語の感動を最大化',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
+    ],
+  },
+
+  // ──────────────────────────────────────────
+  //  メタファー：リファンタジオ
+  // ──────────────────────────────────────────
+  {
+    id: 'metaphor',
+    emoji: '🦊',
+    name: 'メタファー：リファンタジオ',
+    enName: 'Metaphor: ReFantazio',
+    developer: 'アトラス（スタジオ・ゼロ）',
+    year: '2024',
+    platform: 'PS5/PS4/PC/Xbox',
+    genre: 'JRPG',
+    color: '#06d6a0',
+    tagline: '差別と王座継承の世界で、旅と支持と <strong>理想を語ること自体</strong> が政治運動になるJRPG',
+
+    immersion_structure: '選挙レース形式で進む大冒険。各地を巡って民の支持を集めながら、王座への道を競う。仲間との絆を深め、職能（アーキタイプ）を獲得し、戦闘で勝利する ── 全てが <strong>支持率</strong> という一つの軸に統合されている。',
+    emotional_core: '差別される少年が「理想とは何か」を問いながら旅する尊厳。JRPGの王道に <strong>政治と社会構造</strong> を組み込んだ重み。',
+
+    cycle: {
+      instant: 'ターン制戦闘の1アクション／ダンジョンでの1発見。10秒〜1分。',
+      play: '1日の予定（カレンダーシステム）。仲間との絆を深めるか、ダンジョンに行くか、旅するか。30分〜2時間。',
+      phase: '選挙レースの各章。新エリア・新ライバル・新仲間。10〜15時間。',
+      whole: '選挙レース全体（複数月）。世界の変質と王座決定。70〜100時間。',
+    },
+
+    incentive: '「次の支持率を集めるためにどう動くか」「新アーキタイプを開放したい」「仲間との絆をどこまで深めるか」── ペルソナ系のカレンダー型欲求と、JRPGの戦闘・成長欲求が同時駆動する。',
+    play_structure: 'JRPG × カレンダー進行（ペルソナ系） × 選挙レース。アーキタイプ（職能）でキャラを変えられる。',
+    story_mechanics: '差別される種族の主人公が、王座継承レースに参加。各地で仲間を増やし、世界の理想を語る。物語は「政治と社会構造への問い」を中心に展開。',
+    music_direction: '目黒将司＋小西利樹のシンフォニック楽曲。中世風ファンタジーと現代的なロックの融合。視覚はキャラデザイン副島成記の独特の線で、ペルソナ系の延長。',
+
+    fluctuation: {
+      difficulty: 'ペルソナ系の戦闘＋アーキタイプ管理。中盤以降は戦略性が増す。',
+      perception: '世界の各地域で異なる文化・差別・統治形態が見え、世界観が立体的に。',
+      meaning: '「ただの冒険」が「王座を決める政治運動」へ意味化される。仲間との絆も「理想を共有する者」として深まる。',
+      story: '王座継承の真相、世界の差別構造、ライバルの動機が複層的に開示。',
+    },
+
+    chunks: {
+      operation: 'ターン制戦闘＋アーキタイプ切替＋カレンダー選択。',
+      judgment: '今日は誰と過ごすか／戦闘でどのアーキタイプを使うか／どの地域に旅するか。',
+      meaning: '「旅は政治運動」「絆は理想の共有」という意味化。',
+    },
+
+    yokoene: {
+      physical: 'ターン制なので物理身体性は弱い。',
+      contextual: '全ての行為が <strong>支持率</strong> と <strong>世界の運動</strong> に接続される。仲間と話すことが理想を共有することになり、戦闘で勝つことが世界の差別構造を変えることに繋がる。',
+      story_action_level: 3,
+      story_action_note: 'Lv3（行為が物語のテーマと等しい）。「理想を語ることが政治運動である」という主題が、対話・戦闘・絆育成の全てと同期。',
+    },
+
+    transformation: {
+      start: '差別される少年が、ただ世界を旅する。',
+      mid: '仲間が増え、各地の問題を解決し、自分の理想が固まっていく。',
+      end: '王座継承レースの最終局面で、自分の理想が世界の運命を決める。明確な勝利ではなく、何を残すかの選択。',
+      trigger: '重要キャラとの対峙／新アーキタイプの開放／決定的な政治イベント。',
+    },
+
+    viscosity: '<strong>高粘度</strong>。100時間級のJRPGとして、物語と戦闘の両方で長く滞在できる。',
+    ending: 'マルチエンディング（選択で分岐）。',
+
+    strength: 'JRPGの王道に政治・社会構造を組み込んだ野心。アーキタイプシステムによる戦闘の戦略性。アトラスのキャラデザ・楽曲の安定感。',
+    weakness: '100時間級のボリュームで、ライト層には敷居が高い。ペルソナ系のカレンダー進行が好みを分ける。',
+    if_designed: '選挙レースの可視化をもう少し動的に（地図上で支持率の推移を見せる等）すれば、政治運動の実感がさらに強まる。',
+
+    time_structure: '線形（カレンダー）',
+    spatial_structure: '接続（複数の地域・都市）',
+    others_presence: '仲間（複数）・NPC・ライバル',
+
+    energy_body: {
+      tension: { level: 'medium-high', note: '戦闘の緊張、政治レースのプレッシャー。' },
+      temperature: { level: 'warm', note: 'ファンタジー世界の暖かさ、仲間との絆。' },
+      rhythm: { level: 'regular', note: 'カレンダーの規則的な拍。' },
+      density: { level: 'high', note: 'ストーリー・戦闘・絆・政治が密に絡む。' },
+      breathing: { level: 'deep', note: '章の合間が深い呼吸点。' },
+    },
+
+    features: [
+      {
+        name: 'アーキタイプ（職能）', category: '達成可視化',
+        purpose_primary: '戦闘の戦略多様性',
+        purpose_secondary: ['ビルド試行', 'キャラ個性'],
+        mechanism: '絆Lvでアンロック / 各キャラに装着 / スキル継承可',
+        axis_link: ['チャンク', '成長'],
+        boosts: ['仲間絆'],
+        boost_reason: '絆がアーキタイプを開放する',
+      },
+      {
+        name: '選挙レース', category: '演出・没入',
+        purpose_primary: '物語の構造',
+        purpose_secondary: ['支持率の可視化', 'ライバルとの競合'],
+        mechanism: '各地で支持を集める / 期限あり',
+        axis_link: ['没入構造', '感情の核'],
+        boosts: [],
+        boost_reason: '全ての行為を一つの軸に統合',
+      },
+      {
+        name: 'カレンダー進行', category: '進行制御',
+        purpose_primary: '時間の希少性',
+        purpose_secondary: ['選択の重み', '日々のリズム'],
+        mechanism: '1日に1〜2行動 / 月日の進行',
+        axis_link: ['サイクル'],
+        boosts: [],
+        boost_reason: 'ペルソナ系の継承機能',
+      },
+      {
+        name: '仲間絆（コミュ）', category: '社会機能',
+        purpose_primary: '関係性の深化',
+        purpose_secondary: ['アーキタイプ開放', '物語深化'],
+        mechanism: '1日1人と過ごす / 絆Lv上昇',
+        axis_link: ['感情の核', '横エネ'],
+        boosts: ['アーキタイプ'],
+        boost_reason: '絆が能力と物語を駆動',
+      },
+      {
+        name: 'ターン制戦闘', category: '演出・没入',
+        purpose_primary: '戦略性',
+        purpose_secondary: ['アーキタイプ活用', '属性相性'],
+        mechanism: 'ペルソナ系のターン制 / 弱点突きでアドバンテージ',
+        axis_link: ['チャンク'],
+        boosts: ['アーキタイプ'],
+        boost_reason: 'アーキタイプが戦闘の選択肢を作る',
+      },
+      {
+        name: 'ダンジョン探索', category: '達成可視化',
+        purpose_primary: '進捗の可視化',
+        purpose_secondary: ['素材入手', 'ボス戦'],
+        mechanism: 'マップ探索 / 戦闘 / ボス',
+        axis_link: ['成長'],
+        boosts: [],
+        boost_reason: '戦闘と物語の場',
+      },
+    ],
+
+    notes: [],
+    updates: [
+      { date: '2026-05-05', body: 'ページ初版作成（v25 追加）' },
     ],
   },
 ];

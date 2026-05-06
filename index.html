@@ -18921,6 +18921,263 @@ const GAMES = [
     strength:'育成→対人戦の二段構造が「ゲーム的成功」を具体的にする。周年を軸に半年ごとのスパイクが設計として安定', weakness:'ランダムイベントへの依存度が高く育成結果の再現性が低い。対人環境のインフレが継続者を疲弊させやすい', data_quality:'estimated',
     onboarding:'最初の育成1周がそのままチュートリアルになっている。初回の「レースに勝てた」体験と移籍後の空白感が次周回動機を自然に生成', growth_design:'各ウマ娘の育成ごとにリセットされる反復設計。サポカ引き直しで「もっと良い結果が出せるはず」という積み上げ感が継続させる。停滞ポイント：チャンミの対人インフレ',
     resource_design:'スタミナ（体力）を育成に消費。サポカPt・きずな・スキルPt・ヒントが育成内リソース。石（宝珠）がガチャ通貨。特別移籍でURIをリセット→次育成へ',
+    resource_table: [
+      { name:'スタミナ', purpose:'クエスト周回', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'ガチャ・スタミナ補充', source:'メイン進行／イベント／課金' },
+      { name:'魔法少女強化素材', purpose:'スキル強化・限界突破', source:'クエストドロップ／曜日' },
+      { name:'コイン', purpose:'装備購入・売却', source:'クエスト／売却' },
+      { name:'絆Pt', purpose:'絆エピソード解放', source:'戦闘出撃・親愛度上昇' },
+      { name:'対人メダル', purpose:'PvPショップ交換', source:'対人戦勝利' },
+    ],
+    resource_table: [
+      { name:'eFootballコイン', purpose:'契約（ガチャ）・選手獲得', source:'課金中心／ログインで少量' },
+      { name:'GP', purpose:'継承・選手強化', source:'試合報酬／毎日' },
+      { name:'契約書', purpose:'契約更新', source:'コイン購入／試合' },
+      { name:'選手継承素材', purpose:'選手レベル上げ', source:'試合・継承メニュー' },
+      { name:'シーズンポイント', purpose:'シーズン報酬', source:'対戦勝利' },
+      { name:'スキルチケット', purpose:'特定スキル付与', source:'イベント／コイン購入' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'クエスト・ジェネ作戦周回', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'ユニットガチャ・スタミナ補充', source:'メイン進行／毎日／課金' },
+      { name:'ユニットポイント', purpose:'ユニット強化・派生', source:'被り入手／交換所' },
+      { name:'コイン', purpose:'ユニット開発・改造', source:'クエスト／売却' },
+      { name:'パイロット強化素材', purpose:'パイロットレベル上げ', source:'パイロット育成' },
+      { name:'PvPメダル', purpose:'PvPショップ交換', source:'PvP対戦' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'クエスト周回', source:'時間回復／龍石補充' },
+      { name:'龍石', purpose:'ガチャ・スタミナ補充・コンテニュー', source:'メイン／イベント／ログイン／課金' },
+      { name:'ゼニー', purpose:'カード覚醒費・売却', source:'クエスト／売却' },
+      { name:'潜在能力玉', purpose:'潜在能力解放', source:'潜在玉ドロップステージ／コラボ' },
+      { name:'覚醒メダル', purpose:'Z覚醒・極限Z', source:'メダルクエスト／伝説イベント' },
+      { name:'神龍', purpose:'神龍祭り（特殊召喚）', source:'限定イベント' },
+    ],
+    resource_table: [
+      { name:'理性', purpose:'作戦の出撃', source:'時間回復／純源石補充' },
+      { name:'純源石', purpose:'公開求人・スカウト・理性回復', source:'メイン／イベント／課金' },
+      { name:'合成玉', purpose:'スカウトのチケット代替', source:'純源石変換／月パス' },
+      { name:'ロドコイン', purpose:'物資購入・装備', source:'作戦／公開求人' },
+      { name:'昇進素材', purpose:'オペレーター昇進', source:'作戦ドロップ／曜日' },
+      { name:'分隊資金（IS）', purpose:'ローグライク内通貨', source:'統合戦略の戦闘' },
+    ],
+    resource_table: [
+      { name:'樹脂', purpose:'ボス・週ボス・秘境の報酬受取', source:'時間回復（160上限）／脆弱樹脂で補充' },
+      { name:'原石', purpose:'祈願（ガチャ）・樹脂補充', source:'メイン進行／世界探索／イベント／課金' },
+      { name:'創世結晶', purpose:'原石への変換（課金通貨）', source:'課金' },
+      { name:'モラ', purpose:'装備強化・凸', source:'クエスト／放置パスポート' },
+      { name:'聖遺物', purpose:'キャラステータス底上げ', source:'秘境ボス／週ボス' },
+      { name:'凸キャラ欠片', purpose:'キャラの命ノ星座', source:'同キャラの被り入手' },
+    ],
+    resource_table: [
+      { name:'開拓力', purpose:'クエスト・周回', source:'時間回復（240上限）／薬で補充／課金' },
+      { name:'星玉', purpose:'ガチャ・開拓力補充', source:'メイン進行／忘却の庭／課金' },
+      { name:'星彩石（恒常）', purpose:'恒常ガチャ', source:'毎日ミッション／メイン報酬' },
+      { name:'特殊星彩石（限定）', purpose:'限定ガチャ', source:'メイン進行／イベント／課金' },
+      { name:'信用ポイント', purpose:'装備購入・強化', source:'クエスト／売却' },
+      { name:'遺物', purpose:'キャラステータス底上げ', source:'シミュレートユニバース／模擬宇宙' },
+    ],
+    resource_table: [
+      { name:'砂時計', purpose:'パック開封の権利', source:'12時間1回復・最大2／課金で追加' },
+      { name:'ポケパックコイン', purpose:'特定パックの購入', source:'課金' },
+      { name:'パックポイント', purpose:'パックポイントショップ交換', source:'パック開封' },
+      { name:'ショップチケット', purpose:'限定パック開封', source:'イベント／課金' },
+      { name:'デイリーミッション報酬', purpose:'砂時計・通貨の安定供給', source:'毎日のミッション完了' },
+      { name:'バトルポイント', purpose:'バトルショップ交換', source:'対戦・ソロバトル' },
+    ],
+    resource_table: [
+      { name:'エナジー', purpose:'ガチャ・スタミナ・装備強化', source:'メイン／メールBOX／課金' },
+      { name:'スタミナ', purpose:'試合・育成消費', source:'時間回復／エナジー補充' },
+      { name:'コイン', purpose:'選手売却・特訓', source:'試合／売却' },
+      { name:'限界突破コーチ', purpose:'選手の限界突破', source:'被り入手／コーチガチャ' },
+      { name:'契約書', purpose:'契約更新（保有コスト管理）', source:'試合報酬／ショップ' },
+      { name:'特訓コーチ', purpose:'選手の能力アップ', source:'特訓メニュー' },
+    ],
+    resource_table: [
+      { name:'AP', purpose:'クエスト周回', source:'時間回復／聖晶石補充／林檎で補充' },
+      { name:'聖晶石', purpose:'呼符ガチャ・AP補充', source:'メイン進行／マスターミッション／課金' },
+      { name:'呼符', purpose:'単発ガチャ', source:'イベント／メインストーリー' },
+      { name:'QP', purpose:'霊基再臨・スキル強化', source:'クエスト／曜日QP集め／売却' },
+      { name:'素材（無限手・骨等）', purpose:'霊基再臨・スキル強化', source:'修練場／高難度／曜日' },
+      { name:'マナプリズム/レアプリ', purpose:'マナプリズム交換所（種火・サーヴァント）', source:'再臨済みサーヴァントから入手' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'ダンジョン消費', source:'時間回復／魔法石補充' },
+      { name:'魔法石', purpose:'ガチャ・スタミナ補充・コンテニュー', source:'ログイン／メイン／フレ報酬／課金' },
+      { name:'コイン', purpose:'モンスター売却・進化', source:'ダンジョン／売却' },
+      { name:'潜在覚醒たまドラ', purpose:'モンスターのスロット強化', source:'潜在ダンジョン／コラボ' },
+      { name:'+99素材', purpose:'モンスターの＋値強化', source:'プラスたまドラ／コラボ' },
+      { name:'スキル上げ素材', purpose:'スキルターン短縮', source:'スキル上げダンジョン' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'クエスト周回', source:'時間回復／オーブ補充' },
+      { name:'オーブ', purpose:'モンスターガチャ・スタミナ補充', source:'クエスト初回／メイン／課金' },
+      { name:'マナ', purpose:'モンスター強化', source:'クエスト／売却' },
+      { name:'進化素材', purpose:'進化・神化・獣神化', source:'進化クエスト／曜日' },
+      { name:'マルチ参加（無料）', purpose:'4人協力プレイ', source:'ホスト/ゲスト共にオーブ消費なし参加' },
+      { name:'禁忌の獄/超究極報酬', purpose:'限定モンス・獣石', source:'高難度クエストクリア' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'討伐遠征のリソース', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'ガチャ・スタミナ補充', source:'メイン進行／課金' },
+      { name:'ユニパーツ', purpose:'装備（ランダム能力値）', source:'討伐遠征のドロップ（厳選要素）' },
+      { name:'強化素材', purpose:'隊員レベル・スキル強化', source:'クエスト／曜日' },
+      { name:'防衛隊コイン', purpose:'防衛隊ショップ交換', source:'ミッション／PvP' },
+      { name:'隊員欠片', purpose:'隊員の限界突破', source:'被り入手／交換所' },
+    ],
+    resource_table: [
+      { name:'AP（スタミナ）', purpose:'クエスト周回', source:'時間回復／輝石補充' },
+      { name:'輝石', purpose:'呪具ガチャ・AP補充', source:'メイン進行／ログイン／イベント／課金' },
+      { name:'呪霊の欠片', purpose:'キャラ強化・術式解放', source:'クエストドロップ／覚醒交換所' },
+      { name:'交換チケット', purpose:'限定ショップ交換', source:'イベントマラソン／ミッション' },
+      { name:'コイン', purpose:'装備購入・強化', source:'クエスト／売却' },
+      { name:'対人戦メダル', purpose:'PvPショップ交換', source:'対人戦ランキング' },
+    ],
+    resource_table: [
+      { name:'手（手数）', purpose:'ステージごとの試行回数', source:'ステージ開始時に付与（標準25手）' },
+      { name:'ライフ', purpose:'ステージ失敗時の復活', source:'時間回復（最大5）／コイン補充' },
+      { name:'コイン', purpose:'ブースター購入・追加手数', source:'ステージクリア／ログイン／課金' },
+      { name:'ブースター', purpose:'パズル攻略支援', source:'コイン購入／スピン／課金' },
+      { name:'チームトークン', purpose:'チームショップ交換', source:'チームイベント貢献' },
+      { name:'パスポート報酬', purpose:'シーズン報酬', source:'プレイ進捗／課金' },
+    ],
+    resource_table: [
+      { name:'食料・木材・鉄・金', purpose:'建設・訓練・研究', source:'生産施設／略奪／VIP' },
+      { name:'スピードアップ', purpose:'時短', source:'ミッション／パック' },
+      { name:'宝石', purpose:'ガチャ召集・時短', source:'課金中心／ログイン少量' },
+      { name:'英雄欠片', purpose:'英雄の評価（星上げ）', source:'召集／メイン進行／パック' },
+      { name:'体力（AP）', purpose:'探索のリソース', source:'時間回復／薬で補充' },
+      { name:'バトルパス', purpose:'素材入手効率の上昇', source:'課金' },
+    ],
+    resource_table: [
+      { name:'魔法石（スタミナ）', purpose:'ダンジョン消費', source:'時間回復／コイン補充' },
+      { name:'コイン', purpose:'装備強化・ガチャ', source:'放置報酬（最大8h）／PvP' },
+      { name:'放置上限拡大', purpose:'8h放置の上限を伸ばす', source:'課金VIP' },
+      { name:'ランプ磨き素材', purpose:'装備強化', source:'ダンジョン／曜日' },
+      { name:'仲間強化石', purpose:'パートナー強化', source:'PvP・ギルド' },
+      { name:'全サバ素材', purpose:'全サーバー協力イベ素材', source:'全サバボス／協力イベント' },
+    ],
+    resource_table: [
+      { name:'探索AP', purpose:'ダンジョン探索', source:'時間回復／宝石補充' },
+      { name:'宝石', purpose:'ガチャ・蘇生・AP補充', source:'メイン進行／達成報酬／課金' },
+      { name:'GOLD', purpose:'装備購入・強化', source:'ダンジョンドロップ／売却' },
+      { name:'蘇生コスト', purpose:'死亡冒険者の復活', source:'宝石or時間で復活（課金圧）' },
+      { name:'装備素材', purpose:'装備強化・転職要件', source:'高難度ダンジョン' },
+      { name:'ラックステータス', purpose:'宝箱ドロップ率の向上', source:'装備・スキルで上昇' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'試合・特訓周回', source:'時間回復／クリスタル補充' },
+      { name:'クリスタル', purpose:'スカウト（ガチャ）・スタミナ補充', source:'ログイン／メイン進行／課金' },
+      { name:'コイン', purpose:'選手強化・装備購入', source:'試合報酬／売却' },
+      { name:'試合チケット', purpose:'PvP参加', source:'時間配布／クリスタル補充' },
+      { name:'特訓素材', purpose:'選手の能力強化', source:'曜日マップ／週次イベント' },
+      { name:'マイルームアイテム', purpose:'差別化要素・SNS共有', source:'ショップ／イベント／課金' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'探索・PvP参加', source:'時間回復／ダイヤ補充' },
+      { name:'ダイヤ', purpose:'ガチャ・スタミナ補充', source:'メイン進行／放置／課金' },
+      { name:'コイン', purpose:'装備強化・スキル習得', source:'放置／PvP／売却' },
+      { name:'チャレンジコイン', purpose:'限定ショップ交換', source:'デイリーチャレンジ／週次ミッション' },
+      { name:'装備強化素材', purpose:'装備のレベル上げ', source:'バックバトル放置／曜日マップ' },
+      { name:'ギルドコイン', purpose:'ギルドショップ交換', source:'ギルドミッション／ギルド戦' },
+    ],
+    resource_table: [
+      { name:'MP（スタミナ）', purpose:'クエスト周回', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'モンスターガチャ・MP補充', source:'メインストーリー／イベント／ログイン／課金' },
+      { name:'GOLD', purpose:'モンスター強化・装備購入', source:'バトルロード／ゴールドダンジョン（土日）' },
+      { name:'ランクアップ素材', purpose:'モンスターのランク上げ・転生', source:'転生クエスト／曜日ダンジョン' },
+      { name:'スキルパネル', purpose:'スキルツリーの解放', source:'被り入手／メインドロップ／月次ショップ' },
+      { name:'バトルロード(無償)', purpose:'毎日の進捗源・MPなしで周回', source:'時間でロード回復／ステージ拡張' },
+      { name:'闘技場メダル', purpose:'闘技場ショップ交換', source:'ギルド闘技場（PvP）' },
+    ],
+    resource_table: [
+      { name:'食料・木材・石・コイン', purpose:'建設・訓練・研究', source:'施設生産／略奪／VIP' },
+      { name:'温度（薪）', purpose:'拠点の生存維持（独自要素）', source:'採掘／生産施設' },
+      { name:'宝石', purpose:'ガチャ召集・時短', source:'課金中心／ログイン少量' },
+      { name:'スピードアップ', purpose:'建設・研究の時短', source:'ミッション／パック' },
+      { name:'英雄カード', purpose:'ヒーロー召集（ガチャ）', source:'メイン進行／同盟戦争／課金' },
+      { name:'部隊AP', purpose:'探索遠征のリソース', source:'時間回復／薬で補充' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'試合・育成クエスト周回', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'ガチャ・スタミナ補充', source:'ログイン／メイン進行／課金' },
+      { name:'コイン', purpose:'装備強化・スキル強化', source:'試合報酬／売却' },
+      { name:'選手強化素材', purpose:'選手の特訓・覚醒', source:'曜日マップ／被り入手' },
+      { name:'対戦チケット', purpose:'PvP参加（無料枠補充）', source:'時間配布／ジェム補充' },
+      { name:'ランキングメダル', purpose:'ランキング報酬交換', source:'PvPランキング' },
+    ],
+    resource_table: [
+      { name:'スタミナ（BP）', purpose:'試合・キャラ育成クエスト', source:'時間回復／ジェム補充' },
+      { name:'ジェム', purpose:'ガチャ・スタミナ補充', source:'ログイン／ミッション／課金' },
+      { name:'ベリー', purpose:'装備購入・強化', source:'試合／ストーリー／売却' },
+      { name:'スキル玉', purpose:'メダルカスタマイズ・スキル強化', source:'バウンティラッシュ報酬／月次ショップ' },
+      { name:'キャラ覚醒メダル', purpose:'キャラの限界突破', source:'被り入手／イベント' },
+      { name:'装備素材', purpose:'装備強化', source:'試合報酬／コラボ' },
+    ],
+    resource_table: [
+      { name:'食料・木材・鉄鋼・硬貨', purpose:'建設・訓練・研究', source:'生産施設／略奪／資源バフ／課金' },
+      { name:'スピードアップ', purpose:'建設・訓練・研究の時短', source:'ミッション／VIP／課金パック' },
+      { name:'宝石（ダイヤ）', purpose:'ガチャ召集・即時時短', source:'課金中心／ログイン少量配布' },
+      { name:'召集令', purpose:'ヒーロー召集（ガチャ）', source:'メイン進行／同盟戦争報酬／課金' },
+      { name:'体力（AP）', purpose:'探索・遠征のリソース', source:'時間回復／薬で補充' },
+      { name:'ヒーロー欠片', purpose:'ヒーロー覚醒・☆上げ', source:'召集／イベント／パック' },
+    ],
+    resource_table: [
+      { name:'スタミナ', purpose:'クエスト周回・育成', source:'時間回復／ジュエル補充' },
+      { name:'ジュエル', purpose:'ガチャ・スタミナ補充', source:'メイン進行／クラバト／ログイン／課金' },
+      { name:'マナ', purpose:'装備購入・キャラ強化', source:'クエスト／クランバトル／売却' },
+      { name:'メモリーピース', purpose:'ランクアップ・☆昇格', source:'被り入手／ハードクエスト／月次ショップ' },
+      { name:'クランコイン', purpose:'クランショップ装備交換', source:'クランバトル貢献' },
+      { name:'装備素材', purpose:'装備強化', source:'ノーマル／ハードクエスト' },
+    ],
+    resource_table: [
+      { name:'クォーツ', purpose:'ガチャ・キャラ強化', source:'メインストーリー／ログイン／イベント／課金' },
+      { name:'スタミナ', purpose:'メインクエスト・スコアアタック', source:'時間回復／クォーツ補充' },
+      { name:'シリーズPt', purpose:'シリーズ別の強化（ロザリオ・武器等）', source:'シリーズイベント報酬' },
+      { name:'装備強化素材', purpose:'武器・防具のレベル上げ', source:'クエストドロップ／曜日別マップ' },
+      { name:'シスター強化Pt', purpose:'スタイルの限界突破', source:'被り入手／交換所' },
+      { name:'絆Lv', purpose:'絆エピソード解放', source:'戦闘出撃・カフェ会話' },
+    ],
+    resource_table: [
+      { name:'AP（スタミナ）', purpose:'プロデュース1周', source:'時間回復／ジュエル補充' },
+      { name:'ジュエル', purpose:'ガチャ・AP補充', source:'メイン進行／コミュ／コンテスト報酬／課金' },
+      { name:'プロデュースPt', purpose:'サポカ強化・限界突破', source:'プロデュース完了報酬／被り変換' },
+      { name:'マニー', purpose:'育成中の指導・購入', source:'プロデュース内ドロップ／ミッション' },
+      { name:'プレイチケット', purpose:'コンテスト参加（無料枠補充）', source:'時間配布／ジュエル補充' },
+      { name:'限定コイン', purpose:'限定ショップ交換', source:'イベント・コラボ' },
+    ],
+    resource_table: [
+      { name:'魂の輝き（スタミナ）', purpose:'クエスト周回', source:'時間回復／VIPで上限拡大／課金補充' },
+      { name:'宝石', purpose:'ガチャ・スタミナ補充', source:'ミッション／メインストーリー／課金' },
+      { name:'魂の欠片', purpose:'精霊の覚醒・限界突破', source:'被り入手／月次ショップ／イベント' },
+      { name:'コイン', purpose:'装備購入・育成', source:'周回／ショップ売却' },
+      { name:'ルーン', purpose:'装備強化・属性ボーナス', source:'ルーンダンジョン／コロシアム報酬' },
+      { name:'ギルドコイン', purpose:'ギルドショップ交換', source:'ギルド戦・ギルドミッション' },
+    ],
+    resource_table: [
+      { name:'まとめて殲滅蓄積', purpose:'放置による素材獲得', source:'8時間放置自動蓄積（クリア済みステージから）' },
+      { name:'ジェム', purpose:'ガチャ・スキン購入', source:'メイン進行／イベント／課金' },
+      { name:'コアダスト', purpose:'リミテッドキャラの限界突破', source:'ピックアップガチャ／イベント交換所' },
+      { name:'シンクロデバイス', purpose:'低レアキャラのLvを底上げ', source:'シンクロデバイスをアンロックすれば自動共有' },
+      { name:'スキンチケット/コイン', purpose:'コスチューム購入（独自課金軸）', source:'課金専用（時々イベントでコイン配布）' },
+      { name:'クレジット', purpose:'装備強化', source:'クエスト／放置回収' },
+    ],
+    resource_table: [
+      { name:'AP（行動力）', purpose:'クエスト・ハードクエストの周回', source:'時間回復（6分1回復）／カフェ報酬／青輝石で補充' },
+      { name:'青輝石', purpose:'ガチャ・AP回復・コンテニュー', source:'カフェAFK／ミッション／メイン進行／課金' },
+      { name:'ピロシキ', purpose:'AP回復薬', source:'ミッション報酬／イベント' },
+      { name:'クレジット', purpose:'装備購入・キャラ強化', source:'クエストドロップ／ショップ売却' },
+      { name:'装備強化素材', purpose:'装備のレベル上げ・突破', source:'ハードクエスト／装備マップ' },
+      { name:'チケット（総力戦）', purpose:'総力戦への参加', source:'週次配布（自然回復）' },
+    ],
+    resource_table: [
+      { name:'スタミナ（TP）', purpose:'育成1周のリズム制御', source:'時間回復（30分1回復・最大100）／TPショップ／石課金' },
+      { name:'石（ジュエル）', purpose:'ガチャ・TP補充・育成リトライ', source:'ログイン報酬／メインストーリー／チャンミ報酬／課金' },
+      { name:'マニーTP', purpose:'育成中のスキル習得・施設レベル上げ', source:'育成中ドロップ／日替わりレース／セールで購入' },
+      { name:'サポートPt', purpose:'サポカ強化（限界突破・上限解放）', source:'被り入手／PtショップでSSR被りを変換' },
+      { name:'ピース', purpose:'ウマ娘の覚醒・固有スキル解放', source:'シナリオドロップ／因子継承／月次ショップ' },
+      { name:'スキルPt', purpose:'育成中のスキル習得', source:'育成中の練習・レース報酬' },
+    ],
     design_if:'サポートカードの引き合わせ設計（誰×誰の化学反応）をもっと可視化できれば、コア課金動機である「組み合わせ欲求」が強化できる', design_drop:'ランダムイベントへの依存度。育成結果が運次第すぎると「頑張った感」が薄れる。チャンミの強制参加感も長期ユーザーの疲弊要因',
     // ────── 機能 × 目的マップ（サンプル：書き手が観察し直す前提）──────
     features: [
@@ -19238,6 +19495,7 @@ const GAMES = [
     ],
     cycle:'クエスト進行→素材入手→キャラ強化',
     world_emotion:'国民的RPGの世界を「タクティクス」で再体験——懐古と新鮮の共存', incentive_core:'収集',
+    incentive_detail: '【ストーリー進行 × 育成深度】メインストーリーの進行とキャラ育成が密に関係しており、「キャラを育成したい」「ストーリーの先が見たい」がうまく回っている。【他者に勝ちたい】ギルド闘技場（PvP）でのランキング・勝利欲求も並走するインセンティブとして機能。',
     hook_daily:'バトルロード周回・スタミナ消費', hook_weekly:'ギルド闘技場（PvP）・土日ゴールドダンジョン', hook_monthly:'月次ドラクエIPコラボイベント・ランクアップクエスト',
     charge_trigger:'IP愛着型 — ドラクエの人気モンスター・キャラ実装で「昔好きだったキャラを手に入れたい」懐古感情が課金を促進',
     strength:'DQ IPの圧倒的な国内認知度と愛着。バトルロードの自由度高い周回設計', weakness:'ドラクエ既存ファン以外への訴求力が弱い。IP更新（新作ゲーム）のペースに依存する施策設計', data_quality:'estimated',
@@ -20430,6 +20688,37 @@ function renderIncentiveSection(pageId) {
       <div class="tpl-key"><span class="tpl-icon">${icon}</span>${label}</div>
       <div class="tpl-val tpl-empty">— 未記録</div>
     </div>`;
+  // ────── リソース設計レンダラ：表があれば table、なければ legacy text ──────
+  const renderResourceBlock = (g) => {
+    if (g.resource_table && g.resource_table.length) {
+      const rows = g.resource_table.map(r => `
+        <tr>
+          <td style="padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600;color:var(--neon-cyn);white-space:nowrap;">${r.name}</td>
+          <td style="padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.08);">${r.purpose}</td>
+          <td style="padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--text2);">${r.source}</td>
+        </tr>`).join('');
+      return `
+        <div class="tpl-row">
+          <div class="tpl-row-icon">🔋</div>
+          <div class="tpl-row-body" style="padding:0;">
+            <div style="font-size:12px;color:var(--text3);margin-bottom:6px;">リソース設計</div>
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <thead>
+                <tr style="background:rgba(255,255,255,.04);">
+                  <th style="padding:6px 10px;text-align:left;color:var(--text3);border-bottom:1px solid rgba(255,255,255,.15);font-weight:500;">リソース</th>
+                  <th style="padding:6px 10px;text-align:left;color:var(--text3);border-bottom:1px solid rgba(255,255,255,.15);font-weight:500;">用途</th>
+                  <th style="padding:6px 10px;text-align:left;color:var(--text3);border-bottom:1px solid rgba(255,255,255,.15);font-weight:500;">入手先</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+            ${g.resource_design ? `<div style="margin-top:8px;font-size:11px;color:var(--text3);font-style:italic;">補足：${g.resource_design}</div>` : ''}
+          </div>
+        </div>`;
+    }
+    return row('🔋','リソース設計', g.resource_design, false);
+  };
+
 
   const obsBlock = (icon, label, id) => `
     <div class="obs-slot" id="obs-${id}-${pageId}">
@@ -20453,7 +20742,7 @@ function renderIncentiveSection(pageId) {
       <div class="tpl-card">
         ${row('💬','一言でいうと', g.desc || g.cycle, false)}
         ${row('🎭','世界観 / 感情の核', g.world_emotion, false)}
-        ${row('⚡','主インセンティブ', `<span class="incv-badge" style="background:${icCol}22;color:${icCol};">${ic}</span>`, false)}
+        ${row('⚡','主インセンティブ', `<span class="incv-badge" style="background:${icCol}22;color:${icCol};">${ic}</span>${g.incentive_detail ? '<div style="margin-top:6px;font-size:12px;color:var(--text2);line-height:1.6;">'+g.incentive_detail+'</div>' : ''}`, false)}
         ${row('🔄','コアループ', g.cycle, false)}
       </div>
     </div>
@@ -20468,7 +20757,7 @@ function renderIncentiveSection(pageId) {
         ${row('📅 月','月次フック', g.hook_monthly, false)}
         ${row('📈','成長設計 / 停滞', g.growth_design, false)}
         ${row('💰','課金トリガー',              g.charge_trigger, true)}
-        ${row('🔋','リソース設計',              g.resource_design, false)}
+        ${renderResourceBlock(g)}
       </div>
     </div>
 

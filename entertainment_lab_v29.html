@@ -3212,6 +3212,9 @@ body::after {
         <button class="sidebar-btn" onclick="showPage('console-blue-prince')" data-page="console-blue-prince">🏛️ Blue Prince</button>
         <button class="sidebar-btn" onclick="showPage('console-clair-obscur')" data-page="console-clair-obscur">🎨 Clair Obscur: Expedition 33</button>
         <button class="sidebar-btn" onclick="showPage('console-metaphor')" data-page="console-metaphor">🦊 メタファー：リファンタジオ</button>
+        <button class="sidebar-btn" onclick="showPage('console-dispatch')" data-page="console-dispatch">📟 Dispatch</button>
+        <button class="sidebar-btn" onclick="showPage('console-mina-hollower')" data-page="console-mina-hollower">🕯️ Mina the Hollower</button>
+        <button class="sidebar-btn" onclick="showPage('console-arc-raiders')" data-page="console-arc-raiders">🤖 ARC Raiders</button>
       </div>
     </div>
 
@@ -3225,6 +3228,7 @@ body::after {
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">作品</div>
+        <button class="sidebar-btn" onclick="showPage('media-adolescence')" data-page="media-adolescence">🌫️ Adolescence</button>
         <button class="sidebar-btn" onclick="showPage('media-shingodzilla')" data-page="media-shingodzilla">🦖 シン・ゴジラ</button>
         <button class="sidebar-btn" onclick="showPage('media-ghost-shell')" data-page="media-ghost-shell">🧠 Ghost in the shell</button>
         <button class="sidebar-btn" onclick="showPage('media-hanabi')" data-page="media-hanabi">🎆 打ち上げ花火、下から見るか? 横から見るか?</button>
@@ -10192,6 +10196,9 @@ updates: [
     <div id="page-console-blue-prince" class="page"></div>
     <div id="page-console-clair-obscur" class="page"></div>
     <div id="page-console-metaphor" class="page"></div>
+    <div id="page-console-dispatch" class="page"></div>
+    <div id="page-console-mina-hollower" class="page"></div>
+    <div id="page-console-arc-raiders" class="page"></div>
 
     <!-- ════════════════════════════════════════
          About / 研究所の主張（共通）
@@ -10448,6 +10455,7 @@ updates: [
     <div id="page-media-medalist" class="page"></div>
     <div id="page-media-sunny-boy" class="page"></div>
     <div id="page-media-ghost-shell" class="page"></div>
+    <div id="page-media-adolescence" class="page"></div>
     <div id="page-media-hanabi" class="page"></div>
     <div id="page-media-sora-aosa" class="page"></div>
     <div id="page-media-kokosake" class="page"></div>
@@ -11491,6 +11499,243 @@ function renderBoostFlow(hostId, features) {
 //  page-console-{id} の空シェルに renderConsoleTitle が描画
 // ════════════════════════════════════════════════════════
 const CONSOLE_GAMES = [
+  {
+    id: 'dispatch',
+    emoji: '📟',
+    name: 'Dispatch',
+    enName: 'Dispatch',
+    developer: 'AdHoc Studio',
+    year: '2025',
+    platform: 'PS5/PC（Switch・XSXは2026）',
+    genre: 'ナラティブ・アドベンチャー × 差配',
+    color: '#e63946',
+    tagline: '元ヒーローが「ヴィラン更生組のディスパッチャー」になり、<strong>選択</strong>と<strong>差配</strong>でチームを束ねるTelltale系ナラティブ。',
+
+    immersion_structure: '残り続ける選択／元ヴィランたちとの関係ドラマ／その日の事件にメンバーを割り当てる<strong>ディスパッチ盤</strong>。「この寄せ集めは何者で、自分の差配が彼らをどう変えるのか」を読みたくなる引力が、フルボイスの会話劇と差配ミニゲームを一つの呼吸に束ねる。',
+    emotional_core: 'ヒーロー→裏方という立場逆転の悲哀とおかしみ／元ヴィランの部下への愛着／自分の一手が誰かの再起や失敗を左右する責任感。',
+
+    cycle: {
+      instant: 'ダイアログ選択／ディスパッチ盤でメンバーを事件にドラッグ割り当て。数秒で完結する最小ループ。',
+      play: '1エピソード＝会話ドラマ＋その日の差配業務。約1〜2時間のエピソード単位。',
+      phase: 'エピソードを跨いで信頼・関係が変化し、チーム編成の最適解そのものが書き換わる。',
+      whole: '元ヒーロー Robert が裏方の長として、寄せ集めの元ヴィランたちを「チーム」にしていく全体弧。',
+    },
+
+    incentive: '「次に誰が来るか」「この選択が後でどう響くか」「あのメンバーをこの事件に出して大丈夫か」。<strong>関係更新</strong>と<strong>分岐の見届け欲</strong>が複層で同時駆動する。',
+    play_structure: '分岐ナラティブ × ディスパッチ（スキル×事件のマッチング差配）× 関係性管理。選択の即時性と、差配の最適化が二層で噛み合う。',
+    story_mechanics: '物語は会話選択で分岐し、<strong>誰をどの事件に出すか</strong>という差配がキャラの見え方・信頼・物語を露出させる。差配がそのままキャラ理解の行為になっている設計。',
+    music_direction: 'コメディ × ヒーローもののテンポ感。フルボイスの芝居（声優陣）が牽引し、アニメ調の演出でテンポを作る。',
+
+    fluctuation: {
+      difficulty: '事件の難度・メンバーの相性・時間制約で、ディスパッチ判断が毎回変わる。',
+      perception: '「ヴィラン＝悪」という前提が、付き合ううちに崩れる。第一印象と実像のズレ。',
+      meaning: '序盤の何気ない選択が、後のエピソードで意味を持って跳ね返るTelltale系の遡及。',
+      story: '「Robert はヒーローに戻れるのか」「この組織の裏に何があるのか」が断片的に開示される。',
+    },
+
+    chunks: {
+      operation: '会話選択／メンバーを事件にドラッグ割り当て、の操作単位。',
+      judgment: 'スキル×事件×相性×リスクを読んで誰を出すか、関係を壊さない選択は何か、の判断単位。',
+      meaning: '「差配＝人を理解し、信頼を預ける行為」という意味化。',
+    },
+
+    yokoene: {
+      physical: 'ディスパッチ盤の差配が、慣れると「チームを動かす指揮」の感覚に変わる。',
+      contextual: '選択と差配が、寄せ集めを「自分のチーム」にしていく物語に接続。割り当て一つが誰かの再起を左右する重みを帯びてくる。',
+      story_action_level: 2,
+      story_action_note: 'Lv2（行為が物語の状況を表す）。差配という行為が、チームの状態・関係をそのまま物語にしている。ただし行為そのものが「再生」というテーマと完全に等価まではいかないため Lv2 と判断。書き手による再評価で上下する余地あり。',
+    },
+
+    transformation: {
+      start: 'ディスパッチは「スキルと事件のパズル」、メンバーは駒。',
+      mid: 'メンバーの過去・癖が見えてきて、差配が「人を活かす」行為に変わる。',
+      end: '寄せ集めが「チーム」になり、差配が信頼の表現になる。同じ割り当て操作の重みが変わる。',
+      trigger: 'メンバーの個別エピソード解放／信頼イベント／組織の真相開示。',
+    },
+
+    viscosity: '中〜高。エピソード型で「次が見たい」牽引が強い。周回より<strong>一気見型</strong>の粘度で、分岐確認のために二周目を回したくなる。',
+    ending: '選択に応じた分岐結末。Robert と元ヴィランたちの関係の落としどころが残る。スッキリより<strong>関係の余韻</strong>。',
+    strength: 'Telltale系の遺伝子（選択分岐 × フルボイス × キャラ立て）に「ディスパッチ＝差配」というゲーム的フックを足した点。発売約1か月で200万本超のヒットも、フックの強さを裏づける。',
+    weakness: 'ゲーム的にはディスパッチ層がやや浅め／物語主導でリプレイ性は分岐確認に依存／長期滞在型ではなく一気見型。',
+    if_designed: 'ディスパッチの戦略層をもう一段深く（メンバー育成・長期編成の最適化）して、ナラティブと噛み合わせたい。差配の失敗がもっと物語に跳ね返る設計にすると粘度が増す。',
+
+    time_structure: '',
+    spatial_structure: '',
+    others_presence: '',
+
+    energy_body: {
+      tension: { level: 'medium', note: 'コメディ基調だが、選択と差配の「これで合っているか」という緊張が常に薄く流れる。' },
+      temperature: { level: 'warm', note: '人情コメディの温度。元ヴィランたちとの距離が縮むほど温かくなる。' },
+      rhythm: { level: 'regular', note: 'エピソード単位の規則的な拍。会話劇→差配→締め、の反復。' },
+      density: { level: 'medium', note: '会話量とキャラ情報の密度は高いが、操作の密度は軽め。' },
+      breathing: { level: 'medium', note: 'エピソードの区切りが息継ぎ点として機能する。' },
+    },
+
+    features: [],
+    notes: [],
+    updates: [
+      { date: '2026-06-25', body: 'コンシューマに新規追加。Telltale系ナラティブ × ディスパッチ（差配）として整理。' },
+    ],
+  },
+
+  {
+    id: 'mina-hollower',
+    emoji: '🕯️',
+    name: 'Mina the Hollower',
+    enName: 'Mina the Hollower',
+    developer: 'Yacht Club Games',
+    year: '2026',
+    platform: 'Switch/Switch2/PS5/XSX/PC',
+    genre: 'アクションアドベンチャー（GBC風トップダウン）',
+    color: '#7c3aed',
+    tagline: 'ショベルナイトの開発元による、ゲームボーイカラー風の<strong>「潜行（バロウ）」</strong>アクションアドベンチャー。',
+
+    immersion_structure: 'GBC風に凝縮された世界／<strong>潜る（バロウ）</strong>ことで地形と戦闘の両方が変わる操作／サブウェポンとルーンで自分の戦い方を組むビルド探索／歯ごたえのあるボス／床下や壁の先の隠し要素。レトロな制約美と緻密な手作り感が、「もう一区画だけ」を生む。',
+    emotional_core: 'レトロな手触りへの郷愁＋緻密な作り込みへの信頼／潜行で「地面の下に逃げ場と抜け道がある」発見と安心／高難度を越える達成感。',
+
+    cycle: {
+      instant: '鞭で叩く／潜って回避・再配置／サブウェポン発射。0.5〜2秒の攻防ループ。',
+      play: '1ダンジョン／1エリアの探索＋ボス。アイテム発見→ビルド更新→道の解放のサブループ。',
+      phase: '新地域→ギミック理解→中ボス→新サブウェポン／能力→次の解放。1〜2時間スパン。',
+      whole: '呪われた地を巡り、ボスを倒して核心へ至る大ループ。装備とビルドが積み上がっていく。',
+    },
+
+    incentive: '「この壁の先・床下に何があるか」「次のサブウェポンは何か」「このボスをどう崩すか」。<strong>探索の引力</strong>と<strong>攻略欲</strong>が複層で駆動する。',
+    play_structure: 'トップダウン・アクションアドベンチャー × 潜行（バロウ）による地形/戦闘の二重操作 × サブウェポン×ルーンのビルド × メトロイドヴァニア的な解放。',
+    story_mechanics: '物語は世界観・ボス・アイテムの断片で薄く提示される。主役は攻略と探索で、物語は背景の雰囲気として効く設計。',
+    music_direction: 'チップチューン系のレトロ音源（GBC風）で緊張と高揚を作る。視覚も擬似カラーの制約美で、明暗と色数の縛りがそのまま手触りになる。',
+
+    fluctuation: {
+      difficulty: 'ボス・敵配置・トラップの歯ごたえ。Yacht Club らしく高めに設定されている。',
+      perception: '「潜れる床／潜れない床」「壁の先」など、地形の前提が随所で覆る。',
+      meaning: '死んで覚える → 後で同じ道が「攻略済みの庭」に変わる、意味の遡及。',
+      story: '呪いの地の背景が断片的に。考察というより雰囲気として効く揺らぎ。',
+    },
+
+    chunks: {
+      operation: '叩く→潜る→抜ける／サブウェポンの撃ち分け、の身体操作。',
+      judgment: 'いつ潜るか、どのサブウェポンを当てるか、ボスの隙をどう読むか、の判断単位。',
+      meaning: '「潜行＝逃げではなく、攻めと探索の手段」という意味化。',
+    },
+
+    yokoene: {
+      physical: '鞭と潜行のリズムが身体化し、地上と地下を行き来する動きが「操作」から「振る舞い」になっていく。',
+      contextual: '攻略が「呪われた地を踏破する」体験に接続する。ただし物語への接続は軽めで、横エネは身体側に寄る。',
+      story_action_level: 1,
+      story_action_note: 'Lv1寄り（行為が物語進行のトリガー）。攻略＝進行で、行為が物語のテーマと等価になるところまではいかない。レトロアクションとして横エネは身体側に強く、文脈側は控えめ。',
+    },
+
+    transformation: {
+      start: '潜行は「回避テク」、鞭は「攻撃手段」、収集は「強くなる材料」。',
+      mid: '潜行が探索と攻めの軸になり、ビルドで自分の戦い方が出てくる。',
+      end: '地上／地下の往復と鞭のリズムが一体化し、同じ操作が熟練の振る舞いに変わる。',
+      trigger: '新サブウェポン／能力の解放、ボス撃破、隠し領域の発見。',
+    },
+
+    viscosity: '中〜高。レトロ高難度の「もう一回」と、収集・ビルドの探索粘度。やり込み層に強く刺さる。',
+    ending: '攻略型の達成感が主。クリア後のやり込み（タイム／ビルド／隠し要素）で粘度が残る。',
+    strength: 'ショベルナイトの開発元らしい手作り感と、<strong>潜行</strong>という独自の操作軸で、GBC風アクションを現代のゲームとして成立させた点。難度と手触りの調整が緻密。',
+    weakness: '物語の横エネは薄め／レトロ高難度ゆえ人を選ぶ／滞在型というより攻略型。',
+    if_designed: '潜行をもっと物語・世界のテーマに接続したい（潜ること自体が意味を持つ設計）。入口の難度カーブをもう少し開いて、間口を広げる余地もある。',
+
+    time_structure: '',
+    spatial_structure: '',
+    others_presence: '',
+
+    energy_body: {
+      tension: { level: 'high', note: '高難度の攻防。ボス戦と高密度エリアで強く引き絞られる。' },
+      temperature: { level: 'cold', note: 'ゴシック寄りの寒色基調。呪われた地の冷たさ。' },
+      rhythm: { level: 'irregular', note: '地上と地下を往復する不規則な拍。潜るたびにリズムが切り替わる。' },
+      density: { level: 'medium-high', note: '凝縮されたマップに探索・戦闘・隠し要素が高密度で詰まる。' },
+      breathing: { level: 'medium', note: 'セーブ／道の解放が息継ぎ点として機能する。' },
+    },
+
+    features: [],
+    notes: [],
+    updates: [
+      { date: '2026-06-25', body: 'コンシューマに新規追加。潜行（バロウ）を核としたGBC風アクションアドベンチャーとして整理。' },
+    ],
+  },
+
+  {
+    id: 'arc-raiders',
+    emoji: '🤖',
+    name: 'ARC Raiders',
+    enName: 'ARC Raiders',
+    developer: 'Embark Studios',
+    year: '2025',
+    platform: 'PC/PS5/XSX',
+    genre: 'PvPvE 抽出シューター（三人称）',
+    color: '#d97706',
+    tagline: '荒廃した地表で資源を漁り、機械兵<strong>ARC</strong>と他プレイヤーの間を縫って「<strong>持ち帰る</strong>」三人称PvPvE抽出シューター。',
+
+    immersion_structure: '「もう少し漁りたい vs 生きて帰りたい」の常時ジレンマ／ARCの脅威と<strong>他プレイヤーの気配</strong>（偶発的な交戦・共闘）／持ち帰った資源でのクラフトと拠点進行／荒涼とした地表マップの探索。これらが一斉に重なり、1回の出撃を張り詰めた呼吸にする。',
+    emotional_core: '喪失のリスクに常時晒される緊張／偶発的な他者との一期一会（撃つか組むか）／生還した時の安堵と、戦利品の重み。',
+
+    cycle: {
+      instant: 'エイム→射撃／回避→遮蔽／漁る（ルート）。秒単位の交戦と物資回収。',
+      play: '1出撃（レイド）＝降下→探索→交戦→抽出。20〜40分のリスク管理ループ。',
+      phase: '出撃を跨いで装備・クラフト・拠点進行が積み上がり、挑めるリスクの幅が広がる。',
+      whole: '拠点スペランツァの再建・進行と、地表の脅威への習熟。資源を持ち帰り続ける大ループ。',
+    },
+
+    incentive: '「あの建物にレアがあるかも」「次の出撃で装備を整えたい」「あのプレイヤーをやり過ごすか奪うか」。<strong>欲</strong>と<strong>恐怖</strong>が同時に駆動する。',
+    play_structure: '抽出シューター × PvPvE × 永続ロス（死ぬと戦利品喪失）× クラフト/拠点進行 × 偶発的な対人。三人称視点で遮蔽と位置取りが核になる。',
+    story_mechanics: '物語は世界観・拠点NPC・任務で背景的に提示される。主役は出撃ごとの<strong>創発的な体験</strong>＝プレイヤー同士・ARCとの遭遇が、その場の「物語」を生む。',
+    music_direction: '静と動の落差。探索の張り詰めた静寂と、交戦時の緊迫。荒廃した地表の空気とSF機械の脅威感を、Embarkの高品質オーディオが支える。',
+
+    fluctuation: {
+      difficulty: 'ARCの脅威度・他プレイヤーの位置・物資の偏りで、毎回の難度が変わる。',
+      perception: '「安全だと思った経路に他レイダー」「物音＝敵か味方か」など、気配の読み違いが起きる。',
+      meaning: '欲張った一歩が全ロスに、撤退判断が生還に──行為の意味が結果で反転する。',
+      story: '世界が壊れた経緯・ARCの正体・地下社会の事情が断片的に提示される。',
+    },
+
+    chunks: {
+      operation: 'エイム→射撃→遮蔽移動／漁る→退避、の操作単位。',
+      judgment: '押すか引くか、交戦するか回避するか、抽出のタイミングをいつにするか、の判断単位。',
+      meaning: '「抽出＝欲と恐怖の折り合いをつける行為」という意味化。',
+    },
+
+    yokoene: {
+      physical: '遮蔽・位置取り・退き際のリズムが身体化し、地表を「生き延びる動き」で歩けるようになる。',
+      contextual: '出撃の一つ一つが「壊れた世界で物資を持ち帰る」体験に接続する。偶発的な対人が、一期一会の物語として残る。',
+      story_action_level: 2,
+      story_action_note: 'Lv2（行為が物語の状況を表す）。抽出という行為が、世界の状況（資源の希少さ・脅威）をそのまま体験にしている。創発的な対人遭遇が「物語の出来事」になる点も強い。',
+    },
+
+    transformation: {
+      start: '出撃は「ルート集めの作業」、他プレイヤーは「障害物」、ARCは「敵」。',
+      mid: 'リスク管理の駆け引きが面白さの核に。他者との遭遇が緊張と物語を生む。',
+      end: '抽出が「欲と恐怖の折り合い」になり、生還そのものが達成になる。同じ「漁って帰る」が重みを変える。',
+      trigger: '高価値戦利品の生還／手痛い全ロス／印象的な対人遭遇／拠点進行の解放。',
+    },
+
+    viscosity: '高。ロスと生還のリスク設計が「次こそ」を生み、対人の創発で飽きにくい。ライブ運営型で長期滞在に向く。',
+    ending: '明確な終幕より<strong>継続運営型</strong>。出撃ごとの「生還／喪失」の記憶が積層し、一期一会の遭遇が後を引く。',
+    strength: '抽出シューターの緊張設計を、三人称・PvPvE・高品質演出で磨き、対人の<strong>創発</strong>と「帰る」リスク管理を中核に据えた点。2025年屈指のヒットで、ジャンルの到達点の一つ。',
+    weakness: '永続ロスの緊張は人を選ぶ／対人ストレスとマッチングの当たり外れ／ソロには厳しい局面がある。',
+    if_designed: '「撃つか組むか」の創発的協力をもっと誘発する仕掛け（非言語の協調インセンティブ）を強化したい。新規プレイヤーの入口の緊張を緩和する導線も欲しい。',
+
+    time_structure: '',
+    spatial_structure: '',
+    others_presence: 'PvPvE。同じ地表に居合わせる他レイダーが、交戦相手にも一時的な共闘相手にもなる。非言語の駆け引きが体験の核。',
+
+    energy_body: {
+      tension: { level: 'very-high', note: '常時、戦利品喪失のリスクに晒される。抽出直前が最も引き絞られる。' },
+      temperature: { level: 'cold', note: '荒廃した地表の寒色。SF機械の無機質さが温度を下げる。' },
+      rhythm: { level: 'irregular', note: '張り詰めた静寂と突発的な交戦が交互に来る。規則的な刻みではない。' },
+      density: { level: 'medium-high', note: '探索・交戦・対人警戒が同時並行で、一瞬の密度が高い。' },
+      breathing: { level: 'deep', note: '抽出点への到達が深い息継ぎ点。生還した瞬間に呼吸が戻る。' },
+    },
+
+    features: [],
+    notes: [],
+    updates: [
+      { date: '2026-06-25', body: 'コンシューマに新規追加。「持ち帰る」リスク管理と対人の創発を核に、PvPvE抽出シューターとして整理。' },
+    ],
+  },
+
   {
     id: 'elden',
     emoji: '🌅',
@@ -13025,6 +13270,91 @@ const CONSOLE_GAMES = [
 //  全フィールド任意・空欄で問題なし。本文は軽Markdown対応。
 // ════════════════════════════════════════════════════════
 const MEDIA_TITLES = [
+
+  // ─── movie: Adolescence ───
+  {
+    id: 'adolescence',
+    media: 'movie',
+    emoji: '🌫️',
+    name: 'Adolescence',
+    enName: 'Adolescence',
+    creator: 'S・グレアム & J・ソーン 脚本 / P・バランティーニ 監督（Netflix）',
+    year: '2025',
+    genre: 'クライム／心理／社会派ドラマ',
+    overall_rating: 8.9,
+
+    one_liner: '**見えていたはずの子どもが、実はまったく見えていなかったと気づかされる現代型悲劇。**\n\n少年犯罪の真相を解くミステリーではなく、家庭・学校・SNS・男性性・制度が少しずつ噛み合わないまま、ひとりの少年の内面を誰も読み切れなかったことを、ワンカットの逃げ場のなさで体験させる作品として見える。大人の認識能力が、現代の子どもの孤独・SNS空間・男性性に追いつけない――その恐怖を体験させる作品と整理できる。',
+
+    experience: {
+      initial_hook: '普通の家庭に警察が踏み込み、13歳の少年が同級生殺害の加害者候補になる第1話。家庭という安全圏がいきなり崩壊し、観客も「特殊な家庭の話」として距離を取れない。',
+      continuation_incentive: '「誰がやったか」ではなく「なぜ起きたのか」「どこで止められたのか」を追わせる構造。答え合わせではなく、責任の置き場を探させる継続インセンティブとして見える。',
+      repeated_experience: '各話で「理解しようとするが、理解しきれない」が反復される。家庭→学校→心理面接→家族の余波と視点が移っても、核心である少年の内面は読み切れないまま残る。',
+      fluctuation: '少年を「怪物」「被害者」「普通の子」のどれかに固定できない揺らぎ。見方が定まらないこと自体が、大人の認識の限界を体験させると整理できる。',
+      peak: 'ピークは第3話、心理士との対話。少年の弱さ・怒り・承認欲求・自己憐憫・女性蔑視が、編集に救われないまま一続きで露出する。',
+      lasting_sensation: '責任の所在が確定しないまま、重さだけが残る。スッキリではなく、問いが居座る感覚として残る。',
+      yokoene_tateene: '縦エネ：強い。事件の真相より「なぜここまで来たのか／どこで止められたのか」を辿る推進力が引っ張る。横エネ：滞在したい世界ではなく、逃げられなさそのものが体験価値。総じて縦エネと問いの残存で駆動する。',
+    },
+
+    context: {
+      genre_context: '単なる犯罪ドラマではなく、現代社会の「見えなさ」を描く社会派心理ドラマとして見える。事件は入口で、主題は認識の断絶にある。',
+      era_context: '2025年。SNS・インセル文化・男性性をめぐる現代的議論の只中に置かれた作品として整理できる。',
+      creator_context: 'スティーヴン・グレアム＆ジャック・ソーン脚本、フィリップ・バランティーニ監督。各話ワンカットという形式的挑戦で知られる。',
+      medium_context: 'Netflixリミテッドシリーズ。配信ドラマでありながら、各話ワンカット形式で「逃げられない」体験を作っている。',
+      precursor_diff: '犯人当てのクライムものや、特殊な家庭を描く悲劇とは異なり、普通の家庭・普通の人物から始めることで観客が距離を取れない点が差分として見える。',
+      contemporary_resonance: 'SNS・ミーム・絵文字・インセル的価値観が、大人には読み取れない言語圏として機能している。「子どもを愛していること」と「子どもを理解できていること」は別である、という現代的恐怖が刺さる部分と整理できる。',
+    },
+
+    emotion: {
+      initial_value: '混乱・恐怖・否認（1話）。安全だと思っていた家庭が、容疑の場に変わる。',
+      progression: '1話：混乱・恐怖・否認 → 2話：違和感・不穏・大人の無力感 → 3話：嫌悪・同情・理解したくなさ → 4話：喪失・後悔・責任の行き場のなさ。',
+      core: '「愛していた相手を、理解していたとは限らない」。',
+      catharsis: '弱い。事件は進んでも感情は解決せず、納得や赦しは与えられない。',
+      salvation: 'ほぼ無い。救済の代わりに、問いと重さが残る反カタルシス設計として見える。',
+      lingering: '責任の所在が定まらないまま、「自分なら気づけたのか」という問いが視聴後も残る。',
+    },
+
+    narrative: {
+      types: ['犯罪捜査型', '家族崩壊型', '心理解剖型', '社会構造型', '反カタルシス型'],
+      adherence: '犯罪捜査・家族崩壊・心理解剖・社会構造・反カタルシスの型が重なる。通常のミステリーのように真相へ向かう運動自体はある。',
+      deviation: 'ただし「真相が解けて納得する」作品ではなく、事件の背景にある社会的・心理的条件を見せることに主眼がある。原因を一つに断罪できない構造として整理できる。',
+      deviation_value: '原因を確定させないことで、家庭・学校・SNS・男性性・制度が少しずつ噛み合わないまま悲劇に至る構造そのものを体験させられる点に価値があると見える。',
+    },
+
+    media_specific: {
+      runtime_density: '全4話、各話がほぼリアルタイムのワンカット。時間が圧縮されず、出来事の密度がそのまま体感時間になる。',
+      screen_design: 'カメラが人物と空間を途切れず追い、フレーム外も「続いている」感覚を残す。逃げ場のない構図として機能する。',
+      cinematography: '長回し／ワンカット撮影。手持ち〜移動撮影で人物に張り付き、視点が常に「その場」に拘束される。',
+      editing: 'カットがない＝編集による省略・逃げがない。観客が場面から抜けられず、沈黙や気まずさが処理されずにその場に残る。',
+      sound_design: '環境音・沈黙がカットで切られないため、間の重さがそのまま持続する。',
+      actor_physicality: 'ワンカットゆえ芝居が途切れず、表情・呼吸・動揺がリアルタイムで蓄積していく。特に少年と心理士の対話編で身体の緊張が露出する。',
+      theater_experience: '配信ドラマだが、ワンカットの没入で「その場に立ち会わされる」感覚を作る。登場人物が状況から逃げられない感覚と、視聴者が映像から逃げられない感覚が同期する。',
+      one_scene_intensity: '第3話の心理士との対話が白眉。少年の弱さ・怒り・承認欲求・自己憐憫・女性蔑視が、編集に救われないまま一続きで露出する。',
+      ending_design: '真相の解決や断罪ではなく、責任の所在が確定しないまま重さだけが残る幕引きとして見える。',
+      lingering_design: '「愛していた相手を、理解していたとは限らない」という問いが残る。カタルシスより不全感が設計されている。',
+    },
+
+    pull: {
+      what_makes_continue: '「犯人は誰か」ではなく、「この子は本当にやったのか」「なぜここまで行ってしまったのか」「親や学校は何を見落としたのか」「自分なら気づけたのか」という問いが継続を作ると整理できる。',
+      what_is_hook: '普通の13歳・普通の家庭から始まる加害という落差と、各話ワンカットという形式。',
+      what_creates_viscosity: '全4話で家庭→学校→心理面接→家族の余波へ視点が変わり、毎話「読み切れなさ」が更新される構成が粘度を生む。',
+    },
+
+    transferable: {
+      stealable_lessons: '①「犯人探し」ではなく「責任の置き場探し」を継続インセンティブにする。②ワンカットを、逃げられなさ・責任の重さを体験させる演出として使う。③社会問題を描くときほど入口は普通の家庭・普通の人物にする。④SNSを画面演出ではなく、世代間で意味がズレる言語圏として扱う。⑤明快な結論を出さず、視聴後に問いを残す。',
+      applicable_to_design: 'ゲーム／企画に転用するなら、目的を「正解探し」ではなく「責任・解釈の置き場探し」に置く。中断のない演出で逃げられなさ＝重さを体験させ、入口を普通の人物にして距離を取らせない。SNS的記号を世代間翻訳のズレとして設計に組み込む方向。',
+    },
+
+    summary: {
+      strength: 'ワンカット形式とテーマ（逃げられなさ・読み切れなさ）の噛み合い、SNS・男性性をめぐる現代性、感情の余韻、構成の美しさ。',
+      weakness: '重すぎること、娯楽快感が低いこと、再視聴性が人を選ぶこと。スッキリしたい視聴には向かない。',
+      reason: '評価内訳\n構造分析向き：★★★★★\n感情粘度：★★★★★\n娯楽快感：★★☆☆☆\n企画転用性：★★★★☆\n再視聴性：★★★☆☆\n\n少年犯罪の答え合わせではなく、家庭・学校・SNS・男性性・制度が少しずつ噛み合わないまま悲劇に至る構造を、ワンカットの逃げ場のなさで体験させる。「見えていたはずの子どもが、実はまったく見えていなかった」と気づかせる現代型悲劇として、構造分析・感情粘度の価値が高い。総合8.9。',
+    },
+
+    notes: [],
+    updates: [
+      { date: '2026-06-25', body: 'Netflixリミテッドシリーズ『Adolescence』を新規追加（映画タブ）。ワンカット構造 × 現代型悲劇として整理。' },
+    ],
+  },
 
   // ─── アニメサンプル: 進撃の巨人 ───
   {

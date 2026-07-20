@@ -19505,25 +19505,8 @@ function escapeHtml(s) {
 //    - LAST_UPDATED を最新日に更新
 //    - UPDATES 配列の先頭に新規エントリを追加
 // ════════════════════════════════════════════════════════
-const LAST_UPDATED = '2026-07-20';
+const LAST_UPDATED = '2026-07-13';
 const UPDATES = [
-  {
-    date: '2026-07-20',
-    title: '【週次自動更新】7/2-7/8 4Gamerランキング・施策反映',
-    items: [
-      '26/7 を MONTHS に追加（記事対象週 7/2-7/8 が全て7月内のため新規月を延長）',
-      '18 タイトルのranks末尾を4Gamer最新セルラン分析（7/2-7/8）に更新',
-      '急騰: nikke 21→3位（収益+242%）/ arknights 99→45位（+98%）/ fgo 33→14位（+77%）/ monst 8→4位（+66%）/ bounty 61→46位 / gakumas 20→39位は順位下落だが圏内維持',
-      '急落: prospi 1→12位（-75%）/ blue 18→50位（-64%）/ puzzdra 2→7位（-59%）/ howasaw 6→8位（-34%）/ uma 4→6位（-26%）',
-      'starrail は今週 top50 圏外のため 26/7 は null（前週30位）',
-      '14件の新規イベント追加（blue×1 / nikke×1 / pricone×4 / jujutsu×2 / monst×1 / puzzdra×1 / fgo×1 / prospi×1 / arknights×1 / gjene×1）',
-      '出典: 4Gamer記事 https://www.4gamer.net/games/536/G053628/20260715009/',
-      '公式新着取得成功: fgo / gjene / jujutsu / pricone（日付付き新着を抽出）',
-      '公式新着取得失敗: dokkan(404)/efootball(404)/nikke(404)/puzzdra(404)/royal(404)/wiz(404)/howasaw(404)/heaven(403)/prospi(403)/memento(接続拒否)/bluelock・bounty・dqt・gakumas・pokepoke(DNS解決不可) — 該当分は4Gamer急変動フォールバックで補完',
-      '公式新着は取れたがwiki定型文のみでイベント抽出不可: lastwar / topheroes / monst',
-    ],
-  },
-
   {
     date: '2026-07-13',
     title: '【週次自動更新】6/25-7/2 4Gamerランキング・施策反映',
@@ -19775,14 +19758,14 @@ const TITLE_SOURCES = {
 // ════════════════════════════════════════════════════════
 //  RANK CHART ENGINE — injected by merge
 // ════════════════════════════════════════════════════════
-const MONTHS = ['24/1','24/2','24/3','24/4','24/5','24/6','24/7','24/8','24/9','24/10','24/11','24/12','25/1','25/2','25/3','25/4','25/5','25/6','25/7','25/8','25/9','25/10','25/11','25/12','26/1','26/2','26/3','26/4','26/5','26/6','26/7']
+const MONTHS = ['24/1','24/2','24/3','24/4','24/5','24/6','24/7','24/8','24/9','24/10','24/11','24/12','25/1','25/2','25/3','25/4','25/5','25/6','25/7','25/8','25/9','25/10','25/11','25/12','26/1','26/2','26/3','26/4','26/5','26/6']
 const GAMES = [
   // ──────────────────────────────────
   {
     id:'uma', emoji:'🐎', name:'ウマ娘', enName:'Uma Musume',
     type:'育成型シミュレーション', color:'#ff6b35',
     desc:'育成×レース×サポートカード。周年施策が極めて強力で、周年月は毎回首位に近い収益スパイクを記録。',
-    ranks:[5,1,1,10,12,15,14,1,1,18,20,16,10,1,1,8,12,15,10,1,null,null,null,null,null,1,1,26,9,4,6],
+    ranks:[5,1,1,10,12,15,14,1,1,18,20,16,10,1,1,8,12,15,10,1,null,null,null,null,null,1,1,26,9,4],
     events:[{mi:29,date:'2026/07/02',label:'ウマ娘 収益前週比+82%・4位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+82% / 4位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+82%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急騰（23→8位 / 収益前週比106％）', type:'施策', intervention:'欲求刺激', rank:'前週比106％ / 8位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（13％ DL / 106％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（41→23位 / 収益前週比+59%）', type:'施策', intervention:'欲求刺激', rank:'前週比+59% / 23位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-6％ DL / 59％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
@@ -20078,9 +20061,8 @@ const GAMES = [
     id:'blue', emoji:'📘', name:'ブルーアーカイブ', enName:'Blue Archive',
     type:'ストーリー×育成型', color:'#38bdf8',
     desc:'キャラ愛着とシナリオを主軸。サービス1年後から急成長した異例のタイトル。周年＋アニメ化が相乗効果。',
-    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,28,49,19,50],
-    events:[
-      { mi:30, date:'2026/07/08', label:'前週比-64%（18→50位）の急落', type:'施策', intervention:'損失回避', rank:'前週比-64% / 50位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比-64%、順位18→50位。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },{mi:29,date:'2026/07/02',label:'ブルアカ 収益前週比+94%・19位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+94% / 19位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+94%の急変動を確認。4Gamer週次取得'},
+    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,28,49,19],
+    events:[{mi:29,date:'2026/07/02',label:'ブルアカ 収益前週比+94%・19位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+94% / 19位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+94%の急変動を確認。4Gamer週次取得'},
       {mi:0,  date:'2024/01/20〜21', label:'ブルアカふぇす！3周年リアルイベント（幕張）',type:'周年', intervention:'感情増幅', rank:'Top5',  body:'初の2日間リアルイベント。VR施策「お時間あげるよ券」など'},
       {mi:1,  date:'2024/02/04',     label:'3周年 + Angel Beats!コラボ第2弾',type:'周年', intervention:'感情増幅', rank:'Top3', body:'最大150連無料ガチャ。SS立華かなで実装。人気投票→後日PU'},
       {mi:3,  date:'2024/04〜',      label:'TVアニメ放送開始',      type:'コラボ', intervention:'感情増幅', rank:'ユーザー増', body:'テレビ東京系・BS11放送。新規流入＋既存ユーザー盛り上がり'},
@@ -20109,9 +20091,8 @@ const GAMES = [
     id:'nikke', emoji:'🤖', name:'NIKKE（勝利の女神）', enName:'NIKKE',
     type:'アクション×ストーリー', color:'#a78bfa',
     desc:'縦持ちシューティング×高品質ビジュアル。周年の増収率が業界最高クラス。ウィッシュリスト制が特徴。',
-    ranks:[14,18,20,12,14,18,16,15,18,1,10,18,14,18,16,12,14,18,12,14,null,null,null,null,null,null,null,8,21,13,3],
-    events:[
-      { mi:30, date:'2026/07/08', label:'収益急騰（21→3位・前週比+242%）に対応する大型施策', type:'イベント', intervention:'欲求刺激', rank:'前週比+242% / 3位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比+242%、順位21→3位。夏季大型ピックアップ相当の施策実施と推定。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },{mi:29,date:'2026/07/02',label:'NIKKE 収益前週比+135%・13位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+135% / 13位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+135%の急変動を確認。4Gamer週次取得'},
+    ranks:[14,18,20,12,14,18,16,15,18,1,10,18,14,18,16,12,14,18,12,14,null,null,null,null,null,null,null,8,21,13],
+    events:[{mi:29,date:'2026/07/02',label:'NIKKE 収益前週比+135%・13位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+135% / 13位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+135%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急落（11→29位 / 収益前週比-55％）', type:'施策', intervention:'損失回避', rank:'前週比-55％ / 29位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（2％ DL / -55％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（29→11位 / 収益前週比+103%）', type:'施策', intervention:'欲求刺激', rank:'前週比+103% / 11位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（7％ DL / 103％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:28, date:'2026/06/08', label:'4Gamer5/28-6/3週 急騰（27→21位 / 収益前週比61％）', type:'施策', intervention:'欲求刺激', rank:'前週比61％ / 21位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（-14％ DL / 61％ 収益）。出典: https://www.4gamer.net/games/779/G077901/20260608046/'},
@@ -20149,7 +20130,7 @@ const GAMES = [
     id:'memento', emoji:'💀', name:'メメントモリ', enName:'Memento Mori',
     type:'放置型×楽曲コンテンツ', color:'#818cf8',
     desc:'放置型×キャラ固有楽曲という独自設計。供給・消費バランスの精巧さとVTuberコラボ施策が特徴。',
-    ranks:[20,18,24,20,22,18,20,20,22,16,22,20,18,20,22,18,20,15,22,18,null,null,null,null,null,null,null,34,39,48,null],
+    ranks:[20, 18, 24, 20, 22, 18, 20, 20, 22, 16, 22, 20, 18, 20, 22, 18, 20, 15, 22, 18, null, null, null, null, null, null, null, 34, 39, 48],
     events:[
       {mi:1,  date:'2024/02〜03', label:'クリプトラクト＆ミトラスフィアコラボ',type:'コラボ', intervention:'感情増幅', rank:'Top20', body:'ガチャコラボ確率1.37%。異業種IP同士の相互ファン獲得施策'},
       {mi:9,  date:'2024/10/18', label:'2周年キャンペーン',        type:'周年', intervention:'感情増幅', rank:'Top15', body:'新キャラ2体、100連無料ガチャ。POP UP SHOP（新宿・博多）、CD Vol.2発売'},
@@ -20180,7 +20161,7 @@ const GAMES = [
     id:'gakumas', emoji:'🎤', name:'学マス（学園アイドルマスター）', enName:'Gakumas',
     type:'プロデュース育成型', color:'#f472b6',
     desc:'リリース直後1位という異例スタート。ローグライク×プロデュース体験。1周年でTop10は業界的に珍しい評価。',
-    ranks:[null,null,null,null,1,5,10,12,15,20,18,14,12,14,10,8,1,10,12,18,null,null,null,null,null,null,null,49,15,21,39],
+    ranks:[null, null, null, null, 1, 5, 10, 12, 15, 20, 18, 14, 12, 14, 10, 8, 1, 10, 12, 18, null, null, null, null, null, null, null, 49, 15,21],
     events:[{mi:29,date:'2026/07/02',label:'学マス 収益前週比+188%・21位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+188% / 21位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+188%の急変動を確認。4Gamer週次取得'},
       {mi:28, date:'2026/05/11', label:'4Gamer4/30-5/6週 急騰（49→19位 / 収益前週比+174%）', type:'施策', intervention:'欲求刺激', rank:'前週比+174% / 19位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（28％ DL / 174％ 収益）。出典: https://www.4gamer.net/games/456/G045622/20260511005/'},
       {mi:4,  date:'2024/05/16', label:'リリース',                 type:'リリース', intervention:'新規獲得', rank:'リリース月1位', body:'リリース直後1ヶ月で国内1位。アイマスIPを超えた新規層獲得'},
@@ -20209,7 +20190,7 @@ const GAMES = [
     id:'heaven', emoji:'🔥', name:'ヘブンバーンズレッド', enName:'Heaven Burns Red',
     type:'シナリオ型RPG', color:'#fb923c',
     desc:'麻枝准×KEY監修のシナリオを主軸。2Days周年リアルイベント、Angel Beats!コラボ、アーツバトル等多角的施策。',
-    ranks:[15,5,12,16,18,15,18,16,18,20,15,16,12,8,16,14,18,15,16,14,null,null,null,null,null,null,null,null,46,50,null],
+    ranks:[15,5,12,16,18,15,18,16,18,20,15,16,12,8,16,14,18,15,16,14,null,null,null,null,null,null,null,null,46,50],
     events:[
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急騰（70→50位 / 収益前週比64％）', type:'施策', intervention:'欲求刺激', rank:'前週比64％ / 50位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（128％ DL / 64％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急騰（圏外→32位 / 収益前週比+138%）', type:'施策', intervention:'欲求刺激', rank:'前週比+138% / 32位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（+138% 収益 / +19% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
@@ -20242,12 +20223,8 @@ const GAMES = [
     id:'pricone', emoji:'⚔️', name:'プリコネ（プリンセスコネクト！）', enName:'PriConne',
     type:'キャラ愛着型RPG', color:'#60a5fa',
     desc:'月次クランバトルを核とした安定設計。2024年2月に属性システム追加で戦略性向上。無課金でも継続できる設計。',
-    ranks:[18,14,20,16,18,14,16,18,16,20,16,14,18,16,14,18,16,18,14,16,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[18,14,20,16,18,14,16,18,16,20,16,14,18,16,14,18,16,18,14,16,null,null,null,null,null,null,null,null,null,null],
     events:[
-      { mi:30, date:'2026/07/19', label:'「7月クランバトル」モード変更開始', type:'イベント', intervention:'損失回避', rank:'圏外', body:'公式新着より：月次クランバトルのモード切替。ギルド単位の参加圧が働く定例イベント。4Gamer週次取得' },
-      { mi:30, date:'2026/07/17', label:'「ルナの塔 次元断層」開催中', type:'イベント', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：高難度コンテンツ「ルナの塔 次元断層」を開催。4Gamer週次取得' },
-      { mi:30, date:'2026/07/17', label:'「サマーログインボーナス その2」開催', type:'施策', intervention:'損失回避', rank:'圏外', body:'公式新着より：夏季ログインボーナス第2弾。連続ログインの習慣化を狙う定番施策。4Gamer週次取得' },
-      { mi:30, date:'2026/07/16', label:'サイドストーリー「幻惑の妖精 ‐真夏の園で舞踊る影‐」追加', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：夏季テーマのサイドストーリーを追加。季節感でIP接触を更新。4Gamer週次取得' },
       {mi:29, date:'2026/06/26', label:'ストーリーイベント「アンタッチャブル♡アイランド」開催決定', type:'イベント', intervention:'損失回避', rank:'圏外', body:'公式新着より：夏のストーリーイベント開催決定。4Gamer週次取得'},
       {mi:28, date:'2026/06/11', label:'復刻ストーリーイベント開催', type:'イベント', intervention:'損失回避', rank:'圏外', body:'公式新着より：復刻ストーリーイベント。4Gamer週次取得'},
       {mi:28, date:'2026/06/10', label:'Ver.12.4.1 アップデート', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：Ver.12.4.1アップデート。4Gamer週次取得'},
@@ -20298,7 +20275,7 @@ const GAMES = [
     id:'lastwar', emoji:'🏰', name:'ラストウォー：サバイバル', enName:'Last War',
     type:'放置×リアルタイム戦略', color:'#fbbf24',
     desc:'2025年国内年間収益1位。大規模広告で新規獲得し、ギルド戦で定着。多国籍に分散した安定型グローバル収益。',
-    ranks:[10,12,15,10,12,14,10,8,4,10,12,10,8,10,12,10,8,12,10,8,null,null,null,null,null,null,null,12,6,9,10],
+    ranks:[10,12,15,10,12,14,10,8,4,10,12,10,8,10,12,10,8,12,10,8,null,null,null,null,null,null,null,12,6,9],
     events:[
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急騰（5→1位 / 収益前週比56％）', type:'施策', intervention:'欲求刺激', rank:'前週比56％ / 1位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（18％ DL / 56％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:0,  date:'2024年通年',    label:'大規模TV/動画広告展開',         type:'施策', intervention:'新規獲得', rank:'安定Top10', body:'シューティングアクション訴求広告で大量新規獲得。話題性も活用'},
@@ -20330,7 +20307,7 @@ const GAMES = [
     id:'bounty', emoji:'🏴‍☠️', name:'バウンティラッシュ', enName:'Bounty Rush',
     type:'IP×PvP型', color:'#f97316',
     desc:'ワンピースIP×リアルタイムPvP。原作強キャラ実装時に強力な収益スパイク。リーグバトル設計が継続動機。',
-    ranks:[22,20,22,20,22,20,22,20,20,22,20,18,22,20,18,22,20,18,20,4,null,null,null,null,null,null,null,42,26,42,46],
+    ranks:[22, 20, 22, 20, 22, 20, 22, 20, 20, 22, 20, 18, 22, 20, 18, 22, 20, 18, 20, 4, null, null, null, null, null, null, null, 42, 26, 42],
     events:[
       {mi:28, date:'2026/06/08', label:'4Gamer5/28-6/3週 急落（8→26位 / 収益前週比-55％）', type:'施策', intervention:'損失回避', rank:'前週比-55％ / 26位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（-14％ DL / -55％ 収益）。出典: https://www.4gamer.net/games/779/G077901/20260608046/'},
       {mi:28, date:'2026/05/27', label:'4Gamer週次: 収益前週比+440%で49→8位へ急騰（5/21-5/27）', type:'イベント', intervention:'欲求刺激', rank:'前週比+440% / 8位', body:'4Gamer 5/21-5/27 セルラン分析より：収益急変動。週次取得。'},
@@ -20362,7 +20339,7 @@ const GAMES = [
     id:'bluelock', emoji:'⚽', name:'ブルーロック', enName:'Blue Lock',
     type:'IP×育成型', color:'#4ade80',
     desc:'ウマ娘ライクの育成システムをサッカーIPで実装。ギルド機能がコアユーザーリテンションの核。',
-    ranks:[20,22,20,18,22,20,22,18,20,22,20,18,20,22,18,20,18,20,18,20,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[20,22,20,18,22,20,22,18,20,22,20,18,20,22,18,20,18,20,18,20,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:0,  date:'2024/01〜',     label:'育成コンボシステム運用',        type:'施策', intervention:'新規獲得', rank:'Top20', body:'共通コンボ・個別コンボで特定キャラ組み合わせへの需要生成'},
       {mi:5,  date:'2024/06',       label:'ブルーロック漫画・アニメ連動',  type:'コラボ', intervention:'感情増幅', rank:'Top18', body:'原作人気上昇に合わせた新キャラ実装。IP認知の波を活用'},
@@ -20391,7 +20368,7 @@ const GAMES = [
     id:'howasaw', emoji:'🗡️', name:'ホワイトアウトサバイバル', enName:'Whiteout Survival',
     type:'放置×戦略型', color:'#67e8f9',
     desc:'Century Games製。「人民」モチーフ内発動機と満足度リソースが特徴。グローバル収益2024Q4全世界5位。',
-    ranks:[15,16,18,14,16,18,15,16,14,16,14,16,15,14,16,14,15,14,15,14,null,null,null,null,null,null,null,13,4,6,8],
+    ranks:[15,16,18,14,16,18,15,16,14,16,14,16,15,14,16,14,15,14,15,14,null,null,null,null,null,null,null,13,4,6],
     events:[
       {mi:28, date:'2026/05/11', label:'4Gamer4/30-5/6週 急騰（13→5位 / 収益前週比+65%）', type:'施策', intervention:'欲求刺激', rank:'前週比+65% / 5位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（13％ DL / 65％ 収益）。出典: https://www.4gamer.net/games/456/G045622/20260511005/'},
       {mi:0,  date:'2024年通年',    label:'同盟戦（アライアンスウォー）', type:'イベント', intervention:'損失回避', rank:'安定Top15', body:'大規模PvP。ギルド帰属感と義務感でコア課金層を定着'},
@@ -20424,7 +20401,7 @@ const GAMES = [
     id:'dqt', emoji:'🐉', name:'ドラゴンクエストタクト', enName:'DQTact',
     type:'IP×タクティクス', color:'#86efac',
     desc:'ドラクエIPを活用したタクティクスRPG。2024/1に3.5周年。育成深度が深く、ガチャ×クエスト両方を要求。',
-    ranks:[22,18,20,22,20,22,20,18,20,22,20,18,22,18,20,22,20,22,20,22,null,null,null,null,null,null,null,null,49,null,null],
+    ranks:[22,18,20,22,20,22,20,18,20,22,20,18,22,18,20,22,20,22,20,22,null,null,null,null,null,null,null,null,49,null],
     events:[
       {mi:28, date:'2026/05/27', label:'4Gamer週次: 収益前週比+228%で圏外→49位へ復帰（5/21-5/27）', type:'イベント', intervention:'欲求刺激', rank:'前週比+228% / 49位', body:'4Gamer 5/21-5/27 セルラン分析より：収益急変動。週次取得。'},
       {mi:0,  date:'2024/01/25',    label:'3.5周年キャンペーン',           type:'周年', intervention:'感情増幅', rank:'Top18', body:'長期ユーザーへの感謝施策。継続モチベーション維持が主目的'},
@@ -20454,7 +20431,7 @@ const GAMES = [
     id:'dot', emoji:'🕹️', name:'ドット勇者', enName:'Dot Heroes',
     type:'報酬設計型RPG', color:'#c084fc',
     desc:'報酬を受け取る場所が多く、リソース充足感を持続させる設計。バックバトル+回遊で意識が途切れない体験。',
-    ranks:[18,20,18,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,22,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[18,20,18,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,22,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:3,  date:'2024/04',       label:'るろうに剣心コラボ（限定勇者）',type:'コラボ', intervention:'感情増幅', rank:'〜100位', body:'コラボでもランキング大幅上昇なし（100位程度）→AU少ない可能性'},
       {mi:6,  date:'2024/07',       label:'バックバトル機能活用施策',      type:'アプデ', intervention:'欲求刺激', rank:'Top22',  body:'バトルしながら他コンテンツ回遊できる設計で意識が途切れない体験を維持'},
@@ -20482,7 +20459,7 @@ const GAMES = [
     id:'haikyuu', emoji:'🏐', name:'ハイキュー', enName:'Haikyu!!',
     type:'IP活用', color:'#fde68a',
     desc:'ターゲット（女性層）とシステム（デッキ編成）の不一致が課題。無料ガチャ機会が少なく継続動機が弱い。',
-    ranks:[25,24,26,25,26,24,26,25,26,24,26,25,26,24,26,25,26,25,26,25,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[25,24,26,25,26,24,26,25,26,24,26,25,26,24,26,25,26,25,26,25,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:0,  date:'2024年',        label:'IPコラボ・新キャラ定期実装',    type:'イベント', intervention:'損失回避', rank:'Top25', body:'ハイキューIPの新章・アニメ連動キャラ実装。ただし集客効果は限定的'},
       {mi:6,  date:'2024/07',       label:'ゲームシステム改善の試み',      type:'アプデ', intervention:'欲求刺激', rank:'Top25', body:'勝敗の因果納得性向上・キャラ入手機会拡大などの改善検討'},
@@ -20516,7 +20493,7 @@ const GAMES = [
     id:'wiz', emoji:'🧙', name:'ウィザードリィダフネ', enName:'Wizardry Daphne',
     type:'古典RPG×現代スマホ', color:'#a78bfa',
     desc:'リリース月21位のヒットスタート。1周年でも29位を維持。リスクリターン設計（死のコスト）が特徴的。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,21,20,22,24,22,24,22,26,22,29,null,null,null,null,null,null,null,22,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,21,20,22,24,22,24,22,26,22,29,null,null,null,null,null,null,null,22,null,null],
     events:[
       {mi:10, date:'2024/10頃',     label:'リリース',                     type:'リリース', intervention:'新規獲得', rank:'リリース月21位', body:'ウィザードリィIPを現代向けキャラデザで展開。幅広い層にリーチ'},
       {mi:19, date:'2025/10/15',    label:'1周年 + 新冒険者ユズナミキ',   type:'周年', intervention:'感情増幅', rank:'29位維持',  body:'1年経っても安定した人気。メモリアルムービー公開。4Gamerが「人気維持」と評価'},
@@ -20544,7 +20521,7 @@ const GAMES = [
     id:'kinoko', emoji:'🍄', name:'キノコ伝説', enName:'Kinoko Densetsu',
     type:'放置×収集型', color:'#86efac',
     desc:'日本リリース2024/2/23。全世界3000万DL突破の実績。自動収集の停止恐怖が離脱防止に機能する精巧設計。',
-    ranks:[null,5,8,10,12,14,12,15,14,16,15,14,16,15,14,16,15,16,15,16,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,5,8,10,12,14,12,15,14,16,15,14,16,15,14,16,15,16,15,16,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:1,  date:'2024/02/23',    label:'日本版リリース',                type:'リリース', intervention:'新規獲得', rank:'Top5',  body:'東雲うみさんをPR大使に起用。3000万DL実績・韓台でのセルラン1位を携えてリリース'},
       {mi:1,  date:'2024/02末',     label:'App Storeトップ5入り',         type:'施策', intervention:'新規獲得', rank:'Top5',  body:'リリース直後にApp Storeトップ5。大量広告展開が功を奏す'},
@@ -20573,7 +20550,7 @@ const GAMES = [
     id:'topheroes', emoji:'🦸', name:'トップヒーローズ', enName:'Top Heroes',
     type:'放置×探索型', color:'#f9a8d4',
     desc:'放置×自由移動探索のハイブリッド。転送門（セーブポイント）がリスクリターン設計として機能。',
-    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,40,47,null,null],
+    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,40,47,null],
     events:[
       {mi:0,  date:'2024年',        label:'転送門システム運用',            type:'施策', intervention:'新規獲得', rank:'Top22', body:'セーブポイントまで移動しないと無駄になる恐怖がプレイ継続を生む'},
       {mi:8,  date:'2024/09',       label:'新エリア・コンテンツ追加',      type:'アプデ', intervention:'欲求刺激', rank:'Top20', body:'探索エリア拡大でマンネリ化防止。放置ループに新鮮味を追加'},
@@ -20601,7 +20578,7 @@ const GAMES = [
     id:'royal', emoji:'👑', name:'Royal Match', enName:'Royal Match',
     type:'パズル型', color:'#fde047',
     desc:'グローバル収益2024Q4全世界3位。米国市場50%。パズル中毒性設計が独自強み。インゲーム自体が課金動機。',
-    ranks:[18,16,16,16,16,16,16,16,16,16,14,14,15,15,14,14,14,14,14,13,null,null,null,null,null,null,null,18,20,14,21],
+    ranks:[18,16,16,16,16,16,16,16,16,16,14,14,15,15,14,14,14,14,14,13,null,null,null,null,null,null,null,18,20,14],
     events:[
       {mi:0,  date:'2024年通年',    label:'難易度設計（徐々に難化）',      type:'施策', intervention:'新規獲得', rank:'安定Top16', body:'難易度が自然に上昇→サポートへの課金動機を自然生成するシステム'},
       {mi:9,  date:'2024Q4',        label:'グローバル収益全世界3位',       type:'施策', intervention:'新規獲得', rank:'世界3位',  body:'アメリカ50%が最大市場。カジュアルパズルで世界トップクラスの安定収益'},
@@ -20630,10 +20607,8 @@ const GAMES = [
     id:'jujutsu', emoji:'🌀', name:'呪術廻戦ファンパレ', enName:'Jujutsu Kaisen PP',
     type:'IP×GRADE設計', color:'#c084fc',
     desc:'GRADEシステムでメインクエスト進行にLv上限を連動。ガチャ依存を防ぎストーリー進行を促す設計が特徴。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,14,18,16,18,null,null,null,null,null,null,null,48,27,45,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,14,18,16,18,null,null,null,null,null,null,null,48,27,45],
     events:[
-      { mi:30, date:'2026/07/16', label:'呪獄島編5章 追加', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：メインストーリー呪獄島編の第5章を追加。既存プレイヤーの復帰動線。4Gamer週次取得' },
-      { mi:30, date:'2026/07/13', label:'夜特性ピックアップガチャ開催（7/13 15:00〜7/20 14:59）', type:'ガチャ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：夜特性ピックアップ＋残滓の期間限定ガチャ。1週間の短期窓で意思決定を圧縮。4Gamer週次取得' },
       {mi:29, date:'2026/06/22', label:'ガチャ「両面宿儺」ピックアップ', type:'ガチャ', intervention:'欲求刺激', rank:'前週比-29% / 50位', body:'公式新着より：両面宿儺ピックアップガチャ開催。4Gamer週次取得'},
       {mi:28, date:'2026/06/09', label:'VS甚爾SP攻略イベント（6/9〜6/17）', type:'イベント', intervention:'損失回避', rank:'前週比-5% / 27位', body:'公式新着より：VS甚爾SP開催。4Gamer週次取得'},
       {mi:28, date:'2026/06/08', label:'2.5周年記念・夏キャラ（夏伏黒/夏釘崎）ピックアップ召喚開催！', type:'周年', intervention:'感情増幅', rank:'前週比+327% / 19位', body:'公式新着より：2.5周年記念・夏キャラ（夏伏黒/夏釘崎）ピックアップ召喚開催！。4Gamer週次取得。'},
@@ -20669,7 +20644,7 @@ const GAMES = [
     id:'kaijuu', emoji:'👾', name:'怪獣8号', enName:'Kaiju No.8',
     type:'アニメ演出型', color:'#4ade80',
     desc:'アニメレベルの演出が強み。ストーリーへの没入がバトルを「邪魔」に感じさせる課題もある独特の設計。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,12,16,18,18,20,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,12,16,18,18,20,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:15, date:'2025/04頃',     label:'リリース',                     type:'リリース', intervention:'新規獲得', rank:'Top12', body:'「アニメを見ているかのような」クオリティ。スマホタイトルで異例の演出水準'},
       {mi:16, date:'2025/05',       label:'新章・新キャラ実装',           type:'イベント', intervention:'損失回避', rank:'Top16', body:'ストーリー進行度でコンテンツがロック解除される設計が新規定着を支援'},
@@ -20700,9 +20675,8 @@ const GAMES = [
     cycle:'ストライク育成→マルチ攻略→ガチャ需要→新キャラ',
     desc:'国内最長寿Top3。2025年年間1位。マルチプレイコラボの教科書。コラボIPの量と頻度が国内最多水準。',
     tags:['マルチ','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/578Reviews', world_emotion:'マルチで仲間と弾く——友達との「共同作業」が最大の動機', incentive_core:'所属', hook_daily:'スタンプ・デイリーミッション・マルチプレイ誘い合い', hook_weekly:'ギルドイベント・高難度クエスト', hook_monthly:'コラボイベント（月1〜2件）・周年施策', charge_trigger:'コラボ限定型+社会圧型 — 人気IPコラボの「今しか手に入らない限定キャラ」が課金の核。マルチメンバーへの「足を引っ張りたくない」強化圧', strength:'マルチプレイの社会的結束が業界最高水準の継続率を生む。コラボIP数と頻度が他の追随を許さない', weakness:'友人のリアル環境に依存するためユーザー環境変化に脆い。新規ユーザーが既存コミュニティに入りにくい', data_quality:'estimated',
-    ranks:[3,2,4,2,1,3,2,1,1,2,1,2,2,1,1,3,1,2,1,2,null,null,null,null,null,null,null,5,10,8,4],
+    ranks:[3,2,4,2,1,3,2,1,1,2,1,2,2,1,1,3,1,2,1,2,null,null,null,null,null,null,null,5,10,8],
     events:[
-      { mi:30, date:'2026/07/08', label:'収益上昇（8→4位・前週比+66%）に対応する施策', type:'イベント', intervention:'欲求刺激', rank:'前週比+66% / 4位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比+66%、順位8→4位。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },
       {mi:29, date:'2026/07/04', label:'激・獣神祭 新限定「アルカ」＋サッカー日本代表仕様キャラ登場', type:'ガチャ', intervention:'欲求刺激', rank:'前週比-72％ / 6位', body:'公式新着より：ガチャ「激・獣神祭」7/4より開催。新限定キャラ「アルカ」登場。4Gamer週次取得'},
       {mi:29, date:'2026/07/07', label:'「覇者の塔」「覇者の塔シーズンズ」期間限定登場', type:'イベント', intervention:'損失回避', rank:'前週比-72％ / 6位', body:'公式新着より：「覇者の塔」「覇者の塔シーズンズ」7/7 12時より期間限定登場。4Gamer週次取得'},
       {mi:29, date:'2026/07/02', label:'新黎絶クエスト（フォギルエ）＋DREAMDAZE Ⅳ開催', type:'イベント', intervention:'損失回避', rank:'前週比-72％ / 6位', body:'公式新着より：新黎絶クエストが7/11初登場、「DREAMDAZE Ⅳ」開催。4Gamer週次取得'},
@@ -20762,9 +20736,8 @@ const GAMES = [
     cycle:'パズル攻略→モンスター育成→ガチャ需要→コラボ',
     desc:'2012年リリースの国内最長寿タイトル。13周年でもTop5圏。コラボ施策の量・頻度・設計が業界最高水準。',
     tags:['パズル','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/583969296', world_emotion:'パズルを解くたびモンスターが進化する——脳と手の一体感', incentive_core:'成長', hook_daily:'スタミナ周回・デイリーダンジョン', hook_weekly:'週替わりコラボダンジョン・曜日ダンジョン', hook_monthly:'コラボイベント（業界最多頻度）・周年', charge_trigger:'コラボ限定型+成長欲型 — 高難度攻略で「強いモンスターが必要」と感じる設計。コラボ限定モンスターの「今だけ」感', strength:'コラボ頻度が業界最多で常に話題性を維持。パズルゲームの中毒性とRPGの育成欲求を融合した設計', weakness:'スマホゲーム黎明期の設計が多く最新UI/UXとの差が広がる。新規ユーザーには過去コンテンツ量が圧倒的に多く参入障壁', data_quality:'estimated',
-    ranks:[4,3,2,4,3,2,3,4,2,3,3,2,1,2,3,4,3,2,2,1,null,null,null,null,null,null,null,2,31,3,7],
-    events:[
-      { mi:30, date:'2026/07/08', label:'前週比-59%（2→7位）の反動局面', type:'施策', intervention:'損失回避', rank:'前週比-59% / 7位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比-59%、順位2→7位。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },{mi:29,date:'2026/07/02',label:'パズドラ 収益前週比+260%・3位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+260% / 3位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+260%の急変動を確認。4Gamer週次取得'},
+    ranks:[4,3,2,4,3,2,3,4,2,3,3,2,1,2,3,4,3,2,2,1,null,null,null,null,null,null,null,2,31,3],
+    events:[{mi:29,date:'2026/07/02',label:'パズドラ 収益前週比+260%・3位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+260% / 3位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+260%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（18→4位 / 収益前週比+176%）', type:'施策', intervention:'欲求刺激', rank:'前週比+176% / 4位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-8％ DL / 176％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:28, date:'2026/06/08', label:'4Gamer5/28-6/3週 急落（3→31位 / 収益前週比-74％）', type:'施策', intervention:'損失回避', rank:'前週比-74％ / 31位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（-23％ DL / -74％ 収益）。出典: https://www.4gamer.net/games/779/G077901/20260608046/'},
       {mi:28, date:'2026/05/27', label:'4Gamer週次: 収益前週比+388%で31→3位へ急騰（5/21-5/27）', type:'イベント', intervention:'欲求刺激', rank:'前週比+388% / 3位', body:'4Gamer 5/21-5/27 セルラン分析より：収益急変動。週次取得。'},
@@ -20796,9 +20769,8 @@ const GAMES = [
     cycle:'ストーリー消費→キャラ愛着→ガチャ需要→新章',
     desc:'2025年年間3位。ストーリーの質による課金動機設計の国内最高峰。天井なしガチャで炎上→天井導入後も安定。',
     tags:['ストーリー','IP','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/1115221661', world_emotion:'英霊を「召喚」して歴史を旅する——知的所有欲と物語没入の結合', incentive_core:'物語', hook_daily:'APスタミナ消費・デイリーミッション（少量）', hook_weekly:'期間限定クエスト・ショップ交換', hook_monthly:'月次イベント・新章追加・新サーヴァント実装', charge_trigger:'感情ピーク型+限定型 — 章読了の感情的ピークで「このキャラを所有したい」衝動が最大化。天井設計が「確実に手に入る」安心課金を生む', strength:'ストーリーの質と量が国内最高峰。「課金しなくてもストーリーは楽しめる」設計が広い入口を確保', weakness:'天井なし時代の炎上という設計史。バトルシステムの複雑さが新規離脱を招く。APが少なく一日あたりのプレイ量が制限される', data_quality:'estimated',
-    ranks:[3,4,3,3,2,4,3,3,4,2,3,2,3,4,3,2,2,3,1,2,null,null,null,null,null,null,null,9,8,27,14],
+    ranks:[3,4,3,3,2,4,3,3,4,2,3,2,3,4,3,2,2,3,1,2,null,null,null,null,null,null,null,9,8,27],
     events:[
-      { mi:30, date:'2026/07/16', label:'「Fate/Grand Order展 -星見の回廊-」開催記念キャンペーン開催', type:'イベント', intervention:'損失回避', rank:'前週比+77% / 14位', body:'公式新着より：FGO展タイアップ記念キャンペーン。展示会という外部接点を起点にログイン動線を作る施策。4Gamer週次取得' },
       {mi:29, date:'2026/07/01', label:'新規イベント「春の終わりに君を待つ」開幕＋ピックアップ召喚', type:'イベント', intervention:'損失回避', rank:'前週比-22％ / 25位', body:'公式新着より：期間限定イベント「春の終わりに君を待つ」7/1開幕、各種ピックアップ召喚実施。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'期間限定イベント「春の終わりに君を待つ」開幕予定', type:'イベント', intervention:'損失回避', rank:'前週比-77% / 22位', body:'公式新着より：期間限定イベント「春の終わりに君を待つ」開幕予定。4Gamer週次取得'},
       {mi:29, date:'2026/06/12', label:'「夏予習版:雀のお宿の活動日誌」開幕', type:'イベント', intervention:'損失回避', rank:'前週比-77% / 22位', body:'公式新着より：夏予習版イベント「雀のお宿の活動日誌」開幕。4Gamer週次取得'},
@@ -20857,9 +20829,8 @@ const GAMES = [
     cycle:'選手収集→チーム強化→リーグ参戦→シーズン連動イベント',
     desc:'2026年3月1位。プロ野球シーズンに完全連動した施策設計。球団・選手IPの定期更新が継続動機の核。',
     tags:['スポーツ','IP','シーズン'], gameIUrl:'https://game-i.daa.jp/?APP/1043338546', world_emotion:'好きな球団・選手と勝つ——プロ野球ファンの代理体験', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'リーグ対戦（PvP）', hook_monthly:'シーズン開幕連動・OB選手実装・特別イベント', charge_trigger:'IPピーク型+損失回避型 — OB選手（レジェンド）実装と「開幕ダッシュ」感が課金を誘発。シーズン中の「チームを強化したい」定期圧力', strength:'プロ野球シーズン完全連動が「今やる理由」を毎年更新。OB選手という枯れないIP資源', weakness:'プロ野球ファン以外への訴求が限定的。シーズンオフの収益低下が構造的に発生', data_quality:'estimated',
-    ranks:[8,7,9,6,5,4,7,8,6,5,6,7,5,6,4,3,5,4,3,2,null,null,null,null,null,null,null,3,11,1,12],
-    events:[
-      { mi:30, date:'2026/07/08', label:'前週1位からの反動（1→12位・前週比-75%）', type:'施策', intervention:'損失回避', rank:'前週比-75% / 12位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比-75%、順位1→12位。前週の大型施策の反動局面。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },{mi:29,date:'2026/07/02',label:'プロスピA 収益前週比+388%・1位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+388% / 1位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+388%の急変動を確認。4Gamer週次取得'},
+    ranks:[8,7,9,6,5,4,7,8,6,5,6,7,5,6,4,3,5,4,3,2,null,null,null,null,null,null,null,3,11,1],
+    events:[{mi:29,date:'2026/07/02',label:'プロスピA 収益前週比+388%・1位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+388% / 1位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+388%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（38→7位 / 収益前週比+227%）', type:'施策', intervention:'欲求刺激', rank:'前週比+227% / 7位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-10％ DL / 227％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急落（11→38位 / 収益前週比-70%）', type:'施策', intervention:'損失回避', rank:'前週比-70% / 38位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-70% 収益 / -14% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
       {mi:28, date:'2026/06/08', label:'4Gamer5/28-6/3週 急騰（23→11位 / 収益前週比114％）', type:'施策', intervention:'欲求刺激', rank:'前週比114％ / 11位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（26％ DL / 114％ 収益）。出典: https://www.4gamer.net/games/779/G077901/20260608046/'},
@@ -20894,7 +20865,7 @@ const GAMES = [
     cycle:'パック開封→コレクション→バトル→新拡張パック',
     desc:'2024/10リリース後8週連続1位。1ヶ月で3300万DL・世界収益2億ドル。TCG×収集型の設計が新基準を作った。',
     tags:['TCG','収集','ポケモン'], gameIUrl:'https://game-i.daa.jp/?APP/6504857386', world_emotion:'パックを開ける瞬間の「何が出るか」——TCGの開封体験をデジタルで再現', incentive_core:'収集', hook_daily:'パック開封（1日2パック無料）・フレンドギフト', hook_weekly:'バトル対戦・週次ミッション', hook_monthly:'新拡張パック追加（月1〜2回）', charge_trigger:'収集欲型+限定型 — 「アルトマーク（レア演出）が出そう」という期待感が追加パック課金を誘発。図鑑コンプへの強迫的欲求', strength:'「1日2パック無料」という設計が毎日開封の習慣を自然に形成。ポケモンIPの圧倒的な世代横断性', weakness:'TCGの戦略的深さがデジタル版では再現されにくく競技性への不満。重複カードの価値が低い', data_quality:'estimated',
-    ranks:[null,null,null,null,null,null,null,null,null,null,1,1,1,1,1,2,1,3,2,3,null,null,null,null,null,null,null,6,1,15,19],
+    ranks:[null,null,null,null,null,null,null,null,null,null,1,1,1,1,1,2,1,3,2,3,null,null,null,null,null,null,null,6,1,15],
     events:[{mi:29,date:'2026/07/02',label:'ポケポケ 収益前週比+152%・15位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+152% / 15位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+152%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急落（1→24位 / 収益前週比-81%）', type:'施策', intervention:'損失回避', rank:'前週比-81% / 24位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-81% 収益 / -22% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
       {mi:28, date:'2026/06/08', label:'4Gamer5/28-6/3週 急騰（30→1位 / 収益前週比567％）', type:'施策', intervention:'欲求刺激', rank:'前週比567％ / 1位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（20％ DL / 567％ 収益）。出典: https://www.4gamer.net/games/779/G077901/20260608046/'},
@@ -20927,7 +20898,7 @@ const GAMES = [
     cycle:'Ver更新→新キャラガチャ→ストーリー消費→次Ver待機',
     desc:'HoYoVerse製。Ver更新型の課金スパイク設計。原神と並ぶグローバル高収益タイトル。国内Top10常連。',
     tags:['ストーリー','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1600886162', world_emotion:'宇宙を列車で旅する——HoYoVerse品質のキャラと世界への没入', incentive_core:'物語', hook_daily:'スタミナ周回・デイリーミッション', hook_weekly:'忘却の庭・混沌の記憶', hook_monthly:'Ver更新（6週ごと）→新キャラ実装→スパイク', charge_trigger:'Ver更新ピーク型+限定型 — Ver更新時に新キャラ実装が集中し「今引かないと期間が終わる」限定プレッシャーが課金の核', strength:'6週ごとのVer更新サイクルが収益の予測可能なスパイクを設計。ストーリー×キャラ愛着の高密度な組み合わせ', weakness:'Ver更新間隔（6週）のコンテンツ枯渇感。原神と同社のため「どちらをやるか」の自社競合', data_quality:'estimated',
-    ranks:[10,12,8,7,9,11,8,6,7,9,8,7,5,6,4,5,3,4,1,2,null,null,null,null,null,null,null,1,2,30,null],
+    ranks:[10,12,8,7,9,11,8,6,7,9,8,7,5,6,4,5,3,4,1,2,null,null,null,null,null,null,null,1,2,30],
     events:[
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急落（10→35位 / 収益前週比-58%）', type:'施策', intervention:'損失回避', rank:'前週比-58% / 35位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-33％ DL / -58％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急落（2→10位 / 収益前週比-67%）', type:'施策', intervention:'損失回避', rank:'前週比-67% / 10位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-67% 収益 / -25% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
@@ -20963,7 +20934,7 @@ const GAMES = [
     cycle:'探索→ストーリー→新キャラガチャ→Ver更新',
     desc:'オープンワールド×ガチャの世界標準設計。国内Top15常連。スターレイルと同じHoYoVerseのVer更新型。',
     tags:['オープンワールド','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1517783697', world_emotion:'広大な異世界を「旅人」として自由探索——開放感と発見の連続', incentive_core:'物語', hook_daily:'樹脂消費・デイリー依頼', hook_weekly:'週次ボス素材・混沌の深淵', hook_monthly:'Ver更新（6週ごと）・新地域実装・新キャラ実装', charge_trigger:'Ver更新ピーク型 — スターレイルと同様の構造。新地域実装時の「この地域のキャラが欲しい」感情が設計の核', strength:'オープンワールドの探索体験が他追随不可能な独自価値。無課金でもほぼ全コンテンツ楽しめる広い入口', weakness:'無課金フレンドリー設計が課金転換率の低下につながる。樹脂（スタミナ）上限が少なくヘビーユーザーには消化しきれない', data_quality:'estimated',
-    ranks:[12,11,13,10,11,12,10,11,9,12,10,11,8,9,7,8,6,7,5,4,null,null,null,null,null,null,null,37,32,7,5],
+    ranks:[12,11,13,10,11,12,10,11,9,12,10,11,8,9,7,8,6,7,5,4,null,null,null,null,null,null,null,37,32,7],
     events:[{mi:29,date:'2026/07/02',label:'原神 収益前週比+337%・7位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+337% / 7位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+337%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急落（12→32位 / 収益前週比-54％）', type:'施策', intervention:'損失回避', rank:'前週比-54％ / 32位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（5％ DL / -54％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急騰（32→8位 / 収益前週比+85%）', type:'施策', intervention:'欲求刺激', rank:'前週比+85% / 8位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（+85% 収益 / -2% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
@@ -20993,9 +20964,8 @@ const GAMES = [
     cycle:'ストーリー消費→オペレーター育成→イベント攻略→新オペガチャ',
     desc:'中国発・タワーディフェンス×世界観型。コアユーザーへの高密度施策が特徴。2025年10月週次1位を記録。',
     tags:['タワーディフェンス','ストーリー','コア向け'], gameIUrl:'https://game-i.daa.jp/?APP/1464872022', world_emotion:'感染症の世界で戦うオペレーターを率いる——使命感と世界観への深い没入', incentive_core:'成長', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'戦術演習・危機契約', hook_monthly:'期間限定イベント（高難度）・新オペレーター実装', charge_trigger:'感情ピーク型+限定型 — サイドストーリー読了後のキャラ愛着ピークで「このオペレーターが欲しい」衝動。コア向け高難度クリアへの強化需要', strength:'コアゲーマーの「誇り」をくすぐる高難度設計。世界観とキャラクターの密度が生む強固なコミュニティ', weakness:'タワーディフェンスというジャンルの間口の狭さ。コア向け設計がカジュアルユーザーの参入を妨げる', data_quality:'estimated',
-    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,25,null,null,45],
+    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,25,null,null],
     events:[
-      { mi:30, date:'2026/07/08', label:'収益急騰（99→45位・前週比+98%）に対応する施策', type:'イベント', intervention:'欲求刺激', rank:'前週比+98% / 45位', body:'4Gamer週次セルラン分析（7/2-7/8）にて収益前週比+98%、圏外相当の99位から45位へ復帰。出典: https://www.4gamer.net/games/536/G053628/20260715009/' },
       {mi:27, date:'2026/04/14', label:'サイドストーリー「聖山降臨1101」+ 大感謝祭・春', type:'イベント', intervention:'損失回避', rank:'+1625%', body:'4/14開始のサイドストーリーと4/10からの「2026大感謝祭・春」が同時稼働。凛御シルバーアッシュPUガチャ実装で前週比+1625%（4Gamer 自動取得）'},
       {mi:8,  date:'2024/09', label:'サイドストーリー「命ある者の旅」', type:'イベント', intervention:'損失回避', rank:'Top15', body:'高品質サイドストーリーでコアユーザーの課金を喚起'},
       {mi:15, date:'2025/04', label:'新オペレーター「新約エクシア」実装', type:'イベント', intervention:'損失回避', rank:'国内1位', body:'人気キャラ実装で週次1位を獲得。コアゲーでも施策次第で首位に'},
@@ -21024,7 +20994,7 @@ const GAMES = [
     cycle:'バトル→キャラ収集→覚醒強化→コラボ/周年ガチャ',
     desc:'10年超の超長寿タイトル。2026年1月週次1位。ドラゴンボールIPの全コンテンツを定期的に投入し続ける施策設計。',
     tags:['IP','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/1032991513', world_emotion:'ドラゴンボールの全作品を「集める」——世代を超えたDB愛の体現', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'超激戦・降臨クエスト', hook_monthly:'周年（5月）・大型コラボ・超必殺フェス', charge_trigger:'IPピーク型 — DB映画・アニメ・新作ゲーム公開に合わせたコラボキャラが「懐かしのあのキャラを手に入れたい」感情を刺激', strength:'DBという枯れないIPの全コンテンツを動員できる施策設計。10年超の長寿が生む既存ユーザーの復帰ループ', weakness:'DBファン以外への訴求がほぼない。キャラクター性能インフレが旧キャラの陳腐化を加速', data_quality:'estimated',
-    ranks:[7,6,8,7,8,9,7,8,7,8,7,6,8,7,8,6,7,8,4,3,null,null,null,null,null,null,null,23,18,16,20],
+    ranks:[7, 6, 8, 7, 8, 9, 7, 8, 7, 8, 7, 6, 8, 7, 8, 6, 7, 8, 4, 3, null, null, null, null, null, null, null, 23, 18,16],
     events:[{mi:29,date:'2026/07/02',label:'ドッカンバトル 収益前週比+1040%・16位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+1040% / 16位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+1040%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（113→45位 / 収益前週比+234%）', type:'施策', intervention:'欲求刺激', rank:'前週比+234% / 45位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-15％ DL / 234％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:4,  date:'2024/05', label:'9周年キャンペーン', type:'周年', intervention:'感情増幅', rank:'Top5', body:'毎年5月周年。無料ガチャ大量配布＋限定キャラで収益スパイク'},
@@ -21056,9 +21026,8 @@ const GAMES = [
     cycle:'MS収集→編成強化→ミッション攻略→新機体実装ガチャ',
     desc:'2024年4月リリース。2025年10月週次1位。ガンダム93作品750機以上を搭載。IPの網羅性が差別化の核。',
     tags:['シミュレーション','IP','MS収集'], gameIUrl:'https://game-i.daa.jp/?APP/1612234886', world_emotion:'ガンダム93作品のMSを全て集める——マニアの「全制覇欲求」', incentive_core:'収集', hook_daily:'スタミナ消費・ミッション消化', hook_weekly:'週次イベント・マルチバトル', hook_monthly:'ガンダムIP連動イベント・新MS実装', charge_trigger:'IP特定型 — 特定のガンダム作品コラボ時に「あの機体が欲しい」感情が爆発。機体（MS）収集の全制覇欲求がガチャ課金を継続させる', strength:'93作品という比類のないガンダムIP網羅性。シミュレーション戦略性がコアゲーマーの長期定着を促す', weakness:'ガンダムIPへの愛着がない層にはほぼ訴求しない。IP保有者（バンダイナムコ）との関係が施策の機動力に制約', data_quality:'inferred',
-    ranks:[null,null,null,5,6,7,8,9,7,8,9,7,6,5,4,3,5,4,2,3,null,null,null,null,null,null,null,20,7,10,15],
-    events:[
-      { mi:30, date:'2026/07/16', label:'DMM GAMES版 事前登録者数7万人突破キャンペーン', type:'施策', intervention:'新規獲得', rank:'前週比-22% / 15位', body:'公式新着より：DMM GAMES版の事前登録が7万人を突破し、ダイヤ最大3,000個の報酬段階を開放。プラットフォーム拡張による新規獲得フェーズ。4Gamer週次取得' },{mi:29,date:'2026/07/02',label:'Gジェネエターナル 収益前週比+159%・10位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+159% / 10位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+159%の急変動を確認。4Gamer週次取得'},
+    ranks:[null,null,null,5,6,7,8,9,7,8,9,7,6,5,4,3,5,4,2,3,null,null,null,null,null,null,null,20,7,10],
+    events:[{mi:29,date:'2026/07/02',label:'Gジェネエターナル 収益前週比+159%・10位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+159% / 10位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+159%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急落（15→30位 / 収益前週比-52％）', type:'施策', intervention:'損失回避', rank:'前週比-52％ / 30位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（5％ DL / -52％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急騰（25→15位 / 収益前週比+58%）', type:'施策', intervention:'感情増幅', rank:'前週比+58% / 15位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-17％ DL / 58％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急落（7→25位 / 収益前週比-68%）', type:'施策', intervention:'損失回避', rank:'前週比-68% / 25位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-68% 収益 / -16% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
@@ -21097,7 +21066,7 @@ const GAMES = [
     cycle:'選手収集→チーム編成→試合→イベント報酬→新選手実装',
     desc:'コナミのサッカーゲーム。2025年11月週次1位。ゲームシーズン・リアルサッカーシーズン連動設計。',
     tags:['スポーツ','シミュレーション','グローバル'], gameIUrl:'https://game-i.daa.jp/?APP/1439683287', world_emotion:'好きなクラブ・選手でチャンピオンになる——サッカーファンの支配欲', incentive_core:'競争', hook_daily:'スタミナ消費・トレーニング', hook_weekly:'リーグ対戦・イベントマッチ', hook_monthly:'リアルサッカーシーズン連動イベント・新選手実装', charge_trigger:'シーズン連動型+競争圧型 — 欧州カップや国際大会タイミングで「今の環境で最強チームを組みたい」感情が課金を誘発', strength:'リアルサッカーとの連動が「試合結果を見て翌日課金」という自然な課金機会を生む。コナミの試合シミュレーション精度', weakness:'プロスピAとの二重運営によるリソース分散。FIFAライセンス問題など外部要因による施策制約', data_quality:'estimated',
-    ranks:[15,14,16,15,14,13,15,14,13,14,13,12,14,13,12,11,10,9,7,6,null,null,null,null,null,null,null,11,5,2,1],
+    ranks:[15,14,16,15,14,13,15,14,13,14,13,12,14,13,12,11,10,9,7,6,null,null,null,null,null,null,null,11,5,2],
     events:[{mi:29,date:'2026/07/02',label:'eFootball 収益前週比+87%・2位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+87% / 2位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+87%の急変動を確認。4Gamer週次取得'},
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急騰（6→2位 / 収益前週比56％）', type:'施策', intervention:'欲求刺激', rank:'前週比56％ / 2位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（89％ DL / 56％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/22', label:'4Gamer6/11-6/17週 急落（1→6位 / 収益前週比-58%）', type:'施策', intervention:'損失回避', rank:'前週比-58% / 6位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（-1％ DL / -58％ 収益）。出典: https://www.4gamer.net/games/236/G023612/20260622003/'},
@@ -21129,7 +21098,7 @@ const GAMES = [
     cycle:'ストーリー消費→魔法少女収集→バトル→新章解放',
     desc:'2025年3月リリース。アニプレックス製。旧作「マギアレコード」終了後の後継。リリース直後Top5入り。',
     tags:['ストーリー','IP','魔法少女'], gameIUrl:'https://game-i.daa.jp/?APP/6502041392', world_emotion:'まどかIPの続きを生きる——喪失したマギアレコードへの補完欲求', incentive_core:'物語', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'期間限定クエスト', hook_monthly:'月次ストーリーイベント・新魔法少女実装', charge_trigger:'IP継続型+感情ピーク型 — 旧作「マギアレコード」終了ユーザーの「あのキャラたちの続きが見たい」感情。まどかIPへの長年の愛着が課金の土台', strength:'マギアレコード終了から引き継いだ既存ファン基盤。アニプレックスのIP管理力による高品質演出', weakness:'旧作ユーザー依存が強く新規ユーザー獲得設計が弱い。まどかIPの新展開（映画等）に収益が大きく依存', data_quality:'inferred',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4,5,6,7,8,9,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4,5,6,7,8,9,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:14, date:'2025/03/27', label:'リリース', type:'リリース', intervention:'新規獲得', rank:'リリース週Top5', body:'リリース直後にTop5入り。マギアレコード終了ユーザーの移行が順調'},
       {mi:16, date:'2025/05', label:'コラボイベント：旧作キャラ集結', type:'コラボ', intervention:'感情増幅', rank:'Top5', body:'旧作「マギアレコード」との連続性を活かした復帰施策'},

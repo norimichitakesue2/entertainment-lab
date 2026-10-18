@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# 最新の entertainment_lab_v{N}.html を index.html にコピーする
+# 最新の entertainment_lab_v{N}.html を lab.html（研究所）にコピーする
+# ※ index.html はサイトのトップページ（ソーダスプリント／自己紹介）。ここでは触らない。
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -9,5 +10,5 @@ if [ -z "$LATEST" ]; then
   exit 1
 fi
 
-cp "$LATEST" index.html
-echo "Synced $LATEST -> index.html"
+cp "$LATEST" lab.html
+echo "Synced $LATEST -> lab.html"

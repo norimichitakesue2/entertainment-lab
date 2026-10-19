@@ -3179,6 +3179,63 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
   .lh-card b{right:14px;top:auto;bottom:16px;transform:none}
 }
 @media (prefers-reduced-motion:reduce){.sidebar{transition:none}}
+
+/* ═══ LAB SHELF & NAV（2026-10-19）— 作品棚・パンくず・作品一覧の折りたたみ ※週次更新でも残す ═══ */
+.con-cart{background:linear-gradient(180deg,color-mix(in srgb,var(--cart-c,#444) 86%,#0e1f24) 0%,color-mix(in srgb,var(--cart-c,#444) 52%,black) 100%);text-decoration:none;color:#fff}
+.con-cart-name{font-size:15px;text-shadow:0 1px 2px rgba(0,0,0,.55)!important}
+.con-cart-en{font-size:10px;color:rgba(255,255,255,.78)}
+.con-cart-tagline{font-size:12px;line-height:1.6;color:rgba(255,255,255,.9);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.con-cart-meta{font-size:10px;gap:8px}
+.con-cart:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.lab-shelf-wrap{margin:34px 0 8px}
+.lab-shelf-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 14px}
+.lab-shelf-title{font-size:18px;font-weight:700;color:var(--text1);margin:0;display:flex;align-items:baseline;gap:10px}
+.lab-shelf-title small{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--text3)}
+.lab-shelf-count{font:12px/1 'IBM Plex Mono','Noto Sans JP',monospace;color:var(--text3)}
+.lab-shelf-tools{margin-left:auto;display:flex;flex-wrap:wrap;gap:8px}
+.lab-shelf-tools input,.lab-shelf-tools select{min-height:38px;padding:0 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text1);font:inherit;font-size:13px}
+.lab-shelf-tools input{width:240px}
+.lab-shelf-tools input::placeholder{color:var(--text3)}
+.lab-shelf-tools input:focus,.lab-shelf-tools select:focus{outline:2px solid var(--soda);outline-offset:1px}
+.lab-shelf-wrap .con-shelf{background:var(--surface);border-color:var(--border)}
+.lab-shelf-empty{grid-column:1/-1;padding:28px;text-align:center;color:var(--text3);font-size:13px}
+.cs-status{display:none!important}
+.cs-hero{min-height:0!important;padding:36px 24px 6px!important}
+.cs-icon{font-size:30px!important;margin-bottom:6px!important}
+.cs-title{font-size:clamp(34px,4.4vw,52px)!important}
+.lab-plan{margin:30px auto 0;max-width:920px}
+.lab-plan .cs-plan-wrap{margin:0 auto}
+.upd-status a{white-space:nowrap}
+/* breadcrumbs & pager on title pages */
+.lab-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:0 0 18px;font-size:12px;color:var(--text3)}
+.lab-crumb a{color:var(--text2);text-decoration:none;border-bottom:1px solid transparent}
+.lab-crumb a:hover{color:var(--soda);border-color:var(--soda)}
+.lab-crumb [aria-current]{color:var(--text1);font-weight:700}
+.lab-pager{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch;margin:40px 0 10px;padding-top:22px;border-top:1px solid var(--border)}
+.lab-pager a{display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text1);text-decoration:none;min-width:0;transition:border-color .15s}
+.lab-pager a:hover{border-color:var(--soda)}
+.lab-pager small{font:500 10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--text3)}
+.lab-pager strong{font-size:14px;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lab-pager .next{text-align:right;align-items:flex-end}
+.lab-pager .list{align-items:center;justify-content:center;text-align:center}
+.lab-pager .ghost{visibility:hidden}
+/* sidebar: collapsible title lists */
+.lab-works-toggle{display:flex!important;align-items:center;justify-content:space-between}
+.lab-works-toggle .n{font:12px/1 'IBM Plex Mono',monospace;color:var(--text3)}
+.lab-works-toggle .chev{display:inline-block;margin-left:8px;transition:transform .15s;color:var(--text3)}
+.lab-works-toggle[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.lab-works[hidden]{display:none}
+.lab-works{padding-left:6px;border-left:1px solid var(--border);margin:2px 0 6px 14px}
+@media (max-width:768px){
+  .lab-shelf-tools{margin-left:0;width:100%}
+  .lab-shelf-tools input{flex:1;width:auto;min-width:0}
+  .con-shelf-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
+  .con-shelf{padding:14px 12px 12px!important}
+  .con-cart{min-height:150px;padding:12px 10px 12px}
+  .con-cart-name{font-size:14px}
+  .lab-pager{grid-template-columns:1fr 1fr}
+  .lab-pager .list{grid-column:1/-1;order:3}
+}
 </style>
 </head>
 <body>
@@ -21743,24 +21800,8 @@ function escapeHtml(s) {
 //    - LAST_UPDATED を最新日に更新
 //    - UPDATES 配列の先頭に新規エントリを追加
 // ════════════════════════════════════════════════════════
-const LAST_UPDATED = '2026-10-19';
+const LAST_UPDATED = '2026-10-12';
 const UPDATES = [
-  {
-    date: '2026-10-19',
-    title: '【週次自動更新】10/1-10/7週ランキング・施策反映',
-    items: [
-      '26/10 を MONTHS に追加（新月・全ranksにnull push後に末尾へ順位設定）',
-      '17タイトルのranks末尾を4Gamer最新セルラン分析（10/1-10/7、1位SDガンダム Gジェネ エターナル）に更新',
-      '急騰: gjene 10→1位(+158%) / pokepoke 29→15位(+135%) / fgo 32→21位(+92%) / efootball 9→3位(+91%) / gakumas 41→29位(+62%)',
-      '急落: genshin 4→23位(-57%) / starrail 2→10位(-42%) / uma 12→26位(-39%) / prospi 7→13位(-27%) / monst 1→5位(-21%)',
-      'top50圏外化（26/10はnull）: wiz（前週49位）',
-      '13件の新規イベント追加（gjene×3, fgo×4, monst×2, pokepoke/efootball/gakumas/genshin 各1）',
-      '出典: 4Gamer記事 https://www.4gamer.net/games/633/G063395/20261013002/',
-      '公式新着取得成功: gjene（40周年生配信/EXAコラボ/新ストーリーイベント）, monst（黄泉のツガイコラボ/未開の幻洞）, fgo（盈月剣風帖コラボ開幕/冠位名代戦予告/10月アプデ/4100日突破）',
-      '公式新着取得失敗: efootball/dokkan/puzzdra/nikke/royal/howasaw(404), prospi(403), pokepoke/gakumas/bounty(DNS解決不可), starrail/genshin/uma(JSレンダリング・新着抽出不可), lastwar(game8はwiki更新のみ)',
-      '急変動フォールバック: pokepoke(+135%)/efootball(+91%)/gakumas(+62%)/genshin(-57%) を4Gamer記事根拠で記録',
-    ],
-  },
   {
     date: '2026-10-12',
     title: '【週次自動更新】9/24-9/30週ランキング・施策反映',
@@ -22210,14 +22251,14 @@ const TITLE_SOURCES = {
 // ════════════════════════════════════════════════════════
 //  RANK CHART ENGINE — injected by merge
 // ════════════════════════════════════════════════════════
-const MONTHS = ['24/1','24/2','24/3','24/4','24/5','24/6','24/7','24/8','24/9','24/10','24/11','24/12','25/1','25/2','25/3','25/4','25/5','25/6','25/7','25/8','25/9','25/10','25/11','25/12','26/1','26/2','26/3','26/4','26/5','26/6','26/7', '26/8','26/9','26/10']
+const MONTHS = ['24/1','24/2','24/3','24/4','24/5','24/6','24/7','24/8','24/9','24/10','24/11','24/12','25/1','25/2','25/3','25/4','25/5','25/6','25/7','25/8','25/9','25/10','25/11','25/12','26/1','26/2','26/3','26/4','26/5','26/6','26/7', '26/8','26/9']
 const GAMES = [
   // ──────────────────────────────────
   {
     id:'uma', emoji:'🐎', name:'ウマ娘', enName:'Uma Musume',
     type:'育成型シミュレーション', color:'#ff6b35',
     desc:'育成×レース×サポートカード。周年施策が極めて強力で、周年月は毎回首位に近い収益スパイクを記録。',
-    ranks:[5, 1, 1, 10, 12, 15, 14, 1, 1, 18, 20, 16, 10, 1, 1, 8, 12, 15, 10, 1, null, null, null, null, null, 1, 1, 26, 9, 4, 18, 2, 12,26],
+    ranks:[5, 1, 1, 10, 12, 15, 14, 1, 1, 18, 20, 16, 10, 1, 1, 8, 12, 15, 10, 1, null, null, null, null, null, 1, 1, 26, 9, 4, 18, 2, 12],
     events:[
         {mi:31, date:'2026/08/26', label:'ウマ娘 収益前週比+421%・26→3位に急騰（4Gamer 8/20-8/26）', type:'施策', intervention:'欲求刺激', rank:'前週比+421% / 3位', body:'公式新着はJSレンダリングで取得不可。4Gamer 8/20-8/26セルラン分析で収益急騰を確認。4Gamer週次取得'},
         {mi:31, date:'2026/08/24', label:'収益前週比+105%（新ガチャ/新ウマ娘想定、DL微増）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+105％ / 26位', body:'4Gamer週次セルラン分析（8/13-8/19）根拠：収益急騰帯。公式新着はJSレンダリングで抽出不可'},
@@ -22517,7 +22558,7 @@ const GAMES = [
     id:'blue', emoji:'📘', name:'ブルーアーカイブ', enName:'Blue Archive',
     type:'ストーリー×育成型', color:'#38bdf8',
     desc:'キャラ愛着とシナリオを主軸。サービス1年後から急成長した異例のタイトル。周年＋アニメ化が相乗効果。',
-    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,28,49,19,29,40,null,null],
+    ranks:[8,3,10,6,14,15,16,18,14,18,15,12,1,6,12,10,15,12,14,18,null,null,null,null,null,null,null,28,49,19,29,40,null],
     events:[
         {mi:31, date:'2026/09/02', label:'収益前週比+122%で40位へ上昇（新キャラPU施策と推定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+122％ / 40位', body:'4Gamer週次分析(8/27-9/2)より：収益前週比+122%で40位へ上昇（新キャラPU施策と推定）。https://www.4gamer.net/games/148/G014877/20260907012/'},
         {mi:31, date:'2026/08/05', label:'収益前週比+288％の急騰（大型ピックアップ実施と推定・4Gamer週次）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+288％ / 7位', body:'4Gamer週次より：収益前週比+288％の急騰（大型ピックアップ実施と推定・4Gamer週次）'},
@@ -22551,7 +22592,7 @@ const GAMES = [
     id:'nikke', emoji:'🤖', name:'NIKKE（勝利の女神）', enName:'NIKKE',
     type:'アクション×ストーリー', color:'#a78bfa',
     desc:'縦持ちシューティング×高品質ビジュアル。周年の増収率が業界最高クラス。ウィッシュリスト制が特徴。',
-    ranks:[14, 18, 20, 12, 14, 18, 16, 15, 18, 1, 10, 18, 14, 18, 16, 12, 14, 18, 12, 14, null, null, null, null, null, null, null, 8, 21, 13, 17, 29, 27,36],
+    ranks:[14, 18, 20, 12, 14, 18, 16, 15, 18, 1, 10, 18, 14, 18, 16, 12, 14, 18, 12, 14, null, null, null, null, null, null, null, 8, 21, 13, 17, 29, 27],
     events:[
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急騰（39→11位 / 収益前週比+198%）', type:'施策', intervention:'欲求刺激', rank:'前週比+198% / 11位', body:'公式新着404のため4Gamer記事根拠で記録（新ピックアップ想定、+9% DL / +198% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
         {mi:31, date:'2026/08/24', label:'収益前週比+170%で30→9位に急騰（新規ピックアップ想定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+170％ / 9位', body:'4Gamer週次セルラン分析（8/13-8/19）根拠：収益急騰帯。公式新着は取得不可(404)'},
@@ -22593,7 +22634,7 @@ const GAMES = [
     id:'memento', emoji:'💀', name:'メメントモリ', enName:'Memento Mori',
     type:'放置型×楽曲コンテンツ', color:'#818cf8',
     desc:'放置型×キャラ固有楽曲という独自設計。供給・消費バランスの精巧さとVTuberコラボ施策が特徴。',
-    ranks:[20,18,24,20,22,18,20,20,22,16,22,20,18,20,22,18,20,15,22,18,null,null,null,null,null,null,null,34,39,48,null,43,null,null],
+    ranks:[20,18,24,20,22,18,20,20,22,16,22,20,18,20,22,18,20,15,22,18,null,null,null,null,null,null,null,34,39,48,null,43,null],
     events:[
       {mi:1,  date:'2024/02〜03', label:'クリプトラクト＆ミトラスフィアコラボ',type:'コラボ', intervention:'感情増幅', rank:'Top20', body:'ガチャコラボ確率1.37%。異業種IP同士の相互ファン獲得施策'},
       {mi:9,  date:'2024/10/18', label:'2周年キャンペーン',        type:'周年', intervention:'感情増幅', rank:'Top15', body:'新キャラ2体、100連無料ガチャ。POP UP SHOP（新宿・博多）、CD Vol.2発売'},
@@ -22624,9 +22665,8 @@ const GAMES = [
     id:'gakumas', emoji:'🎤', name:'学マス（学園アイドルマスター）', enName:'Gakumas',
     type:'プロデュース育成型', color:'#f472b6',
     desc:'リリース直後1位という異例スタート。ローグライク×プロデュース体験。1周年でTop10は業界的に珍しい評価。',
-    ranks:[null, null, null, null, 1, 5, 10, 12, 15, 20, 18, 14, 12, 14, 10, 8, 1, 10, 12, 18, null, null, null, null, null, null, null, 49, 15, 21, 24, 25, 41,29],
+    ranks:[null, null, null, null, 1, 5, 10, 12, 15, 20, 18, 14, 12, 14, 10, 8, 1, 10, 12, 18, null, null, null, null, null, null, null, 49, 15, 21, 24, 25, 41],
     events:[
-        {mi:33, date:'2026/10/13', label:'4Gamer 10/1-10/7週 急騰（41→29位 / 収益前週比+62%）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+62% / 29位', body:'4Gamer 10/1-10/7 セルラン分析根拠（公式新着はDNS解決不可で取得できず、記事の収益急騰を記録）'},
         {mi:32, date:'2026/09/16', label:'収益前週比+63%で34→15位に急騰（4Gamer 9/10-9/16 セルラン分析より）', type:'施策', intervention:'欲求刺激', rank:'前週比+63% / 15位', body:'4Gamer記事 9/10-9/16 セルラン分析の急変動帯エントリ'},
         {mi:31, date:'2026/08/24', label:'収益前週比+135%で48→19位に急騰（新イベント/新アイドル想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+135％ / 19位', body:'4Gamer週次セルラン分析（8/13-8/19）根拠：収益急騰帯。公式新着は取得不可(DNS)'},
         {mi:31, date:'2026/08/19', label:'収益急落（前週比-54％ / 48位）4Gamer 8/6-8/12週', type:'施策', intervention:'損失回避', rank:'前週比-54% / 48位', body:'公式新着はJSレンダリング/取得不可のため、4Gamer 8/6-8/12 セルラン分析で収益前週比-54％の急変動を確認。出典: https://www.4gamer.net/games/266/G026651/20260819006/'},      { mi:30, date:'2026/07/22', label:'4Gamer 7/16-7/22週 急騰（50→23位／収益前週比+111%）', type:'施策', intervention:'欲求刺激', rank:'前週比+111% / 23位', body:'公式新着DNS解決不可。4Gamer記事根拠で急騰を記録' },
@@ -22658,7 +22698,7 @@ const GAMES = [
     id:'heaven', emoji:'🔥', name:'ヘブンバーンズレッド', enName:'Heaven Burns Red',
     type:'シナリオ型RPG', color:'#fb923c',
     desc:'麻枝准×KEY監修のシナリオを主軸。2Days周年リアルイベント、Angel Beats!コラボ、アーツバトル等多角的施策。',
-    ranks:[15,5,12,16,18,15,18,16,18,20,15,16,12,8,16,14,18,15,16,14,null,null,null,null,null,null,null,null,46,50,null,32,null,null],
+    ranks:[15,5,12,16,18,15,18,16,18,20,15,16,12,8,16,14,18,15,16,14,null,null,null,null,null,null,null,null,46,50,null,32,null],
     events:[
       {mi:29, date:'2026/06/24', label:'4Gamer 6/18-6/24週 急騰（70→50位 / 収益前週比64％）', type:'施策', intervention:'欲求刺激', rank:'前週比64％ / 50位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（128％ DL / 64％ 収益）。出典: https://www.4gamer.net/games/793/G079368/20260626052/'},
       {mi:29, date:'2026/06/15', label:'4Gamer6/4-6/10週 急騰（圏外→32位 / 収益前週比+138%）', type:'施策', intervention:'欲求刺激', rank:'前週比+138% / 32位', body:'公式新着取得失敗/抽出ゼロのため4Gamer記事根拠で記録（+138% 収益 / +19% DL）。出典: https://www.4gamer.net/games/536/G053628/20260615009/'},
@@ -22691,7 +22731,7 @@ const GAMES = [
     id:'pricone', emoji:'⚔️', name:'プリコネ（プリンセスコネクト！）', enName:'PriConne',
     type:'キャラ愛着型RPG', color:'#60a5fa',
     desc:'月次クランバトルを核とした安定設計。2024年2月に属性システム追加で戦略性向上。無課金でも継続できる設計。',
-    ranks:[18,14,20,16,18,14,16,18,16,20,16,14,18,16,14,18,16,18,14,16,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[18,14,20,16,18,14,16,18,16,20,16,14,18,16,14,18,16,18,14,16,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
         {mi:32, date:'2026/09/18', label:'Ver.12.7.0アップデート実施', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：Ver.12.7.0アップデート実施。4Gamer週次取得'},
         {mi:32, date:'2026/09/18', label:'「9月クランバトル」モード変更開始', type:'イベント', intervention:'損失回避', rank:'圏外', body:'公式新着より：「9月クランバトル」モード変更開始。4Gamer週次取得'},
@@ -22756,7 +22796,7 @@ const GAMES = [
     id:'lastwar', emoji:'🏰', name:'ラストウォー：サバイバル', enName:'Last War',
     type:'放置×リアルタイム戦略', color:'#fbbf24',
     desc:'2025年国内年間収益1位。大規模広告で新規獲得し、ギルド戦で定着。多国籍に分散した安定型グローバル収益。',
-    ranks:[10, 12, 15, 10, 12, 14, 10, 8, 4, 10, 12, 10, 8, 10, 12, 10, 8, 12, 10, 8, null, null, null, null, null, null, null, 12, 6, 9, 11, 15, 16,16],
+    ranks:[10, 12, 15, 10, 12, 14, 10, 8, 4, 10, 12, 10, 8, 10, 12, 10, 8, 12, 10, 8, null, null, null, null, null, null, null, 12, 6, 9, 11, 15, 16],
     events:[
         {mi:32, date:'2026/09/17', label:'公式サイト登録者数90万人突破イベント開催（9/17〜）', type:'イベント', intervention:'損失回避', rank:'前週比+12% / 11位', body:'公式新着より：公式サイト登録者数90万人突破イベント開催（9/17〜）。4Gamer週次取得'},
         {mi:30, date:'2026/07/23', label:'新コンテンツ「トナカイ輸送車」機能解放', type:'アプデ', intervention:'欲求刺激', rank:'前週比+9% / 7位', body:'公式新着より：新機能トナカイ輸送車の解放。4Gamer週次取得'},
@@ -22790,7 +22830,7 @@ const GAMES = [
     id:'bounty', emoji:'🏴‍☠️', name:'バウンティラッシュ', enName:'Bounty Rush',
     type:'IP×PvP型', color:'#f97316',
     desc:'ワンピースIP×リアルタイムPvP。原作強キャラ実装時に強力な収益スパイク。リーグバトル設計が継続動機。',
-    ranks:[22, 20, 22, 20, 22, 20, 22, 20, 20, 22, 20, 18, 22, 20, 18, 22, 20, 18, 20, 4, null, null, null, null, null, null, null, 42, 26, 42, 40, 22, 40,37],
+    ranks:[22, 20, 22, 20, 22, 20, 22, 20, 20, 22, 20, 18, 22, 20, 18, 22, 20, 18, 20, 4, null, null, null, null, null, null, null, 42, 26, 42, 40, 22, 40],
     events:[
         {mi:31, date:'2026/09/02', label:'収益前週比-60%で22位へ下落（前週フェス反動）', type:'施策', intervention:'損失回避', rank:'前週比-60％ / 22位', body:'4Gamer週次分析(8/27-9/2)より：収益前週比-60%で22位へ下落（前週フェス反動）。https://www.4gamer.net/games/148/G014877/20260907012/'},
         {mi:31, date:'2026/08/26', label:'バウンティラッシュ 収益前週比+459%・47→5位に急騰（4Gamer 8/20-8/26）', type:'施策', intervention:'欲求刺激', rank:'前週比+459% / 5位', body:'公式新着取得失敗（DNS）。4Gamer 8/20-8/26セルラン分析で収益急騰を確認。4Gamer週次取得'},
@@ -22825,7 +22865,7 @@ const GAMES = [
     id:'bluelock', emoji:'⚽', name:'ブルーロック', enName:'Blue Lock',
     type:'IP×育成型', color:'#4ade80',
     desc:'ウマ娘ライクの育成システムをサッカーIPで実装。ギルド機能がコアユーザーリテンションの核。',
-    ranks:[20,22,20,18,22,20,22,18,20,22,20,18,20,22,18,20,18,20,18,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[20,22,20,18,22,20,22,18,20,22,20,18,20,22,18,20,18,20,18,20,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:0,  date:'2024/01〜',     label:'育成コンボシステム運用',        type:'施策', intervention:'新規獲得', rank:'Top20', body:'共通コンボ・個別コンボで特定キャラ組み合わせへの需要生成'},
       {mi:5,  date:'2024/06',       label:'ブルーロック漫画・アニメ連動',  type:'コラボ', intervention:'感情増幅', rank:'Top18', body:'原作人気上昇に合わせた新キャラ実装。IP認知の波を活用'},
@@ -22854,7 +22894,7 @@ const GAMES = [
     id:'howasaw', emoji:'🗡️', name:'ホワイトアウトサバイバル', enName:'Whiteout Survival',
     type:'放置×戦略型', color:'#67e8f9',
     desc:'Century Games製。「人民」モチーフ内発動機と満足度リソースが特徴。グローバル収益2024Q4全世界5位。',
-    ranks:[15, 16, 18, 14, 16, 18, 15, 16, 14, 16, 14, 16, 15, 14, 16, 14, 15, 14, 15, 14, null, null, null, null, null, null, null, 13, 4, 6, 5, 10, 5,7],
+    ranks:[15, 16, 18, 14, 16, 18, 15, 16, 14, 16, 14, 16, 15, 14, 16, 14, 15, 14, 15, 14, null, null, null, null, null, null, null, 13, 4, 6, 5, 10, 5],
     events:[
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急騰（8→3位 / 収益前週比+57%）', type:'施策', intervention:'欲求刺激', rank:'前週比+57% / 3位', body:'公式新着はgame8参照のみ、4Gamer記事根拠で記録（+1% DL / +57% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
       {mi:28, date:'2026/05/11', label:'4Gamer4/30-5/6週 急騰（13→5位 / 収益前週比+65%）', type:'施策', intervention:'欲求刺激', rank:'前週比+65% / 5位', body:'公式新着取得失敗のため4Gamer記事根拠で記録（13％ DL / 65％ 収益）。出典: https://www.4gamer.net/games/456/G045622/20260511005/'},
@@ -22888,7 +22928,7 @@ const GAMES = [
     id:'dqt', emoji:'🐉', name:'ドラゴンクエストタクト', enName:'DQTact',
     type:'IP×タクティクス', color:'#86efac',
     desc:'ドラクエIPを活用したタクティクスRPG。2024/1に3.5周年。育成深度が深く、ガチャ×クエスト両方を要求。',
-    ranks:[22,18,20,22,20,22,20,18,20,22,20,18,22,18,20,22,20,22,20,22,null,null,null,null,null,null,null,null,49,null,null,43,null,null],
+    ranks:[22,18,20,22,20,22,20,18,20,22,20,18,22,18,20,22,20,22,20,22,null,null,null,null,null,null,null,null,49,null,null,43,null],
     events:[
         {mi:31, date:'2026/08/19', label:'収益急騰（前週比80％ / 43位）4Gamer 8/6-8/12週', type:'施策', intervention:'欲求刺激', rank:'前週比80% / 43位', body:'公式新着はJSレンダリング/取得不可のため、4Gamer 8/6-8/12 セルラン分析で収益前週比80％の急変動を確認。出典: https://www.4gamer.net/games/266/G026651/20260819006/'},
       {mi:28, date:'2026/05/27', label:'4Gamer週次: 収益前週比+228%で圏外→49位へ復帰（5/21-5/27）', type:'イベント', intervention:'欲求刺激', rank:'前週比+228% / 49位', body:'4Gamer 5/21-5/27 セルラン分析より：収益急変動。週次取得。'},
@@ -22919,7 +22959,7 @@ const GAMES = [
     id:'dot', emoji:'🕹️', name:'ドット勇者', enName:'Dot Heroes',
     type:'報酬設計型RPG', color:'#c084fc',
     desc:'報酬を受け取る場所が多く、リソース充足感を持続させる設計。バックバトル+回遊で意識が途切れない体験。',
-    ranks:[18,20,18,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,22,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[18,20,18,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,22,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:3,  date:'2024/04',       label:'るろうに剣心コラボ（限定勇者）',type:'コラボ', intervention:'感情増幅', rank:'〜100位', body:'コラボでもランキング大幅上昇なし（100位程度）→AU少ない可能性'},
       {mi:6,  date:'2024/07',       label:'バックバトル機能活用施策',      type:'アプデ', intervention:'欲求刺激', rank:'Top22',  body:'バトルしながら他コンテンツ回遊できる設計で意識が途切れない体験を維持'},
@@ -22947,7 +22987,7 @@ const GAMES = [
     id:'haikyuu', emoji:'🏐', name:'ハイキュー', enName:'Haikyu!!',
     type:'IP活用', color:'#fde68a',
     desc:'ターゲット（女性層）とシステム（デッキ編成）の不一致が課題。無料ガチャ機会が少なく継続動機が弱い。',
-    ranks:[25,24,26,25,26,24,26,25,26,24,26,25,26,24,26,25,26,25,26,25,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[25,24,26,25,26,24,26,25,26,24,26,25,26,24,26,25,26,25,26,25,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:0,  date:'2024年',        label:'IPコラボ・新キャラ定期実装',    type:'イベント', intervention:'損失回避', rank:'Top25', body:'ハイキューIPの新章・アニメ連動キャラ実装。ただし集客効果は限定的'},
       {mi:6,  date:'2024/07',       label:'ゲームシステム改善の試み',      type:'アプデ', intervention:'欲求刺激', rank:'Top25', body:'勝敗の因果納得性向上・キャラ入手機会拡大などの改善検討'},
@@ -22981,7 +23021,7 @@ const GAMES = [
     id:'wiz', emoji:'🧙', name:'ウィザードリィダフネ', enName:'Wizardry Daphne',
     type:'古典RPG×現代スマホ', color:'#a78bfa',
     desc:'リリース月21位のヒットスタート。1周年でも29位を維持。リスクリターン設計（死のコスト）が特徴的。',
-    ranks:[null, null, null, null, null, null, null, null, null, null, 21, 20, 22, 24, 22, 24, 22, 26, 22, 29, null, null, null, null, null, null, null, 22, null, null, null, 40, 49,null],
+    ranks:[null, null, null, null, null, null, null, null, null, null, 21, 20, 22, 24, 22, 24, 22, 26, 22, 29, null, null, null, null, null, null, null, 22, null, null, null, 40, 49],
     events:[
         {mi:32, date:'2026/10/01', label:'冒険者情報更新（新ピックアップ/イベント, 10/1）でTop50圏内（49位）に復帰', type:'アプデ', intervention:'欲求刺激', rank:'前週比+73% / 49位', body:'公式新着（冒険者情報）より：10/1更新。4Gamer週次取得'},
         {mi:32, date:'2026/09/17', label:'冒険者情報・新着お知らせ更新（新ピックアップ関連）', type:'施策', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：冒険者情報・新着お知らせ更新（新ピックアップ関連）。4Gamer週次取得'},
@@ -23015,7 +23055,7 @@ const GAMES = [
     id:'kinoko', emoji:'🍄', name:'キノコ伝説', enName:'Kinoko Densetsu',
     type:'放置×収集型', color:'#86efac',
     desc:'日本リリース2024/2/23。全世界3000万DL突破の実績。自動収集の停止恐怖が離脱防止に機能する精巧設計。',
-    ranks:[null,5,8,10,12,14,12,15,14,16,15,14,16,15,14,16,15,16,15,16,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,5,8,10,12,14,12,15,14,16,15,14,16,15,14,16,15,16,15,16,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:1,  date:'2024/02/23',    label:'日本版リリース',                type:'リリース', intervention:'新規獲得', rank:'Top5',  body:'東雲うみさんをPR大使に起用。3000万DL実績・韓台でのセルラン1位を携えてリリース'},
       {mi:1,  date:'2024/02末',     label:'App Storeトップ5入り',         type:'施策', intervention:'新規獲得', rank:'Top5',  body:'リリース直後にApp Storeトップ5。大量広告展開が功を奏す'},
@@ -23044,7 +23084,7 @@ const GAMES = [
     id:'topheroes', emoji:'🦸', name:'トップヒーローズ', enName:'Top Heroes',
     type:'放置×探索型', color:'#f9a8d4',
     desc:'放置×自由移動探索のハイブリッド。転送門（セーブポイント）がリスクリターン設計として機能。',
-    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,40,47,null,null,null,null,null],
+    ranks:[22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,22,20,null,null,null,null,null,null,null,40,47,null,null,null,null],
     events:[
         {mi:30, date:'2026/07/22', label:'アップデート情報・新ギフトコード配布', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：アプデ情報と新ギフトコード配布。4Gamer週次取得'},
       {mi:0,  date:'2024年',        label:'転送門システム運用',            type:'施策', intervention:'新規獲得', rank:'Top22', body:'セーブポイントまで移動しないと無駄になる恐怖がプレイ継続を生む'},
@@ -23073,7 +23113,7 @@ const GAMES = [
     id:'royal', emoji:'👑', name:'Royal Match', enName:'Royal Match',
     type:'パズル型', color:'#fde047',
     desc:'グローバル収益2024Q4全世界3位。米国市場50%。パズル中毒性設計が独自強み。インゲーム自体が課金動機。',
-    ranks:[18, 16, 16, 16, 16, 16, 16, 16, 16, 16, 14, 14, 15, 15, 14, 14, 14, 14, 14, 13, null, null, null, null, null, null, null, 18, 20, 14, 20, 19, 19,19],
+    ranks:[18, 16, 16, 16, 16, 16, 16, 16, 16, 16, 14, 14, 15, 15, 14, 14, 14, 14, 14, 13, null, null, null, null, null, null, null, 18, 20, 14, 20, 19, 19],
     events:[
       {mi:0,  date:'2024年通年',    label:'難易度設計（徐々に難化）',      type:'施策', intervention:'新規獲得', rank:'安定Top16', body:'難易度が自然に上昇→サポートへの課金動機を自然生成するシステム'},
       {mi:9,  date:'2024Q4',        label:'グローバル収益全世界3位',       type:'施策', intervention:'新規獲得', rank:'世界3位',  body:'アメリカ50%が最大市場。カジュアルパズルで世界トップクラスの安定収益'},
@@ -23102,7 +23142,7 @@ const GAMES = [
     id:'jujutsu', emoji:'🌀', name:'呪術廻戦ファンパレ', enName:'Jujutsu Kaisen PP',
     type:'IP×GRADE設計', color:'#c084fc',
     desc:'GRADEシステムでメインクエスト進行にLv上限を連動。ガチャ依存を防ぎストーリー進行を促す設計が特徴。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,14,18,16,18,null,null,null,null,null,null,null,48,27,45,null,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,14,18,16,18,null,null,null,null,null,null,null,48,27,45,null,null,null],
     events:[
       { mi:30, date:'2026/07/16', label:'呪獄島編5章 追加', type:'アプデ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：メインストーリー呪獄島編の第5章を追加。既存プレイヤーの復帰動線。4Gamer週次取得' },
       { mi:30, date:'2026/07/13', label:'夜特性ピックアップガチャ開催（7/13 15:00〜7/20 14:59）', type:'ガチャ', intervention:'欲求刺激', rank:'圏外', body:'公式新着より：夜特性ピックアップ＋残滓の期間限定ガチャ。1週間の短期窓で意思決定を圧縮。4Gamer週次取得' },
@@ -23141,7 +23181,7 @@ const GAMES = [
     id:'kaijuu', emoji:'👾', name:'怪獣8号', enName:'Kaiju No.8',
     type:'アニメ演出型', color:'#4ade80',
     desc:'アニメレベルの演出が強み。ストーリーへの没入がバトルを「邪魔」に感じさせる課題もある独特の設計。',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,12,16,18,18,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,12,16,18,18,20,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:15, date:'2025/04頃',     label:'リリース',                     type:'リリース', intervention:'新規獲得', rank:'Top12', body:'「アニメを見ているかのような」クオリティ。スマホタイトルで異例の演出水準'},
       {mi:16, date:'2025/05',       label:'新章・新キャラ実装',           type:'イベント', intervention:'損失回避', rank:'Top16', body:'ストーリー進行度でコンテンツがロック解除される設計が新規定着を支援'},
@@ -23172,10 +23212,8 @@ const GAMES = [
     cycle:'ストライク育成→マルチ攻略→ガチャ需要→新キャラ',
     desc:'国内最長寿Top3。2025年年間1位。マルチプレイコラボの教科書。コラボIPの量と頻度が国内最多水準。',
     tags:['マルチ','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/578Reviews', world_emotion:'マルチで仲間と弾く——友達との「共同作業」が最大の動機', incentive_core:'所属', hook_daily:'スタンプ・デイリーミッション・マルチプレイ誘い合い', hook_weekly:'ギルドイベント・高難度クエスト', hook_monthly:'コラボイベント（月1〜2件）・周年施策', charge_trigger:'コラボ限定型+社会圧型 — 人気IPコラボの「今しか手に入らない限定キャラ」が課金の核。マルチメンバーへの「足を引っ張りたくない」強化圧', strength:'マルチプレイの社会的結束が業界最高水準の継続率を生む。コラボIP数と頻度が他の追随を許さない', weakness:'友人のリアル環境に依存するためユーザー環境変化に脆い。新規ユーザーが既存コミュニティに入りにくい', data_quality:'estimated',
-    ranks:[3, 2, 4, 2, 1, 3, 2, 1, 1, 2, 1, 2, 2, 1, 1, 3, 1, 2, 1, 2, null, null, null, null, null, null, null, 5, 10, 8, 13, 5, 1,5],
+    ranks:[3, 2, 4, 2, 1, 3, 2, 1, 1, 2, 1, 2, 2, 1, 1, 3, 1, 2, 1, 2, null, null, null, null, null, null, null, 5, 10, 8, 13, 5, 1],
     events:[
-        {mi:33, date:'2026/10/15', label:'【モンスト×黄泉のツガイ】コラボイベントが10/16より開催', type:'コラボ', intervention:'感情増幅', rank:'前週比-21% / 5位', body:'公式新着より：黄泉のツガイコラボ開催。4Gamer週次取得'},
-        {mi:33, date:'2026/10/13', label:'期間限定イベント「未開の幻洞」が10/14より登場', type:'イベント', intervention:'欲求刺激', rank:'前週比-21% / 5位', body:'公式新着より：期間限定イベント「未開の幻洞」。4Gamer週次取得'},
         {mi:32, date:'2026/10/08', label:'「期間限定！13周年記念パック」10/10登場＋Ver.33.0アップデート実施', type:'周年', intervention:'感情増幅', rank:'前週比+180% / 1位', body:'公式新着より：13周年記念パック／Ver.33.0。4Gamer週次取得'},
         {mi:32, date:'2026/10/09', label:'ガチャ「激・獣神祭」10/10開催（第1～3弾初回★5以上排出24%）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+180% / 1位', body:'公式新着より：激・獣神祭。4Gamer週次取得'},
         {mi:32, date:'2026/10/01', label:'13周年感謝キャンペーン（モンパスお試し／超爆轟黎祭／オーブバックチャレンジ）', type:'周年', intervention:'感情増幅', rank:'前週比-29% / 12位', body:'公式新着より：13周年感謝キャンペーン群。4Gamer週次取得'},
@@ -23262,7 +23300,7 @@ const GAMES = [
     cycle:'パズル攻略→モンスター育成→ガチャ需要→コラボ',
     desc:'2012年リリースの国内最長寿タイトル。13周年でもTop5圏。コラボ施策の量・頻度・設計が業界最高水準。',
     tags:['パズル','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/583969296', world_emotion:'パズルを解くたびモンスターが進化する——脳と手の一体感', incentive_core:'成長', hook_daily:'スタミナ周回・デイリーダンジョン', hook_weekly:'週替わりコラボダンジョン・曜日ダンジョン', hook_monthly:'コラボイベント（業界最多頻度）・周年', charge_trigger:'コラボ限定型+成長欲型 — 高難度攻略で「強いモンスターが必要」と感じる設計。コラボ限定モンスターの「今だけ」感', strength:'コラボ頻度が業界最多で常に話題性を維持。パズルゲームの中毒性とRPGの育成欲求を融合した設計', weakness:'スマホゲーム黎明期の設計が多く最新UI/UXとの差が広がる。新規ユーザーには過去コンテンツ量が圧倒的に多く参入障壁', data_quality:'estimated',
-    ranks:[4, 3, 2, 4, 3, 2, 3, 4, 2, 3, 3, 2, 1, 2, 3, 4, 3, 2, 2, 1, null, null, null, null, null, null, null, 2, 31, 3, 9, 1, 3,8],
+    ranks:[4, 3, 2, 4, 3, 2, 3, 4, 2, 3, 3, 2, 1, 2, 3, 4, 3, 2, 2, 1, null, null, null, null, null, null, null, 2, 31, 3, 9, 1, 3],
     events:[
         {mi:32, date:'2026/09/30', label:'収益急騰（コラボ／フェス系ガチャ想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+231% / 3位', body:'4Gamer記事根拠：収益前週比+231%の急騰を記録。公式新着は404で取得不可'},
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急落（3→25位 / 収益前週比-78%）', type:'施策', intervention:'損失回避', rank:'前週比-78% / 25位', body:'公式新着404のため4Gamer記事根拠で記録（前週施策一巡で反落、-14% DL / -78% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
@@ -23303,12 +23341,8 @@ const GAMES = [
     cycle:'ストーリー消費→キャラ愛着→ガチャ需要→新章',
     desc:'2025年年間3位。ストーリーの質による課金動機設計の国内最高峰。天井なしガチャで炎上→天井導入後も安定。',
     tags:['ストーリー','IP','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/1115221661', world_emotion:'英霊を「召喚」して歴史を旅する——知的所有欲と物語没入の結合', incentive_core:'物語', hook_daily:'APスタミナ消費・デイリーミッション（少量）', hook_weekly:'期間限定クエスト・ショップ交換', hook_monthly:'月次イベント・新章追加・新サーヴァント実装', charge_trigger:'感情ピーク型+限定型 — 章読了の感情的ピークで「このキャラを所有したい」衝動が最大化。天井設計が「確実に手に入る」安心課金を生む', strength:'ストーリーの質と量が国内最高峰。「課金しなくてもストーリーは楽しめる」設計が広い入口を確保', weakness:'天井なし時代の炎上という設計史。バトルシステムの複雑さが新規離脱を招く。APが少なく一日あたりのプレイ量が制限される', data_quality:'estimated',
-    ranks:[3, 4, 3, 3, 2, 4, 3, 3, 4, 2, 3, 2, 3, 4, 3, 2, 2, 3, 1, 2, null, null, null, null, null, null, null, 9, 8, 27, 12, 8, 32,21],
+    ranks:[3, 4, 3, 3, 2, 4, 3, 3, 4, 2, 3, 2, 3, 4, 3, 2, 2, 3, 1, 2, null, null, null, null, null, null, null, 9, 8, 27, 12, 8, 32],
     events:[
-        {mi:33, date:'2026/10/16', label:'復刻 Fate/Samurai Remnant×FGOコラボレーションイベント「盈月剣風帖」開幕', type:'コラボ', intervention:'感情増幅', rank:'前週比+92% / 21位', body:'公式新着より：Samurai Remnantコラボ復刻開幕（収益+92%の主因）。4Gamer週次取得'},
-        {mi:33, date:'2026/10/16', label:'【予告】「冠位名代戦」開幕予定', type:'イベント', intervention:'損失回避', rank:'前週比+92% / 21位', body:'公式新着より：冠位名代戦開幕予告。4Gamer週次取得'},
-        {mi:33, date:'2026/10/14', label:'【カルデア広報局より】10月のゲームアップデート', type:'アプデ', intervention:'欲求刺激', rank:'前週比+92% / 21位', body:'公式新着より：10月ゲームアップデート。4Gamer週次取得'},
-        {mi:33, date:'2026/10/18', label:'リリース4100日突破キャンペーン', type:'施策', intervention:'感情増幅', rank:'前週比+92% / 21位', body:'公式新着より：リリース4100日突破キャンペーン。4Gamer週次取得'},
         {mi:32, date:'2026/10/09', label:'【予告】Fate/Samurai Remnant×FGO復刻コラボ「盈月剣風帖」開幕予定', type:'コラボ', intervention:'感情増幅', rank:'前週比-79% / 32位', body:'公式新着より：盈月剣風帖復刻予告。4Gamer週次取得'},
         {mi:32, date:'2026/10/07', label:'「冠位名代戦」準備応援ピックアップ召喚＋応援キャンペーン開催', type:'ガチャ', intervention:'欲求刺激', rank:'前週比-79% / 32位', body:'公式新着より：冠位名代戦準備応援。4Gamer週次取得'},
         {mi:32, date:'2026/09/30', label:'期間限定「くたばれ！ パンプキンファーム･スローター」開幕（ハロウィン2026）', type:'イベント', intervention:'損失回避', rank:'前週比+161% / 2位', body:'公式新着より：ハロウィン期間限定イベント開幕が増収を牽引。4Gamer週次取得'},
@@ -23391,7 +23425,7 @@ const GAMES = [
     cycle:'選手収集→チーム強化→リーグ参戦→シーズン連動イベント',
     desc:'2026年3月1位。プロ野球シーズンに完全連動した施策設計。球団・選手IPの定期更新が継続動機の核。',
     tags:['スポーツ','IP','シーズン'], gameIUrl:'https://game-i.daa.jp/?APP/1043338546', world_emotion:'好きな球団・選手と勝つ——プロ野球ファンの代理体験', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'リーグ対戦（PvP）', hook_monthly:'シーズン開幕連動・OB選手実装・特別イベント', charge_trigger:'IPピーク型+損失回避型 — OB選手（レジェンド）実装と「開幕ダッシュ」感が課金を誘発。シーズン中の「チームを強化したい」定期圧力', strength:'プロ野球シーズン完全連動が「今やる理由」を毎年更新。OB選手という枯れないIP資源', weakness:'プロ野球ファン以外への訴求が限定的。シーズンオフの収益低下が構造的に発生', data_quality:'estimated',
-    ranks:[8, 7, 9, 6, 5, 4, 7, 8, 6, 5, 6, 7, 5, 6, 4, 3, 5, 4, 3, 2, null, null, null, null, null, null, null, 3, 11, 1, 7, 13, 7,13],
+    ranks:[8, 7, 9, 6, 5, 4, 7, 8, 6, 5, 6, 7, 5, 6, 4, 3, 5, 4, 3, 2, null, null, null, null, null, null, null, 3, 11, 1, 7, 13, 7],
     events:[
         {mi:32, date:'2026/09/30', label:'収益急騰（Sランク配布／アニバ系施策想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+181% / 7位', body:'4Gamer記事根拠：収益前週比+181%の急騰を記録。公式新着は403で取得不可'},
         {mi:31, date:'2026/09/02', label:'収益前週比-70%で13位へ下落（前週アニバ反動）', type:'施策', intervention:'損失回避', rank:'前週比-70％ / 13位', body:'4Gamer週次分析(8/27-9/2)より：収益前週比-70%で13位へ下落（前週アニバ反動）。https://www.4gamer.net/games/148/G014877/20260907012/'},
@@ -23435,9 +23469,8 @@ const GAMES = [
     cycle:'パック開封→コレクション→バトル→新拡張パック',
     desc:'2024/10リリース後8週連続1位。1ヶ月で3300万DL・世界収益2億ドル。TCG×収集型の設計が新基準を作った。',
     tags:['TCG','収集','ポケモン'], gameIUrl:'https://game-i.daa.jp/?APP/6504857386', world_emotion:'パックを開ける瞬間の「何が出るか」——TCGの開封体験をデジタルで再現', incentive_core:'収集', hook_daily:'パック開封（1日2パック無料）・フレンドギフト', hook_weekly:'バトル対戦・週次ミッション', hook_monthly:'新拡張パック追加（月1〜2回）', charge_trigger:'収集欲型+限定型 — 「アルトマーク（レア演出）が出そう」という期待感が追加パック課金を誘発。図鑑コンプへの強迫的欲求', strength:'「1日2パック無料」という設計が毎日開封の習慣を自然に形成。ポケモンIPの圧倒的な世代横断性', weakness:'TCGの戦略的深さがデジタル版では再現されにくく競技性への不満。重複カードの価値が低い', data_quality:'estimated',
-    ranks:[null, null, null, null, null, null, null, null, null, null, 1, 1, 1, 1, 1, 2, 1, 3, 2, 3, null, null, null, null, null, null, null, 6, 1, 15, 50, 6, 29,15],
+    ranks:[null, null, null, null, null, null, null, null, null, null, 1, 1, 1, 1, 1, 2, 1, 3, 2, 3, null, null, null, null, null, null, null, 6, 1, 15, 50, 6, 29],
     events:[
-        {mi:33, date:'2026/10/13', label:'4Gamer 10/1-10/7週 急騰（29→15位 / 収益前週比+135%）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+135% / 15位', body:'4Gamer 10/1-10/7 セルラン分析根拠（公式新着はDNS解決不可で取得できず、記事の収益急騰を記録）'},
         {mi:32, date:'2026/09/09', label:'収益前週比-76%で6→33位へ大幅下落（新弾谷間と推定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比-76% / 33位', body:'4Gamer週次分析(9/3-9/9)より：収益前週比-76%で6→33位へ大幅下落（新弾谷間と推定）。https://www.4gamer.net/games/316/G031663/20260914029/'},
         {mi:31, date:'2026/09/02', label:'収益前週比+268%で6位へ上昇（新弾/ピックアップと推定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+268％ / 6位', body:'4Gamer週次分析(8/27-9/2)より：収益前週比+268%で6位へ上昇（新弾/ピックアップと推定）。https://www.4gamer.net/games/148/G014877/20260907012/'},
         {mi:31, date:'2026/08/26', label:'ポケポケ 収益前週比-54%・10→26位に反落（4Gamer 8/20-8/26）', type:'施策', intervention:'損失回避', rank:'前週比-54% / 26位', body:'公式新着取得失敗（DNS）。4Gamer 8/20-8/26セルラン分析で収益反落を確認。4Gamer週次取得'},
@@ -23475,7 +23508,7 @@ const GAMES = [
     cycle:'Ver更新→新キャラガチャ→ストーリー消費→次Ver待機',
     desc:'HoYoVerse製。Ver更新型の課金スパイク設計。原神と並ぶグローバル高収益タイトル。国内Top10常連。',
     tags:['ストーリー','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1600886162', world_emotion:'宇宙を列車で旅する——HoYoVerse品質のキャラと世界への没入', incentive_core:'物語', hook_daily:'スタミナ周回・デイリーミッション', hook_weekly:'忘却の庭・混沌の記憶', hook_monthly:'Ver更新（6週ごと）→新キャラ実装→スパイク', charge_trigger:'Ver更新ピーク型+限定型 — Ver更新時に新キャラ実装が集中し「今引かないと期間が終わる」限定プレッシャーが課金の核', strength:'6週ごとのVer更新サイクルが収益の予測可能なスパイクを設計。ストーリー×キャラ愛着の高密度な組み合わせ', weakness:'Ver更新間隔（6週）のコンテンツ枯渇感。原神と同社のため「どちらをやるか」の自社競合', data_quality:'estimated',
-    ranks:[10, 12, 8, 7, 9, 11, 8, 6, 7, 9, 8, 7, 5, 6, 4, 5, 3, 4, 1, 2, null, null, null, null, null, null, null, 1, 2, 30, 3, 7, 2,10],
+    ranks:[10, 12, 8, 7, 9, 11, 8, 6, 7, 9, 8, 7, 5, 6, 4, 5, 3, 4, 1, 2, null, null, null, null, null, null, null, 1, 2, 30, 3, 7, 2],
     events:[
         {mi:32, date:'2026/09/30', label:'収益急騰（新バージョン／限定ガチャ想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+286% / 2位', body:'4Gamer記事根拠：収益前週比+286%の急騰を記録。公式新着はJSレンダリングで取得不可'},
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急落（5→26位 / 収益前週比-72%）', type:'施策', intervention:'損失回避', rank:'前週比-72% / 26位', body:'公式新着JSレンダリングのため4Gamer記事根拠で記録（新バージョン一巡で反落、-5% DL / -72% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
@@ -23519,9 +23552,8 @@ const GAMES = [
     cycle:'探索→ストーリー→新キャラガチャ→Ver更新',
     desc:'オープンワールド×ガチャの世界標準設計。国内Top15常連。スターレイルと同じHoYoVerseのVer更新型。',
     tags:['オープンワールド','グローバル','Ver更新'], gameIUrl:'https://game-i.daa.jp/?APP/1517783697', world_emotion:'広大な異世界を「旅人」として自由探索——開放感と発見の連続', incentive_core:'物語', hook_daily:'樹脂消費・デイリー依頼', hook_weekly:'週次ボス素材・混沌の深淵', hook_monthly:'Ver更新（6週ごと）・新地域実装・新キャラ実装', charge_trigger:'Ver更新ピーク型 — スターレイルと同様の構造。新地域実装時の「この地域のキャラが欲しい」感情が設計の核', strength:'オープンワールドの探索体験が他追随不可能な独自価値。無課金でもほぼ全コンテンツ楽しめる広い入口', weakness:'無課金フレンドリー設計が課金転換率の低下につながる。樹脂（スタミナ）上限が少なくヘビーユーザーには消化しきれない', data_quality:'estimated',
-    ranks:[12, 11, 13, 10, 11, 12, 10, 11, 9, 12, 10, 11, 8, 9, 7, 8, 6, 7, 5, 4, null, null, null, null, null, null, null, 37, 32, 7, 39, 34, 4,23],
+    ranks:[12, 11, 13, 10, 11, 12, 10, 11, 9, 12, 10, 11, 8, 9, 7, 8, 6, 7, 5, 4, null, null, null, null, null, null, null, 37, 32, 7, 39, 34, 4],
     events:[
-        {mi:33, date:'2026/10/13', label:'4Gamer 10/1-10/7週 急落（4→23位 / 収益前週比-57%）', type:'イベント', intervention:'損失回避', rank:'前週比-57% / 23位', body:'4Gamer 10/1-10/7 セルラン分析根拠（公式新着はJSレンダリングで取得できず、記事の収益急落を記録）'},
         {mi:32, date:'2026/09/30', label:'収益増（新バージョン／限定祈願想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+52% / 4位', body:'4Gamer記事根拠：収益前週比+52%を記録。公式新着はJSレンダリングで取得不可'},
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急騰（50→7位 / 収益前週比+476%）', type:'施策', intervention:'欲求刺激', rank:'前週比+476% / 7位', body:'公式新着JSレンダリングのため4Gamer記事根拠で記録（新バージョン/新キャラPUで大幅増収、+5% DL / +476% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
         {mi:31, date:'2026/09/02', label:'収益前週比+59%で34位へ上昇（新バージョン/PUと推定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+59％ / 34位', body:'4Gamer週次分析(8/27-9/2)より：収益前週比+59%で34位へ上昇（新バージョン/PUと推定）。https://www.4gamer.net/games/148/G014877/20260907012/'},
@@ -23557,7 +23589,7 @@ const GAMES = [
     cycle:'ストーリー消費→オペレーター育成→イベント攻略→新オペガチャ',
     desc:'中国発・タワーディフェンス×世界観型。コアユーザーへの高密度施策が特徴。2025年10月週次1位を記録。',
     tags:['タワーディフェンス','ストーリー','コア向け'], gameIUrl:'https://game-i.daa.jp/?APP/1464872022', world_emotion:'感染症の世界で戦うオペレーターを率いる——使命感と世界観への深い没入', incentive_core:'成長', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'戦術演習・危機契約', hook_monthly:'期間限定イベント（高難度）・新オペレーター実装', charge_trigger:'感情ピーク型+限定型 — サイドストーリー読了後のキャラ愛着ピークで「このオペレーターが欲しい」衝動。コア向け高難度クリアへの強化需要', strength:'コアゲーマーの「誇り」をくすぐる高難度設計。世界観とキャラクターの密度が生む強固なコミュニティ', weakness:'タワーディフェンスというジャンルの間口の狭さ。コア向け設計がカジュアルユーザーの参入を妨げる', data_quality:'estimated',
-    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,25,null,null,27,45,null,null],
+    ranks:[18,17,16,18,17,15,14,16,15,14,15,14,12,11,10,9,8,7,6,5,null,null,null,null,null,null,null,25,null,null,27,45,null],
     events:[
         {mi:30, date:'2026/07/29', label:'セルラン急落：収益前週比-76%で3→27位（イベント一巡・4Gamer 7/23-7/29）', type:'施策', intervention:'損失回避', rank:'前週比-76％ / 27位', body:'公式新着取得不可のため4Gamer 7/23-7/29 セルラン分析で急変動を確認。4Gamer週次取得'},
       { mi:30, date:'2026/07/22', label:'4Gamer 7/16-7/22週 急騰（41→3位／収益前週比+486%）', type:'施策', intervention:'欲求刺激', rank:'前週比+486% / 3位', body:'公式新着はJSレンダリングで抽出不可。4Gamer記事根拠で急騰を記録（DL成長率+74%）' },
@@ -23590,7 +23622,7 @@ const GAMES = [
     cycle:'バトル→キャラ収集→覚醒強化→コラボ/周年ガチャ',
     desc:'10年超の超長寿タイトル。2026年1月週次1位。ドラゴンボールIPの全コンテンツを定期的に投入し続ける施策設計。',
     tags:['IP','コラボ','長寿'], gameIUrl:'https://game-i.daa.jp/?APP/1032991513', world_emotion:'ドラゴンボールの全作品を「集める」——世代を超えたDB愛の体現', incentive_core:'収集', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'超激戦・降臨クエスト', hook_monthly:'周年（5月）・大型コラボ・超必殺フェス', charge_trigger:'IPピーク型 — DB映画・アニメ・新作ゲーム公開に合わせたコラボキャラが「懐かしのあのキャラを手に入れたい」感情を刺激', strength:'DBという枯れないIPの全コンテンツを動員できる施策設計。10年超の長寿が生む既存ユーザーの復帰ループ', weakness:'DBファン以外への訴求がほぼない。キャラクター性能インフレが旧キャラの陳腐化を加速', data_quality:'estimated',
-    ranks:[7, 6, 8, 7, 8, 9, 7, 8, 7, 8, 7, 6, 8, 7, 8, 6, 7, 8, 4, 3, null, null, null, null, null, null, null, 23, 18, 16, 38, 3, 6,4],
+    ranks:[7, 6, 8, 7, 8, 9, 7, 8, 7, 8, 7, 6, 8, 7, 8, 6, 7, 8, 4, 3, null, null, null, null, null, null, null, 23, 18, 16, 38, 3, 6],
     events:[
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 急落（2→9位 / 収益前週比-60%）', type:'施策', intervention:'損失回避', rank:'前週比-60% / 9位', body:'公式新着404のため4Gamer記事根拠で記録（前週フェス一巡で反落、+1% DL / -60% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
         {mi:32, date:'2026/09/16', label:'収益前週比+118%で9→2位に急騰（4Gamer 9/10-9/16 セルラン分析より）', type:'施策', intervention:'欲求刺激', rank:'前週比+118% / 2位', body:'4Gamer記事 9/10-9/16 セルラン分析の急変動帯エントリ'},
@@ -23627,11 +23659,8 @@ const GAMES = [
     cycle:'MS収集→編成強化→ミッション攻略→新機体実装ガチャ',
     desc:'2024年4月リリース。2025年10月週次1位。ガンダム93作品750機以上を搭載。IPの網羅性が差別化の核。',
     tags:['シミュレーション','IP','MS収集'], gameIUrl:'https://game-i.daa.jp/?APP/1612234886', world_emotion:'ガンダム93作品のMSを全て集める——マニアの「全制覇欲求」', incentive_core:'収集', hook_daily:'スタミナ消費・ミッション消化', hook_weekly:'週次イベント・マルチバトル', hook_monthly:'ガンダムIP連動イベント・新MS実装', charge_trigger:'IP特定型 — 特定のガンダム作品コラボ時に「あの機体が欲しい」感情が爆発。機体（MS）収集の全制覇欲求がガチャ課金を継続させる', strength:'93作品という比類のないガンダムIP網羅性。シミュレーション戦略性がコアゲーマーの長期定着を促す', weakness:'ガンダムIPへの愛着がない層にはほぼ訴求しない。IP保有者（バンダイナムコ）との関係が施策の機動力に制約', data_quality:'inferred',
-    ranks:[null, null, null, 5, 6, 7, 8, 9, 7, 8, 9, 7, 6, 5, 4, 3, 5, 4, 2, 3, null, null, null, null, null, null, null, 20, 7, 10, 47, 18, 10,1],
+    ranks:[null, null, null, 5, 6, 7, 8, 9, 7, 8, 9, 7, 6, 5, 4, 3, 5, 4, 2, 3, null, null, null, null, null, null, null, 20, 7, 10, 47, 18, 10],
     events:[
-        {mi:33, date:'2026/10/16', label:'ストーリーイベント「機動戦士ガンダム外伝 コロニーの落ちた地で…」開催＋UR「リボーンズガンダム」ピックアップ', type:'イベント', intervention:'欲求刺激', rank:'前週比+158% / 1位', body:'公式新着より：新ストーリーイベント＋UR機体ピックアップ。4Gamer週次取得'},
-        {mi:33, date:'2026/10/14', label:'「ガンダムゲーム40周年記念生配信」10月28日20:00配信決定', type:'施策', intervention:'感情増幅', rank:'前週比+158% / 1位', body:'公式新着より：ガンダムゲーム40周年記念生配信告知。4Gamer週次取得'},
-        {mi:33, date:'2026/10/08', label:'「ガンダムEXAコラボステージ」開催＋コミックス施策', type:'コラボ', intervention:'感情増幅', rank:'前週比+158% / 1位', body:'公式新着より：ガンダムEXAコラボステージ。4Gamer週次取得'},
         {mi:32, date:'2026/09/30', label:'収益急騰（新規ユニット／ガチャ更新想定）', type:'イベント', intervention:'欲求刺激', rank:'前週比+145% / 10位', body:'4Gamer記事根拠：収益前週比+145%の急騰を記録。公式新着は画像ベースで日付のみ確認（9/25・9/30・10/8更新）'},
         {mi:32, date:'2026/09/30', label:'メインステージ「機動戦士Vガンダム」追加＋UR「V2アサルトバスターガンダム」ピックアップガシャ', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+78% / 28位', body:'公式新着より：新メインステージ＋URピックアップ。4Gamer週次取得'},
         {mi:32, date:'2026/09/18', label:'ストーリーイベント「機動戦士ガンダム00F」開催・URガンダムアヴァランチ ピックアップガシャ', type:'ガチャ', intervention:'欲求刺激', rank:'前週比-43% / 31位', body:'公式新着より：ストーリーイベント「機動戦士ガンダム00F」開催・URガンダムアヴァランチ ピックアップガシャ。4Gamer週次取得'},
@@ -23686,9 +23715,8 @@ const GAMES = [
     cycle:'選手収集→チーム編成→試合→イベント報酬→新選手実装',
     desc:'コナミのサッカーゲーム。2025年11月週次1位。ゲームシーズン・リアルサッカーシーズン連動設計。',
     tags:['スポーツ','シミュレーション','グローバル'], gameIUrl:'https://game-i.daa.jp/?APP/1439683287', world_emotion:'好きなクラブ・選手でチャンピオンになる——サッカーファンの支配欲', incentive_core:'競争', hook_daily:'スタミナ消費・トレーニング', hook_weekly:'リーグ対戦・イベントマッチ', hook_monthly:'リアルサッカーシーズン連動イベント・新選手実装', charge_trigger:'シーズン連動型+競争圧型 — 欧州カップや国際大会タイミングで「今の環境で最強チームを組みたい」感情が課金を誘発', strength:'リアルサッカーとの連動が「試合結果を見て翌日課金」という自然な課金機会を生む。コナミの試合シミュレーション精度', weakness:'プロスピAとの二重運営によるリソース分散。FIFAライセンス問題など外部要因による施策制約', data_quality:'estimated',
-    ranks:[15, 14, 16, 15, 14, 13, 15, 14, 13, 14, 13, 12, 14, 13, 12, 11, 10, 9, 7, 6, null, null, null, null, null, null, null, 11, 5, 2, 1, 9, 9,3],
+    ranks:[15, 14, 16, 15, 14, 13, 15, 14, 13, 14, 13, 12, 14, 13, 12, 11, 10, 9, 7, 6, null, null, null, null, null, null, null, 11, 5, 2, 1, 9, 9],
     events:[
-        {mi:33, date:'2026/10/13', label:'4Gamer 10/1-10/7週 急騰（9→3位 / 収益前週比+91%）', type:'施策', intervention:'欲求刺激', rank:'前週比+91% / 3位', body:'4Gamer 10/1-10/7 セルラン分析根拠（公式新着404で取得できず、記事の収益急騰を記録）'},
         {mi:32, date:'2026/09/30', label:'収益急落（前週1位からの反動／イベント端境期想定）', type:'施策', intervention:'損失回避', rank:'前週比-65% / 9位', body:'4Gamer記事根拠：収益前週比-65%の急落を記録。公式新着は404で取得不可'},
         {mi:32, date:'2026/09/28', label:'4Gamer 9/17-9/23週 首位奪還（6→1位 / 収益前週比+154%）', type:'施策', intervention:'欲求刺激', rank:'前週比+154% / 1位', body:'公式新着404のため4Gamer記事根拠で記録（新シーズン/選手PUで首位、+8% DL / +154% 収益）。出典: https://www.4gamer.net/games/536/G053628/20260928001/'},
         {mi:32, date:'2026/09/09', label:'収益前週比+66%で9→3位へ急上昇（新パック/施策効果と推定）', type:'ガチャ', intervention:'欲求刺激', rank:'前週比+66% / 3位', body:'4Gamer週次分析(9/3-9/9)より：収益前週比+66%で9→3位へ急上昇（新パック/施策効果と推定）。https://www.4gamer.net/games/316/G031663/20260914029/'},{mi:29,date:'2026/07/02',label:'eFootball 収益前週比+87%・2位（4Gamer 6/25-7/2 セルラン分析）',type:'施策',intervention:'欲求刺激',rank:'前週比+87% / 2位',body:'公式新着はJSレンダリング/取得不可のため、4Gamer 6/25-7/2 セルラン分析で収益前週比+87%の急変動を確認。4Gamer週次取得'},
@@ -23722,7 +23750,7 @@ const GAMES = [
     cycle:'ストーリー消費→魔法少女収集→バトル→新章解放',
     desc:'2025年3月リリース。アニプレックス製。旧作「マギアレコード」終了後の後継。リリース直後Top5入り。',
     tags:['ストーリー','IP','魔法少女'], gameIUrl:'https://game-i.daa.jp/?APP/6502041392', world_emotion:'まどかIPの続きを生きる——喪失したマギアレコードへの補完欲求', incentive_core:'物語', hook_daily:'スタミナ消費・デイリーミッション', hook_weekly:'期間限定クエスト', hook_monthly:'月次ストーリーイベント・新魔法少女実装', charge_trigger:'IP継続型+感情ピーク型 — 旧作「マギアレコード」終了ユーザーの「あのキャラたちの続きが見たい」感情。まどかIPへの長年の愛着が課金の土台', strength:'マギアレコード終了から引き継いだ既存ファン基盤。アニプレックスのIP管理力による高品質演出', weakness:'旧作ユーザー依存が強く新規ユーザー獲得設計が弱い。まどかIPの新展開（映画等）に収益が大きく依存', data_quality:'inferred',
-    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4,5,6,7,8,9,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    ranks:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4,5,6,7,8,9,null,null,null,null,null,null,null,null,null,null,null,null,null],
     events:[
       {mi:14, date:'2025/03/27', label:'リリース', type:'リリース', intervention:'新規獲得', rank:'リリース週Top5', body:'リリース直後にTop5入り。マギアレコード終了ユーザーの移行が順調'},
       {mi:16, date:'2025/05', label:'コラボイベント：旧作キャラ集結', type:'コラボ', intervention:'感情増幅', rank:'Top5', body:'旧作「マギアレコード」との連続性を活かした復帰施策'},
@@ -24630,6 +24658,195 @@ var _UPD_SHEETS = (typeof _UPD_SHEETS !== 'undefined') ? _UPD_SHEETS : [];
   }
   document.querySelectorAll('[data-count]').forEach(function(el){ var n = countFor(el.dataset.count); el.textContent = n ? (n + (el.dataset.count === 'socialgame' ? 'タイトル' : '作品')) : ''; });
   try { var u = document.querySelector('[data-lab-updated]'); if (u && typeof LAST_UPDATED !== 'undefined') u.textContent = LAST_UPDATED; } catch(e) {}
+})();
+
+</script>
+<script>
+/* ═══ LAB SHELF & NAV（2026-10-19）— 作品棚／URLで開ける・戻れる／パンくず・前後移動／サイドバーの作品一覧を折りたたみ
+   作品データ（GAMES / MEDIA_TITLES / サイドバーの作品ボタン）から自動生成。※週次更新でも残す ═══ */
+(function(){
+  var LABEL = {socialgame:'ソシャゲ', console:'コンシューマ', movie:'映画', anime:'アニメ', manga:'漫画', novel:'小説'};
+  var CART = ['#0b5f7a','#2f6f5e','#6b3a55','#6e5420','#3d4f8a','#7a3b2e','#2e6a86','#5a4a7a','#4f6b2a','#7a5230'];
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function strip(s){ return String(s || '').replace(/\*\*/g,'').replace(/\n+/g,' ').trim(); }
+  function hash(s){ var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+  function exists(id){ return !!document.getElementById('page-' + id); }
+  function btnName(b){ return b.textContent.replace(/^[^\wぁ-んァ-ヶ一-龠ａ-ｚＡ-Ｚ0-9]+/, '').trim(); }
+
+  // ── work lists per media ─────────────────────────────
+  function workBtns(m){
+    var block = document.querySelector('.sb-media-block[data-media="' + m + '"]');
+    if (!block) return [];
+    var re = m === 'console' ? /showPage\('console-(?!theory'|template')/ : /showPage\('media-(?!template)/;
+    return Array.prototype.filter.call(block.querySelectorAll('.sidebar-btn[onclick]'), function(b){ return re.test(b.getAttribute('onclick')); });
+  }
+  function worksOf(m){
+    if (m === 'socialgame') return (typeof GAMES !== 'undefined' ? GAMES : []).map(function(g){
+        var pid = g.id;
+        if (!exists(pid)) {   // データIDとページIDがずれている作品（例: royal / royalmatch）は名前で照合
+          var b = Array.prototype.find.call(document.querySelectorAll('.sb-media-block[data-media="socialgame"] .sidebar-btn[data-page]'), function(x){ return btnName(x) === g.name; });
+          pid = b ? b.dataset.page : null;
+        }
+        return pid && exists(pid) ? {id:pid, name:g.name, g:g} : null;
+      }).filter(Boolean);
+    if (m === 'console') return workBtns('console').map(function(b){ return {id:b.dataset.page, name:btnName(b)}; }).filter(function(w){ return exists(w.id); });
+    if (typeof MEDIA_TITLES === 'undefined') return [];
+    return MEDIA_TITLES.filter(function(t){ return t.media === m && exists('media-' + t.id); }).map(function(t){ return {id:'media-' + t.id, name:t.name, t:t}; });
+  }
+  function overviewOf(m){ return m === 'socialgame' ? 'overview' : 'overview-' + m; }
+  function mediaOf(id){
+    if (!id) return null;
+    var m = id.match(/^overview-(\w+)$/); if (m) return m[1];
+    if (id === 'overview') return 'socialgame';
+    if (/^media-/.test(id) && typeof MEDIA_TITLES !== 'undefined') { var t = MEDIA_TITLES.find(function(x){ return 'media-' + x.id === id; }); if (t) return t.media; }
+    var b = document.querySelector('.sb-media-block .sidebar-btn[data-page="' + id + '"]');
+    if (b) return b.closest('.sb-media-block').dataset.media;
+    if (/^console-/.test(id)) return 'console';
+    if (typeof GAMES !== 'undefined' && GAMES.some(function(g){ return g.id === id; })) return 'socialgame';
+    return null;
+  }
+
+  // ── shelf (title cards) ──────────────────────────────
+  function mcColor(n){ return n >= 81 ? '#66cc33' : n >= 61 ? '#ffcc33' : '#ff6874'; }
+  function cardMedia(w){
+    var t = w.t, sub = [t.enName && t.enName !== t.name ? t.enName : '', t.year].filter(Boolean).join(' / ');
+    var genre = String(t.genre || '').split(/\s*[\/／・]\s*/)[0];
+    var right = (t.overall_rating != null && t.overall_rating !== '') ? ('総合 ' + t.overall_rating) : (t.experience ? '詳細分析' : '概要');
+    var mc = (typeof t.metascore === 'number') ? '<span class="con-cart-mc" style="--mcc:' + mcColor(t.metascore) + '">' + t.metascore + '</span>' : '';
+    return '<a class="con-cart" href="#' + w.id + '" data-go="' + w.id + '" style="--cart-c:' + CART[hash(t.id) % CART.length] + ';">' + mc
+      + '<div class="con-cart-emoji">' + esc(t.emoji || '🎞️') + '</div>'
+      + '<div class="con-cart-name">' + esc(t.name) + '</div>'
+      + (sub ? '<div class="con-cart-en">' + esc(sub) + '</div>' : '')
+      + '<div class="con-cart-tagline">' + esc(strip(t.one_liner)) + '</div>'
+      + '<div class="con-cart-meta">' + (genre ? '<span class="con-cart-platform">' + esc(genre) + '</span>' : '<span></span>') + '<span>' + esc(right) + '</span></div></a>';
+  }
+  function lastRank(g){ var r = (g.ranks || []).filter(function(x){ return x != null; }); return r.length ? r[r.length - 1] : null; }
+  function cardGame(w){
+    var g = w.g, r = lastRank(g);
+    return '<a class="con-cart" href="#' + w.id + '" data-go="' + w.id + '" style="--cart-c:' + esc(g.color || CART[hash(g.id) % CART.length]) + ';">'
+      + (r ? '<span class="con-cart-mc" style="--mcc:#bff0ee">' + r + '位</span>' : '')
+      + '<div class="con-cart-emoji">' + esc(g.emoji || '🎮') + '</div>'
+      + '<div class="con-cart-name">' + esc(g.name) + '</div>'
+      + (g.enName ? '<div class="con-cart-en">' + esc(g.enName) + '</div>' : '')
+      + '<div class="con-cart-tagline">' + esc(strip(g.desc)) + '</div>'
+      + '<div class="con-cart-meta"><span class="con-cart-platform">' + esc(String(g.type || '').split(/[\/／]/)[0]) + '</span><span>' + (r ? '最新 ' + r + '位' : '') + '</span></div></a>';
+  }
+  function buildShelf(m, anchor, before){
+    var page = document.getElementById('page-' + overviewOf(m));
+    if (!page || page.querySelector('.lab-shelf-wrap')) return;
+    var works = worksOf(m); if (!works.length) return;
+    var hasMc = m === 'movie', isGame = m === 'socialgame';
+    var wrap = document.createElement('section');
+    wrap.className = 'lab-shelf-wrap';
+    wrap.innerHTML = '<div class="lab-shelf-head"><h2 class="lab-shelf-title">作品一覧 <small>TITLES ON SHELF</small></h2><span class="lab-shelf-count"></span>'
+      + '<div class="lab-shelf-tools"><input type="search" placeholder="' + (isGame ? 'タイトル・タイプで絞り込み' : '作品名・作者・ジャンルで絞り込み') + '" aria-label="作品を絞り込み">'
+      + '<select aria-label="並び順"><option value="reg">登録順</option>'
+      + (isGame ? '<option value="rank">最新順位が高い順</option>' : '<option value="rate">総合評価が高い順</option><option value="year">新しい順</option>')
+      + (hasMc ? '<option value="mc">メタスコアが高い順</option>' : '') + '<option value="name">名前順</option></select></div></div>'
+      + '<div class="con-shelf"><div class="con-shelf-grid"></div></div>';
+    var grid = wrap.querySelector('.con-shelf-grid'), input = wrap.querySelector('input'), sel = wrap.querySelector('select'), cnt = wrap.querySelector('.lab-shelf-count');
+    function num(v){ var n = parseFloat(v); return isNaN(n) ? -1 : n; }
+    function draw(){
+      var q = input.value.trim().toLowerCase(), list = works.slice();
+      if (q) list = list.filter(function(w){ var d = w.t || w.g; return [d.name, d.enName, d.creator, d.genre, d.type, d.year].join(' ').toLowerCase().indexOf(q) >= 0; });
+      var s = sel.value;
+      if (s === 'rate') list.sort(function(a,b){ return num(b.t.overall_rating) - num(a.t.overall_rating); });
+      if (s === 'year') list.sort(function(a,b){ return num(String(b.t.year).slice(0,4)) - num(String(a.t.year).slice(0,4)); });
+      if (s === 'mc') list.sort(function(a,b){ return num(b.t.metascore) - num(a.t.metascore); });
+      if (s === 'rank') list.sort(function(a,b){ var x = lastRank(a.g) || 999, y = lastRank(b.g) || 999; return x - y; });
+      if (s === 'name') list.sort(function(a,b){ return String(a.name).localeCompare(String(b.name), 'ja'); });
+      grid.innerHTML = list.length ? list.map(isGame ? cardGame : cardMedia).join('') : '<div class="lab-shelf-empty">該当する作品がありません</div>';
+      cnt.textContent = list.length + (isGame ? 'タイトル' : '作品') + (q ? ' / 全' + works.length : '');
+    }
+    input.addEventListener('input', draw); sel.addEventListener('change', draw); draw();
+    if (anchor) anchor.parentNode.insertBefore(wrap, before ? anchor : anchor.nextSibling); else page.appendChild(wrap);
+    // 「実装予定コンテンツ」は作品の後ろへ
+    var plan = page.querySelector('.cs-plan-wrap');
+    if (plan) { var sec = document.createElement('section'); sec.className = 'lab-plan'; sec.appendChild(plan); page.appendChild(sec); }
+  }
+  ['movie','anime','manga','novel'].forEach(function(m){
+    var page = document.getElementById('page-overview-' + m); if (!page) return;
+    buildShelf(m, page.querySelector('.cs-hero'), false);
+  });
+  (function(){
+    var page = document.getElementById('page-overview'); if (!page) return;
+    var wn = document.getElementById('whats-new-anchor'), block = wn;
+    while (block && block.parentNode !== page) block = block.parentNode;
+    buildShelf('socialgame', block || null, true);
+  })();
+
+  // 入口ページの件数も棚と同じ基準で数える
+  document.querySelectorAll('[data-count]').forEach(function(el){ var n = worksOf(el.dataset.count).length; el.textContent = n ? n + (el.dataset.count === 'socialgame' ? 'タイトル' : '作品') : ''; });
+
+  // ── sidebar: collapse long title lists ───────────────
+  ['console','movie','anime','manga','novel'].forEach(function(m){
+    var btns = workBtns(m); if (btns.length < 6) return;
+    var parent = btns[0].parentNode;
+    var box = document.createElement('div'); box.className = 'lab-works'; box.hidden = true; box.id = 'lab-works-' + m;
+    var tg = document.createElement('button'); tg.type = 'button'; tg.className = 'sidebar-btn lab-works-toggle';
+    tg.setAttribute('aria-expanded', 'false'); tg.setAttribute('aria-controls', box.id);
+    tg.innerHTML = '<span>作品一覧</span><span><span class="n">' + btns.length + '</span><span class="chev" aria-hidden="true">›</span></span>';
+    parent.insertBefore(tg, btns[0]); parent.insertBefore(box, btns[0]);
+    btns.forEach(function(b){ box.appendChild(b); });
+    tg.addEventListener('click', function(){ var open = box.hidden; box.hidden = !open; tg.setAttribute('aria-expanded', String(open)); });
+  });
+  function revealActive(){
+    var a = document.querySelector('.sb-media-block.active .lab-works .sidebar-btn.active');
+    if (a) { var box = a.closest('.lab-works'); if (box.hidden) { box.hidden = false; var tg = document.querySelector('[aria-controls="' + box.id + '"]'); if (tg) tg.setAttribute('aria-expanded', 'true'); } }
+  }
+
+  // ── breadcrumbs + previous / next on title pages ─────
+  function decorate(id){
+    var m = mediaOf(id), page = document.getElementById('page-' + id); if (!m || !page) return;
+    var list = worksOf(m), i = -1;
+    for (var k = 0; k < list.length; k++) if (list[k].id === id) i = k;
+    if (i < 0) return;
+    page.querySelectorAll('.lab-crumb,.lab-pager').forEach(function(e){ e.remove(); });
+    var ov = overviewOf(m);
+    var crumb = document.createElement('nav'); crumb.className = 'lab-crumb'; crumb.setAttribute('aria-label', 'パンくずリスト');
+    crumb.innerHTML = '<a href="#lab-home" data-go="lab-home">研究所</a><span aria-hidden="true">›</span><a href="#' + ov + '" data-go="' + ov + '">' + LABEL[m] + '</a><span aria-hidden="true">›</span><span aria-current="page">' + esc(list[i].name) + '</span>';
+    page.insertBefore(crumb, page.firstChild);
+    var prev = list[i - 1], next = list[i + 1];
+    function link(w, cls, lab){ return w ? '<a class="' + cls + '" href="#' + w.id + '" data-go="' + w.id + '"><small>' + lab + '</small><strong>' + esc(w.name) + '</strong></a>' : '<span class="' + cls + ' ghost"></span>'; }
+    var pager = document.createElement('nav'); pager.className = 'lab-pager'; pager.setAttribute('aria-label', '前後の作品');
+    pager.innerHTML = link(prev, 'prev', '← 前の作品') + '<a class="list" href="#' + ov + '" data-go="' + ov + '"><small>LIST</small><strong>' + LABEL[m] + 'の一覧へ</strong></a>' + link(next, 'next', '次の作品 →');
+    page.appendChild(pager);
+  }
+
+  // ── URL routing (#page-id) with back / forward ───────
+  var routing = true;               // until the initial page is settled
+  var _show = showPage;
+  window.showPage = showPage = function(id){
+    _show(id);
+    if (!routing) {
+      var h = '#' + id;
+      if (location.hash !== h) history.pushState({page:id}, '', id === 'lab-home' ? location.pathname : h);
+    }
+    revealActive();
+    setTimeout(function(){ decorate(id); }, 160);
+  };
+  function go(id){
+    if (!id || !exists(id)) id = 'lab-home';
+    var m = mediaOf(id);
+    routing = true;
+    try {
+      if (m && document.body.dataset.media !== m && typeof switchMedia === 'function') switchMedia(m);
+      showPage(id);
+    } finally { routing = false; }
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('[data-go]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    var id = a.getAttribute('data-go'), m = mediaOf(id);
+    if (m && document.body.dataset.media !== m && typeof switchMedia === 'function') switchMedia(m);
+    showPage(id);
+  });
+  window.addEventListener('popstate', function(){ go(decodeURIComponent(location.hash.slice(1)) || 'lab-home'); });
+  document.addEventListener('DOMContentLoaded', function(){
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (id && exists(id)) go(id); else routing = false;
+  });
 })();
 
 </script>

@@ -8,34 +8,34 @@
 
 <style>
 /* ─── Google Fonts ─── */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 
 :root {
   /* ── 背景 ── */
-  --bg:      #09080f;
-  --surface: #0f0c1a;
-  --surface2:#16122a;
-  --surface3:#1e1930;
-  --border:  rgba(140,80,255,.18);
+  --bg:      #0d1618;
+  --surface: #112125;
+  --surface2:#193137;
+  --surface3:#20393e;
+  --border:  rgba(110,190,210,.18);
   --border2: rgba(255,160,80,.22);
 
   /* ── アクセント（ハブデザインと統一） ── */
   --a1:  #ff6b35;   /* orange  */
-  --a2:  #b060ff;   /* purple  */
+  --a2:  #3cb4d8;   /* purple  */
   --a3:  #30e8e0;   /* cyan    */
   --a4:  #10b981;   /* green   */
   --a5:  #ffe040;   /* yellow  */
-  --a6:  #ff3fa0;   /* pink    */
+  --a6:  #8fd8e6;   /* pink    */
 
   /* ── テキスト ── */
-  --text:  #e8e0f4;
-  --text1: #e8e0f4;
+  --text:  #edf2ee;
+  --text1: #edf2ee;
   --text2: #9080b8;
   --text3: #5a4880;
 
   /* ── ネオン ── */
-  --neon-pur: #b060ff;
-  --neon-pnk: #ff3fa0;
+  --neon-pur: #3cb4d8;
+  --neon-pnk: #8fd8e6;
   --neon-org: #ff7030;
   --neon-cyn: #30e8e0;
   --neon-ylw: #ffe040;
@@ -43,7 +43,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   background:var(--bg); color:var(--text);
-  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family:'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight:300; line-height:1.75; overflow-x:hidden;
 }
 body::before {
@@ -53,8 +53,8 @@ body::before {
 body::after {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(120,50,255,.08) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 35% at 10% 100%, rgba(255,50,160,.04) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(60,180,216,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 35% at 10% 100%, rgba(143,216,230,.04) 0%, transparent 60%);
 }
 
 /* ─── HERO ─── */
@@ -65,8 +65,8 @@ body::after {
 
 
 .stat { display:flex; flex-direction:column; gap:3px; }
-.stat-n { font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:40px; color:var(--a3); line-height:1; }
-.stat-l { font-family:'Space Mono','Courier New',Courier,monospace; font-size:10px; letter-spacing:2px; color:var(--text3); text-transform:uppercase; }
+.stat-n { font-family:'IBM Plex Mono','Noto Sans JP',Impact,'Arial Narrow',sans-serif; font-size:40px; color:var(--a3); line-height:1; }
+.stat-l { font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:10px; letter-spacing:2px; color:var(--text3); text-transform:uppercase; }
 
 /* ─── APP SHELL ─── */
 .shell { display:flex; height:calc(100vh - 0px); }
@@ -74,29 +74,29 @@ body::after {
 /* ─── SIDEBAR ─── */
 .sidebar {
   width:224px; flex-shrink:0;
-  background:linear-gradient(180deg, #0c0a18 0%, #0a0814 100%);
-  border-right:1px solid rgba(140,80,255,.18);
+  background:linear-gradient(180deg, #0f1f22 0%, #0d1a1d 100%);
+  border-right:1px solid rgba(110,190,210,.18);
   overflow-y:auto; position:sticky; top:0; height:100vh;
 }
 .sidebar-section { padding:18px 14px 6px; }
 .sidebar-label {
-  font-family:'Share Tech Mono','Courier New',monospace;
-  font-size:9px; letter-spacing:2.5px; color:rgba(140,80,255,.5);
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
+  font-size:9px; letter-spacing:2.5px; color:rgba(110,190,210,.5);
   text-transform:uppercase; padding:6px 14px 4px;
   display:block;
 }
 .sidebar-btn {
   display:block; width:100%; text-align:left; padding:8px 14px;
-  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family:'Noto Sans JP','Noto Sans JP',sans-serif;
   font-size:12px; color:var(--text2); background:none; border:none;
   border-radius:5px; cursor:pointer; transition:all .15s;
   position:relative; overflow:hidden;
 }
 .sidebar-btn:hover {
-  background:rgba(140,80,255,.1); color:var(--text1);
+  background:rgba(110,190,210,.1); color:var(--text1);
 }
 .sidebar-btn.active {
-  background:rgba(176,96,255,.12); color:var(--neon-pur);
+  background:rgba(60,180,216,.12); color:var(--neon-pur);
   font-weight:700;
 }
 .sidebar-btn.active::before {
@@ -116,7 +116,7 @@ body::after {
   position:relative;
 }
 .page-tag {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:3px; color:var(--neon-pur);
   text-transform:uppercase; margin-bottom:10px;
   opacity:.75; display:block;
@@ -129,7 +129,7 @@ body::after {
 }
 .page-title em {
   color:var(--neon-pur); font-style:normal;
-  text-shadow:0 0 20px rgba(176,96,255,.4);
+  text-shadow:0 0 20px rgba(60,180,216,.4);
 }
 .page-title em { color:var(--a3); font-style:normal; }
 .page-desc { font-size:14px; color:var(--text2); margin-top:12px; line-height:1.7; max-width:680px; }
@@ -138,7 +138,7 @@ body::after {
 .sec { margin-bottom:40px; }
 .sec-label {
   display:flex; align-items:center; gap:12px;
-  font-family:'Space Mono','Courier New',Courier,monospace; font-size:10px; letter-spacing:3px; color:var(--a1); text-transform:uppercase;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:10px; letter-spacing:3px; color:var(--a1); text-transform:uppercase;
   margin-bottom:16px;
 }
 .sec-label::after { content:''; flex:1; height:1px; background:var(--border); }
@@ -150,24 +150,24 @@ body::after {
 
 /* ─── RESOURCE TABLE ─── */
 .res-table { width:100%; border-collapse:collapse; font-size:13px; }
-.res-table th { text-align:left; padding:9px 14px; font-family:'Space Mono','Courier New',Courier,monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); background:var(--surface2); border-bottom:1px solid var(--border); }
+.res-table th { text-align:left; padding:9px 14px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); background:var(--surface2); border-bottom:1px solid var(--border); }
 .res-table td { padding:9px 14px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text); line-height:1.6; }
 .res-table tr:last-child td { border-bottom:none; }
 .res-table tr:hover td { background:var(--surface2); }
 
 /* ─── MEASURES TABLE ─── */
 .m-table { width:100%; border-collapse:collapse; font-size:13px; }
-.m-table th { text-align:left; padding:10px 14px; font-family:'Space Mono','Courier New',Courier,monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); background:var(--surface2); border-bottom:1px solid var(--border); }
+.m-table th { text-align:left; padding:10px 14px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); background:var(--surface2); border-bottom:1px solid var(--border); }
 .m-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text); line-height:1.65; }
 .m-table tr:last-child td { border-bottom:none; }
 .m-table tr:hover td { background:var(--surface2); }
 
 /* ─── TAGS ─── */
-.tag { display:inline-block; padding:2px 8px; border-radius:3px; font-family:'Space Mono','Courier New',Courier,monospace; font-size:10px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
+.tag { display:inline-block; padding:2px 8px; border-radius:3px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:10px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
 .tag-e { background:rgba(255,107,53,.12); color:var(--a1); border:1px solid rgba(255,107,53,.25); }
 .tag-s { background:rgba(16,185,129,.12); color:var(--a4); border:1px solid rgba(16,185,129,.25); }
 .tag-c { background:rgba(6,182,212,.12); color:var(--a3); border:1px solid rgba(6,182,212,.25); }
-.tag-m { background:rgba(124,58,237,.12); color:#a78bfa; border:1px solid rgba(124,58,237,.25); }
+.tag-m { background:rgba(60,180,216,.12); color:#8fd8e6; border:1px solid rgba(60,180,216,.25); }
 
 /* ─── CYCLE FLOW ─── */
 .cycle-wrap { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:24px; margin-bottom:16px; }
@@ -192,10 +192,10 @@ body::after {
   background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;
   cursor:pointer; transition:all .2s; display:flex; flex-direction:column; gap:8px;
 }
-.ov-card:hover { border-color:var(--a2); transform:translateY(-2px); box-shadow:0 8px 32px rgba(124,58,237,.1); }
+.ov-card:hover { border-color:var(--a2); transform:translateY(-2px); box-shadow:0 8px 32px rgba(60,180,216,.1); }
 .ov-card-head { display:flex; justify-content:space-between; align-items:flex-start; }
 .ov-card h3 { font-size:15px; font-weight:700; color:#fff; }
-.ov-card .ov-cycle { font-size:11px; color:var(--a3); font-family:'Space Mono','Courier New',Courier,monospace; margin-top:2px; }
+.ov-card .ov-cycle { font-size:11px; color:var(--a3); font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; margin-top:2px; }
 .ov-card .ov-desc { font-size:12px; color:var(--text2); line-height:1.65; }
 .ov-card .ov-tags { display:flex; gap:6px; flex-wrap:wrap; }
 
@@ -208,7 +208,7 @@ body::after {
 /* ─── CHART ─── */
 .chart-wrap { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:24px; margin-bottom:16px; position:relative; }
 .chart-wrap canvas { max-height:280px; }
-.chart-title { font-size:11px; font-weight:700; color:var(--a3); margin-bottom:16px; font-family:'Space Mono','Courier New',Courier,monospace; letter-spacing:1px; }
+.chart-title { font-size:11px; font-weight:700; color:var(--a3); margin-bottom:16px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; letter-spacing:1px; }
 
 /* ─── TIMELINE ─── */
 .tl { position:relative; padding-left:28px; }
@@ -217,11 +217,11 @@ body::after {
 .tl-dot { position:absolute; left:-25px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--a1); border:2px solid var(--bg); box-shadow:0 0 0 2px var(--a1); }
 .tl-dot.blue { background:var(--a3); box-shadow:0 0 0 2px var(--a3); }
 .tl-dot.green { background:var(--a4); box-shadow:0 0 0 2px var(--a4); }
-.tl-dot.purple { background:#a78bfa; box-shadow:0 0 0 2px #a78bfa; }
-.tl-date { font-family:'Space Mono','Courier New',Courier,monospace; font-size:10px; color:var(--a1); margin-bottom:3px; }
+.tl-dot.purple { background:#8fd8e6; box-shadow:0 0 0 2px #8fd8e6; }
+.tl-date { font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:10px; color:var(--a1); margin-bottom:3px; }
 .tl-title { font-size:13px; font-weight:700; color:var(--text); margin-bottom:4px; }
 .tl-body { font-size:12px; color:var(--text2); line-height:1.6; }
-.tl-rank { display:inline-block; background:rgba(255,107,53,.15); color:var(--a1); border:1px solid rgba(255,107,53,.3); border-radius:4px; padding:1px 7px; font-family:'Space Mono','Courier New',Courier,monospace; font-size:10px; font-weight:700; margin-left:8px; vertical-align:middle; }
+.tl-rank { display:inline-block; background:rgba(255,107,53,.15); color:var(--a1); border:1px solid rgba(255,107,53,.3); border-radius:4px; padding:1px 7px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace; font-size:10px; font-weight:700; margin-left:8px; vertical-align:middle; }
 .tl-rank.top1 { background:rgba(250,204,21,.15); color:#fbbf24; border-color:rgba(250,204,21,.3); }
 .tl-rank.top5 { background:rgba(6,182,212,.15); color:var(--a3); border-color:rgba(6,182,212,.3); }
 .tl-rank.top10 { background:rgba(16,185,129,.15); color:var(--a4); border-color:rgba(16,185,129,.3); }
@@ -229,13 +229,13 @@ body::after {
 
 /* ── Rank Chart Block ── */
 .rank-chart-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:20px;}
-.rcb-label{font-family:'Space Mono','Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;color:var(--a3);text-transform:uppercase;margin-bottom:18px;}
+.rcb-label{font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;color:var(--a3);text-transform:uppercase;margin-bottom:18px;}
 .rcb-area{position:relative;height:260px;}.svg-chart-host{width:100%;height:260px;position:relative;}
 .rcb-area canvas{width:100%!important;height:260px!important;}
 .rcb-legend{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap;}
-.rcb-li{display:flex;align-items:center;gap:5px;font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;color:var(--text2);}
+.rcb-li{display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;color:var(--text2);}
 .rcb-dot{width:7px;height:7px;border-radius:50%;}
-.rcb-note{margin-left:auto;font-size:9px;color:var(--text3);font-family:'Space Mono','Courier New',Courier,monospace;}
+.rcb-note{margin-left:auto;font-size:9px;color:var(--text3);font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;}
 /* callout — ホバー/タップで表示 */
 .cc-wrap{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
 .cc{position:absolute;pointer-events:none;background:var(--surface3);border:1px solid var(--border2);border-radius:8px;
@@ -251,14 +251,14 @@ body::after {
 /* ヒント表示 */
 .rc-hint{
   position:absolute;top:8px;right:14px;
-  font-family:'Space Mono','Courier New',monospace;font-size:9px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;font-size:9px;
   color:var(--text3);letter-spacing:1px;
   pointer-events:none;opacity:.6;
 }
-.cc-date{font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;color:var(--a1);margin-bottom:3px;letter-spacing:.5px;}
+.cc-date{font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;color:var(--a1);margin-bottom:3px;letter-spacing:.5px;}
 .cc-title{font-weight:700;color:var(--text);font-size:11px;margin-bottom:2px;line-height:1.4;}
 .cc-body{color:var(--text2);font-size:10px;line-height:1.5;}
-.cc-rank{display:inline-block;font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;font-weight:700;
+.cc-rank{display:inline-block;font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;font-weight:700;
   padding:1px 6px;border-radius:3px;margin-left:5px;vertical-align:middle;}
 .cc-r1{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3);}
 .cc-r5{background:rgba(6,182,212,.12);color:var(--a3);border:1px solid rgba(6,182,212,.25);}
@@ -266,23 +266,23 @@ body::after {
 .cc-r20{background:rgba(144,144,184,.12);color:var(--text2);border:1px solid rgba(144,144,184,.2);}
 /* event table */
 .ev-table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px;}
-.evtw-label{font-family:'Space Mono','Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;color:var(--a1);
+.evtw-label{font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:10px;letter-spacing:2px;color:var(--a1);
   text-transform:uppercase;padding:16px 24px 0;}
 .ev-tbl{width:100%;border-collapse:collapse;font-size:13px;}
-.ev-tbl th{text-align:left;padding:10px 16px;font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;
+.ev-tbl th{text-align:left;padding:10px 16px;font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;
   letter-spacing:2px;text-transform:uppercase;color:var(--text3);background:var(--surface2);border-bottom:1px solid var(--border);}
 .ev-tbl td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text);line-height:1.6;}
 .ev-tbl tr:last-child td{border-bottom:none;}
 .ev-tbl tr:hover td{background:var(--surface2);}
-.ev-tbl td:first-child{font-family:'Space Mono','Courier New',Courier,monospace;font-size:10px;color:var(--a5);white-space:nowrap;width:110px;}
-.evtag{display:inline-block;padding:1px 7px;border-radius:3px;font-family:'Space Mono','Courier New',Courier,monospace;
+.ev-tbl td:first-child{font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:10px;color:var(--a5);white-space:nowrap;width:110px;}
+.evtag{display:inline-block;padding:1px 7px;border-radius:3px;font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;
   font-size:9px;font-weight:700;text-transform:uppercase;margin-right:5px;vertical-align:middle;}
 .evtag-周年{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.25);}
 .evtag-コラボ{background:rgba(236,72,153,.12);color:#f9a8d4;border:1px solid rgba(236,72,153,.25);}
 .evtag-イベント{background:rgba(255,107,53,.12);color:var(--a1);border:1px solid rgba(255,107,53,.25);}
 .evtag-アプデ{background:rgba(6,182,212,.12);color:var(--a3);border:1px solid rgba(6,182,212,.25);}
 .evtag-施策{background:rgba(16,185,129,.12);color:var(--a4);border:1px solid rgba(16,185,129,.25);}
-.evtag-リリース{background:rgba(124,58,237,.12);color:#a78bfa;border:1px solid rgba(124,58,237,.25);}
+.evtag-リリース{background:rgba(60,180,216,.12);color:#8fd8e6;border:1px solid rgba(60,180,216,.25);}
 
 /* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar { width:4px; height:4px; }
@@ -306,7 +306,7 @@ body::after {
 .upd-bar > *{pointer-events:auto;}
 .upd-status{
   background:var(--surface2);border:1px solid var(--border);border-radius:8px;
-  padding:8px 14px;font-family:'Space Mono','Courier New',Courier,monospace;font-size:10px;color:var(--text2);
+  padding:8px 14px;font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:10px;color:var(--text2);
   max-width:340px;text-align:right;line-height:1.5;
   opacity:0;transition:opacity .3s;
 }
@@ -316,12 +316,12 @@ body::after {
 .upd-status.loading{color:var(--a3);border-color:rgba(6,182,212,.3);}
 .upd-btn{
   display:flex;align-items:center;gap:9px;
-  background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;
+  background:linear-gradient(135deg,#2a9cc0,#1f86a8);color:#fff;
   border:none;border-radius:10px;padding:11px 20px;
-  font-family:'Space Mono','Courier New',Courier,monospace;font-size:11px;letter-spacing:.5px;
-  cursor:pointer;transition:all .2s;box-shadow:0 4px 24px rgba(124,58,237,.35);
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:11px;letter-spacing:.5px;
+  cursor:pointer;transition:all .2s;box-shadow:0 4px 24px rgba(60,180,216,.35);
 }
-.upd-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(124,58,237,.5);}
+.upd-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(60,180,216,.5);}
 .upd-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;}
 .upd-btn .ico{font-size:14px;display:inline-block;transition:transform .1s;}
 .upd-btn.spinning .ico{animation:uSpin .7s linear infinite;}
@@ -341,7 +341,7 @@ body::after {
   border-radius:10px;padding:16px 20px;margin-bottom:20px;
 }
 .diff-notice-head{
-  font-family:'Space Mono','Courier New',Courier,monospace;font-size:10px;letter-spacing:1px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:10px;letter-spacing:1px;
   color:var(--a4);margin-bottom:10px;
 }
 .diff-line{
@@ -353,7 +353,7 @@ body::after {
 
 /* last-updated badge */
 .upd-badge{
-  font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;letter-spacing:1px;color:var(--text3);
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;letter-spacing:1px;color:var(--text3);
   background:var(--surface2);border:1px solid var(--border);
   border-radius:4px;padding:3px 9px;display:inline-flex;align-items:center;gap:5px;
   margin-top:8px;
@@ -366,7 +366,7 @@ body::after {
   padding:20px 24px;margin-bottom:16px;
 }
 .sheet-block .sb-head{
-  font-family:'Space Mono','Courier New',Courier,monospace;font-size:9px;letter-spacing:2px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',Courier,monospace;font-size:9px;letter-spacing:2px;
   text-transform:uppercase;color:var(--a1);margin-bottom:12px;
 }
 .sheet-item{
@@ -385,7 +385,7 @@ body::after {
 .sp-nav-item {
   display:flex; align-items:center; gap:6px;
   padding:6px 14px; border-radius:20px; border:1px solid;
-  font-family:'Space Mono','Courier New',monospace; font-size:11px; font-weight:700;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:11px; font-weight:700;
   text-decoration:none; transition:opacity .15s;
 }
 .sp-nav-item:hover { opacity:.75; }
@@ -407,12 +407,12 @@ body::after {
   flex-shrink:0; line-height:1;
 }
 .sp-block-title {
-  font-family:'Bebas Neue',Impact,sans-serif;
+  font-family:'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size:28px; line-height:1; margin-bottom:4px;
 }
 .sp-block-tagline {
   font-size:12px; color:var(--text2);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 .sp-block-desc {
   font-size:13px; line-height:1.8; color:var(--text1);
@@ -424,7 +424,7 @@ body::after {
   padding:12px 16px; margin-bottom:16px;
 }
 .sp-tips-label {
-  font-family:'Space Mono','Courier New',monospace; font-size:9px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:9px;
   letter-spacing:2px; color:var(--text3); margin-bottom:8px;
 }
 .sp-tips-list { margin:0; padding-left:18px; }
@@ -432,7 +432,7 @@ body::after {
   font-size:12px; color:var(--text2); margin-bottom:4px; line-height:1.6;
 }
 .sp-cases-label {
-  font-family:'Space Mono','Courier New',monospace; font-size:9px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:9px;
   letter-spacing:2px; color:var(--text3); margin-bottom:10px;
 }
 .sp-cases-grid {
@@ -450,20 +450,20 @@ body::after {
 }
 .sp-tag {
   font-size:10px; font-weight:700; padding:2px 8px;
-  border-radius:4px; font-family:'Space Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 .sp-date {
   font-size:10px; color:var(--text3);
-  font-family:'Space Mono','Courier New',monospace; margin-left:auto;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; margin-left:auto;
 }
 .sp-rank {
   font-size:9px; padding:2px 6px; border-radius:4px;
   background:rgba(251,191,36,.2); color:#fbbf24;
-  font-family:'Space Mono','Courier New',monospace; font-weight:700;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-weight:700;
 }
 .sp-case-label { font-size:12px; font-weight:700; color:var(--text1); margin-bottom:4px; }
 .sp-case-body { font-size:11px; color:var(--text2); line-height:1.6; }
-.sp-empty { font-size:12px; color:var(--text3); padding:12px; font-family:'Space Mono','Courier New',monospace; }
+.sp-empty { font-size:12px; color:var(--text3); padding:12px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
 @media (max-width:768px) {
   .sp-cases-grid { grid-template-columns:1fr; }
   .sp-block-icon { font-size:22px; padding:8px; }
@@ -475,10 +475,10 @@ body::after {
 }
 .cf-step {
   background:rgba(var(--c, 139,92,246),.12);
-  color:var(--c, #8b5cf6);
+  color:var(--c, #3cb4d8);
   padding:4px 10px; border-radius:4px;
   font-size:12px; font-weight:600;
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   position:relative;
 }
 .cf-step:not(:last-child)::after {
@@ -490,7 +490,7 @@ body::after {
 .sim-block { display:flex; flex-direction:column; gap:16px; }
 .sim-cat { }
 .sim-cat-label {
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:11px; font-weight:700; letter-spacing:1px;
   margin-bottom:8px;
 }
@@ -511,7 +511,7 @@ body::after {
 }
 .sim-tag {
   font-size:11px; font-weight:700; padding:3px 8px;
-  border-radius:4px; font-family:'Space Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 .sim-goto {
   background:none; border:none; color:var(--text3);
@@ -537,12 +537,12 @@ body::after {
   margin-bottom: 32px;
 }
 .hero-eyebrow {
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:10px; letter-spacing:3px; color:var(--a1);
   text-transform:uppercase; margin-bottom:16px;
 }
 .hero-title {
-  font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;
+  font-family:'IBM Plex Mono','Noto Sans JP',Impact,'Arial Narrow',sans-serif;
   font-size:clamp(32px,5vw,56px); line-height:1.1;
   color:var(--text1); margin-bottom:16px; letter-spacing:1px;
 }
@@ -556,12 +556,12 @@ body::after {
 }
 .hero-stat { text-align:center; }
 .hs-num {
-  display:block; font-family:'Bebas Neue',Impact,sans-serif;
+  display:block; font-family:'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size:36px; color:var(--a1); line-height:1;
 }
 .hs-label {
   font-size:10px; color:var(--text3);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 
 /* ════════════════════════════════════════
@@ -582,19 +582,19 @@ body::after {
 .qnav-card:hover { border-color:var(--a1); background:var(--surface3); }
 .qnav-icon { font-size:22px; }
 .qnav-title { font-size:13px; font-weight:700; color:var(--text1); }
-.qnav-desc { font-size:11px; color:var(--text3); font-family:'Space Mono','Courier New',monospace; }
+.qnav-desc { font-size:11px; color:var(--text3); font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
 
 /* ════════════════════════════════════════
    OVERVIEW CARD ENHANCEMENTS
 ════════════════════════════════════════ */
 .ov-type {
   font-size:10px; color:var(--text3);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   white-space:nowrap;
 }
 .ov-incentive-badge {
   font-size:10px; font-weight:700; padding:2px 7px;
-  border-radius:4px; font-family:'Space Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   white-space:nowrap;
 }
 .ov-world-emotion {
@@ -606,15 +606,15 @@ body::after {
   display:flex; justify-content:space-between; align-items:center;
   margin-top:8px; padding-top:6px; border-top:1px solid var(--border);
 }
-.ov-dq { font-size:10px; color:var(--text3); font-family:'Space Mono','Courier New',monospace; }
-.ov-goto { font-size:11px; color:var(--a1); font-family:'Space Mono','Courier New',monospace; }
+.ov-dq { font-size:10px; color:var(--text3); font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
+.ov-goto { font-size:11px; color:var(--a1); font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
 
 /* ════════════════════════════════════════
    TRUST LABEL
 ════════════════════════════════════════ */
 .trust-label {
   font-size:10px; color:var(--text3);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   padding:2px 8px; background:var(--surface3);
   border-radius:4px; border:1px solid var(--border);
 }
@@ -632,12 +632,12 @@ body::after {
 }
 .incv-card-label {
   font-size:10px; font-weight:700; margin-bottom:6px;
-  font-family:'Space Mono','Courier New',monospace; letter-spacing:1px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; letter-spacing:1px;
 }
 .incv-text { font-size:12px; color:var(--text1); line-height:1.6; margin:0; }
 .incv-badge {
   font-size:12px; font-weight:700; padding:3px 10px;
-  border-radius:4px; font-family:'Space Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 .hook-grid {
   display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
@@ -649,7 +649,7 @@ body::after {
 }
 .hook-label {
   font-size:9px; font-weight:700; color:var(--text3);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   letter-spacing:1px; margin-bottom:5px;
 }
 .hook-text { font-size:11px; color:var(--text2); line-height:1.5; margin:0; }
@@ -660,7 +660,7 @@ body::after {
 }
 .trigger-label {
   font-size:10px; font-weight:700; color:#f97316;
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   letter-spacing:1px; margin-bottom:6px;
 }
 .trigger-text { font-size:12px; color:var(--text1); line-height:1.7; margin:0; }
@@ -670,7 +670,7 @@ body::after {
 .sw-card.weakness  { border-left:3px solid #ef4444; }
 .sw-label {
   font-size:9px; font-weight:700;
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   letter-spacing:1px; margin-bottom:5px;
 }
 .sw-card.strength .sw-label { color:#10b981; }
@@ -688,7 +688,7 @@ body::after {
 .cmp-table th {
   background:var(--surface3); padding:8px 10px;
   text-align:left; color:var(--text2);
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:1px;
   border-bottom:1px solid var(--border2);
   white-space:nowrap;
@@ -700,7 +700,7 @@ body::after {
 .cmp-row:hover { background:var(--surface2); }
 .cmp-badge {
   font-size:10px; font-weight:700; padding:2px 8px;
-  border-radius:4px; font-family:'Space Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   white-space:nowrap;
 }
 .cmp-filter {
@@ -768,17 +768,17 @@ body::after {
 }
 
 .sidebar-section-label {
-  font-family:'Share Tech Mono','Courier New',monospace;
-  font-size:8px; letter-spacing:2px; color:rgba(176,96,255,.55);
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
+  font-size:8px; letter-spacing:2px; color:rgba(60,180,216,.55);
   text-transform:uppercase; padding:6px 14px 4px; display:block;
 }
 /* ── サイドバーヘッダー ── */
 .sb-header {
   display:flex; align-items:center; gap:9px;
   padding:16px 14px 12px;
-  border-bottom:1px solid rgba(140,80,255,.15);
+  border-bottom:1px solid rgba(110,190,210,.15);
   position:sticky; top:0; z-index:10;
-  background:linear-gradient(180deg,#0e0c1e 0%,#0c0a18 100%);
+  background:linear-gradient(180deg,#122428 0%,#0f1f22 100%);
 }
 .sb-logo {
   width:26px; height:26px; border-radius:6px; flex-shrink:0;
@@ -792,7 +792,7 @@ body::after {
   color:var(--text1); line-height:1.1;
 }
 .sb-site-sub {
-  display:block; font-family:'Share Tech Mono','Courier New',monospace;
+  display:block; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:8px; letter-spacing:1.5px; color:var(--text3);
   margin-top:1px;
 }
@@ -815,7 +815,7 @@ body::after {
   margin-bottom: 28px;
 }
 .hub-eyebrow {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:4px; color:var(--neon-cyn);
   text-transform:uppercase; margin-bottom:16px; opacity:.8;
 }
@@ -826,11 +826,11 @@ body::after {
   background:linear-gradient(135deg,#fff 30%,var(--neon-pur) 65%,var(--neon-pnk));
   -webkit-background-clip:text; -webkit-text-fill-color:transparent;
   background-clip:text;
-  filter:drop-shadow(0 0 18px rgba(176,96,255,.5));
+  filter:drop-shadow(0 0 18px rgba(60,180,216,.5));
 }
 .hub-title-sub {
   display:block; margin-top:5px;
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:clamp(9px,1.2vw,11px); letter-spacing:3px; color:var(--text3);
 }
 .hub-desc {
@@ -850,18 +850,18 @@ body::after {
 }
 .hub-stat:last-child { border-right:none; }
 .hst-num {
-  display:block; font-family:'Orbitron',monospace;
+  display:block; font-family:'IBM Plex Mono','Noto Sans JP',monospace;
   font-size:18px; font-weight:700; color:var(--neon-cyn); line-height:1;
   text-shadow:0 0 10px var(--neon-cyn);
 }
 .hst-lbl {
-  display:block; font-family:'Share Tech Mono','Courier New',monospace;
+  display:block; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:8px; color:var(--text3); letter-spacing:1.5px; margin-top:3px;
 }
 
 /* ── SECTION TITLE ── */
 .hub-sec-title {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; color:var(--text3); letter-spacing:3px;
   text-transform:uppercase; padding:24px 0 12px;
   display:flex; align-items:center; gap:12px;
@@ -886,8 +886,8 @@ body::after {
 }
 .hub-panel:hover { transform:translateY(-2px); }
 .hub-panel:hover::before {
-  border-color:rgba(176,96,255,.45);
-  box-shadow:0 0 20px rgba(176,96,255,.15), inset 0 0 20px rgba(176,96,255,.04);
+  border-color:rgba(60,180,216,.45);
+  box-shadow:0 0 20px rgba(60,180,216,.15), inset 0 0 20px rgba(60,180,216,.04);
 }
 
 /* PRIMARY grid */
@@ -914,10 +914,10 @@ body::after {
 }
 
 /* panel accent backgrounds */
-.hub-panel-compare .hub-panel-screen { background-color:#120920; }
+.hub-panel-compare .hub-panel-screen { background-color:#122428; }
 .hub-panel-cycle   .hub-panel-screen { background-color:#08141a; }
 .hub-panel-gacha   .hub-panel-screen { background-color:#1a0c08; }
-.hub-panel-playbook .hub-panel-screen { background-color:#180820; }
+.hub-panel-playbook .hub-panel-screen { background-color:#112327; }
 .hub-panel-ranking  .hub-panel-screen { background-color:#181408; }
 .hub-panel-titles   .hub-panel-screen { background-color:#080e1a; }
 
@@ -927,7 +927,7 @@ body::after {
   z-index:4; pointer-events:none;
 }
 .hub-panel-rank {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:2px; margin-bottom:4px; opacity:.8;
 }
 .hub-panel-name {
@@ -936,12 +936,12 @@ body::after {
 }
 .hub-panel-sm .hub-panel-name { font-size:13px; }
 .hub-panel-sub {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; color:var(--text2); letter-spacing:1px;
 }
 .hub-panel-arr {
   position:absolute; bottom:18px; right:18px; z-index:4;
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:11px; opacity:0; transform:translateX(-4px);
   transition:opacity .18s, transform .18s;
 }
@@ -1045,7 +1045,7 @@ body::after {
   gap:12px; margin-top:0;
 }
 .hub-terminal {
-  background:#0a0914;
+  background:#0e1b1e;
   border:1px solid rgba(80,255,180,.14);
   border-radius:7px; overflow:hidden;
   display:flex; flex-direction:column;
@@ -1060,7 +1060,7 @@ body::after {
   animation:blink 2s ease-in-out infinite; flex-shrink:0;
 }
 .hub-term-title {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:8px; color:rgba(80,255,180,.45); letter-spacing:1px;
   margin-left:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }
@@ -1069,7 +1069,7 @@ body::after {
   display:flex; flex-direction:column; justify-content:center; gap:6px;
 }
 .hub-term-line {
-  font-family:'Share Tech Mono','Courier New',monospace; font-size:10px;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:10px;
 }
 .hub-term-prompt { color:rgba(80,255,180,.55); margin-right:4px; }
 .hub-term-cmd    { color:rgba(200,210,255,.65); }
@@ -1082,7 +1082,7 @@ body::after {
 .hub-sub-btn {
   position:relative; display:flex; align-items:flex-start; gap:8px;
   padding:10px 11px 9px;
-  background:#0e0c1c; border:1px solid var(--border);
+  background:#112327; border:1px solid var(--border);
   border-radius:6px; text-decoration:none; color:inherit;
   cursor:pointer; transition:background .15s, border-color .15s, transform .12s;
   overflow:hidden;
@@ -1090,7 +1090,7 @@ body::after {
 .hub-sub-btn::before {
   content:attr(data-tag); position:absolute;
   top:6px; right:7px;
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:7px; letter-spacing:1px; color:var(--text3);
   opacity:0; transition:opacity .15s;
 }
@@ -1100,7 +1100,7 @@ body::after {
   box-shadow:0 0 5px var(--neon-pur); opacity:0; transition:opacity .15s;
 }
 .hub-sub-btn:hover {
-  background:#161228; border-color:rgba(160,100,255,.35);
+  background:#183035; border-color:rgba(160,100,255,.35);
   transform:translateY(-1px);
 }
 .hub-sub-btn:hover::before { opacity:1; }
@@ -1110,10 +1110,10 @@ body::after {
 .hsb-body { display:flex; flex-direction:column; gap:2px; flex:1; min-width:0; }
 .hsb-name { font-size:11px; font-weight:700; color:var(--text1); line-height:1.3;
             white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.hsb-desc { font-family:'Share Tech Mono','Courier New',monospace;
+.hsb-desc { font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
             font-size:8px; color:var(--text3); letter-spacing:.5px; }
 .hsb-arr  {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:10px; color:var(--neon-pur); opacity:0;
   transition:opacity .14s, transform .14s;
   align-self:center; flex-shrink:0; transform:translateX(-3px);
@@ -1162,7 +1162,7 @@ body::after {
 .cmp-table th {
   background:var(--surface3); padding:8px 10px;
   text-align:left; color:var(--text2);
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:1px;
   border-bottom:1px solid var(--border2); white-space:nowrap;
 }
@@ -1173,7 +1173,7 @@ body::after {
 .cmp-row:hover { background:var(--surface2); cursor:pointer; }
 .cmp-badge {
   font-size:10px; font-weight:700; padding:2px 8px;
-  border-radius:4px; font-family:'Share Tech Mono','Courier New',monospace;
+  border-radius:4px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   white-space:nowrap;
 }
 .cmp-filter { display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
@@ -1181,11 +1181,11 @@ body::after {
   padding:3px 10px; border-radius:4px;
   background:var(--surface3); border:1px solid var(--border);
   color:var(--text2); font-size:11px; cursor:pointer; transition:all .15s;
-  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family:'Noto Sans JP','Noto Sans JP',sans-serif;
 }
 .cf-btn.active, .cf-btn:hover {
   background:var(--neon-pur); border-color:var(--neon-pur);
-  color:#fff; box-shadow:0 0 8px rgba(176,96,255,.4);
+  color:#fff; box-shadow:0 0 8px rgba(60,180,216,.4);
 }
 
 @media(max-width:768px) {
@@ -1198,7 +1198,7 @@ body::after {
   display:flex; flex-wrap:wrap; gap:6px; margin-bottom:4px;
 }
 .iv-badge {
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:10px; padding:3px 9px; border-radius:4px; font-weight:700;
   letter-spacing:.5px;
 }
@@ -1206,7 +1206,7 @@ body::after {
 .m-table th {
   background:var(--surface3); padding:9px 12px;
   text-align:left; color:var(--text2); white-space:nowrap;
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size:9px; letter-spacing:1px; border-bottom:1px solid var(--border2);
 }
 .m-table td {
@@ -1217,7 +1217,7 @@ body::after {
 .iv-tag {
   font-size:9px; font-weight:700; padding:2px 7px;
   border-radius:4px; white-space:nowrap;
-  font-family:'Share Tech Mono','Courier New',monospace;
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 
 .feat-grid { display:flex; flex-wrap:wrap; gap:6px; }
@@ -1227,9 +1227,9 @@ body::after {
 }
 .ob-phases { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .ob-phase { background:var(--surface2); border-radius:9px; padding:18px; border-left:3px solid; }
-.ob-phase-num { font-family:'Share Tech Mono','Courier New',monospace; font-size:9px; letter-spacing:2px; margin-bottom:6px; }
+.ob-phase-num { font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:9px; letter-spacing:2px; margin-bottom:6px; }
 .ob-phase-name { font-size:14px; font-weight:700; margin-bottom:4px; }
-.ob-phase-goal { font-size:11px; color:var(--text3); margin-bottom:12px; font-family:'Share Tech Mono','Courier New',monospace; }
+.ob-phase-goal { font-size:11px; color:var(--text3); margin-bottom:12px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
 .ob-list { padding-left:14px; }
 .ob-list li { font-size:11px; color:var(--text2); line-height:1.8; }
 .ob-titles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
@@ -1244,19 +1244,19 @@ body::after {
 .hooks-matrix { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .hm-col { background:var(--surface2); border-radius:9px; padding:16px; }
 .hm-head { font-size:12px; font-weight:700; border-bottom:2px solid; padding-bottom:8px; margin-bottom:8px; }
-.hm-desc { font-size:10px; color:var(--text3); margin-bottom:10px; font-family:'Share Tech Mono','Courier New',monospace; }
+.hm-desc { font-size:10px; color:var(--text3); margin-bottom:10px; font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; }
 .hm-items { display:flex; flex-direction:column; gap:6px; }
 .hm-item { display:flex; align-items:center; gap:7px; font-size:11px; color:var(--text2); }
 .hm-dot { width:5px; height:5px; border-radius:50%; flex-shrink:0; }
 .hooks-principles { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
 .hp-card { background:var(--surface2); border-radius:8px; padding:14px; border-left:3px solid var(--neon-pur); }
-.hp-num { font-family:'Orbitron','Share Tech Mono',monospace; font-size:18px; font-weight:700; color:var(--neon-pur); opacity:.4; line-height:1; margin-bottom:6px; }
+.hp-num { font-family:'IBM Plex Mono','Noto Sans JP','IBM Plex Mono','Noto Sans JP',monospace; font-size:18px; font-weight:700; color:var(--neon-pur); opacity:.4; line-height:1; margin-bottom:6px; }
 .hp-title { font-size:12px; font-weight:700; color:var(--text1); margin-bottom:6px; }
 .hp-desc { font-size:11px; color:var(--text2); line-height:1.7; }
 .growth-patterns { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
 .gp-card { background:var(--surface2); border-radius:9px; padding:16px; border-left:3px solid; }
 .gp-title { font-size:13px; font-weight:700; margin-bottom:4px; }
-.gp-games { font-family:'Share Tech Mono','Courier New',monospace; font-size:9px; color:var(--text3); margin-bottom:8px; letter-spacing:1px; }
+.gp-games { font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size:9px; color:var(--text3); margin-bottom:8px; letter-spacing:1px; }
 .gp-desc { font-size:11px; color:var(--text2); line-height:1.7; margin-bottom:6px; }
 .gp-risk { font-size:10px; color:var(--text3); padding:6px 8px; background:var(--surface3); border-radius:4px; }
 .wall-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
@@ -1278,12 +1278,12 @@ body::after {
   display:flex; justify-content:space-between; align-items:center;
   width:100%; padding:7px 14px;
   background:none; border:none; cursor:pointer;
-  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family:'Noto Sans JP','Noto Sans JP',sans-serif;
   font-size:11px; font-weight:700;
   color:var(--text3); text-align:left;
   border-radius:5px; transition:color .15s, background .15s;
 }
-.sb-acc-trigger:hover { color:var(--text2); background:rgba(140,80,255,.06); }
+.sb-acc-trigger:hover { color:var(--text2); background:rgba(110,190,210,.06); }
 .sb-acc-arrow {
   font-size:9px; color:var(--text3); flex-shrink:0;
   transition:transform .2s;
@@ -1299,8 +1299,8 @@ body::after {
 }
 /* sidebar-label (category header) */
 .sidebar-label {
-  font-family:'Share Tech Mono','Courier New',monospace;
-  font-size:9px; letter-spacing:2.5px; color:rgba(176,96,255,.5);
+  font-family:'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
+  font-size:9px; letter-spacing:2.5px; color:rgba(60,180,216,.5);
   text-transform:uppercase; padding:10px 14px 3px; display:block;
 }
 
@@ -1338,7 +1338,7 @@ body::after {
 .tpl-key {
   display: flex; align-items: center; gap: 7px;
   padding: 9px 12px;
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 10px; letter-spacing: .5px;
   color: var(--text3);
   border-right: 1px solid var(--border);
@@ -1370,7 +1370,7 @@ body::after {
 .tpl-sw.design-if { border-left: 3px solid var(--neon-cyn); }
 .tpl-sw.design-drop { border-left: 3px solid #f59e0b; }
 .tpl-sw-head {
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 9px; letter-spacing: 1px;
   margin-bottom: 7px;
 }
@@ -1385,7 +1385,7 @@ body::after {
 .obs-guide {
   font-size: 9px; color: var(--neon-ylw); opacity: .6;
   font-style: italic; margin-left: 12px;
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
 }
 .obs-grid {
   display: grid;
@@ -1411,12 +1411,12 @@ body::after {
   font-size: 11px; font-weight: 700; color: var(--text2); flex: 1;
 }
 .obs-status {
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 8px; letter-spacing: 1px; padding: 2px 6px;
   border-radius: 3px;
 }
 .obs-status.empty {
-  background: rgba(90,72,128,.25); color: var(--text3);
+  background: rgba(123,151,156,.25); color: var(--text3);
 }
 .obs-status.filled {
   background: rgba(255,224,64,.12); color: var(--neon-ylw);
@@ -1434,10 +1434,10 @@ body::after {
   padding: 6px 10px;
   background: var(--surface2);
   border-radius: 6px;
-  border: 1px dashed rgba(90,72,128,.3);
+  border: 1px dashed rgba(123,151,156,.3);
 }
 .obs-log-hint {
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 9px; color: var(--text3); letter-spacing: .5px;
 }
 
@@ -1464,12 +1464,12 @@ body::after {
 .legacy-toggle:hover { background: var(--surface3); }
 .lt-icon { font-size: 14px; }
 .lt-label {
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 10px; letter-spacing: 1.5px; color: var(--text3);
   flex: 1;
 }
 .lt-count {
-  font-family: 'Share Tech Mono','Courier New', monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New', monospace;
   font-size: 9px; color: var(--text3);
   background: var(--surface3); padding: 2px 8px; border-radius: 10px;
 }
@@ -1502,7 +1502,7 @@ body::after {
   justify-content: flex-start;
   gap: 5px;
   padding: 7px 8px;
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-size: 11px;
   font-weight: 700;
   color: var(--text2);
@@ -1523,15 +1523,15 @@ body::after {
 }
 .ms-btn.active {
   color: #fff;
-  background: linear-gradient(135deg, rgba(176,96,255,.25), rgba(255,107,53,.18));
+  background: linear-gradient(135deg, rgba(60,180,216,.25), rgba(255,107,53,.18));
   border-color: var(--neon-pur);
-  box-shadow: 0 0 12px rgba(176,96,255,.25), inset 0 0 0 1px rgba(176,96,255,.2);
+  box-shadow: 0 0 12px rgba(60,180,216,.25), inset 0 0 0 1px rgba(60,180,216,.2);
 }
 .ms-btn .ms-emoji { font-size: 13px; line-height: 1; }
 .ms-btn .ms-soon {
   display: inline-block;
   margin-left: auto;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 8px;
   letter-spacing: .5px;
   color: var(--text3);
@@ -1564,7 +1564,7 @@ body::after {
   position: relative;
 }
 .cs-eyebrow {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--a1);
@@ -1576,10 +1576,10 @@ body::after {
   font-size: 72px;
   line-height: 1;
   margin-bottom: 24px;
-  filter: drop-shadow(0 0 24px rgba(176,96,255,.35));
+  filter: drop-shadow(0 0 24px rgba(60,180,216,.35));
 }
 .cs-title {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: clamp(40px, 6vw, 72px);
   line-height: 1.05;
   color: var(--text1);
@@ -1587,7 +1587,7 @@ body::after {
   margin-bottom: 12px;
 }
 .cs-title-jp {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: clamp(22px, 3vw, 32px);
   color: var(--a3);
@@ -1607,7 +1607,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px;
   letter-spacing: 1px;
   color: var(--a4);
@@ -1632,7 +1632,7 @@ body::after {
   text-align: left;
 }
 .cs-plan-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   letter-spacing: 2px;
   color: var(--a1);
@@ -1691,21 +1691,21 @@ body::after {
   border-bottom: 1px solid var(--border);
 }
 .fm-title {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; letter-spacing: 2px;
   color: var(--a3); text-transform: uppercase;
 }
 .fm-title::before { content: '◾ '; color: var(--a1); }
 .fm-summary {
   font-size: 11px; color: var(--text3);
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   margin-left: auto;
 }
 .fm-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 700px; }
 .fm-table th {
   text-align: left;
   padding: 8px 10px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1.5px;
   color: var(--text3); text-transform: uppercase;
   background: var(--surface2);
@@ -1727,7 +1727,7 @@ body::after {
 }
 .fm-cat {
   display: inline-block;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1px; font-weight: 700;
   padding: 2px 8px; border-radius: 3px;
   background: var(--cat-c, var(--text3))22;
@@ -1740,11 +1740,11 @@ body::after {
 .fm-purpose-sec li { padding-left: 12px; position: relative; margin: 1px 0; list-style: none; }
 .fm-purpose-sec li::before { content: '·'; position: absolute; left: 4px; color: var(--text3); }
 .fm-mech {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; color: var(--text2); line-height: 1.55;
 }
 .fm-axis {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: var(--text3); letter-spacing: .5px;
   display: inline-block; padding: 1px 5px;
   background: var(--surface2); border: 1px solid var(--border);
@@ -1757,7 +1757,7 @@ body::after {
 }
 .fm-boost-target {
   display: inline-block;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   color: var(--a3);
   background: rgba(48,232,224,.06);
@@ -1775,22 +1775,22 @@ body::after {
 }
 .fm-boost-empty {
   font-size: 10px; color: var(--text3);
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
 }
 
 /* ── 横エネ拡張（身体/文脈 + 行為=物語Lv） ── */
 .yk-cell {
   background: var(--surface2);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--block-c, #a78bfa);
+  border-left: 3px solid var(--block-c, #8fd8e6);
   border-radius: 5px;
   padding: 10px 13px;
   margin: 8px 0;
 }
 .yk-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1.5px;
-  color: var(--block-c, #a78bfa);
+  color: var(--block-c, #8fd8e6);
   margin-bottom: 5px;
   text-transform: uppercase;
 }
@@ -1801,13 +1801,13 @@ body::after {
   margin-top: 10px;
   padding: 10px 14px;
   background: rgba(167,139,250,0.06);
-  border-left: 3px solid #a78bfa;
+  border-left: 3px solid #8fd8e6;
   border-radius: 0 4px 4px 0;
 }
 .yk-lv-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1.5px;
-  color: #a78bfa;
+  color: #8fd8e6;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -1849,7 +1849,7 @@ body::after {
   filter: drop-shadow(0 4px 0 rgba(0,0,0,.4));
 }
 .ent-hero-name {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: clamp(36px, 5vw, 56px);
   line-height: 1.0;
   letter-spacing: 1px;
@@ -1857,7 +1857,7 @@ body::after {
   text-shadow: 3px 3px 0 rgba(0,0,0,.4);
 }
 .ent-hero-jp {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: 18px;
   margin-bottom: 12px;
@@ -1866,7 +1866,7 @@ body::after {
   display: flex; gap: 8px; flex-wrap: wrap;
 }
 .ent-hero-meta span {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1px;
   color: rgba(255,255,255,.95);
   background: rgba(0,0,0,.35);
@@ -1876,7 +1876,7 @@ body::after {
 }
 .ent-hero-medium-badge {
   display: inline-block;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 2px;
   font-weight: 700;
   padding: 4px 12px;
@@ -1903,19 +1903,19 @@ body::after {
   padding-bottom: 8px;
 }
 .ent-sec-num {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 26px;
   color: var(--sec-c, var(--neon-pur));
   letter-spacing: 1px;
 }
 .ent-sec-title {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: 16px;
   color: var(--text1);
 }
 .ent-sec-en {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   color: var(--text3);
   letter-spacing: 2px;
@@ -1929,7 +1929,7 @@ body::after {
   background: rgba(0,0,0,.4);
   padding: 1px 5px;
   border-radius: 3px;
-  font-family: 'Space Mono',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP',monospace;
   font-size: 11px;
 }
 
@@ -1941,7 +1941,7 @@ body::after {
   margin: 8px 0;
 }
 .ent-field-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px;
   letter-spacing: 1.5px;
   color: var(--field-c, var(--text3));
@@ -1956,7 +1956,7 @@ body::after {
 .ent-field-body p { margin: 0 0 6px; }
 .ent-field-empty {
   color: var(--text3);
-  font-family: 'Space Mono',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP',monospace;
   font-size: 11px;
 }
 
@@ -1970,7 +1970,7 @@ body::after {
   font-size: 11px;
   font-weight: 700;
   background: rgba(167,139,250,.12);
-  color: #a78bfa;
+  color: #8fd8e6;
   border: 1px solid rgba(167,139,250,.35);
   border-radius: 12px;
 }
@@ -1980,14 +1980,14 @@ body::after {
   display: flex; align-items: center; gap: 8px;
 }
 .ent-rating-num {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 28px;
   color: var(--con-yel);
   line-height: 1;
 }
 .ent-rating-max {
   font-size: 12px; color: var(--text3);
-  font-family: 'Space Mono',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP',monospace;
 }
 .ent-rating-bar-track {
   flex: 1;
@@ -2009,8 +2009,8 @@ body::after {
 
 /* ── IP評価ページ（ソシャゲ）── */
 .ip-hero {
-  background: linear-gradient(135deg, rgba(176,96,255,.06), rgba(255,107,53,.04));
-  border: 1px solid rgba(176,96,255,.25);
+  background: linear-gradient(135deg, rgba(60,180,216,.06), rgba(255,107,53,.04));
+  border: 1px solid rgba(60,180,216,.25);
   border-radius: 12px;
   padding: 24px 28px;
   margin-bottom: 24px;
@@ -2028,8 +2028,8 @@ body::after {
   color: var(--neon-pur);
   text-align: center;
   padding: 10px;
-  border-top: 1px dashed rgba(176,96,255,.3);
-  border-bottom: 1px dashed rgba(176,96,255,.3);
+  border-top: 1px dashed rgba(60,180,216,.3);
+  border-bottom: 1px dashed rgba(60,180,216,.3);
   margin: 10px 0;
 }
 .ip-3req {
@@ -2046,12 +2046,12 @@ body::after {
   padding: 14px 16px;
 }
 .ip-req-num {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 24px;
   color: var(--r-c, var(--neon-pur));
 }
 .ip-req-name {
-  font-family: 'Zen Kaku Gothic New',sans-serif;
+  font-family: 'Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: 14px;
   color: var(--text1);
@@ -2077,7 +2077,7 @@ body::after {
 .ip-vs-col.vert { border-top: 3px solid #1d6dff; }
 .ip-vs-col.horiz { border-top: 3px solid var(--neon-pnk); }
 .ip-vs-col h4 {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 18px; letter-spacing: 1px;
   margin-bottom: 4px;
 }
@@ -2093,7 +2093,7 @@ body::after {
   border-bottom: 1px solid var(--border);
   padding: 8px 12px;
   text-align: left;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1.5px;
   color: var(--text3);
   text-transform: uppercase;
@@ -2133,7 +2133,7 @@ body::after {
   color: var(--text1);
 }
 .ip-title-type {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1px;
   color: var(--text3);
   background: var(--surface2);
@@ -2146,7 +2146,7 @@ body::after {
   margin: 4px 0;
 }
 .ip-title-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1px;
   color: var(--text3);
   min-width: 90px;
@@ -2187,14 +2187,14 @@ body::after {
   padding: 12px 14px;
 }
 .eb-param-name {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
   color: var(--p-c, var(--con-yel));
   margin-bottom: 2px;
 }
 .eb-param-jp {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: 14px;
   color: var(--text1);
@@ -2218,7 +2218,7 @@ body::after {
   width: var(--w, 50%);
 }
 .eb-value {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1px;
   color: var(--text3);
   margin-top: 4px;
@@ -2260,14 +2260,14 @@ body::after {
   color: var(--neon-pnk);
 }
 .gl-step-name {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   color: var(--gl-c, var(--con-yel));
   margin-bottom: 4px;
 }
 .gl-step-jp {
-  font-family: 'Zen Kaku Gothic New',sans-serif;
+  font-family: 'Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: 12px;
   color: var(--text1);
@@ -2302,17 +2302,17 @@ body::after {
   background: var(--surface);
 }
 .tm-top { border-left: 4px solid var(--con-yel); }
-.tm-mid { border-left: 4px solid #a78bfa; }
+.tm-mid { border-left: 4px solid #8fd8e6; }
 .tm-bot { border-left: 4px solid #06d6a0; }
 .tm-layer-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: var(--text3);
 }
 .tm-top .tm-layer-label { color: var(--con-yel); }
-.tm-mid .tm-layer-label { color: #a78bfa; }
+.tm-mid .tm-layer-label { color: #8fd8e6; }
 .tm-bot .tm-layer-label { color: #06d6a0; }
 .tm-layer-content {
   display: flex; flex-direction: column; gap: 8px;
@@ -2328,7 +2328,7 @@ body::after {
 }
 .tm-card-title { font-weight: 700; }
 .tm-card-sub {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; color: var(--text3); letter-spacing: 1px;
 }
 .tm-row {
@@ -2345,14 +2345,14 @@ body::after {
   padding: 6px 10px;
 }
 .tm-pair-link {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
-  color: #a78bfa;
+  color: #8fd8e6;
   letter-spacing: 1px;
 }
 .tm-arrow {
   text-align: center;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   color: var(--text3);
   letter-spacing: 1px;
@@ -2367,13 +2367,13 @@ body::after {
   margin-bottom: 8px;
 }
 .tm-mech-title {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1.5px;
   color: #06d6a0;
   margin-bottom: 6px;
 }
 .tm-mech-flow {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px;
   color: var(--text);
   line-height: 1.7;
@@ -2396,12 +2396,12 @@ body::after {
 .tm-cross {
   margin-top: 14px;
   padding: 12px 16px;
-  background: rgba(255,93,177,.04);
-  border: 1px dashed rgba(255,93,177,.3);
+  background: rgba(143,216,230,.04);
+  border: 1px dashed rgba(143,216,230,.3);
   border-radius: 6px;
 }
 .tm-cross-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1.5px;
   color: var(--neon-pnk);
   margin-bottom: 6px;
@@ -2415,7 +2415,7 @@ body::after {
 
 /* ── 中心理論引用ブロック（理論ページ末尾） ── */
 .thesis-block {
-  background: linear-gradient(180deg, rgba(255,107,53,.05) 0%, rgba(176,96,255,.04) 100%);
+  background: linear-gradient(180deg, rgba(255,107,53,.05) 0%, rgba(60,180,216,.04) 100%);
   border: 1px solid rgba(255,107,53,.25);
   border-radius: 10px;
   padding: 24px 28px;
@@ -2426,13 +2426,13 @@ body::after {
   content: '"';
   position: absolute;
   top: -10px; left: 16px;
-  font-family: 'Bebas Neue',Impact,serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,serif;
   font-size: 56px; line-height: 1;
   color: var(--con-yel);
   opacity: 0.3;
 }
 .thesis-flow {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 12px; color: var(--text);
   line-height: 2;
   background: rgba(0,0,0,.3);
@@ -2462,7 +2462,7 @@ body::after {
 }
 .fm-flow-head {
   display: flex; align-items: center; gap: 10px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; letter-spacing: 2px;
   color: var(--neon-pnk);
   margin-bottom: 12px;
@@ -2481,13 +2481,13 @@ body::after {
 }
 .fm-node:hover { filter: brightness(1.4); }
 .fm-flow-empty {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; color: var(--text3);
   text-align: center; padding: 20px;
 }
 .fm-empty {
   text-align: center;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; color: var(--text3);
   padding: 20px;
 }
@@ -2501,7 +2501,7 @@ body::after {
 }
 .fm-legend-item {
   display: inline-flex; align-items: center; gap: 5px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: var(--text2);
   padding: 2px 8px; border-radius: 3px;
   background: var(--surface2); border: 1px solid var(--border);
@@ -2546,7 +2546,7 @@ body::after {
 }
 .con-hero > * { position: relative; z-index: 1; }
 .con-hero-eyebrow {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 4px;
   color: var(--con-yel); text-transform: uppercase;
   margin-bottom: 14px;
@@ -2558,7 +2558,7 @@ body::after {
   box-shadow: 0 0 10px var(--con-red);
 }
 .con-hero-title {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: clamp(38px, 5.5vw, 64px);
   line-height: 1.0; letter-spacing: 1px;
   margin-bottom: 8px; color: var(--text1);
@@ -2566,7 +2566,7 @@ body::after {
 }
 .con-hero-title em { color: var(--con-yel); font-style: normal; }
 .con-hero-jp {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900;
   font-size: clamp(18px, 2vw, 22px);
   color: var(--text1); margin-bottom: 18px;
@@ -2580,7 +2580,7 @@ body::after {
 }
 .con-hero-tag {
   display: inline-block; padding: 4px 12px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1px;
   color: var(--con-cream);
   background: rgba(0,0,0,.3);
@@ -2589,7 +2589,7 @@ body::after {
 }
 .con-sec-label {
   display: flex; align-items: center; gap: 14px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 12px; letter-spacing: 3px;
   color: var(--con-yel); text-transform: uppercase;
   margin: 30px 0 16px; padding-bottom: 8px;
@@ -2617,7 +2617,7 @@ body::after {
   border-radius: 0 0 8px 8px;
 }
 .con-shelf-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; letter-spacing: 2px;
   color: var(--con-yel); margin-bottom: 14px;
   display: flex; align-items: center; gap: 10px;
@@ -2663,14 +2663,14 @@ body::after {
   filter: drop-shadow(0 2px 0 rgba(0,0,0,.4));
 }
 .con-cart-name {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900; font-size: 14px;
   line-height: 1.25; color: #fff;
   text-shadow: 0 1px 0 rgba(0,0,0,.6);
   letter-spacing: .5px;
 }
 .con-cart-en {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: rgba(255,255,255,.7);
   letter-spacing: 1px;
 }
@@ -2681,7 +2681,7 @@ body::after {
 .con-cart-meta {
   margin-top: auto;
   display: flex; justify-content: space-between; align-items: center;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: rgba(255,255,255,.85);
   padding-top: 6px;
   border-top: 1px solid rgba(255,255,255,.15);
@@ -2716,20 +2716,20 @@ body::after {
 }
 .con-axis-num {
   position: absolute; top: -10px; left: 18px;
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 22px;
   background: var(--con-shop-bg);
   color: var(--axis-c, var(--con-yel));
   padding: 0 10px; letter-spacing: 1px;
 }
 .con-axis-title {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900; font-size: 18px;
   color: var(--text1); margin-bottom: 4px;
   margin-left: 32px;
 }
 .con-axis-en {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   color: var(--axis-c, var(--con-yel));
   letter-spacing: 2px;
@@ -2745,7 +2745,7 @@ body::after {
   border-radius: 0 4px 4px 0;
 }
 .con-axis-sub-head {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1.5px;
   color: var(--axis-c, var(--con-yel));
   margin-bottom: 4px;
@@ -2756,22 +2756,22 @@ body::after {
   display: flex; align-items: center; gap: 9px;
 }
 .con-mc-num {
-  font-family: 'Bebas Neue',Impact,sans-serif; font-size: 34px; line-height: 1;
-  color: #0e0b14; background: var(--mc,#66cc33);
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif; font-size: 34px; line-height: 1;
+  color: #101b1e; background: var(--mc,#66cc33);
   min-width: 54px; height: 54px; padding: 0 7px; border-radius: 9px;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 3px 0 rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.28);
 }
 .con-mc-cap {
-  font-family: 'Space Mono','Courier New',monospace; font-size: 9px;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace; font-size: 9px;
   letter-spacing: 2px; color: rgba(255,255,255,.9); text-align: left; line-height: 1.4;
 }
 .con-mc-plat { color: rgba(255,255,255,.7); letter-spacing: 1px; }
 .con-cart { position: relative; }
 .con-cart-mc {
   position: absolute; top: 8px; right: 8px; z-index: 2;
-  font-family: 'Bebas Neue',Impact,sans-serif; font-size: 17px; line-height: 1;
-  color: #0e0b14; background: var(--mcc,#66cc33);
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif; font-size: 17px; line-height: 1;
+  color: #101b1e; background: var(--mcc,#66cc33);
   min-width: 27px; height: 23px; padding: 0 5px; border-radius: 5px;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 1px 0 rgba(0,0,0,.4);
@@ -2801,21 +2801,21 @@ body::after {
   filter: drop-shadow(0 4px 0 rgba(0,0,0,.4));
 }
 .con-title-hero-name {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: clamp(36px, 5vw, 56px);
   line-height: 1.0; letter-spacing: 1px;
   margin-bottom: 8px;
   text-shadow: 3px 3px 0 rgba(0,0,0,.4);
 }
 .con-title-hero-jp {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900; font-size: 18px;
   margin-bottom: 14px;
   text-shadow: 0 1px 0 rgba(0,0,0,.4);
 }
 .con-title-hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .con-title-hero-meta span {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1px;
   color: rgba(255,255,255,.95);
   background: rgba(0,0,0,.35);
@@ -2845,18 +2845,18 @@ body::after {
   padding-bottom: 8px;
 }
 .con-block-num {
-  font-family: 'Bebas Neue',Impact,sans-serif;
+  font-family: 'IBM Plex Mono','Noto Sans JP',Impact,sans-serif;
   font-size: 22px;
   color: var(--block-c, var(--con-yel));
   letter-spacing: 1px;
 }
 .con-block-title {
-  font-family: 'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-family: 'Noto Sans JP','Noto Sans JP',sans-serif;
   font-weight: 900; font-size: 16px;
   color: var(--text1);
 }
 .con-block-en {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; color: var(--text3);
   letter-spacing: 2px; margin-left: auto;
 }
@@ -2880,7 +2880,7 @@ body::after {
   padding: 10px 13px;
 }
 .con-subitem-label {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1.5px;
   color: var(--block-c, var(--con-yel));
   margin-bottom: 4px;
@@ -2897,7 +2897,7 @@ body::after {
 }
 .con-notes-head {
   display: flex; align-items: center; gap: 10px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; letter-spacing: 2px;
   color: var(--con-yel); text-transform: uppercase;
   margin-bottom: 14px;
@@ -2911,13 +2911,13 @@ body::after {
   border-radius: 0 4px 4px 0;
 }
 .con-note-date {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: var(--con-blu);
   letter-spacing: 1px; margin-bottom: 3px;
 }
 .con-note-body { font-size: 12px; color: var(--text); line-height: 1.75; }
 .con-note-empty {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px; color: var(--text3);
   text-align: center; padding: 12px;
 }
@@ -2931,7 +2931,7 @@ body::after {
   color: var(--con-grn); font-weight: 700;
 }
 .con-update-date {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; color: var(--con-grn);
   margin-right: 8px; letter-spacing: 1px;
 }
@@ -2939,7 +2939,7 @@ body::after {
   border-left: 4px solid var(--con-mag);
   padding: 10px 16px;
   margin: 10px 0;
-  background: rgba(255,93,177,.04);
+  background: rgba(143,216,230,.04);
   font-size: 13px; color: var(--text);
   line-height: 1.85; font-style: italic;
 }
@@ -2953,8 +2953,8 @@ body::after {
    WHAT'S NEW PANEL (overview)
 ════════════════════════════════════════ */
 .whatsnew-wrap {
-  background: linear-gradient(135deg, rgba(176,96,255,.04), rgba(255,107,53,.03));
-  border: 1px solid rgba(176,96,255,.25);
+  background: linear-gradient(135deg, rgba(60,180,216,.04), rgba(255,107,53,.03));
+  border: 1px solid rgba(60,180,216,.25);
   border-radius: 12px;
   padding: 22px 26px;
   margin: 0 0 32px;
@@ -2970,7 +2970,7 @@ body::after {
 }
 .whatsnew-label {
   display: flex; align-items: center; gap: 10px;
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 11px;
   letter-spacing: 2px;
   color: var(--a3);
@@ -2985,7 +2985,7 @@ body::after {
   animation: pulse 2s infinite;
 }
 .whatsnew-meta {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px;
   color: var(--text3);
   letter-spacing: 1px;
@@ -3014,7 +3014,7 @@ body::after {
   margin-bottom: 8px;
 }
 .wn-date {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 10px; letter-spacing: 1px;
   color: var(--a1);
   background: rgba(255,107,53,.08);
@@ -3026,7 +3026,7 @@ body::after {
   font-size: 14px; font-weight: 700; color: var(--text1);
 }
 .wn-badge-new {
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   font-size: 9px; letter-spacing: 1px;
   color: var(--a4);
   background: rgba(16,185,129,.1);
@@ -3051,18 +3051,134 @@ body::after {
 }
 .wn-empty {
   font-size: 12px; color: var(--text3);
-  font-family: 'Space Mono','Courier New',monospace;
+  font-family: 'IBM Plex Mono','Noto Sans JP','Courier New',monospace;
   text-align: center; padding: 16px;
 }
 
-/* ── サイト間タブ（トップ ⇄ 研究所）。トップページのCSSとは独立 ── */
+/* ════════════════════════════════════════════════════════════
+   NIGHT SODA THEME — トップページと共通のトンマナ（2026-10-19）
+   ・配色：濃い青緑の夜 + ソーダの青。紫/ピンクのネオンは使わない
+   ・書体：Noto Sans JP（本文）＋ IBM Plex Mono（英数ラベル）
+   ※ このブロックと末尾の LAB UX スクリプトは週次更新でも残すこと
+   ════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0e1f24; --surface:#132a31; --surface2:#18323a; --surface3:#1f3c45;
+  --border:rgba(120,190,205,.16); --border2:rgba(120,190,205,.24);
+  --a1:#d6e38c; --a2:#3cb4d8; --a3:#8fd8e6; --a4:#6cc9a1; --a5:#e6dc7a; --a6:#e59bb5;
+  --text:#edf2ee; --text1:#edf2ee; --text2:#a9bfc2; --text3:#7b979c;
+  --neon-pur:#3cb4d8; --neon-pnk:#8fd8e6; --neon-org:#e9b872; --neon-cyn:#8fd8e6; --neon-ylw:#e6dc7a;
+  --soda:#3cb4d8; --soda-deep:#0b5f7a;
+}
+body{background:var(--bg);color:var(--text1);font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 0}
+body::before{display:none}
+body::after{background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(60,180,216,.07) 0%,transparent 70%)}
+*{text-shadow:none!important}
+::selection{background:rgba(60,180,216,.35)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offset:3px}
+
+/* site tabs (ホーム ⇄ 研究所) */
 .sb-header{flex-wrap:wrap}
-.site-tabs{flex-basis:100%;order:-1;display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;margin-bottom:10px;border:1px solid rgba(140,80,255,.28);border-radius:8px;background:rgba(255,255,255,.03)}
-.site-tabs a{display:flex;align-items:center;justify-content:center;gap:5px;min-height:34px;border-radius:5px;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-size:12px;font-weight:700;color:var(--text2);text-decoration:none;transition:background .15s,color .15s}
-.site-tabs a:hover{background:rgba(140,80,255,.12);color:var(--text1)}
-.site-tabs a[aria-current="page"]{background:rgba(176,96,255,.2);color:var(--text1)}
-.site-tabs a:focus-visible{outline:2px solid var(--neon-pur);outline-offset:2px}
-@media (max-width:768px){.site-tabs a{min-height:44px;font-size:13px}}
+.site-tabs{flex-basis:100%;order:-1;display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;margin-bottom:12px;border:1px solid var(--border2);border-radius:8px}
+.site-tabs a{display:flex;align-items:center;justify-content:center;min-height:34px;padding:0 10px;border-radius:5px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.lh-nb{display:inline-block}
+
+/* media title pages */
+.ent-hero-name{font-family:'Noto Sans JP',sans-serif!important;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.ent-medium-movie{--ent-c:#0b5f7a}.ent-medium-anime{--ent-c:#6b3a55}.ent-medium-manga{--ent-c:#6e5420}.ent-medium-novel{--ent-c:#2f5a46}
+
+/* sidebar */
+.sidebar{background:#10252b;border-right:1px solid var(--border)}
+.sb-header{background:#10252b;border-bottom:1px solid var(--border)}
+.sb-logo{background:none!important;width:22px;height:22px;display:grid;place-items:center;text-decoration:none}
+.lab-brand-symbol{display:grid;grid-template-columns:repeat(2,7px);gap:3px;transform:rotate(-9deg)}
+.lab-brand-symbol i{width:7px;height:7px;background:var(--text1)}
+.lab-brand-symbol i:last-child{background:var(--soda);border-radius:50%}
+.sb-site-name{font-weight:700;letter-spacing:.03em}
+.sb-site-sub{color:var(--text3);letter-spacing:.09em}
+.sb-status-dot{background:var(--soda)!important;box-shadow:none!important}
+.sidebar-btn{color:var(--text2);font-size:13px!important;line-height:1.5;padding:9px 14px}
+.sidebar-btn:hover{background:rgba(120,190,205,.08);color:var(--text1)}
+.sidebar-btn.active{background:rgba(60,180,216,.14);color:var(--text1);font-weight:700}
+.sidebar-btn.active::before{background:var(--soda)!important;box-shadow:none!important}
+.sidebar-label,.sidebar-section-label{color:var(--text3)!important;font-size:10px!important;letter-spacing:.14em!important}
+.ms-btn{color:var(--text2)}
+.ms-btn.active{color:var(--text1);background:rgba(60,180,216,.16)!important;border-color:var(--soda)!important;box-shadow:none!important}
+.site-tabs{border-color:var(--border2);background:rgba(255,255,255,.02)}
+.site-tabs a{font-family:'Noto Sans JP',sans-serif;color:var(--text2)}
+.site-tabs a:hover{background:rgba(120,190,205,.1);color:var(--text1)}
+.site-tabs a[aria-current="page"]{background:var(--text1);color:#0e1f24}
+
+/* headings & accents */
+.hero-title,.con-hero-title{letter-spacing:-.01em;font-weight:700}
+.hero-title{font-family:'Noto Sans JP',sans-serif}
+.hs-num,.stat-n{font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-weight:500}
+
+/* update controls: no longer floating — compact block at the end of the sidebar */
+.upd-bar{position:static!important;align-items:stretch!important;pointer-events:auto!important;margin:18px 14px 24px;padding-top:14px;border-top:1px solid var(--border);gap:8px!important}
+.upd-status{opacity:1!important;text-align:left!important;max-width:none!important;background:none!important;border:none!important;padding:0!important;font-size:11px!important;color:var(--text3)!important}
+.upd-btn{background:none!important;border:1px solid var(--border2)!important;color:var(--text2)!important;box-shadow:none!important;padding:8px 12px!important;font-size:11px!important;border-radius:7px!important;justify-content:center}
+.upd-btn:hover{border-color:var(--soda)!important;color:var(--text1)!important}
+
+/* ── 研究所の入口 ── */
+.lh{max-width:980px;margin:0 auto;padding:64px 48px 80px}
+.lh-kicker{font:500 12px/1.6 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--soda);margin:0 0 18px}
+.lh-title{font-size:clamp(30px,3.4vw,44px);line-height:1.6;letter-spacing:-.03em;font-weight:700;color:var(--text1);margin:0}
+.lh-lead{font-size:17px;line-height:2;color:var(--text2);margin:22px 0 0;max-width:760px}
+.lh-label{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:700;color:var(--text1);margin:52px 0 16px}
+.lh-label::before{content:"";width:20px;height:2px;background:var(--soda)}
+.lh-axes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
+.lh-axis{background:var(--surface);padding:26px 28px}
+.lh-axis:nth-child(2),.lh-axis:nth-child(3){background:#16303a}
+.lh-axis span{font:500 11px/1.6 'IBM Plex Mono',monospace;letter-spacing:.13em;color:var(--soda)}
+.lh-axis h3{font-size:24px;line-height:1.5;margin:10px 0 6px;color:var(--text1)}
+.lh-axis p{font-size:15px;line-height:1.8;color:var(--text2);margin:0}
+.lh-media{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lh-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:20px 22px 22px;border:1px solid var(--border2);border-radius:12px;background:var(--surface);color:var(--text1);cursor:pointer;font:inherit;transition:border-color .15s,background .15s}
+.lh-card:hover{border-color:var(--soda);background:#173540}
+.lh-card .lh-en{font:500 10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.13em;color:var(--text3)}
+.lh-card strong{font-size:20px;line-height:1.5}
+.lh-card em{font-style:normal;font-size:13px;color:var(--text2);min-height:1.5em}
+.lh-card b{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--soda);font-size:18px}
+.lh-note{font-size:15px;line-height:1.95;color:var(--text2);margin:40px 0 0}
+.lh-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid var(--border)}
+.lh-link{background:none;border:none;border-bottom:1px solid var(--text2);color:var(--text1);font:inherit;font-size:15px;font-weight:700;padding:8px 0;cursor:pointer}
+.lh-link:hover{color:var(--soda);border-color:var(--soda)}
+.lh-link-sm{font-size:13px;font-weight:500;padding:0}
+.lh-updated{font:12px/1.8 'IBM Plex Mono','Noto Sans JP',monospace;color:var(--text3)}
+
+/* ── mobile: content first, sidebar as a drawer ── */
+.lab-mbar,.lab-scrim{display:none}
+@media (max-width:768px){
+  .lab-mbar{display:flex;position:sticky;top:0;z-index:60;align-items:center;justify-content:space-between;gap:10px;height:60px;padding:0 14px;background:rgba(14,31,36,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+  .lab-mbar-menu{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text1);font:700 13px/1 'Noto Sans JP',sans-serif;cursor:pointer}
+  .lab-mbar-menu i{display:block;width:14px;height:2px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
+  .lab-mbar .site-tabs{margin:0;flex:0 0 auto;width:auto;order:0;grid-template-columns:auto auto}
+  .lab-mbar .site-tabs a{min-height:40px;padding:0 12px;font-size:12px}
+  .sidebar{position:fixed!important;top:0;left:0;bottom:0;width:min(86vw,340px)!important;height:100%!important;z-index:70;transform:translateX(-102%);transition:transform .22s ease;box-shadow:12px 0 40px rgba(0,0,0,.45)}
+  body.lab-nav-open .sidebar{transform:none}
+  .lab-scrim{position:fixed;inset:0;z-index:65;background:rgba(5,14,17,.6)}
+  body.lab-nav-open .lab-scrim{display:block}
+  body.lab-nav-open{overflow:hidden}
+  .sb-header .site-tabs{display:none}
+  .page{padding:22px 18px!important}
+  .content{overflow-x:clip}
+  .hub-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+  .hub-stat{padding:10px 8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .hub-stat:nth-child(2n){border-right:none}
+  .ev-tbl{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lh{padding:28px 4px 56px}
+  .lh-title{font-size:29px;line-height:1.7}
+  .lh-lead{font-size:16px}
+  .lh-label{margin-top:40px;font-size:15px}
+  .lh-axis{padding:20px 14px}
+  .lh-axis h3{font-size:clamp(16px,4.8vw,21px)}
+  .lh-axis p{font-size:13px}
+  .lh-media{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .lh-card{padding:16px 16px 18px}
+  .lh-card strong{font-size:17px}
+  .lh-card b{right:14px;top:auto;bottom:16px;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.sidebar{transition:none}}
 </style>
 </head>
 <body>
@@ -3077,9 +3193,9 @@ body::after {
     <!-- サイドバーヘッダー -->
     <div class="sb-header">
       <nav class="site-tabs" aria-label="サイト切り替え"><a href="./">← ホーム</a><a href="lab.html" aria-current="page">研究所</a></nav>
-      <div class="sb-logo">🔬</div>
+      <a href="./" class="sb-logo" aria-label="ホームへ"><span class="lab-brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span></a>
       <div class="sb-title-wrap">
-        <span class="sb-site-name">エンタメ研究所</span>
+        <span class="sb-site-name">エンタメ設計研究所</span>
         <span class="sb-site-sub">ENTERTAINMENT DESIGN LAB</span>
       </div>
       <span class="sb-status-dot"></span>
@@ -3089,6 +3205,7 @@ body::after {
          GLOBAL LINKS（メディア非依存）
     ════════════════════════════════════════ -->
     <div class="sidebar-section" style="padding-bottom:4px;">
+      <button class="sidebar-btn" onclick="showPage('lab-home')" data-page="lab-home" style="font-size:11px;">🧭 研究所の入口</button>
       <button class="sidebar-btn" onclick="showPage('about-lab')" data-page="about-lab" style="font-size:11px;">📜 About / 研究所の主張</button>
       <button class="sidebar-btn" onclick="showPage('cross-axis')" data-page="cross-axis" style="font-size:11px;">🔀 横断分析（9軸 × ソシャゲ）</button>
     </div>
@@ -3101,19 +3218,19 @@ body::after {
         <span class="ms-emoji">🎮</span>ソシャゲ
       </button>
       <button class="ms-btn" data-media="console" onclick="switchMedia('console')">
-        <span class="ms-emoji">🕹️</span>コンシューマ<span class="ms-soon">WIP</span>
+        <span class="ms-emoji">🕹️</span>コンシューマ
       </button>
       <button class="ms-btn" data-media="movie" onclick="switchMedia('movie')">
-        <span class="ms-emoji">🎬</span>映画<span class="ms-soon">WIP</span>
+        <span class="ms-emoji">🎬</span>映画
       </button>
       <button class="ms-btn" data-media="manga" onclick="switchMedia('manga')">
-        <span class="ms-emoji">📖</span>漫画<span class="ms-soon">WIP</span>
+        <span class="ms-emoji">📖</span>漫画
       </button>
       <button class="ms-btn" data-media="anime" onclick="switchMedia('anime')">
-        <span class="ms-emoji">📺</span>アニメ<span class="ms-soon">WIP</span>
+        <span class="ms-emoji">📺</span>アニメ
       </button>
       <button class="ms-btn" data-media="novel" onclick="switchMedia('novel')">
-        <span class="ms-emoji">📚</span>小説<span class="ms-soon">WIP</span>
+        <span class="ms-emoji">📚</span>小説
       </button>
     </div>
 
@@ -3421,9 +3538,42 @@ body::after {
 
   <!-- CONTENT -->
   <main class="content">
+    <!-- ═══ 研究所の入口（トップから来た人向け） ═══ -->
+    <div id="page-lab-home" class="page">
+      <section class="lh">
+        <p class="lh-kicker">ENTERTAINMENT DESIGN LAB</p>
+        <h1 class="lh-title">面白さを、<br><span class="lh-nb">いくつもの軸から</span><span class="lh-nb">読み解く。</span></h1>
+        <p class="lh-lead">ゲーム、映画、漫画、アニメ、小説。「なぜ続けたくなるのか」「どう習熟するのか」「何が感情を動かすのか」。作品に合わせてさまざまな分析軸を重ね、面白さが生まれる仕組みを構造的に考えています。</p>
+
+        <p class="lh-label">たとえば、こんな視点から。</p>
+        <div class="lh-axes">
+          <div class="lh-axis"><span>MOTIVATION</span><h3>動機とサイクル</h3><p>続けたくなる仕組み</p></div>
+          <div class="lh-axis"><span>LEARNING</span><h3>学習と習熟</h3><p>できることが広がる過程</p></div>
+          <div class="lh-axis"><span>PREDICTION</span><h3>予測と揺らぎ</h3><p>期待と驚きのつくり方</p></div>
+          <div class="lh-axis"><span>IMMERSION</span><h3>没入と意味</h3><p>世界との関わりと、心に残るもの</p></div>
+        </div>
+
+        <p class="lh-label">メディアから読む</p>
+        <div class="lh-media">
+          <button class="lh-card" onclick="switchMedia('socialgame')"><span class="lh-en">SOCIAL GAME</span><strong>ソシャゲ</strong><em data-count="socialgame"></em><b aria-hidden="true">→</b></button>
+          <button class="lh-card" onclick="switchMedia('console')"><span class="lh-en">CONSOLE</span><strong>コンシューマ</strong><em data-count="console"></em><b aria-hidden="true">→</b></button>
+          <button class="lh-card" onclick="switchMedia('movie')"><span class="lh-en">MOVIE</span><strong>映画</strong><em data-count="movie"></em><b aria-hidden="true">→</b></button>
+          <button class="lh-card" onclick="switchMedia('anime')"><span class="lh-en">ANIME</span><strong>アニメ</strong><em data-count="anime"></em><b aria-hidden="true">→</b></button>
+          <button class="lh-card" onclick="switchMedia('manga')"><span class="lh-en">MANGA</span><strong>漫画</strong><em data-count="manga"></em><b aria-hidden="true">→</b></button>
+          <button class="lh-card" onclick="switchMedia('novel')"><span class="lh-en">NOVEL</span><strong>小説</strong><em data-count="novel"></em><b aria-hidden="true">→</b></button>
+        </div>
+
+        <p class="lh-note">作品ごとの特徴と、作品を横断して見えてくる共通の構造。その両方を、日々のゲームづくりにつなげています。</p>
+        <div class="lh-foot">
+          <button class="lh-link" onclick="showPage('cross-axis')">横断分析（9軸 × ソシャゲ）を見る <span aria-hidden="true">→</span></button>
+          <span class="lh-updated">最終更新 <span data-lab-updated>--</span> ・ <button class="lh-link lh-link-sm" onclick="showPage('overview');setTimeout(function(){var a=document.getElementById('whats-new-anchor');if(a)a.scrollIntoView({behavior:'smooth'})},80)">更新履歴</button></span>
+        </div>
+      </section>
+    </div>
+
 
     <!-- ─── OVERVIEW ─── -->
-    <div id="page-overview" class="page active">
+    <div id="page-overview" class="page">
 
       <!-- HERO -->
       <div class="hub-hero">
@@ -3661,7 +3811,7 @@ body::after {
         </div>
         <div class="intervention-legend">
           <span class="iv-badge" style="background:rgba(245,158,11,.15);color:#f59e0b;">感情増幅</span>
-          <span class="iv-badge" style="background:rgba(139,92,246,.15);color:#8b5cf6;">欲求刺激</span>
+          <span class="iv-badge" style="background:rgba(139,92,246,.15);color:#3cb4d8;">欲求刺激</span>
           <span class="iv-badge" style="background:rgba(239,68,68,.15);color:#ef4444;">損失回避</span>
           <span class="iv-badge" style="background:rgba(6,182,212,.15);color:#06b6d4;">復帰促進</span>
           <span class="iv-badge" style="background:rgba(16,185,129,.15);color:#10b981;">新規獲得</span>
@@ -7351,8 +7501,8 @@ body::after {
     </div>
     <!-- ─── Fate/Grand Order ─── -->
     <div <div id="page-fgo" class="page">
-      <div class="page-header" style="--accent:#7c3aed;">
-        <p class="page-tag" style="color:#7c3aed;">// ストーリー課金型</p>
+      <div class="page-header" style="--accent:#2a9cc0;">
+        <p class="page-tag" style="color:#2a9cc0;">// ストーリー課金型</p>
         </p>
         <h2 class="page-title">⚔️ <em>Fate/Grand Order</em></h2>
         <p class="page-desc">2025年年間3位。ストーリーの質による課金動機設計の国内最高峰。天井なし→天井導入の設計変遷が業界教訓。</p>
@@ -7361,7 +7511,7 @@ body::after {
       <div class="sec">
         <div class="sec-label">基本ゲームサイクル</div>
         <div class="card">
-          <div class="cycle-flow" style="--c:#7c3aed;"><span class="cf-step">ストーリー章を読む</span><span class="cf-step">感情ピークで新サーヴァント欲求</span><span class="cf-step">ガチャ課金</span><span class="cf-step">AP消費でイベント周回</span></div>
+          <div class="cycle-flow" style="--c:#2a9cc0;"><span class="cf-step">ストーリー章を読む</span><span class="cf-step">感情ピークで新サーヴァント欲求</span><span class="cf-step">ガチャ課金</span><span class="cf-step">AP消費でイベント周回</span></div>
         </div>
       </div>
 
@@ -8186,7 +8336,7 @@ body::after {
 
       <div class="sec">
         <div class="sec-label">// パターン一覧</div>
-        <div class="sp-nav"><a class="sp-nav-item" href="#sp-anniversary" style="border-color:#f59e0b;color:#f59e0b;">🎂 周年施策 <span class="sp-nav-count">16</span></a><a class="sp-nav-item" href="#sp-newchar" style="border-color:#8b5cf6;color:#8b5cf6;">✨ 新キャラ・新ユニット実装 <span class="sp-nav-count">8</span></a><a class="sp-nav-item" href="#sp-collab" style="border-color:#06b6d4;color:#06b6d4;">🤝 コラボ施策 <span class="sp-nav-count">7</span></a><a class="sp-nav-item" href="#sp-newcontent" style="border-color:#10b981;color:#10b981;">🆕 新コンテンツ・新システム実装 <span class="sp-nav-count">6</span></a><a class="sp-nav-item" href="#sp-event" style="border-color:#ec4899;color:#ec4899;">📅 期間限定イベント <span class="sp-nav-count">1</span></a><a class="sp-nav-item" href="#sp-advertising" style="border-color:#f97316;color:#f97316;">📣 マーケティング・広告施策 <span class="sp-nav-count">2</span></a><a class="sp-nav-item" href="#sp-platform" style="border-color:#6366f1;color:#6366f1;">🌐 プラットフォーム拡大 <span class="sp-nav-count">4</span></a><a class="sp-nav-item" href="#sp-improvement" style="border-color:#84cc16;color:#84cc16;">🔧 ゲーム改善・QOL向上 <span class="sp-nav-count">1</span></a></div>
+        <div class="sp-nav"><a class="sp-nav-item" href="#sp-anniversary" style="border-color:#f59e0b;color:#f59e0b;">🎂 周年施策 <span class="sp-nav-count">16</span></a><a class="sp-nav-item" href="#sp-newchar" style="border-color:#3cb4d8;color:#3cb4d8;">✨ 新キャラ・新ユニット実装 <span class="sp-nav-count">8</span></a><a class="sp-nav-item" href="#sp-collab" style="border-color:#06b6d4;color:#06b6d4;">🤝 コラボ施策 <span class="sp-nav-count">7</span></a><a class="sp-nav-item" href="#sp-newcontent" style="border-color:#10b981;color:#10b981;">🆕 新コンテンツ・新システム実装 <span class="sp-nav-count">6</span></a><a class="sp-nav-item" href="#sp-event" style="border-color:#ec4899;color:#ec4899;">📅 期間限定イベント <span class="sp-nav-count">1</span></a><a class="sp-nav-item" href="#sp-advertising" style="border-color:#f97316;color:#f97316;">📣 マーケティング・広告施策 <span class="sp-nav-count">2</span></a><a class="sp-nav-item" href="#sp-platform" style="border-color:#6366f1;color:#6366f1;">🌐 プラットフォーム拡大 <span class="sp-nav-count">4</span></a><a class="sp-nav-item" href="#sp-improvement" style="border-color:#84cc16;color:#84cc16;">🔧 ゲーム改善・QOL向上 <span class="sp-nav-count">1</span></a></div>
       </div>
 
     <div class="sp-block" id="sp-anniversary">
@@ -8336,10 +8486,10 @@ body::after {
       </div>
     </div>
     <div class="sp-block" id="sp-newchar">
-      <div class="sp-block-header" style="border-left:4px solid #8b5cf6;">
-        <div class="sp-block-icon" style="background:rgba(139,92,246,0.08);color:#8b5cf6;">✨</div>
+      <div class="sp-block-header" style="border-left:4px solid #3cb4d8;">
+        <div class="sp-block-icon" style="background:rgba(139,92,246,0.08);color:#3cb4d8;">✨</div>
         <div>
-          <h2 class="sp-block-title" style="color:#8b5cf6;">新キャラ・新ユニット実装</h2>
+          <h2 class="sp-block-title" style="color:#3cb4d8;">新キャラ・新ユニット実装</h2>
           <p class="sp-block-tagline">ガチャ需要と直結する最頻出施策</p>
         </div>
       </div>
@@ -8352,7 +8502,7 @@ body::after {
         <div class="sp-cases-label">// 事例 (8件)</div>
         <div class="sp-cases-grid"><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🐎 ウマ娘</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🐎 ウマ娘</span>
                 <span class="sp-date">2024/09</span>
                 <span class="sp-rank">3週連続1位</span>
               </div>
@@ -8360,7 +8510,7 @@ body::after {
               <div class="sp-case-body">9/10新ウマ娘実装。3.5周年余波で3週連続首位</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🏴‍☠️ バウンティラッシュ</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🏴‍☠️ バウンティラッシュ</span>
                 <span class="sp-date">2024/09</span>
                 <span class="sp-rank">Top20</span>
               </div>
@@ -8368,7 +8518,7 @@ body::after {
               <div class="sp-case-body">人気キャラのフェスガチャ。シーズン制リーグバトル報酬更新</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🏴‍☠️ バウンティラッシュ</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🏴‍☠️ バウンティラッシュ</span>
                 <span class="sp-date">2026/03/05</span>
                 <span class="sp-rank">前週比257%・3位</span>
               </div>
@@ -8376,7 +8526,7 @@ body::after {
               <div class="sp-case-body">五老星実装で26位→3位の急上昇。原作最強クラスIP施策</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">⚽ ブルーロック</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">⚽ ブルーロック</span>
                 <span class="sp-date">2024/01〜</span>
                 <span class="sp-rank">Top20</span>
               </div>
@@ -8384,7 +8534,7 @@ body::after {
               <div class="sp-case-body">共通コンボ・個別コンボで特定キャラ組み合わせへの需要生成</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🐉 ドラゴンクエストタクト</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🐉 ドラゴンクエストタクト</span>
                 <span class="sp-date">2024/06</span>
                 <span class="sp-rank">Top20</span>
               </div>
@@ -8392,7 +8542,7 @@ body::after {
               <div class="sp-case-body">歴代ドラクエシリーズのモンスター定期実装でIP価値を維持</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🏐 ハイキュー</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🏐 ハイキュー</span>
                 <span class="sp-date">2024年</span>
                 <span class="sp-rank">Top25</span>
               </div>
@@ -8400,7 +8550,7 @@ body::after {
               <div class="sp-case-body">ハイキューIPの新章・アニメ連動キャラ実装。ただし集客効果は限定的</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">🌀 呪術廻戦ファンパレ</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">🌀 呪術廻戦ファンパレ</span>
                 <span class="sp-date">2025/04</span>
                 <span class="sp-rank">Top10</span>
               </div>
@@ -8408,7 +8558,7 @@ body::after {
               <div class="sp-case-body">GRADEシステムで新クエスト進行が新素材の解放につながる設計</div>
             </div><div class="sp-case">
               <div class="sp-case-head">
-                <span class="sp-tag" style="background:#8b5cf622;color:#8b5cf6;">👾 怪獣8号</span>
+                <span class="sp-tag" style="background:#8b5cf622;color:#3cb4d8;">👾 怪獣8号</span>
                 <span class="sp-date">2025/05</span>
                 <span class="sp-rank">Top16</span>
               </div>
@@ -9141,7 +9291,7 @@ body::after {
           <div class="con-cart-en">CHUNKS</div>
           <div class="con-cart-tagline">身体化されるまとまり</div>
         </div>
-        <div class="con-cart" style="--cart-c:#a78bfa;" onclick="showPage('console-theory')">
+        <div class="con-cart" style="--cart-c:#8fd8e6;" onclick="showPage('console-theory')">
           <div class="con-cart-emoji">↔</div>
           <div class="con-cart-name">横エネ</div>
           <div class="con-cart-en">YOKO-ENE</div>
@@ -9153,7 +9303,7 @@ body::after {
           <div class="con-cart-en">TRANSFORMATION</div>
           <div class="con-cart-tagline">同じ行為が別の意味を帯びる</div>
         </div>
-        <div class="con-cart" style="--cart-c:#7c3aed;" onclick="showPage('console-theory')">
+        <div class="con-cart" style="--cart-c:#2a9cc0;" onclick="showPage('console-theory')">
           <div class="con-cart-emoji">⬇</div>
           <div class="con-cart-name">没入構造</div>
           <div class="con-cart-en">IMMERSION</div>
@@ -9213,7 +9363,7 @@ body::after {
             </div>
           </a>
 
-          <a class="con-cart" style="--cart-c:#a78bfa;" onclick="showPage('console-disco-elysium')">
+          <a class="con-cart" style="--cart-c:#8fd8e6;" onclick="showPage('console-disco-elysium')">
             <span class="con-cart-mc" style="--mcc:#66cc33">91</span>
             <div class="con-cart-emoji">🕵️</div>
             <div class="con-cart-name">Disco Elysium</div>
@@ -9261,7 +9411,7 @@ body::after {
             </div>
           </a>
 
-          <a class="con-cart" style="--cart-c:#7c3aed;" onclick="showPage('console-returnal')">
+          <a class="con-cart" style="--cart-c:#2a9cc0;" onclick="showPage('console-returnal')">
             <span class="con-cart-mc" style="--mcc:#66cc33">86</span>
             <div class="con-cart-emoji">🌌</div>
             <div class="con-cart-name">RETURNAL</div>
@@ -9319,7 +9469,7 @@ body::after {
               <span>WIP</span>
             </div>
           </a>
-          <a class="con-cart" style="--cart-c:#7c3aed;" onclick="showPage('console-mina-hollower')">
+          <a class="con-cart" style="--cart-c:#2a9cc0;" onclick="showPage('console-mina-hollower')">
             <span class="con-cart-mc" style="--mcc:#66cc33">91</span>
             <div class="con-cart-emoji">🕯️</div>
             <div class="con-cart-name">Mina the Hollower</div>
@@ -9675,7 +9825,7 @@ body::after {
       <!-- 3階層連動マップ（鳥瞰図） -->
       <div class="con-sec-label">理論の鳥瞰 <span class="en">3-LAYER CONNECTION MAP</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:14px;">
-        理論は <strong>3階層</strong> で連動する。<strong style="color:var(--con-yel);">上層（基調）</strong>が中層の運動を縛り、<strong style="color:#a78bfa;">中層（10軸）</strong>がプレイ体験を読み解く観察フレームになり、<strong style="color:#06d6a0;">下層（メカニズム）</strong>が中層を動かす動力源になる。
+        理論は <strong>3階層</strong> で連動する。<strong style="color:var(--con-yel);">上層（基調）</strong>が中層の運動を縛り、<strong style="color:#8fd8e6;">中層（10軸）</strong>がプレイ体験を読み解く観察フレームになり、<strong style="color:#06d6a0;">下層（メカニズム）</strong>が中層を動かす動力源になる。
       </p>
 
       <div class="theory-map">
@@ -9813,7 +9963,7 @@ body::after {
             <div class="eb-param-jp">リズム</div>
             <div class="eb-param-desc">テンポの速い遅い、規則的／不規則。プレイヤーの身体が刻む基本拍。</div>
           </div>
-          <div class="eb-param" style="--p-c:#a78bfa;">
+          <div class="eb-param" style="--p-c:#8fd8e6;">
             <div class="eb-param-name">DENSITY</div>
             <div class="eb-param-jp">密度</div>
             <div class="eb-param-desc">情報量・刺激量の多さ少なさ。1分あたりの体験密度。</div>
@@ -9952,7 +10102,7 @@ body::after {
           </div>
 
           <!-- 下層メカ: 予測性とズレの運動 -->
-          <h4 style="margin:20px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#06d6a0;">下層メカ：予測性とズレの運動</h4>
+          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#06d6a0;">下層メカ：予測性とズレの運動</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:8px;">揺らぎは「半分わかる」状態を作ることで、予測の運動そのものを駆動する。</p>
           <div class="con-axis-sub" style="border-left-color:#06d6a0;">
             <div class="con-axis-sub-head" style="color:#06d6a0;">「半分わかる」が継続を生む</div>
@@ -9991,7 +10141,7 @@ body::after {
           </div>
 
           <!-- 下層メカ: リスクリターン選択 -->
-          <h4 style="margin:20px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#ff5db1;">下層メカ：リスクリターン選択がチャンク多様性を生む</h4>
+          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#ff5db1;">下層メカ：リスクリターン選択がチャンク多様性を生む</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:8px;">同じ揺らぎでも、複数の対処選択肢がある。プレイヤーが選び取ることで <strong>個別化されたチャンク</strong> が形成される。</p>
           <div class="con-axis-sub" style="border-left-color:#ff5db1;">
             <div class="con-axis-sub-head" style="color:#ff5db1;">流れ：揺らぎ → リスクリターン選択 → チャンク化 → 身体化</div>
@@ -10010,7 +10160,7 @@ body::after {
       </div>
 
       <!-- 7. 横エネ（抜本再構成 v17）-->
-      <div class="con-axis" style="--axis-c:#a78bfa;">
+      <div class="con-axis" style="--axis-c:#8fd8e6;">
         <span class="con-axis-num">07</span>
         <div class="con-axis-title">横エネ</div>
         <div class="con-axis-en">YOKO-ENE — 行為が世界の意味に接続されたときに発生する</div>
@@ -10029,7 +10179,7 @@ body::after {
           <div class="con-quote">この2つが重なると、行為が「ゲームのための操作」ではなく、その世界の中で自然に行っていることのように感じられる。</div>
 
           <!-- 2成分 -->
-          <h4 style="margin:20px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#a78bfa;">2成分：身体横エネ × 文脈横エネ</h4>
+          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">2成分：身体横エネ × 文脈横エネ</h4>
           <div class="con-axis-sub" style="border-left-color:#06d6a0;">
             <div class="con-axis-sub-head" style="color:#06d6a0;">身体横エネ（PHYSICAL）</div>
             <p>操作・リズム・戦闘・回避・パリィ など、メカニクス由来の同期。プレイヤーの入力と結果が即時に一致し、身体的に世界に触れている感覚。<br>
@@ -10043,7 +10193,7 @@ body::after {
 
           <!-- 比較表 -->
           <div style="margin:14px 0;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-size:12px;color:var(--text);">
-            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:8px;letter-spacing:1.5px;">// 強い作品は両方持つ</div>
+            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;color:var(--text3);margin-bottom:8px;letter-spacing:1.5px;">// 強い作品は両方持つ</div>
             <table style="width:100%;border-collapse:collapse;font-size:11px;">
               <thead><tr style="color:var(--text3);text-align:left;"><th style="padding:4px 8px;">ゲーム</th><th style="padding:4px 8px;">身体</th><th style="padding:4px 8px;">文脈</th></tr></thead>
               <tbody style="line-height:1.8;">
@@ -10057,7 +10207,7 @@ body::after {
           </div>
 
           <!-- 行為=物語のレベル -->
-          <h4 style="margin:24px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#a78bfa;">行為＝物語のレベル（Lv1〜Lv4）</h4>
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">行為＝物語のレベル（Lv1〜Lv4）</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">文脈横エネの強度は「行為がどれだけ物語に接続されているか」で測れる。4レベルあり、上に行くほど深い。</p>
 
           <div class="con-axis-sub" style="border-left-color:#9090b8;">
@@ -10083,7 +10233,7 @@ body::after {
 
           <!-- 強度仮説式 -->
           <div style="margin-top:20px;padding:14px 18px;background:rgba(255,209,102,.06);border:1px solid rgba(255,209,102,.35);border-radius:6px;">
-            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--con-yel);margin-bottom:8px;">// 横エネ強度の仮説式</div>
+            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;letter-spacing:1.5px;color:var(--con-yel);margin-bottom:8px;">// 横エネ強度の仮説式</div>
             <p style="font-size:13px;color:var(--text);font-weight:700;margin:0;line-height:1.8;text-align:center;">
               横エネ強度 ≒ 世界理解量 × 行為が物語に与える意味量
             </p>
@@ -10093,7 +10243,7 @@ body::after {
           </div>
 
           <!-- 下層メカ: 同期5種 -->
-          <h4 style="margin:24px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#a78bfa;">下層メカ：同期5種（精密化）</h4>
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">下層メカ：同期5種（精密化）</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">前述の「身体/文脈」は粗いラベル。実際にはプレイヤーが世界と同期する経路は <strong>5種</strong> あり、これらの組み合わせで横エネの質が決まる。<strong>行為=物語Lv（深さ）と同期5種（広さ）は直交する2次元軸</strong>。</p>
           <div class="con-axis-sub" style="border-left-color:#06d6a0;">
             <div class="con-axis-sub-head" style="color:#06d6a0;">① 身体同期</div>
@@ -10135,7 +10285,7 @@ body::after {
           <p style="font-size:12px; color:var(--text3); margin-top:8px;">→ 「開始時／中盤／終盤／変化のきっかけ」を整理する。</p>
 
           <!-- 下層メカ: 未完チャンク5種 -->
-          <h4 style="margin:20px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#fb923c;">下層メカ：未完チャンク5種（予測インセンティブの母体）</h4>
+          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#fb923c;">下層メカ：未完チャンク5種（予測インセンティブの母体）</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:8px;">継続を生むのは、自分の中に <strong>未処理のチャンクが残っていること</strong>。意味変容は、未完チャンクが時間をかけて回収・更新される過程として捉えられる。</p>
           <div class="con-axis-sub" style="border-left-color:#fb923c;">
             <div class="con-axis-sub-head" style="color:#fb923c;">① 因果未完</div>
@@ -10162,7 +10312,7 @@ body::after {
       </div>
 
       <!-- 9. 没入構造 -->
-      <div class="con-axis" style="--axis-c:#7c3aed;">
+      <div class="con-axis" style="--axis-c:#2a9cc0;">
         <span class="con-axis-num">09</span>
         <div class="con-axis-title">没入構造</div>
         <div class="con-axis-en">IMMERSION — 何が束になって没入を作るか（プレイヤーの内面化）</div>
@@ -10175,14 +10325,14 @@ body::after {
           </p>
 
           <!-- 没入 ⇄ 横エネの対 -->
-          <div class="con-axis-sub" style="border-left-color:#7c3aed;">
-            <div class="con-axis-sub-head" style="color:#7c3aed;">没入構造 ⇄ 横エネ：内向き / 外向きの対</div>
+          <div class="con-axis-sub" style="border-left-color:#2a9cc0;">
+            <div class="con-axis-sub-head" style="color:#2a9cc0;">没入構造 ⇄ 横エネ：内向き / 外向きの対</div>
             <p><strong>没入構造（この軸）</strong> = プレイヤーの <strong>内面化</strong>。行為・認知・感情がプレイヤーの中で同期した状態（内向き）。<br>
             <strong>横エネ（07）</strong> = プレイヤーの行為が <strong>世界と同期</strong> した状態（外向き）。<br>
             両者は同じ現象の <strong>2つの側面</strong>：プレイヤー側を見るのが没入構造、プレイヤー × 世界の関係を見るのが横エネ。</p>
           </div>
-          <div class="con-axis-sub" style="border-left-color:#7c3aed;">
-            <div class="con-axis-sub-head" style="color:#7c3aed;">内面化のプロセス</div>
+          <div class="con-axis-sub" style="border-left-color:#2a9cc0;">
+            <div class="con-axis-sub-head" style="color:#2a9cc0;">内面化のプロセス</div>
             <p>メカニクス上の <strong>コスト</strong> とキャラの <strong>ハードル</strong> が一致 → 操作とキャラ反応にズレがない → プレイヤーの意図とメカのインセンティブが一致 → 「思考-操作-状況」がチャンク化 → 世界との距離感が縮まる。<br>
             可視化：選択理由が「効率」から「キャラ／物語」に移行、同じ状況での意思決定が速くなり「キャラらしい選択」が安定する。</p>
           </div>
@@ -10204,7 +10354,7 @@ body::after {
           </p>
 
           <!-- 下層メカ: 跳ね返り感情の蓄積 → 核の立ち上がり -->
-          <h4 style="margin:20px 0 10px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#dc2626;">下層メカ：跳ね返り感情の蓄積から核が立ち上がる</h4>
+          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#dc2626;">下層メカ：跳ね返り感情の蓄積から核が立ち上がる</h4>
           <p style="font-size:12px;color:var(--text2);margin-bottom:8px;">感情の核は最初から存在するのではなく、<strong>ループの中で繰り返し生じる「跳ね返り感情」が蓄積</strong> することで、作品全体を貫く中心感情として立ち上がる。</p>
           <div class="con-axis-sub" style="border-left-color:#dc2626;">
             <div class="con-axis-sub-head" style="color:#dc2626;">跳ね返り感情とは</div>
@@ -10320,7 +10470,7 @@ body::after {
             <div class="gl-step-jp">コスト</div>
             <div class="gl-step-desc">行為の対価。HP・MP・時間・操作労力。難度の揺らぎを生む主源。</div>
           </div>
-          <div class="gl-step" style="--gl-c:#a78bfa;">
+          <div class="gl-step" style="--gl-c:#8fd8e6;">
             <div class="gl-step-name">04 FEEDBACK</div>
             <div class="gl-step-jp">フィードバック</div>
             <div class="gl-step-desc">結果の返り。跳ね返り感情（達成感／後悔／執着）を生む。</div>
@@ -10361,7 +10511,7 @@ body::after {
             <div class="gl-step-jp">瞬間介入軸</div>
             <div class="gl-step-desc">その場の判断を作る。<br>例：どの方向に撃つか／どこまで溜めるか／どの距離で当てるか／いつ放つか</div>
           </div>
-          <div class="gl-step" style="--gl-c:#a78bfa;">
+          <div class="gl-step" style="--gl-c:#8fd8e6;">
             <div class="gl-step-name">IN-RUN</div>
             <div class="gl-step-jp">ラン内介入軸</div>
             <div class="gl-step-desc">1プレイ中の欲求連鎖を作る。<br>例：攻めるか立て直すか／どの敵群を狙うか／どのルートを通るか</div>
@@ -10418,7 +10568,7 @@ body::after {
               <span style="font-size:12px;color:var(--text2);line-height:1.7;">近づくほど当てやすいが、被弾リスクも高まる</span>
             </div>
             <div style="display:flex;gap:12px;align-items:baseline;">
-              <span style="font-weight:900;color:#a78bfa;min-width:42px;flex-shrink:0;">方向</span>
+              <span style="font-weight:900;color:#8fd8e6;min-width:42px;flex-shrink:0;">方向</span>
               <span style="font-size:12px;color:var(--text2);line-height:1.7;">壁・敵群・報酬ルートの位置によって、どこに飛ばすかが変わる</span>
             </div>
             <div style="display:flex;gap:12px;align-items:baseline;">
@@ -10426,7 +10576,7 @@ body::after {
               <span style="font-size:12px;color:var(--text2);line-height:1.7;">軽い敵・重い敵・爆発敵などによって狙い方が変わる</span>
             </div>
             <div style="display:flex;gap:12px;align-items:baseline;">
-              <span style="font-weight:900;color:#ff3fa0;min-width:42px;flex-shrink:0;">ルート</span>
+              <span style="font-weight:900;color:#8fd8e6;min-width:42px;flex-shrink:0;">ルート</span>
               <span style="font-size:12px;color:var(--text2);line-height:1.7;">安全ルートと報酬ルートによって、攻めるか立て直すかが変わる</span>
             </div>
           </div>
@@ -11025,7 +11175,7 @@ updates: [
 
       <div class="sec">
         <div class="sec-label">// 物語骨格の型（複数選択可）</div>
-        <div class="card" style="border-left:3px solid #a78bfa;">
+        <div class="card" style="border-left:3px solid #8fd8e6;">
           <p style="font-size:13px;color:var(--text2);line-height:1.85;margin-bottom:10px;">
             <code>narrative.types</code> に配列で複数指定可能。<strong>当てはまる型</strong>を選び、<strong>沿っている点</strong>・<strong>逸脱点</strong>・<strong>逸脱が生む体験価値</strong>を記入。
           </p>
@@ -11057,7 +11207,7 @@ updates: [
           <p style="font-size:13px;color:var(--text);line-height:1.85;">
             各フィールドの本文は <strong>軽Markdown</strong> として処理される：
           </p>
-          <p style="padding-left:14px;font-size:12px;color:var(--text2);line-height:1.85;font-family:'Space Mono',monospace;">
+          <p style="padding-left:14px;font-size:12px;color:var(--text2);line-height:1.85;font-family:'IBM Plex Mono','Noto Sans JP',monospace;">
             <code>**bold**</code> → <strong>bold</strong><br>
             <code>*italic*</code> → 斜体<br>
             <code>`code`</code> → <code>code</code><br>
@@ -11229,17 +11379,17 @@ updates: [
           </ul>
         </div>
       </div>
-      <div style="max-width:920px;margin:22px auto 0;background:var(--surface2,#161320);border:1px solid var(--border,#2a2438);border-radius:12px;padding:22px 26px;text-align:left;">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:#a78bfa;margin-bottom:14px;">// METASCORE の見方（映画基準）</div>
+      <div style="max-width:920px;margin:22px auto 0;background:var(--surface2,#1a282b);border:1px solid var(--border,#2d4247);border-radius:12px;padding:22px 26px;text-align:left;">
+        <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;letter-spacing:2px;color:#8fd8e6;margin-bottom:14px;">// METASCORE の見方（映画基準）</div>
         <p style="color:var(--text2,#c9c2d6);font-size:13px;line-height:1.85;margin:0 0 16px;">Metacriticのメタスコアは<strong style="color:#fff;">媒体ごとに色分け基準が異なります</strong>。映画・TV・音楽は<strong style="color:#66cc33;">61以上で「緑（好評）」</strong>。ゲーム（75以上で緑）より緑・絶賛のラインが低いため、映画の70点台はゲームの70点台より高い評価帯に相当します。当研究所の映画メタスコア・バッジは、この映画基準で色分けしています。</p>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
-          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:#e8e0f4;background:rgba(255,255,255,.03);border:1px solid var(--border,#2a2438);border-left:4px solid #66cc33;border-radius:5px;padding:5px 10px;">81–100 Universal acclaim / 絶賛</span>
-          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:#e8e0f4;background:rgba(255,255,255,.03);border:1px solid var(--border,#2a2438);border-left:4px solid #66cc33;border-radius:5px;padding:5px 10px;">61–80 Generally favorable / 好評</span>
-          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:#e8e0f4;background:rgba(255,255,255,.03);border:1px solid var(--border,#2a2438);border-left:4px solid #ffbd3f;border-radius:5px;padding:5px 10px;">40–60 Mixed or average / 賛否混在</span>
-          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:#e8e0f4;background:rgba(255,255,255,.03);border:1px solid var(--border,#2a2438);border-left:4px solid #ff6874;border-radius:5px;padding:5px 10px;">20–39 Generally unfavorable / 不評</span>
-          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11px;color:#e8e0f4;background:rgba(255,255,255,.03);border:1px solid var(--border,#2a2438);border-left:4px solid #ff6874;border-radius:5px;padding:5px 10px;">0–19 Overwhelming dislike / 酷評</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;color:#edf2ee;background:rgba(255,255,255,.03);border:1px solid var(--border,#2d4247);border-left:4px solid #66cc33;border-radius:5px;padding:5px 10px;">81–100 Universal acclaim / 絶賛</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;color:#edf2ee;background:rgba(255,255,255,.03);border:1px solid var(--border,#2d4247);border-left:4px solid #66cc33;border-radius:5px;padding:5px 10px;">61–80 Generally favorable / 好評</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;color:#edf2ee;background:rgba(255,255,255,.03);border:1px solid var(--border,#2d4247);border-left:4px solid #ffbd3f;border-radius:5px;padding:5px 10px;">40–60 Mixed or average / 賛否混在</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;color:#edf2ee;background:rgba(255,255,255,.03);border:1px solid var(--border,#2d4247);border-left:4px solid #ff6874;border-radius:5px;padding:5px 10px;">20–39 Generally unfavorable / 不評</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:11px;color:#edf2ee;background:rgba(255,255,255,.03);border:1px solid var(--border,#2d4247);border-left:4px solid #ff6874;border-radius:5px;padding:5px 10px;">0–19 Overwhelming dislike / 酷評</span>
         </div>
-        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text3,#8a8398);border-top:1px solid var(--border,#2a2438);padding-top:10px;line-height:1.7;">参考 — ゲーム基準：90+ 絶賛 ／ 75+ 緑（好評）／ 50–74 黄 ／ 49以下 赤。ゲームは60点台が「平均」帯になるため、Metacriticが媒体別に色を調整している。</div>
+        <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;color:var(--text3,#8a8398);border-top:1px solid var(--border,#2d4247);padding-top:10px;line-height:1.7;">参考 — ゲーム基準：90+ 絶賛 ／ 75+ 緑（好評）／ 50–74 黄 ／ 49以下 赤。ゲームは60点台が「平均」帯になるため、Metacriticが媒体別に色を調整している。</div>
       </div>
     </div>
 
@@ -11540,10 +11690,10 @@ function initRankChart() {
           reverse: true,
           min: 1, max: 30,
           grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#9090b8', font: { family: 'Space Mono', size: 10 }, stepSize: 5,
+          ticks: { color: '#9090b8', font: { family: 'IBM Plex Mono', size: 10 }, stepSize: 5,
             callback: v => v === 1 ? '🥇 1位' : v + '位' }
         },
-        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9090b8', font: { family: 'Space Mono', size: 10 } } }
+        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9090b8', font: { family: 'IBM Plex Mono', size: 10 } } }
       },
       plugins: {
         legend: { labels: { color: '#ddddf0', font: { family: 'Noto Sans JP', size: 12 }, boxWidth: 16 } },
@@ -11887,7 +12037,7 @@ function renderBoostFlow(hostId, features) {
   // カラム見出し
   ['起点', '中継', '終着'].forEach((label, i) => {
     svg += `<text x="${i * colW + colW / 2}" y="20" text-anchor="middle"
-      font-family="'Space Mono','Courier New',monospace" font-size="10" fill="#9080b8" letter-spacing="3">${label}</text>`;
+      font-family="'IBM Plex Mono','Courier New',monospace" font-size="10" fill="#9080b8" letter-spacing="3">${label}</text>`;
   });
 
   // ── 接点位置の事前計算 ──
@@ -11960,7 +12110,7 @@ function renderBoostFlow(hostId, features) {
       <rect x="${p.x}" y="${p.y}" width="3" height="${nodeH}"
         fill="${cat.color}"/>
       <text x="${p.x + nodeW/2}" y="${p.y + nodeH/2 + 4}" text-anchor="middle"
-        font-family="'Zen Kaku Gothic New','Noto Sans JP',sans-serif" font-size="11" font-weight="700"
+        font-family="'Noto Sans JP','Noto Sans JP',sans-serif" font-size="11" font-weight="700"
         fill="#e8e0f4">${esc(name)}</text>
     </g>`;
   });
@@ -21175,16 +21325,16 @@ function renderMediaTitle(id) {
 
   // 各セクションの色
   const C = {
-    info:    '#9080b8',
-    one:     '#ffd166',
-    exp:     '#06d6a0',
-    ctx:     '#1d6dff',
-    emo:     '#dc2626',
-    narr:    '#a78bfa',
-    media:   '#ec4899',
-    pull:    '#fb923c',
-    trs:     '#f59e0b',
-    sum:     '#06b6d4',
+    info:    '#7b979c',
+    one:     '#e6dc7a',
+    exp:     '#6cc9a1',
+    ctx:     '#5b9fe0',
+    emo:     '#e08a7a',
+    narr:    '#8fd8e6',
+    media:   '#e59bb5',
+    pull:    '#e9b872',
+    trs:     '#d6e38c',
+    sum:     '#3cb4d8',
   };
 
   // ヒーロー＆セクション組み立て
@@ -23823,7 +23973,7 @@ function _updAddRankButtons() {
       'border:1px solid var(--border)',
       'border-radius:6px',
       'padding:5px 12px',
-      'font-family:\'Space Mono\',monospace',
+      'font-family:\'IBM Plex Mono\',monospace',
       'font-size:10px',
       'color:var(--text2)',
       'cursor:pointer',
@@ -23836,7 +23986,7 @@ function _updAddRankButtons() {
     btn.onclick = () => updOpenRankInput(pageId);
 
     const label = chartBlock.querySelector('.rcb-label');
-    if (label) chartBlock.insertBefore(btn, label);
+    if (label) label.parentNode.insertBefore(btn, label);
   });
 }
 
@@ -23847,7 +23997,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderOverview();
   renderMeasures();
   renderWhatsNew();
-  showPage('overview');
+  showPage('lab-home');
 
   // ── チャート・ボタン初期化（遅延）──
   setTimeout(() => {
@@ -24079,7 +24229,7 @@ function _addGameIRows() {
 
     // Insert at top of chart block, before rcb-label
     const label = chartBlock.querySelector('.rcb-label');
-    if (label) chartBlock.insertBefore(row, label);
+    if (label) label.parentNode.insertBefore(row, label);
     else chartBlock.prepend(row);
   });
 }
@@ -24367,7 +24517,7 @@ function wrapExistingContent(pageId) {
   // rcb-area の前に挿入
   const rcb = page.querySelector('.rcb-area');
   if (rcb) {
-    page.insertBefore(wrapper, rcb);
+    rcb.parentNode.insertBefore(wrapper, rcb);
   } else {
     page.appendChild(wrapper);
   }
@@ -24397,5 +24547,62 @@ function wrapExistingContent(pageId) {
 })();
 </script>
 
+<script>
+/* ═══ LAB UX（2026-10-19）— モバイルのドロワー化・更新ボタンの格納・件数表示 ═══
+   ※ 週次更新でも残すこと */
+var _STORE_TIME = (typeof _STORE_TIME !== 'undefined') ? _STORE_TIME : 'lab_last_sync';
+var _UPD_SHEETS = (typeof _UPD_SHEETS !== 'undefined') ? _UPD_SHEETS : [];
+(function(){
+  var mq = window.matchMedia('(max-width:768px)');
+  var body = document.body, sidebar = document.querySelector('.sidebar');
+  // mobile top bar
+  var bar = document.createElement('div');
+  bar.className = 'lab-mbar';
+  bar.innerHTML = '<button class="lab-mbar-menu" aria-expanded="false" aria-controls="lab-sidebar"><i aria-hidden="true"></i>目次</button>'
+    + '<nav class="site-tabs" aria-label="サイト切り替え"><a href="./">← ホーム</a><a href="lab.html" aria-current="page">研究所</a></nav>';
+  var scrim = document.createElement('div'); scrim.className = 'lab-scrim';
+  if (sidebar) { sidebar.id = 'lab-sidebar'; }
+  var shell = document.querySelector('.shell');
+  if (shell) { shell.parentNode.insertBefore(bar, shell); }
+  body.appendChild(scrim);
+  var menuBtn = bar.querySelector('.lab-mbar-menu');
+  function setOpen(open){
+    body.classList.toggle('lab-nav-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    if (open && sidebar) { var a = sidebar.querySelector('.sidebar-btn.active') || sidebar.querySelector('.sidebar-btn'); if (a) a.focus({preventScroll:true}); }
+  }
+  menuBtn.addEventListener('click', function(){ setOpen(!body.classList.contains('lab-nav-open')); });
+  scrim.addEventListener('click', function(){ setOpen(false); menuBtn.focus(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && body.classList.contains('lab-nav-open')) { setOpen(false); menuBtn.focus(); } });
+  // navigation hooks: close drawer & go to top after choosing a page (keep open when switching media)
+  var keepOpen = false;
+  if (typeof showPage === 'function') {
+    var _show = showPage;
+    window.showPage = showPage = function(id){
+      _show(id);
+      if (mq.matches) { window.scrollTo(0, 0); if (!keepOpen) setOpen(false); }
+    };
+  }
+  if (typeof switchMedia === 'function') {
+    var _switch = switchMedia;
+    window.switchMedia = switchMedia = function(m){ keepOpen = true; try { _switch(m); } finally { keepOpen = false; } };
+  }
+  mq.addEventListener && mq.addEventListener('change', function(){ if (!mq.matches) setOpen(false); });
+  // update controls -> bottom of sidebar
+  var upd = document.getElementById('upd-bar');
+  if (upd && sidebar) sidebar.appendChild(upd);
+  // entrance page: counts & last update (computed from existing data, no hand-written numbers)
+  function countFor(m){
+    if (m === 'socialgame') return (typeof GAMES !== 'undefined') ? GAMES.length : 0;
+    var block = document.querySelector('.sb-media-block[data-media="' + m + '"]');
+    if (!block) return 0;
+    var re = (m === 'console') ? /showPage\('console-(?!theory|template)/ : /showPage\('media-(?!template)/;
+    return Array.prototype.filter.call(block.querySelectorAll('.sidebar-btn[onclick]'), function(b){ return re.test(b.getAttribute('onclick')); }).length;
+  }
+  document.querySelectorAll('[data-count]').forEach(function(el){ var n = countFor(el.dataset.count); el.textContent = n ? (n + (el.dataset.count === 'socialgame' ? 'タイトル' : '作品')) : ''; });
+  try { var u = document.querySelector('[data-lab-updated]'); if (u && typeof LAST_UPDATED !== 'undefined') u.textContent = LAST_UPDATED; } catch(e) {}
+})();
+
+</script>
 </body>
 </html>

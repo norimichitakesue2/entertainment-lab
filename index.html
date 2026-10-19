@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Norimichi Takesue — エンタメ設計研究所</title>
 <meta name="description" content="遊びの「面白い」を、考えて、つくる。ゲームプランナー Norimichi Takesueの個人制作とエンタメ研究。ソーダスプリント制作中。">
-<meta name="theme-color" content="#f8f8f2">
+<meta name="theme-color" content="#0e1f24">
 <link rel="canonical" href="https://norimichitakesue2.github.io/entertainment-lab/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="エンタメ設計研究所">
@@ -14,6 +14,8 @@
 <meta property="og:image" content="https://norimichitakesue2.github.io/entertainment-lab/assets/soda-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@NoriTakesue">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <style>
 :root{--paper:#f8f8f2;--ink:#153640;--muted:#4d656c;--line:#d7e0de;--blue:#007da4;--cyan:#c6f4f2;--lime:#e4ef9d;--white:#fff;--approach:#eaf2ee;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--header-height:88px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 12px)}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.9 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:6px}::selection{background:var(--cyan)}.wrap{max-width:1320px;padding:0 56px;margin:auto}.skip{position:absolute;left:12px;top:-80px;z-index:40;background:white;padding:12px}.skip:focus{top:12px}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -43,6 +45,7 @@
 /* Lead headings rendered as <p> (keep heading outline = section h2 only) */
 .approach-top p.big-heading,.lab-header p.big-heading{font-size:clamp(30px,3vw,40px);line-height:1.65;letter-spacing:-.045em;margin:0;font-weight:750;color:var(--ink)}
 @media(max-width:600px){.approach-top p.big-heading,.lab-header p.big-heading{font-size:29px;line-height:1.7}}
+.approach-top p.big-heading br,.lab-header p.big-heading br{display:inline}
 /* Keep phrases together */
 .nb{display:inline-block}
 /* External link (X) */
@@ -50,6 +53,30 @@
 @media(max-width:850px){.header-right{gap:16px}}
 @media(max-width:600px){.header-right{gap:8px}.page-tabs a{min-height:40px;padding:0 9px;font-size:12px}.menu-button{padding:8px 10px}.game-label{padding:8px 11px}.game-label strong{font-size:16px}.game-label span{font-size:10px;margin-top:3px}.video-toggle{width:40px;height:40px;font-size:15px}.ext-link{font-size:13px}}
 @media(max-width:600px){.brand strong{white-space:nowrap;font-size:14px}.brand small{display:none}.media-bottom{flex-direction:row-reverse}}@media(max-width:420px){.caption{flex-direction:column;gap:2px}.caption span:last-child{text-align:left}}@media(max-width:374px){.brand strong{font-size:13px}.page-tabs a{padding:0 7px;font-size:11px}.menu-button{padding:8px 8px;font-size:11px}.media-topline .badge:last-child{display:none}}@media(max-width:340px){.brand-symbol{display:none}}
+
+/* ═══ NIGHT SODA — 研究所と共通のトンマナ（暗めの夜＋ソーダの青） ═══ */
+:root{--paper:#0e1f24;--ink:#edf2ee;--muted:#a9bfc2;--line:#26424a;--blue:#3cb4d8;--cyan:#bff0ee;--lime:#dfeaa0;--white:#132a31;--approach:#11262c;--surface:#132a31;--surface2:#16303a;--mono:'IBM Plex Mono','Noto Sans JP',ui-monospace,SFMono-Regular,monospace}
+body{font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+::selection{background:rgba(60,180,216,.35)}
+.skip{background:var(--surface);color:var(--ink)}
+.header{background:rgba(14,31,36,.96);backdrop-filter:blur(6px)}
+.brand-symbol i{background:var(--ink)}
+.menu-button{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.page-tabs{background:var(--surface);border-color:var(--line)}.page-tabs a:hover{background:var(--surface2);color:var(--ink)}.page-tabs a[aria-current="page"]{background:var(--ink);color:#0e1f24}
+.hero-media{border-color:#ffffff14;box-shadow:0 22px 56px rgba(0,0,0,.35)}
+.badge{background:rgba(14,31,36,.92);color:var(--ink)}
+.game-label{background:rgba(9,22,26,.9)}.video-toggle{background:rgba(9,22,26,.9)}
+.number{border-color:rgba(60,180,216,.35)}
+.project-meta{background:#0b5f7a}
+.approach{background:var(--approach);border-color:#1f3a42}.approach .section-heading{background:var(--approach);border-color:var(--line)}
+.principle{background:var(--surface);border-color:#24414a}
+.origin{background:var(--paper);border-color:#24414a}
+.research-axes{background:var(--line);border-color:var(--line)}.research-axis{background:var(--surface)}.research-axis:nth-child(2),.research-axis:nth-child(3){background:var(--surface2)}.research-axis:nth-child(4){background:var(--surface)}
+.name-mark{background:var(--surface);border-color:var(--line)}
+.activity-list span{background:var(--surface2)}
+.closing{background:var(--surface);border-color:var(--line)}
+.ext-link{border-color:var(--muted)}.ext-link:hover{background:var(--ink);color:#0e1f24}
+.hero-copy p,.body-copy,.approach-top p,.principle p,.origin-copy p,.lab-header p,.about-copy p,details p{color:var(--muted)}
 </style>
 </head>
 <body>

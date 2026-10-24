@@ -3236,6 +3236,69 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
   .lab-pager{grid-template-columns:1fr 1fr}
   .lab-pager .list{grid-column:1/-1;order:3}
 }
+
+/* ═══ CONSOLE THEMES（2026-10-24）— 10軸ページ × 作品の双方向リンク ※週次更新でも残す ═══ */
+.ct-page{max-width:980px;margin:0 auto}
+.ct-hero{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;padding:26px 28px;border:1px solid var(--border2);border-radius:16px;background:var(--surface);margin-bottom:22px}
+.ct-num{grid-row:span 2;display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:var(--soda);color:#0e1f24;font:700 22px/1 'IBM Plex Mono',monospace}
+.ct-name{margin:0;font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--text1);line-height:1.4}
+.ct-q{margin:0;font-size:16px;color:var(--text2)}
+.ct-scope{grid-column:1/-1;margin:10px 0 0;padding-top:12px;border-top:1px solid var(--border);font-size:13px;line-height:1.85;color:var(--text2)}
+.ct-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:34px 0 12px;font-size:18px;font-weight:800;color:var(--text1)}
+.ct-h small{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--text3)}
+.ct-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ct-chip{padding:6px 12px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2)}
+.ct-theory .con-axis{margin:0}
+.ct-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:0 0 14px;font-size:11px;color:var(--text3)}
+.ct-legend span{display:inline-flex;align-items:center;gap:6px}
+.ct-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;font:600 10px/1.6 'Noto Sans JP',sans-serif;letter-spacing:.04em;border:1px solid transparent;white-space:nowrap}
+.ct-b-note{background:rgba(60,180,216,.14);color:#8fd8e6;border-color:rgba(60,180,216,.3)}
+.ct-b-excerpt{background:rgba(108,201,161,.12);color:#9fdcc0;border-color:rgba(108,201,161,.3)}
+.ct-b-pending{background:rgba(255,255,255,.04);color:var(--text3);border-color:var(--border2)}
+.ct-b-done{background:rgba(108,201,161,.12);color:#9fdcc0}
+.ct-b-wip{background:rgba(230,220,122,.1);color:#e6dc7a}
+.ct-b-candidate{background:rgba(229,155,181,.12);color:#efb6ca}
+.ct-group{margin:20px 0 6px;font:600 12px/1.6 'Noto Sans JP',sans-serif;color:var(--text3);letter-spacing:.06em}
+.ct-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ct-card{display:flex;flex-direction:column;gap:8px;padding:18px 18px 16px;border:1px solid var(--border2);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--text1);transition:border-color .15s,background .15s}
+.ct-card:hover{border-color:var(--soda);background:#173540}
+.ct-card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ct-card-name{font-size:15px;font-weight:800;line-height:1.45;margin-right:auto}
+.ct-lens{font:500 11px/1.5 'IBM Plex Mono','Noto Sans JP',monospace;color:var(--soda);letter-spacing:.04em}
+.ct-text{margin:0;font-size:13px;line-height:1.85;color:var(--text2)}
+.ct-qa{margin:0;padding:8px 10px;border-left:2px solid var(--soda);background:rgba(60,180,216,.06);font-size:12px;line-height:1.7;color:var(--text1)}
+.ct-qa b{color:var(--soda);font-weight:700;margin-right:6px}
+.ct-go{margin-top:auto;font-size:12px;font-weight:700;color:var(--soda)}
+.ct-pending{display:flex;flex-wrap:wrap;gap:8px}
+.ct-pending a{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px dashed var(--border2);border-radius:999px;font-size:12px;color:var(--text2);text-decoration:none}
+.ct-pending a:hover{border-color:var(--soda);color:var(--text1)}
+.ct-compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.ct-compare div{padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--surface2)}
+.ct-compare strong{display:block;font-size:13px;margin-bottom:6px;color:var(--text1)}
+.ct-compare p{margin:0;font-size:12px;line-height:1.7;color:var(--text2)}
+.ct-note{margin:10px 0 0;font-size:12px;line-height:1.8;color:var(--text3)}
+.ct-axis-link{display:inline-flex;margin-top:12px;font-size:12px;font-weight:700;color:var(--soda);text-decoration:none;border-bottom:1px solid transparent}
+.ct-axis-link:hover{border-color:var(--soda)}
+/* reverse links on title pages */
+.ct-rel{margin:34px 0 10px;padding:22px 22px 18px;border:1px solid var(--border2);border-radius:14px;background:var(--surface)}
+.ct-rel h3{margin:0 0 4px;font-size:17px;font-weight:800;color:var(--text1)}
+.ct-rel>p{margin:0 0 14px;font-size:12px;color:var(--text3)}
+.ct-rel-list{display:grid;gap:8px}
+.ct-rel-item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);text-decoration:none;color:var(--text1)}
+.ct-rel-item:hover{border-color:var(--soda)}
+.ct-rel-num{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:rgba(60,180,216,.16);color:var(--soda);font:700 12px/1 'IBM Plex Mono',monospace}
+.ct-rel-item strong{font-size:14px}
+.ct-rel-item small{display:block;margin-top:2px;font-size:12px;color:var(--text2);line-height:1.6}
+.ct-rel-item em{font-style:normal;font-size:12px;font-weight:700;color:var(--soda);white-space:nowrap}
+/* candidate pages */
+.ct-cand-hero{padding:26px 28px;border:1px dashed rgba(229,155,181,.45);border-radius:16px;background:var(--surface);margin-bottom:20px}
+.ct-cand-hero .em{font-size:34px}
+.ct-cand-hero h1{margin:8px 0 6px;font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--text1)}
+.ct-meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.ct-meta span{padding:3px 9px;border:1px solid var(--border2);border-radius:6px;font-size:12px;color:var(--text2)}
+/* overview: candidate carts */
+.con-cart.ct-cand-cart{border-style:dashed}
+@media(max-width:768px){.ct-hero{grid-template-columns:1fr;padding:20px}.ct-num{grid-row:auto;width:52px;height:52px;font-size:18px}.ct-grid{grid-template-columns:1fr}.ct-rel{padding:18px 14px}.ct-rel-item{grid-template-columns:auto 1fr}.ct-rel-item em{grid-column:2}.ct-cand-hero{padding:20px}}
 </style>
 </head>
 <body>
@@ -3264,7 +3327,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
     <div class="sidebar-section" style="padding-bottom:4px;">
       <button class="sidebar-btn" onclick="showPage('lab-home')" data-page="lab-home" style="font-size:11px;">🧭 研究所の入口</button>
       <button class="sidebar-btn" onclick="showPage('about-lab')" data-page="about-lab" style="font-size:11px;">📜 About / 研究所の主張</button>
-      <button class="sidebar-btn" onclick="showPage('cross-axis')" data-page="cross-axis" style="font-size:11px;">🔀 横断分析（9軸 × ソシャゲ）</button>
+      <button class="sidebar-btn" onclick="showPage('cross-axis')" data-page="cross-axis" style="font-size:11px;">🔀 横断分析（10軸 × ソシャゲ）</button>
     </div>
 
     <!-- ════════════════════════════════════════
@@ -3405,7 +3468,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
     <div class="sb-media-block" data-media="console">
       <div class="sidebar-section">
         <button class="sidebar-btn active" onclick="showPage('overview-console')" data-page="overview-console">🏪 トップ（陳列棚）</button>
-        <button class="sidebar-btn" onclick="showPage('console-theory')" data-page="console-theory">📚 9軸の骨格</button>
+        <button class="sidebar-btn" onclick="showPage('console-theory')" data-page="console-theory">📚 10軸の骨格</button>
         <button class="sidebar-btn" onclick="showPage('console-template')" data-page="console-template">📝 タイトル追加ガイド</button>
       </div>
       <div class="sidebar-section">
@@ -3622,7 +3685,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
 
         <p class="lh-note">作品ごとの特徴と、作品を横断して見えてくる共通の構造。その両方を、日々のゲームづくりにつなげています。</p>
         <div class="lh-foot">
-          <button class="lh-link" onclick="showPage('cross-axis')">横断分析（9軸 × ソシャゲ）を見る <span aria-hidden="true">→</span></button>
+          <button class="lh-link" onclick="showPage('cross-axis')">横断分析（10軸 × ソシャゲ）を見る <span aria-hidden="true">→</span></button>
           <span class="lh-updated">最終更新 <span data-lab-updated>--</span> ・ <button class="lh-link lh-link-sm" onclick="showPage('overview');setTimeout(function(){var a=document.getElementById('whats-new-anchor');if(a)a.scrollIntoView({behavior:'smooth'})},80)">更新履歴</button></span>
         </div>
       </section>
@@ -9301,20 +9364,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
         <p class="con-hero-desc">
           コンシューマゲームを、メカニクスだけでなく <strong style="color:var(--con-yel);">没入感まで含めて構造で読む</strong> 研究ページ。<br>
           サイクル・インセンティブ・揺らぎ・チャンク・横エネ・意味変容——<br>
-          作品がどう成立し、どう深まり、どう意味を変えていくかを9軸で読み解く。
+          作品がどう成立し、どう深まり、どう意味を変えていくかを10軸で読み解く。
         </p>
         <div class="con-hero-tags">
-          <span class="con-hero-tag">⌬ 9軸の骨格</span>
+          <span class="con-hero-tag">⌬ 10軸の骨格</span>
           <span class="con-hero-tag">📚 体験構造</span>
           <span class="con-hero-tag">🔍 没入研究</span>
           <span class="con-hero-tag">✎ プレイ観察ログ</span>
         </div>
       </div>
 
-      <!-- 9軸サマリ -->
-      <div class="con-sec-label">9軸の骨格 <span class="en">CORE FRAMEWORK</span></div>
+      <!-- 10軸サマリ -->
+      <div class="con-sec-label">10軸の骨格 <span class="en">CORE FRAMEWORK</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:18px;">
-        この研究所では、作品を「メカニクス」だけで語らない。プレイヤーが <strong style="color:var(--con-yel);">何を反復し、なぜ続け、どこで更新され、何が身体化され、どう没入につながり、最後に何が残るか</strong> を、以下の9軸で読み解く。
+        この研究所では、作品を「メカニクス」だけで語らない。プレイヤーが <strong style="color:var(--con-yel);">何を反復し、なぜ続け、どこで更新され、何が身体化され、どう没入につながり、最後に何が残るか</strong> を、以下の10軸で読み解く。
       </p>
 
       <div class="con-shelf-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:24px;">
@@ -9375,7 +9438,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       </div>
 
       <p style="font-size:12px; color:var(--text3); text-align:center; margin-bottom:30px;">
-        ▲ 各カードをクリックで「9軸の骨格」ページへ
+        ▲ 各カードをクリックで「10軸の骨格」ページへ
       </p>
 
       <!-- TITLES SHELF -->
@@ -9853,7 +9916,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <div class="con-block" style="--block-c:var(--con-blu);">
         <div class="con-block-body">
           <p>
-            ① <strong style="color:var(--con-blu);">9軸の骨格</strong> ページで理論を理解する。<br>
+            ① <strong style="color:var(--con-blu);">10軸の骨格</strong> ページで理論を理解する。<br>
             ② <strong style="color:var(--con-blu);">タイトル棚</strong> から作品を選び、その作品の構造を読む。<br>
             ③ 自分でプレイした観察を <strong style="color:var(--con-blu);">観察メモ</strong> として追記していく。<br>
             ④ 新しい作品を追加するときは <strong style="color:var(--con-blu);">タイトル追加ガイド</strong> を参照。
@@ -9867,12 +9930,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
     </div>
 
     <!-- ════════════════════════════════════════
-         コンシューマ：9軸の骨格（理論ページ）
+         コンシューマ：10軸の骨格（理論ページ）
     ════════════════════════════════════════ -->
     <div id="page-console-theory" class="page">
       <div class="con-hero">
-        <div class="con-hero-eyebrow">// 9-AXIS CORE FRAMEWORK</div>
-        <h1 class="con-hero-title">9軸の<em>骨格</em></h1>
+        <div class="con-hero-eyebrow">// 10-AXIS CORE FRAMEWORK</div>
+        <h1 class="con-hero-title">10軸の<em>骨格</em></h1>
         <div class="con-hero-jp">体験はどう成立し、どう深まり、どう意味を変えるか</div>
         <p class="con-hero-desc">
           単発の出来事ではなく <strong style="color:var(--con-yel);">反復の積み重ね</strong>として体験を捉え、その反復の中でプレイヤーが何を <strong style="color:var(--con-yel);">身体化</strong> し、世界とどう <strong style="color:var(--con-yel);">同期</strong> し、最後に何が <strong style="color:var(--con-yel);">残る</strong> のかを9つの軸で読み解く。
@@ -9893,7 +9956,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
             <div class="tm-row">
               <span class="tm-card"><span class="tm-card-title">エネルギー体</span><span class="tm-card-sub">張力・温度・リズム・密度・呼吸</span></span>
             </div>
-            <p style="font-size:11px;color:var(--text3);margin:4px 0 0;">作品全体の質を決める無意識のパラメータ。9軸の運動の方向を縛る。</p>
+            <p style="font-size:11px;color:var(--text3);margin:4px 0 0;">作品全体の質を決める無意識のパラメータ。10軸の運動の方向を縛る。</p>
           </div>
         </div>
 
@@ -9966,7 +10029,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <div class="con-sec-label">読み順の提案 <span class="en">SUGGESTED READING ORDER</span></div>
       <div class="con-block" style="--block-c:var(--con-mag);">
         <div class="con-block-body">
-          <p>9軸は <strong style="color:var(--con-mag);">骨格として 01→09 の順</strong> に並べているが、作品を読むときの推奨は逆方向：<strong style="color:var(--con-mag);">「09 感情の核」から入って、それを成立させる構造を遡る</strong> 順で読むと体験的に分かりやすい。</p>
+          <p>10軸は <strong style="color:var(--con-mag);">骨格として 01→09 の順</strong> に並べているが、作品を読むときの推奨は逆方向：<strong style="color:var(--con-mag);">「09 感情の核」から入って、それを成立させる構造を遡る</strong> 順で読むと体験的に分かりやすい。</p>
           <p style="font-size:12px; color:var(--text2); padding-left:14px;">
             まず <strong>09 感情の核</strong> で「この作品は何を残すか」を掴む<br>
             → <strong>08 没入構造</strong> でそれを成立させる束を見る<br>
@@ -9978,11 +10041,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
         </div>
       </div>
 
-      <!-- 9軸の連動（上部に再配置） -->
-      <div class="con-sec-label">9軸の連動 <span class="en">HOW THEY INTERLOCK</span></div>
+      <!-- 10軸の連動（上部に再配置） -->
+      <div class="con-sec-label">10軸の連動 <span class="en">HOW THEY INTERLOCK</span></div>
       <div class="con-block" style="--block-c:var(--con-mag);">
         <div class="con-block-body">
-          <p>9軸は独立しているのではなく、次のように <strong>連動</strong> している：</p>
+          <p>10軸は独立しているのではなく、次のように <strong>連動</strong> している：</p>
           <ol style="font-size:12px;color:var(--text2);line-height:2;padding-left:24px;">
             <li>プレイヤーは、ある <strong style="color:var(--con-mag);">インセンティブ</strong> によって動き始める</li>
             <li>その行為は、一定の <strong style="color:var(--con-mag);">サイクル</strong> の中で反復される</li>
@@ -10000,7 +10063,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <!-- 上層: エネルギー体 -->
       <div class="con-sec-label">上層 — エネルギー体 <span class="en">UPPER LAYER · ENERGY BODY</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:14px;">
-        作品全体を貫く <strong style="color:var(--con-yel);">基調状態</strong>。設計者が無意識に縛っている <strong>5つのパラメータ</strong>で、9軸の運動の方向を形作る。物語・演出・操作・音・間 ── これらすべてを同じ向きに揃える「縛り」。
+        作品全体を貫く <strong style="color:var(--con-yel);">基調状態</strong>。設計者が無意識に縛っている <strong>5つのパラメータ</strong>で、10軸の運動の方向を形作る。物語・演出・操作・音・間 ── これらすべてを同じ向きに揃える「縛り」。
       </p>
 
       <div class="eb-wrap">
@@ -10034,10 +10097,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       </div>
 
       <p style="font-size:12px; color:var(--text3); line-height:1.85; margin-bottom:20px;">
-        エネルギー体は <strong>9軸の運動の方向を縛り</strong>、その総和が <strong>感情の核として立ち上がる</strong>。エネルギー体は設計者の選択、感情の核はプレイヤーの受容結果。
+        エネルギー体は <strong>10軸の運動の方向を縛り</strong>、その総和が <strong>感情の核として立ち上がる</strong>。エネルギー体は設計者の選択、感情の核はプレイヤーの受容結果。
       </p>
 
-      <div class="con-sec-label">9軸の各論 <span class="en">EACH AXIS</span></div>
+      <div class="con-sec-label">10軸の各論 <span class="en">EACH AXIS</span></div>
 
       <!-- 1. サイクル -->
       <div class="con-axis" style="--axis-c:#e63946;">
@@ -10219,40 +10282,55 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <!-- 7. 横エネ（抜本再構成 v17）-->
       <div class="con-axis" style="--axis-c:#8fd8e6;">
         <span class="con-axis-num">07</span>
-        <div class="con-axis-title">横エネ</div>
-        <div class="con-axis-en">YOKO-ENE — 行為が世界の意味に接続されたときに発生する</div>
+        <div class="con-axis-title">横エネ（横エネルギー）</div>
+        <div class="con-axis-en">YOKO-ENE — 主体と世界の同期</div>
         <div class="con-axis-body">
-          <p>この理論で <strong>最も独自</strong> な概念。プレイヤーの行為が単なる操作や攻略としてではなく、その世界の <strong>営みや振る舞い</strong> として感じられる状態。<strong>横エネには2つの成分</strong>があり、強い作品はその両方を備える。</p>
+          <p><strong>横エネルギー（横エネ）＝主体と世界の同期体験。</strong>行為を繰り返すうちに操作が身体に馴染み、変化する世界の文脈とのズレに適応し直し、やがて自分の振る舞いが世界と噛み合って感じられる──その状態を指す。この理論で最も独自な概念。</p>
 
-          <!-- 成立条件 -->
-          <div class="con-axis-sub">
-            <div class="con-axis-sub-head">成立条件①（プレイヤー側）</div>
-            <p>反復や学習を通じて身体リズムができていること。</p>
-          </div>
-          <div class="con-axis-sub">
-            <div class="con-axis-sub-head">成立条件②（作品側）</div>
-            <p>その行為が世界や文脈の中で意味を持っていること。</p>
-          </div>
-          <div class="con-quote">この2つが重なると、行為が「ゲームのための操作」ではなく、その世界の中で自然に行っていることのように感じられる。</div>
-
-          <!-- 2成分 -->
-          <h4 style="margin:20px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">2成分：身体横エネ × 文脈横エネ</h4>
-          <div class="con-axis-sub" style="border-left-color:#06d6a0;">
-            <div class="con-axis-sub-head" style="color:#06d6a0;">身体横エネ（PHYSICAL）</div>
-            <p>操作・リズム・戦闘・回避・パリィ など、メカニクス由来の同期。プレイヤーの入力と結果が即時に一致し、身体的に世界に触れている感覚。<br>
-            例：DMC のスタイリッシュ評価、Celeste の成功体験、ダクソのパリィ。</p>
-          </div>
-          <div class="con-axis-sub" style="border-left-color:#fb923c;">
-            <div class="con-axis-sub-head" style="color:#fb923c;">文脈横エネ（CONTEXTUAL）</div>
-            <p>世界・物語・意味・存在 など、ストーリー理解由来の同期。行為に「何のために？」が結びつき、世界の中で意味のある振る舞いをしている感覚。<br>
-            例：Outer Wilds の探索、Death Stranding の運送、ICO の手を引く動き。</p>
+          <div class="con-axis-sub" style="border-left-color:#3cb4d8;">
+            <div class="con-axis-sub-head" style="color:#3cb4d8;">インセンティブ連鎖とは別物</div>
+            <p>「一つの行動の結果が、次の行動への欲求になる」のは<strong>インセンティブ連鎖</strong>（02 インセンティブ）で扱う。横エネが見るのは「次に何をしたいか」ではなく、<strong>「いま自分の振る舞いが世界とどれだけ噛み合っているか」</strong>。両者は同時に起きることが多いが、同じものとして扱わない。</p>
           </div>
 
-          <!-- 比較表 -->
+          <div class="con-axis-sub" style="border-left-color:#e9b872;">
+            <div class="con-axis-sub-head" style="color:#e9b872;">縦エネとの関係</div>
+            <p><strong>縦エネ＝理想と不足のズレ → 目標 → 挑戦 → 達成</strong>。縦エネは「目的とのズレ」を解消する運動、横エネは「世界とのズレ」を解消して同期する運動。同義ではないが往復する──挑戦の過程で同期が深まり、深まった同期が次の挑戦の手触りを変える。</p>
+          </div>
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">同期が生まれる流れ</h4>
+          <p style="line-height:2.2;"><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">行為の反復</span><span style="color:var(--text3);margin:0 2px;">→</span><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">操作のチャンク化</span><span style="color:var(--text3);margin:0 2px;">→</span><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">文脈の変化</span><span style="color:var(--text3);margin:0 2px;">→</span><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">ズレ</span><span style="color:var(--text3);margin:0 2px;">→</span><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">再チャンク化／適応</span><span style="color:var(--text3);margin:0 2px;">→</span><span style="display:inline-block;padding:4px 10px;margin:3px 2px;border:1px solid var(--border2);border-radius:999px;font-size:12px;color:var(--text1);background:var(--surface2);">世界との整合・同期</span></p>
+          <p style="font-size:12px;color:var(--text2);">一度同期しても、文脈が変われば再びズレが生まれ、再チャンク化を経て同期し直す。この往復が繰り返されるほど、行為は「ゲームのための操作」から「その世界での振る舞い」へ変わっていく。</p>
+
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">5種の同期（何と同期するか）</h4>
+
+          <div class="con-axis-sub" style="border-left-color:#6cc9a1;">
+            <div class="con-axis-sub-head" style="color:#6cc9a1;">① 身体の同期</div>
+            <p>操作・リズム・戦闘・回避・パリィ。入力と結果が即時に一致し、身体で世界に触れている感覚。<br>例：DMC、Celeste。</p>
+          </div>
+
+          <div class="con-axis-sub" style="border-left-color:#e9b872;">
+            <div class="con-axis-sub-head" style="color:#e9b872;">② 環境の同期</div>
+            <p>地形・気候・光・音・物理など、世界の条件に振る舞いが呼応する。<br>例：BotWの登攀・天候、DEATH STRANDINGの地形。</p>
+          </div>
+
+          <div class="con-axis-sub" style="border-left-color:#6cc9a1;">
+            <div class="con-axis-sub-head" style="color:#6cc9a1;">③ 社会の同期</div>
+            <p>NPC・他プレイヤー・コミュニティの意図や反応を読み、関係の中で振る舞いを変える。<br>例：ELDEN RINGのメッセージ、どうぶつの森の島民、DEATH STRANDINGの非同期マルチ。</p>
+          </div>
+
+          <div class="con-axis-sub" style="border-left-color:#e9b872;">
+            <div class="con-axis-sub-head" style="color:#e9b872;">④ 意味の同期</div>
+            <p>行為が世界の物語・テーマ・象徴の中で意味を持つ。<br>例：Outer Wildsの探索、ワンダと巨像の登攀。</p>
+          </div>
+
+          <div class="con-axis-sub" style="border-left-color:#e08a7a;">
+            <div class="con-axis-sub-head" style="color:#e08a7a;">⑤ 時間の同期</div>
+            <p>日没・季節・ループ・歴史など、世界の時間構造と自分の行為の時間が重なる。<br>例：Outer Wildsの22分ループ、どうぶつの森のリアルタイム連動。</p>
+          </div>
+          <p style="font-size:12px;color:var(--text3);margin-top:8px;">※ 以前の整理の「身体横エネ」は①身体の同期、「文脈横エネ」は主に④意味の同期にあたる。作品ページの「身体の同期／意味の同期」欄はこの対応で読む。</p>
           <div style="margin:14px 0;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-size:12px;color:var(--text);">
-            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;color:var(--text3);margin-bottom:8px;letter-spacing:1.5px;">// 強い作品は両方持つ</div>
+            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;color:var(--text3);margin-bottom:8px;letter-spacing:1.5px;">// 身体の同期 × 意味の同期（作品別の観察）</div>
             <table style="width:100%;border-collapse:collapse;font-size:11px;">
-              <thead><tr style="color:var(--text3);text-align:left;"><th style="padding:4px 8px;">ゲーム</th><th style="padding:4px 8px;">身体</th><th style="padding:4px 8px;">文脈</th></tr></thead>
+              <thead><tr style="color:var(--text3);text-align:left;"><th style="padding:4px 8px;">ゲーム</th><th style="padding:4px 8px;">身体の同期</th><th style="padding:4px 8px;">意味の同期</th></tr></thead>
               <tbody style="line-height:1.8;">
                 <tr><td style="padding:3px 8px;">モンハン</td><td style="color:#06d6a0;">強</td><td style="color:var(--text3);">弱</td></tr>
                 <tr><td style="padding:3px 8px;">十三機兵</td><td style="color:var(--text3);">弱</td><td style="color:#fb923c;">強</td></tr>
@@ -10264,8 +10342,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
           </div>
 
           <!-- 行為=物語のレベル -->
-          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">行為＝物語のレベル（Lv1〜Lv4）</h4>
-          <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">文脈横エネの強度は「行為がどれだけ物語に接続されているか」で測れる。4レベルあり、上に行くほど深い。</p>
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">同期の深さ：行為＝物語のレベル（Lv1〜Lv4）</h4>
+          <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">意味の同期の深さは「行為がどれだけ物語に接続されているか」で測れる。4レベルあり、上に行くほど深い。</p>
 
           <div class="con-axis-sub" style="border-left-color:#9090b8;">
             <div class="con-axis-sub-head" style="color:#9090b8;">Lv1: 行為が物語進行のトリガー</div>
@@ -10290,42 +10368,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
 
           <!-- 強度仮説式 -->
           <div style="margin-top:20px;padding:14px 18px;background:rgba(255,209,102,.06);border:1px solid rgba(255,209,102,.35);border-radius:6px;">
-            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;letter-spacing:1.5px;color:var(--con-yel);margin-bottom:8px;">// 横エネ強度の仮説式</div>
+            <div style="font-family:'IBM Plex Mono','Noto Sans JP',monospace;font-size:10px;letter-spacing:1.5px;color:var(--con-yel);margin-bottom:8px;">// 意味の同期の強さ（仮説式）</div>
             <p style="font-size:13px;color:var(--text);font-weight:700;margin:0;line-height:1.8;text-align:center;">
-              横エネ強度 ≒ 世界理解量 × 行為が物語に与える意味量
+              意味の同期の強さ ≒ 世界理解量 × 行為が物語に与える意味量
             </p>
             <p style="font-size:11px;color:var(--text3);margin:8px 0 0;line-height:1.6;">
-              世界理解量はストーリーの揺らぎとチャンク化が生み、行為の意味量は行為=物語のLv で測れる。両者の積で文脈横エネが決まる。
+              世界理解量はストーリーの揺らぎとチャンク化が生み、行為の意味量は行為=物語のLv で測れる。両者の積で意味の同期の強さが決まる。
             </p>
           </div>
 
-          <!-- 下層メカ: 同期5種 -->
-          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">下層メカ：同期5種（精密化）</h4>
-          <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">前述の「身体/文脈」は粗いラベル。実際にはプレイヤーが世界と同期する経路は <strong>5種</strong> あり、これらの組み合わせで横エネの質が決まる。<strong>行為=物語Lv（深さ）と同期5種（広さ）は直交する2次元軸</strong>。</p>
-          <div class="con-axis-sub" style="border-left-color:#06d6a0;">
-            <div class="con-axis-sub-head" style="color:#06d6a0;">① 身体同期</div>
-            <p>操作・リズム・戦闘・回避・パリィ。身体的な入力と結果の即時一致。例：DMC、Celeste。<br><span style="color:var(--text3);font-size:11px;">前述の「身体横エネ」と等価。</span></p>
-          </div>
-          <div class="con-axis-sub" style="border-left-color:#fb923c;">
-            <div class="con-axis-sub-head" style="color:#fb923c;">② 環境同期</div>
-            <p>地形・気候・光・空気感など、世界の物理に呼応する。<br>例：BotWの登攀／天候、Death Stranding の地形。</p>
-          </div>
-          <div class="con-axis-sub" style="border-left-color:#06d6a0;">
-            <div class="con-axis-sub-head" style="color:#06d6a0;">③ 社会同期</div>
-            <p>NPC・他プレイヤー・コミュニティとの関係性に呼応する。<br>例：ELDEN RINGのメッセージ、Animal Crossingの島民、Death Stranding の非同期マルチ。</p>
-          </div>
-          <div class="con-axis-sub" style="border-left-color:#fb923c;">
-            <div class="con-axis-sub-head" style="color:#fb923c;">④ 意味同期</div>
-            <p>世界・物語・テーマ・象徴に呼応する。行為が世界の意味を持つ状態。<br>例：Outer Wildsの探索、Shadow of the Colossusの登攀。<br><span style="color:var(--text3);font-size:11px;">前述の「文脈横エネ」のコア。</span></p>
-          </div>
-          <div class="con-axis-sub" style="border-left-color:#dc2626;">
-            <div class="con-axis-sub-head" style="color:#dc2626;">⑤ 時間同期</div>
-            <p>クール／日没／季節／ループなど、世界の時間構造に身体リズムが揃う。<br>例：Outer Wildsの22分ループ、どうぶつの森のリアルタイム連動。</p>
-          </div>
+          
 
-          <p style="font-size:12px; color:var(--text3); margin-top:12px;">→ <strong>プレイヤーの行為が世界と同期しているか</strong> を、5種類の経路 × Lv1〜4 の <strong>2次元評価</strong> で測る。</p>
+          <h4 style="margin:24px 0 10px;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:14px;color:#8fd8e6;">代表的な観察対象</h4>
+          <p style="font-size:12px;color:var(--text2);">Cairn（身体＋環境）／Sektori（身体＋環境）／ARC Raiders（環境＋社会）／Dispatch（社会＋時間）／SEASON: A letter to the future（環境＋意味＋時間）／DEATH STRANDING（身体＋環境＋時間）。<br><span style="color:var(--text3);">未プレイの作品を含む観察仮説。各作品で何と同期するかは「関連作品」で確認できる。</span></p>
+
+          <p style="font-size:12px; color:var(--text3); margin-top:12px;">→ <strong>主体と世界が同期しているか</strong>を、5種の同期（広さ）× 行為＝物語Lv（深さ）の2次元で見る。</p>
         </div>
       </div>
+
 
       <!-- 8. 意味変容 -->
       <div class="con-axis" style="--axis-c:#fb923c;">
@@ -10437,14 +10497,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
             <p>メカ感情とキャラ感情が同期した状態で <strong>ループが回り続ける</strong> と、跳ね返り感情がプレイヤーの認知を更新し、新しい行動を促進する <strong>高次の感情ループ</strong> が成立。これが作品固有の <strong>感情の核</strong> として残る。</p>
           </div>
 
-          <p style="font-size:12px; color:var(--text3); margin-top:8px;">→ 各作品ページの <strong>入口</strong> になる重要な観点。エネルギー体（基調）が形作り、9軸の運動が支え、ループの跳ね返りが蓄積して立ち上がる。</p>
+          <p style="font-size:12px; color:var(--text3); margin-top:8px;">→ 各作品ページの <strong>入口</strong> になる重要な観点。エネルギー体（基調）が形作り、10軸の運動が支え、ループの跳ね返りが蓄積して立ち上がる。</p>
         </div>
       </div>
 
       <!-- 観察補助レンズ（追加軸の候補） -->
       <div class="con-sec-label">観察補助レンズ <span class="en">SUPPLEMENTAL LENSES</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:14px;">
-        9軸では拾いきれない作品もある。以下の3つは <strong style="color:var(--con-yel);">骨格に並列するサブ観察軸</strong> として追加で持っておく。各作品ページの任意フィールドとして埋められるようになっている（埋まっている作品でのみ表示）。
+        10軸では拾いきれない作品もある。以下の3つは <strong style="color:var(--con-yel);">骨格に並列するサブ観察軸</strong> として追加で持っておく。各作品ページの任意フィールドとして埋められるようになっている（埋まっている作品でのみ表示）。
       </p>
 
       <div class="con-axis" style="--axis-c:#60a5fa;">
@@ -10507,7 +10567,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <!-- 下層: ゲームループ4要素 -->
       <div class="con-sec-label">下層 — ゲームループ4要素 <span class="en">LOWER LAYER · GAME LOOP</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:14px;">
-        9軸の運動を駆動する <strong>動力源</strong>。インセンティブ → アクション → コスト → フィードバック の <strong>1回転</strong> がプレイヤーの体験のミクロな単位。これが反復することで、9軸のすべての運動（揺らぎ、チャンク化、身体化、横エネ、感情の核）が立ち上がる。
+        10軸の運動を駆動する <strong>動力源</strong>。インセンティブ → アクション → コスト → フィードバック の <strong>1回転</strong> がプレイヤーの体験のミクロな単位。これが反復することで、10軸のすべての運動（揺らぎ、チャンク化、身体化、横エネ、感情の核）が立ち上がる。
       </p>
 
       <div class="gl-wrap">
@@ -10539,7 +10599,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
         この4要素ループの <strong>1回転がチャンク化の最小単位</strong>。何度も回ることで、操作チャンク → 判断チャンク → 意味チャンクへと身体化が深まり、跳ね返り感情が積み重なって <strong>感情の核</strong> が立ち上がる。
       </p>
       <p style="font-size:12px; color:var(--text3); line-height:1.85; margin-bottom:20px;">
-        9軸との対応：<strong>インセンティブ</strong>=02軸、<strong>コスト</strong>=03軸、<strong>アクション</strong>=01サイクル、<strong>フィードバック</strong>=10感情の核 にそれぞれ繋がる。リスクリターン選択は、ループの「アクション」ステップ内に組み込まれる。<strong>介入軸</strong>（後述）は、この <strong>アクション</strong> と <strong>コスト</strong> をまたぐ接点として働く。
+        10軸との対応：<strong>インセンティブ</strong>=02軸、<strong>コスト</strong>=03軸、<strong>アクション</strong>=01サイクル、<strong>フィードバック</strong>=10感情の核 にそれぞれ繋がる。リスクリターン選択は、ループの「アクション」ステップ内に組み込まれる。<strong>介入軸</strong>（後述）は、この <strong>アクション</strong> と <strong>コスト</strong> をまたぐ接点として働く。
       </p>
 
       <!-- 下層深掘り: 介入軸（ACTIONの分解） -->
@@ -10668,7 +10728,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <!-- 中心理論：揺らぎ→チャンク化→意味→横エネ -->
       <div class="con-sec-label">中心理論 — 揺らぎから横エネへ <span class="en">CORE THESIS</span></div>
       <p style="font-size:13px; color:var(--text2); line-height:1.85; margin-bottom:14px;">
-        9軸を貫く <strong style="color:var(--con-yel);">中心理論</strong>。揺らぎ・チャンク・意味変容・横エネ・感情の核 を一本の流れで結ぶ。
+        10軸を貫く <strong style="color:var(--con-yel);">中心理論</strong>。揺らぎ・チャンク・意味変容・横エネ・感情の核 を一本の流れで結ぶ。
       </p>
       <div class="thesis-block">
         <div class="thesis-flow">断片情報（揺らぎ）
@@ -10692,7 +10752,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
 感情の核 が立ち上がる</div>
 
         <p style="font-size:13px; color:var(--text); line-height:1.85; margin:14px 0;">
-          つまり：揺らぎが <strong>予測インセンティブ</strong> を生み（未完チャンクが母体）、リスクリターンの選択がチャンク化を <strong>個別化</strong> し、反復で <strong>身体化</strong> される。身体化された行為が世界の意味と接続して <strong>横エネ</strong> を発生させ、ループを通じて <strong>跳ね返り感情</strong> が蓄積する。それが作品固有の <strong>感情の核</strong> を成立させる ── 9軸＋コスト軸はこの流れの各ステージを切り取った観察軸。
+          つまり：揺らぎが <strong>予測インセンティブ</strong> を生み（未完チャンクが母体）、リスクリターンの選択がチャンク化を <strong>個別化</strong> し、反復で <strong>身体化</strong> される。身体化された行為が世界の意味と接続して <strong>横エネ</strong> を発生させ、ループを通じて <strong>跳ね返り感情</strong> が蓄積する。それが作品固有の <strong>感情の核</strong> を成立させる ── 10軸はこの流れの各ステージを切り取った観察軸。
         </p>
 
         <div class="thesis-key">
@@ -10718,11 +10778,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--soda);outline-offse
       <div class="con-sec-label">補足：観察フレーム <span class="en">OBSERVATION SUB-FRAMES</span></div>
       <div class="con-block">
         <div class="con-block-body">
-          <p>9軸が <strong>骨格</strong> なら、以下は具体的な <strong>観察項目</strong> として併用する：</p>
+          <p>10軸が <strong>骨格</strong> なら、以下は具体的な <strong>観察項目</strong> として併用する：</p>
           <p style="padding-left:14px;color:var(--text2);font-size:12px;">
             導入・没入設計／動機形成と目的提示／空間と探索設計／構造的ナラティブ／フェーズ構成と展開リズム／キャラクターとの共鳴／音・ビジュアル・間の使い方／エンディングと解放感／語りたくなる記憶構造
           </p>
-          <p style="font-size:11px; color:var(--text3); margin-top:8px;">→ これら細かい観点群は、9軸の骨格を覗き込むための <strong>レンズ</strong> として使う。</p>
+          <p style="font-size:11px; color:var(--text3); margin-top:8px;">→ これら細かい観点群は、10軸の骨格を覗き込むための <strong>レンズ</strong> として使う。</p>
         </div>
       </div>
 
@@ -10890,7 +10950,7 @@ updates: [
           <p style="font-size:13px; color:var(--text2); line-height:1.85;">
             <em style="color:var(--text3); font-size:11px;">// 初めての読者向けに、まず読むべき3ページを書き手が選定する欄。研究所の入口になる。</em>
           </p>
-          <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — 候補例: ① コンシューマ／9軸の骨格　② ソシャゲ／施策パターン辞典　③ ランキング推移 ]</p>
+          <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — 候補例: ① コンシューマ／10軸の骨格　② ソシャゲ／施策パターン辞典　③ ランキング推移 ]</p>
         </div>
       </div>
 
@@ -10898,7 +10958,7 @@ updates: [
         <div class="sec-label">// 用語と運用</div>
         <div class="card" style="border-left:3px solid var(--a4);">
           <p style="font-size:13px; color:var(--text2); line-height:1.85;">
-            <em style="color:var(--text3); font-size:11px;">// 9軸の用語、ソシャゲ側の incentive_core / charge_trigger 等の用語、書き手が独自に使う言葉の定義集。読者の参照用。</em>
+            <em style="color:var(--text3); font-size:11px;">// 10軸の用語、ソシャゲ側の incentive_core / charge_trigger 等の用語、書き手が独自に使う言葉の定義集。読者の参照用。</em>
           </p>
           <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — 用語表をここに ]</p>
         </div>
@@ -10906,32 +10966,32 @@ updates: [
     </div>
 
     <!-- ════════════════════════════════════════
-         9軸 × ソシャゲ：横断分析（共通）
+         10軸 × ソシャゲ：横断分析（共通）
     ════════════════════════════════════════ -->
     <div id="page-cross-axis" class="page">
       <div class="page-header">
         <p class="page-tag">// CROSS-DOMAIN ANALYSIS</p>
-        <h2 class="page-title">9軸 × <em>ソシャゲ</em>：横断分析</h2>
-        <p class="page-desc">コンシューマ用に立てた9軸を、ソシャゲ32タイトルにあてはめて読み直す。両ドメインを通底する設計言語の発見を目指す。</p>
+        <h2 class="page-title">10軸 × <em>ソシャゲ</em>：横断分析</h2>
+        <p class="page-desc">コンシューマ用に立てた10軸を、ソシャゲ32タイトルにあてはめて読み直す。両ドメインを通底する設計言語の発見を目指す。</p>
       </div>
 
       <div class="sec">
         <div class="sec-label">// このページの狙い</div>
         <div class="card">
           <p style="font-size:13px; color:var(--text2); line-height:1.85;">
-            9軸（サイクル / インセンティブ / 粘度 / 揺らぎ / チャンク / 横エネ / 意味変容 / 没入構造 / 感情の核）は本来コンシューマ作品の体験構造を読むためのフレームだが、<strong style="color:var(--a3);">ソシャゲにも適用できる</strong>。<br>
+            10軸（サイクル / インセンティブ / 粘度 / 揺らぎ / チャンク / 横エネ / 意味変容 / 没入構造 / 感情の核）は本来コンシューマ作品の体験構造を読むためのフレームだが、<strong style="color:var(--a3);">ソシャゲにも適用できる</strong>。<br>
             むしろソシャゲ側の用語（incentive_core / charge_trigger / hook の三段）と並置して読むと、両ドメインの設計が <strong style="color:var(--a3);">同じ深さで語れる言葉</strong> が見つかる可能性がある。
           </p>
         </div>
       </div>
 
       <div class="sec">
-        <div class="sec-label">// 9軸 × ソシャゲ32タイトル マッピング</div>
+        <div class="sec-label">// 10軸 × ソシャゲ32タイトル マッピング</div>
         <div class="card" style="border-left:3px solid var(--a1);">
           <p style="font-size:13px; color:var(--text2); line-height:1.85;">
             <em style="color:var(--text3); font-size:11px;">// 各軸ごとに、ソシャゲのどのタイトルが代表例になるかを整理する欄。例: 横エネ → ウマ娘の育成中の没入感／意味変容 → FGO のシナリオ進行で課金行動が「物語投資」に変わる など。</em>
           </p>
-          <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — 9軸 × タイトルのマトリクスをここに ]</p>
+          <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — 10軸 × タイトルのマトリクスをここに ]</p>
         </div>
       </div>
 
@@ -10939,7 +10999,7 @@ updates: [
         <div class="sec-label">// ソシャゲ独自の追加軸</div>
         <div class="card" style="border-left:3px solid var(--a2);">
           <p style="font-size:13px; color:var(--text2); line-height:1.85;">
-            <em style="color:var(--text3); font-size:11px;">// ソシャゲは9軸では拾えない独自軸を持つ。例: 課金トリガー、運営施策のリズム（周年・コラボ・ハフバ）、社会圧（ギルド・対人）、長寿性（5年以上の運営）など。これらをコンシューマ側の補助レンズと対応づける欄。</em>
+            <em style="color:var(--text3); font-size:11px;">// ソシャゲは10軸では拾えない独自軸を持つ。例: 課金トリガー、運営施策のリズム（周年・コラボ・ハフバ）、社会圧（ギルド・対人）、長寿性（5年以上の運営）など。これらをコンシューマ側の補助レンズと対応づける欄。</em>
           </p>
           <p style="font-size:11px; color:var(--text3); margin-top:10px;">[ TBD — ソシャゲ独自軸のリストとコンシューマとの対応 ]</p>
         </div>
@@ -21533,12 +21593,12 @@ function renderConsoleTitle(id) {
     };
     const physical = y.physical ? `
       <div class="yk-cell" style="--block-c:#06d6a0;border-left-color:#06d6a0;">
-        <div class="yk-label" style="color:#06d6a0;">身体横エネ — PHYSICAL</div>
+        <div class="yk-label" style="color:#06d6a0;">身体の同期 — PHYSICAL</div>
         <div class="yk-body">${rich(y.physical)}</div>
       </div>` : '';
     const contextual = y.contextual ? `
       <div class="yk-cell" style="--block-c:#fb923c;border-left-color:#fb923c;">
-        <div class="yk-label" style="color:#fb923c;">文脈横エネ — CONTEXTUAL</div>
+        <div class="yk-label" style="color:#fb923c;">意味の同期 — CONTEXTUAL</div>
         <div class="yk-body">${rich(y.contextual)}</div>
       </div>` : '';
     const lv = y.story_action_level;
@@ -24662,6 +24722,189 @@ var _UPD_SHEETS = (typeof _UPD_SHEETS !== 'undefined') ? _UPD_SHEETS : [];
 
 </script>
 <script>
+const CONSOLE_THEME_DATA = {"axes":[{"id":"cycle","num":"01","name":"サイクル","question":"何を、どの時間粒度で反復するか","scope":"瞬間／プレイ／フェーズ／全体進行。欲求AからBへの受け渡しを観察する。","topics":["次の行動を生むインセンティブ連鎖","長時間の欲求をつなぐゲームサイクル"]},{"id":"incentive","num":"02","name":"インセンティブ","question":"なぜ、その行為をしたくなるのか","scope":"縦エネ、不足と達成、予測インセンティブ、報酬から次の欲求への接続。","topics":["縦エネルギー（不足→挑戦→達成）","次の行動を生むインセンティブ連鎖","先を読ませる予測インセンティブ","長時間の欲求をつなぐゲームサイクル","情報を出しすぎず自分で気づかせる"]},{"id":"cost","num":"03","name":"コスト","question":"行為にどんな対価がかかるか","scope":"時間・損失・資源・機会費用。リスクとリターンを別々に読む。","topics":["縦エネルギー（不足→挑戦→達成）","先を読ませる予測インセンティブ","選択の残響と文脈の更新"]},{"id":"viscosity","num":"04","name":"粘度","question":"その動機はどれくらい持続するか","scope":"短期快感から長期的な世界理解・関係・未完の問いまで。","topics":["縦エネルギー（不足→挑戦→達成）","次の行動を生むインセンティブ連鎖","長時間の欲求をつなぐゲームサイクル"]},{"id":"fluctuation","num":"05","name":"揺らぎ","question":"何がズレ、理解や感情が更新されたか","scope":"難度・知覚・意味・物語の揺らぎ。ズレに世界側の理由があるか。","topics":["横エネルギー（主体と世界の同期）","選択の残響と文脈の更新","揺らぎから感情や没入を生む"]},{"id":"chunks","num":"06","name":"チャンク","question":"何が身につき、どう組み替わるか","scope":"操作・判断・社会チャンク。初回の習熟と文脈に合わせた再チャンク化を区別。","topics":["横エネルギー（主体と世界の同期）","先を読ませる予測インセンティブ","操作していて気持ちよい手触り","上達とプレイスタイルの形成","情報を出しすぎず自分で気づかせる"]},{"id":"yoko","num":"07","name":"横エネルギー","question":"主体と世界は何に同期するか","scope":"身体／環境／社会／意味／時間の5同期。インセンティブ連鎖と混同しない。","topics":["横エネルギー（主体と世界の同期）","上達とプレイスタイルの形成","ゲームだからこその体験的な納得","世界・キャラクターとの個人的関係"]},{"id":"meaning","num":"08","name":"意味変容","question":"同じ行為の意味がどう変わるか","scope":"行為＝物語、体験的納得、メタ認知。説明ではなく体験から理解する。","topics":["選択の残響と文脈の更新","ゲームだからこその体験的な納得","世界・キャラクターとの個人的関係"]},{"id":"immersion","num":"09","name":"没入構造","question":"どの要素の束が世界への関与を作るか","scope":"手触り、視線、情報設計、音、テンポ、世界との整合などの統合。","topics":["操作していて気持ちよい手触り","揺らぎから感情や没入を生む","情報を出しすぎず自分で気づかせる"]},{"id":"emotion","num":"10","name":"感情の核","question":"最後にどんな感情や記憶が残るか","scope":"作品固有の感情、キャラとの愛着、個人的な記録・世界との歴史。","topics":["揺らぎから感情や没入を生む","世界・キャラクターとの個人的関係"]}],"works":{"console-dispatch":{"name":"Dispatch","emoji":"📟","status":"wip","kind":"existing"},"console-mina-hollower":{"name":"Mina the Hollower","emoji":"🕯️","status":"wip","kind":"existing"},"console-arc-raiders":{"name":"ARC Raiders","emoji":"🤖","status":"wip","kind":"existing"},"console-elden":{"name":"ELDEN RING","emoji":"🌅","status":"done","kind":"existing"},"console-ff16":{"name":"FINAL FANTASY XVI","emoji":"🔥","status":"done","kind":"existing"},"console-death-stranding":{"name":"DEATH STRANDING","emoji":"📦","status":"done","kind":"existing"},"console-disco-elysium":{"name":"Disco Elysium","emoji":"🕵️","status":"done","kind":"existing"},"console-bg3":{"name":"Baldur's Gate 3","emoji":"🐉","status":"done","kind":"existing"},"console-13kihei":{"name":"十三機兵防衛圏","emoji":"🤖","status":"done","kind":"existing"},"console-citizen-sleeper":{"name":"Citizen Sleeper","emoji":"🎲","status":"done","kind":"existing"},"console-returnal":{"name":"Returnal","emoji":"🌌","status":"done","kind":"existing"},"console-blue-prince":{"name":"Blue Prince","emoji":"🏛️","status":"done","kind":"existing"},"console-clair-obscur":{"name":"Clair Obscur: Expedition 33","emoji":"🎨","status":"done","kind":"existing"},"console-metaphor":{"name":"メタファー：リファンタジオ","emoji":"🦊","status":"done","kind":"existing"},"console-harvestela":{"name":"ハーヴェステラ","emoji":"🌾","status":"wip","kind":"existing"},"console-unicorn-overlord":{"name":"ユニコーンオーバーロード","emoji":"🦄","status":"wip","kind":"existing"},"console-yakuza7":{"name":"龍が如く7","emoji":"🐉","status":"wip","kind":"existing"},"console-romasaga2-r7":{"name":"ロマサガ2 リベンジオブザセブン","emoji":"⚔️","status":"wip","kind":"existing"},"console-saga-emerald":{"name":"サガ エメラルドビヨンド","emoji":"💎","status":"wip","kind":"existing"},"console-sea-of-stars":{"name":"Sea of Stars","emoji":"⭐","status":"wip","kind":"existing"},"console-eiyuden":{"name":"百英雄伝","emoji":"🛡️","status":"wip","kind":"existing"},"console-ff7r":{"name":"FF7 リメイク","emoji":"🌹","status":"wip","kind":"existing"},"console-ghostwire":{"name":"Ghostwire: Tokyo","emoji":"👻","status":"wip","kind":"existing"},"console-miles-morales":{"name":"スパイダーマン マイルズ・モラレス","emoji":"🕷️","status":"wip","kind":"existing"},"console-prospi-console":{"name":"プロ野球スピリッツ2024-2025","emoji":"⚾","status":"wip","kind":"existing"},"console-mh-wilds":{"name":"モンスターハンターワイルズ","emoji":"🐲","status":"wip","kind":"existing"},"console-hollow-knight":{"name":"Hollow Knight","emoji":"🐛","status":"wip","kind":"existing"},"console-dave-the-diver":{"name":"Dave the Diver","emoji":"🤿","status":"wip","kind":"existing"},"console-hundred-line":{"name":"HUNDRED LINE 最終防衛学園","emoji":"🎓","status":"wip","kind":"existing"},"console-saga-frontier":{"name":"サガ フロンティア リマスター","emoji":"🎴","status":"wip","kind":"existing"},"console-rematch":{"name":"REMATCH","emoji":"⚽","status":"wip","kind":"existing"},"console-celeste":{"name":"Celeste","emoji":"🏔️","status":"wip","kind":"existing"},"console-gow-ragnarok":{"name":"ゴッド・オブ・ウォー ラグナロク","emoji":"🪓","status":"wip","kind":"existing"},"console-skate-story":{"name":"Skate Story","emoji":"🛹","status":"wip","kind":"existing"},"console-dredge":{"name":"DREDGE","emoji":"🎣","status":"wip","kind":"existing"},"console-kirby-forgotten":{"name":"星のカービィ ディスカバリー","emoji":"🌟","status":"wip","kind":"existing"},"console-densha-attack":{"name":"電車アタック","emoji":"🚃","status":"wip","kind":"existing"},"console-taskbar-hero":{"name":"タスクバーヒーロー","emoji":"🦸","status":"wip","kind":"existing"},"console-titanium-court":{"name":"Titanium Court","emoji":"🃏","status":"wip","kind":"existing"},"console-mewgenics":{"name":"MEWGENICS","emoji":"🐱","status":"wip","kind":"existing"},"console-babel-tower":{"name":"バベルの塔: 混沌の生存者たち","emoji":"🗼","status":"wip","kind":"existing"},"console-cand-season":{"name":"SEASON: A letter to the future","emoji":"🚲","status":"candidate","kind":"candidate","dev":"Scavengers Studio","year":"2023","platform":"PS5 / PS4 / PC","summary":"何を記録するかを選び、旅と記憶に意味を与える"},"console-cand-outer-wilds":{"name":"Outer Wilds","emoji":"🪐","status":"candidate","kind":"candidate","dev":"Mobius Digital","year":"2019","platform":"PC / PS / Xbox / Switch","summary":"天体と時間の法則を発見することで行動が変わる"},"console-cand-1000xresist":{"name":"1000xRESIST","emoji":"🧬","status":"candidate","kind":"candidate","dev":"sunset visitor","year":"2024","platform":"PC / Switch / PS5 / Xbox","summary":"記憶と真実の再解釈を通じて意味が揺らぐ"},"console-cand-cairn":{"name":"Cairn","emoji":"🧗","status":"candidate","kind":"candidate","dev":"The Game Bakers","year":"2026","platform":"PC / PS5","summary":"岩壁ごとに手足と姿勢を再適応させる"},"console-cand-sektori":{"name":"Sektori","emoji":"🔷","status":"candidate","kind":"candidate","dev":"Kimmo Lahtinen（gimblll）","year":"2025","platform":"PC / PS5 / Xbox / Switch 2","summary":"射撃・回避・音楽・戦場を身体リズムへ統合"},"console-cand-consume-me":{"name":"Consume Me","emoji":"🍽️","status":"candidate","kind":"candidate","dev":"Jenny Jiao Hsia / AP Thomson ほか","year":"2025","platform":"PC / Mac","summary":"時間割と自己管理の最適化を体験的な問いに転換"},"console-cand-signalis":{"name":"SIGNALIS","emoji":"📡","status":"candidate","kind":"candidate","dev":"rose-engine","year":"2022","platform":"PC / PS4 / Xbox One / Switch","summary":"探索と反復を通じて記憶・欠落・不安を知覚させる"},"console-cand-ff7-rebirth":{"name":"FINAL FANTASY VII REBIRTH","emoji":"⚔️","status":"candidate","kind":"candidate","dev":"SQUARE ENIX","year":"2024","platform":"PS5 / PC / Switch 2 / Xbox","summary":"探索・ミニゲーム・戦闘・仲間・原作知識を長編に統合"}},"links":[{"axis":"cycle","page":"console-dave-the-diver","kind":"note","role":"主教材","lens":"遊びの往復","text":"潜水で得た魚が寿司屋経営の材料となり、店の改善が再び海へ向かう動機になる。","q":"満足の直後に次の欲求が生まれる接点は？"},{"axis":"cycle","page":"console-metaphor","kind":"note","role":"主教材","lens":"長期RPG","text":"旅・街の活動・交流・ダンジョンの時間配分が長期進行のリズムになる。","q":"一日の終わりに何を次の楽しみにしたか？"},{"axis":"cycle","page":"console-cand-ff7-rebirth","kind":"note","role":"主教材","lens":"長編の切り替え","text":"探索・戦闘・ミニゲーム・人物会話が異なる欲求を交互に喚起する。","q":"切り替えが停滞の回避か、物語上の必然か？"},{"axis":"cycle","page":"console-dredge","kind":"note","role":"比較教材","lens":"出港と帰港","text":"探索の成果を換金し、次の遠征能力へ変換する。","q":"帰港が単なる清算で終わらないのはなぜか？"},{"axis":"cycle","page":"console-cand-consume-me","kind":"note","role":"比較教材","lens":"日課と負荷","text":"日々のタスクを最適化する反復が、作品テーマとの摩擦を生みうる。","q":"反復が快感から負担へ変わる局面は？"},{"axis":"cycle","page":"console-yakuza7","kind":"note","role":"比較教材","lens":"遊びの切替","text":"戦闘・経営・街遊び・交流のサイクルを比較する。","q":"活動間の接続は自発的か強制的か？"},{"axis":"incentive","page":"console-celeste","kind":"note","role":"主教材","lens":"上達","text":"目に見える地形の課題と即時再挑戦が上達欲求を支える。","q":"何との差を埋めたくなったか？"},{"axis":"incentive","page":"console-densha-attack","kind":"note","role":"主教材","lens":"先読み","text":"前方に見える地形や進路を目標として現在の入力へ変換する。","q":"未来の何を見て行動を決めたか？"},{"axis":"incentive","page":"console-dave-the-diver","kind":"note","role":"比較教材","lens":"次の報酬","text":"獲得物が次の改善目標に変わる連続的な欲求を追う。","q":"報酬が新しい不足へどう変わる？"},{"axis":"incentive","page":"console-clair-obscur","kind":"note","role":"比較教材","lens":"上達と攻略","text":"手番の計画とパリィ習熟が攻略欲求を重ねる。","q":"どの失敗が次の試行を誘ったか？"},{"axis":"cost","page":"console-arc-raiders","kind":"note","role":"主教材","lens":"損失と帰還","text":"追加探索の利益と装備を失うリスクが、撤退判断を変える。","q":"いつ帰還が合理的になったか？"},{"axis":"cost","page":"console-cand-consume-me","kind":"note","role":"主教材","lens":"時間の機会費用","text":"予定に使う有限時間が、ほかの活動の機会損失を生む。","q":"何を選んだことで何を断念したか？"},{"axis":"cost","page":"console-cand-cairn","kind":"note","role":"主教材","lens":"失敗コスト","text":"体力・物資・姿勢・安全確保が登攀のリスク計算になる。","q":"危険を理解しても進みたくなる根拠は？"},{"axis":"cost","page":"console-citizen-sleeper","kind":"note","role":"比較教材","lens":"生活の配分","text":"限られた行動機会を生存・交流・仕事に割り振る。","q":"今日の選択は後日の何を閉じたか？"},{"axis":"cost","page":"console-metaphor","kind":"note","role":"比較教材","lens":"残り日数","text":"交流・遠征・育成の選択を時間制約が重くする。","q":"時間の可視化が選択をどう変える？"},{"axis":"viscosity","page":"console-cand-outer-wilds","kind":"note","role":"主教材","lens":"未完の問い","text":"解けない謎がプレイをまたいで知りたい気持ちを維持する。","q":"翌日も考えてしまった疑問は？"},{"axis":"viscosity","page":"console-cand-1000xresist","kind":"note","role":"主教材","lens":"意味の未完","text":"人物と記憶の関係を再解釈し続ける動機が残る。","q":"何が未完のまま心に残るか？"},{"axis":"viscosity","page":"console-dispatch","kind":"note","role":"比較教材","lens":"関係の継続","text":"キャラクターの次の反応を予期することが遊ぶ理由になるかを確認する。","q":"この人物に再会したいのはなぜか？"},{"axis":"fluctuation","page":"console-cand-signalis","kind":"note","role":"主教材","lens":"意味と知覚","text":"断片的な情報と反復によって確信していた物語理解が揺れる。","q":"いつ何の解釈が変わったか？"},{"axis":"fluctuation","page":"console-cand-1000xresist","kind":"note","role":"主教材","lens":"記憶の再解釈","text":"以前の出来事に新情報が重なり、人物や真実の意味が更新される。","q":"新情報が過去のどの理解を壊したか？"},{"axis":"fluctuation","page":"console-cand-ff7-rebirth","kind":"note","role":"比較教材","lens":"既知と未知","text":"原作知識に基づく予測と新しい展開とのズレを感情の駆動に利用する。","q":"予測のズレは納得できる理由を持つか？"},{"axis":"fluctuation","page":"console-saga-emerald","kind":"note","role":"比較教材","lens":"状況変化","text":"同じ戦術を通し続けられない条件を追う。","q":"再チャンク化を促す何が変わったか？"},{"axis":"fluctuation","page":"console-cand-sektori","kind":"note","role":"比較教材","lens":"変化する戦場","text":"視覚と敵配置の変化が身体的な反応を揺らす。","q":"揺らぎは理不尽でなく読めるか？"},{"axis":"chunks","page":"console-cand-cairn","kind":"note","role":"主教材","lens":"操作→文脈","text":"基本操作が身体化した後、岩壁の形に合わせ手足を組み直す。","q":"どの場面で操作の正解が岩壁依存に変わるか？"},{"axis":"chunks","page":"console-cand-sektori","kind":"note","role":"主教材","lens":"身体リズム","text":"射撃・移動・回避がまとまり、変化する戦場へ注意が向くかを追う。","q":"入力を意識しなくなった後に何が見える？"},{"axis":"chunks","page":"console-mh-wilds","kind":"note","role":"主教材","lens":"敵への適応","text":"武器操作の反復から、モンスターの癖に合わせた戦い方へ移る。","q":"自分の行動は敵の文脈に合っているか？"},{"axis":"chunks","page":"console-mewgenics","kind":"note","role":"主教材","lens":"判断チャンク","text":"編成・地形・能力の組み合わせに応じて判断の型が変わる。","q":"前回の定石がなぜ通じなくなった？"},{"axis":"chunks","page":"console-clair-obscur","kind":"note","role":"比較教材","lens":"複合チャンク","text":"手番の計画と回避・パリィの操作習熟を区別して見る。","q":"一方の習熟が他方の判断を邪魔しないか？"},{"axis":"yoko","page":"console-cand-cairn","kind":"note","role":"主教材","lens":"身体＋環境同期","text":"岩壁の形を読み、手足と姿勢を調整する。山が攻略対象から身体を合わせる相手へ変わる過程を見る。","q":"岩壁に身体が馴染んだ瞬間は？"},{"axis":"yoko","page":"console-cand-sektori","kind":"note","role":"主教材","lens":"身体＋環境同期","text":"操作をチャンク化したあと、音・視覚・敵挙動が一つのリズムとして感じられるか。","q":"身体が整うと何が前景化するか？"},{"axis":"yoko","page":"console-arc-raiders","kind":"note","role":"主教材","lens":"環境＋社会同期","text":"敵AI・音・地形だけでなく、他者の意図を読み直して振る舞いを変える。","q":"世界の中で自然に振る舞えるようになったか？"},{"axis":"yoko","page":"console-dispatch","kind":"note","role":"主教材","lens":"社会＋時間同期","text":"人物ごとの反応を学習し、派遣・会話の判断を組み替える。","q":"設定理解が関係性の身体的な予測に変わったか？"},{"axis":"yoko","page":"console-cand-season","kind":"note","role":"主教材","lens":"環境＋意味＋時間","text":"移動・観察・記録によって土地や人の時間に触れ、自分の記録を作る。","q":"旅先の何を残すかがなぜ変わったか？"},{"axis":"yoko","page":"console-death-stranding","kind":"note","role":"主教材","lens":"身体＋環境＋時間","text":"荷物・重心・地形に慣れることで、地面の質感や他者の痕跡を読む。","q":"操作への意識が後景化した時、地形の何が見えたか？"},{"axis":"yoko","page":"console-cand-outer-wilds","kind":"note","role":"比較教材","lens":"環境＋時間","text":"天体の法則と時間変化を理解し、世界の中で可能な行為を再構築する。","q":"知識が世界との整合感に変わったか？"},{"axis":"yoko","page":"console-metaphor","kind":"note","role":"比較教材","lens":"社会＋意味","text":"旅と交流の蓄積がこの世界でどう振る舞うかという感覚に変わるか。","q":"支持者を数値でなく関係として見始めたか？"},{"axis":"meaning","page":"console-cand-season","kind":"note","role":"主教材","lens":"記録する行為","text":"何を見て何を残すかを選ぶこと自体が、旅の意味を作る。","q":"自分の記録が作品の言葉より多くを語ったか？"},{"axis":"meaning","page":"console-cand-consume-me","kind":"note","role":"主教材","lens":"最適化の意味変容","text":"タスクを効率化する快感が、自己管理をめぐる問いに反転するか。","q":"得意になった行為を後からどう捉え直したか？"},{"axis":"meaning","page":"console-cand-outer-wilds","kind":"note","role":"主教材","lens":"知ることで進む","text":"知識の獲得が可能な行為そのものを変える。","q":"操作能力でなく理解が何を変えたか？"},{"axis":"meaning","page":"console-cand-1000xresist","kind":"note","role":"主教材","lens":"記憶と解釈","text":"繰り返し語られる事柄の意味が、経験によって更新される。","q":"知っていたはずのことが別物になった瞬間は？"},{"axis":"meaning","page":"console-cand-cairn","kind":"note","role":"比較教材","lens":"登ることの意味","text":"岩を見る・手足を置く・失敗する反復が登山の意味を言葉より先に伝えるか。","q":"行為がテーマの理解を生んだか？"},{"axis":"meaning","page":"console-titanium-court","kind":"note","role":"比較教材","lens":"ルールと物語","text":"戦場の組み替えと奇妙な世界観が意味の一体感を作るか検証する。","q":"ルールの異様さに作品上の意味があるか？"},{"axis":"immersion","page":"console-cand-sektori","kind":"note","role":"主教材","lens":"身体×音×映像","text":"入力のリズム・戦場・音楽が一つの注意状態を作る。","q":"何が意識の焦点から消え、何が残ったか？"},{"axis":"immersion","page":"console-returnal","kind":"note","role":"主教材","lens":"操作×緊張×反復","text":"敵の弾と移動、演出・音が緊張の連続性を作る。","q":"操作と世界の時間が一致したのはいつか？"},{"axis":"immersion","page":"console-clair-obscur","kind":"note","role":"主教材","lens":"判断×タイミング×音楽","text":"コマンド選択とリアルタイム防御、演出の統合を観察する。","q":"入力介入は考える時間を豊かにするか？"},{"axis":"immersion","page":"console-ff7r","kind":"note","role":"比較教材","lens":"ATBと注意配分","text":"通常攻撃でATBを貯め、コマンドを選ぶ往復が操作チャンクを支えるか妨げるか。","q":"ATB待ちが世界知覚を後景化させていないか？"},{"axis":"immersion","page":"console-skate-story","kind":"note","role":"比較教材","lens":"移動と質感","text":"滑走リズムと映像・音が一体化するかを観察する。","q":"操作から空間知覚への移行は？"},{"axis":"immersion","page":"console-cand-cairn","kind":"note","role":"比較教材","lens":"身体感覚","text":"岩肌と姿勢を画面越しの身体感覚に変換する。","q":"何が手触りの主な情報源か？"},{"axis":"emotion","page":"console-cand-season","kind":"note","role":"主教材","lens":"自分だけの記憶","text":"取捨選択して残した写真・音・記録が個人の旅になる。","q":"何を残したことが最後に効いたか？"},{"axis":"emotion","page":"console-dispatch","kind":"note","role":"主教材","lens":"関係の蓄積","text":"人物の反応を予期できるようになることで愛着が深まるか。","q":"誰の反応を期待して戻ってきたか？"},{"axis":"emotion","page":"console-cand-1000xresist","kind":"note","role":"主教材","lens":"余韻と記憶","text":"物語の再解釈が終わった後にどんな感情が残るかを見る。","q":"理解できた後も残る未完は？"},{"axis":"emotion","page":"console-cand-ff7-rebirth","kind":"note","role":"主教材","lens":"IPと履歴","text":"原作知識・仲間との移動・演出がキャラクターへの愛着にどう作用するか。","q":"キャラが設定から関係へ変わった瞬間は？"},{"axis":"emotion","page":"console-clair-obscur","kind":"note","role":"比較教材","lens":"美術と喪失","text":"映像・音楽・戦闘が作品の感情を補強するか比較する。","q":"強い演出を抜いても何が残る？"},{"axis":"emotion","page":"console-metaphor","kind":"note","role":"比較教材","lens":"旅の歴史","text":"支持者・仲間・時間配分が個人の旅の記憶を形成するか。","q":"世界が単なる舞台でなくなった局面は？"},{"axis":"incentive","page":"console-elden","kind":"excerpt","role":"作品分析より","lens":"動機の連鎖","text":"「あの遠くに見える塔は何だろう」の連鎖。視界の中に常に 未踏の引力 が置かれていて、プレイヤーは目的を強制されることなく、自分の好奇心ベースで動き続ける。","q":""},{"axis":"yoko","page":"console-elden","kind":"excerpt","role":"作品分析より","lens":"意味の同期","text":"断片化されたロアを能動的に拾い続けるうち、戦闘行為が「ゲームのチャレンジ」ではなく「この世界で何かを通過する儀式」として感じられるようになる。半神を倒すことは個人の挑戦ではなく 世界の運命を決める一手 として意味を帯びてくる。","q":""},{"axis":"fluctuation","page":"console-elden","kind":"excerpt","role":"作品分析より","lens":"意味の揺らぎ","text":"ストームヴィル前で死にまくる経験 → 後で振り返ると「最初の本当の門番」だったと意味が遡及する。NPCを助けたつもりが裏切りに繋がる、など、行為の意味が時間差で変わる。","q":""},{"axis":"cycle","page":"console-ff16","kind":"excerpt","role":"作品分析より","lens":"全体進行のサイクル","text":"メインストーリー進行 → アビリティ習得 → ベアラーの真実への接近 → 召喚獣との対峙。各章ごとに「強くなる→次の試練」のループだが、世界の見え方そのものは変わりにくい。","q":""},{"axis":"incentive","page":"console-ff16","kind":"excerpt","role":"作品分析より","lens":"動機の連鎖","text":"主軸は 「ストーリーの続きが知りたい」。次にアクションとしての上達欲求（戦技・召喚獣アビリティの使い分け）。サブクエストは「キャラ・世界観の深掘り」が動機だが、本筋への寄与が弱いため副次的に消化されやすい。","q":""},{"axis":"immersion","page":"console-ff16","kind":"excerpt","role":"作品分析より","lens":"没入の束","text":"バトル没入は強いが、ゲーム世界への没入は弱い。三層で言うと「行為同期」と「目的同期」までは到達するが、「世界同期」に届いていない。","q":""},{"axis":"meaning","page":"console-disco-elysium","kind":"excerpt","role":"作品分析より","lens":"行為の意味の変化","text":"スキル人格との対話に慣れ、自分の思想の傾向が見え始める。事件と自分が並走する。","q":""},{"axis":"emotion","page":"console-disco-elysium","kind":"excerpt","role":"作品分析より","lens":"残る感情","text":"破綻した自己の再構築。記憶も誇りも失った刑事が、「それでも自分は何者になれるか」を選び直していく感触。哀しみと滑稽さと尊厳が同居する稀有な感情の核。","q":""},{"axis":"viscosity","page":"console-disco-elysium","kind":"excerpt","role":"作品分析より","lens":"動機の持続","text":"極めて高粘度。一周40-60時間でも「あのスキルを上げて違う自分でもう一度」と複数周プレイされやすい。クリア後も自分の選択が頭に残り続ける。","q":""},{"axis":"chunks","page":"console-bg3","kind":"excerpt","role":"作品分析より","lens":"操作チャンク","text":"ターン制戦闘の1アクション選択／会話判定の試行／環境ギミックの活用。","q":""},{"axis":"emotion","page":"console-bg3","kind":"excerpt","role":"作品分析より","lens":"残る感情","text":"偶然と選択が織りなす 自分だけの物語 への愛着。マルチプレイで友人と選択を共有することで、その物語が共有体験になる感動。","q":""},{"axis":"fluctuation","page":"console-bg3","kind":"excerpt","role":"作品分析より","lens":"意味の揺らぎ","text":"善悪の選択が、後の章で全く違う意味を持って返ってくる。「あの時殺さなかった敵が再登場する」など、選択の意味が時間差で書き換わる。","q":""},{"axis":"incentive","page":"console-13kihei","kind":"excerpt","role":"作品分析より","lens":"動機の連鎖","text":"「この情報はあのキャラの話と繋がるのか？」「この時代設定の違和感は何を示しているのか？」── プレイヤーが 仮説を立てて確認する サイクルが連続する。さらに「次のキャラのストーリーを早く読みたい」感情が並走する。","q":""},{"axis":"fluctuation","page":"console-13kihei","kind":"excerpt","role":"作品分析より","lens":"意味の揺らぎ","text":"「あのキャラの言葉の意味」が後の章で書き換わる経験が頻発。プレイヤーの記憶に残った断片が、後で意味を持って戻ってくる。","q":""},{"axis":"meaning","page":"console-13kihei","kind":"excerpt","role":"作品分析より","lens":"行為の意味の変化","text":"時代を跨ぐ違和感、別の時代の同じキャラ、機兵の存在意義への疑問が積み重なる。","q":""},{"axis":"incentive","page":"console-blue-prince","kind":"excerpt","role":"作品分析より","lens":"動機の連鎖","text":"「次に何の部屋が引けるか」のドラフト的興奮 ＋「あの部屋の謎の答えは何か」の探究欲。さらに「日ごとの更新でどんな新しい組み合わせができるか」の試行錯誤。","q":""},{"axis":"fluctuation","page":"console-blue-prince","kind":"excerpt","role":"作品分析より","lens":"意味の揺らぎ","text":"「ただの部屋探索」が、家族の歴史と父の遺志を読み解く行為に変質していく。","q":""},{"axis":"chunks","page":"console-blue-prince","kind":"excerpt","role":"作品分析より","lens":"操作チャンク","text":"扉開く→ドラフト→部屋を選ぶ→探索→アイテム拾得。","q":""},{"axis":"chunks","page":"console-mina-hollower","kind":"excerpt","role":"作品分析より","lens":"操作チャンク","text":"叩く→潜る→抜ける／サブウェポンの撃ち分け、の身体操作。","q":""},{"axis":"immersion","page":"console-mina-hollower","kind":"excerpt","role":"作品分析より","lens":"没入の束","text":"GBC風に凝縮された世界／潜る（バロウ）ことで地形と戦闘の両方が変わる操作／サブウェポンとルーンで自分の戦い方を組むビルド探索／歯ごたえのあるボス／床下や壁の先の隠し要素。レトロな制約美と緻密な手作り感が、「もう一区画だけ」を生む。","q":""},{"axis":"cycle","page":"console-harvestela","kind":"pending","role":"関連候補","lens":"分析前","text":"四季を巡る農業生活と、死をもたらす「死季」の謎を追うライフシミュレーションRPG。","q":""},{"axis":"viscosity","page":"console-harvestela","kind":"pending","role":"関連候補","lens":"分析前","text":"四季を巡る農業生活と、死をもたらす「死季」の謎を追うライフシミュレーションRPG。","q":""},{"axis":"chunks","page":"console-unicorn-overlord","kind":"pending","role":"関連候補","lens":"分析前","text":"編成した部隊が自動で激突するリアルタイム戦術と、大陸解放の王道譚をヴァニラウェアの美術で描く。","q":""},{"axis":"incentive","page":"console-unicorn-overlord","kind":"pending","role":"関連候補","lens":"分析前","text":"編成した部隊が自動で激突するリアルタイム戦術と、大陸解放の王道譚をヴァニラウェアの美術で描く。","q":""},{"axis":"cycle","page":"console-romasaga2-r7","kind":"pending","role":"関連候補","lens":"分析前","text":"皇帝継承で千年の戦いを紡ぐ名作の3Dフルリメイク。閃きとフリーシナリオは健在。","q":""},{"axis":"yoko","page":"console-romasaga2-r7","kind":"pending","role":"関連候補","lens":"分析前","text":"皇帝継承で千年の戦いを紡ぐ名作の3Dフルリメイク。閃きとフリーシナリオは健在。","q":""},{"axis":"immersion","page":"console-sea-of-stars","kind":"pending","role":"関連候補","lens":"分析前","text":"クロノ・トリガーへの愛に満ちたタイミング制バトルと、日月の子の冒険を描くモダン・レトロJRPG。","q":""},{"axis":"cycle","page":"console-sea-of-stars","kind":"pending","role":"関連候補","lens":"分析前","text":"クロノ・トリガーへの愛に満ちたタイミング制バトルと、日月の子の冒険を描くモダン・レトロJRPG。","q":""},{"axis":"incentive","page":"console-eiyuden","kind":"pending","role":"関連候補","lens":"分析前","text":"幻想水滸伝スタッフによる百人の仲間集め。拠点育成と大河ドラマの正統派JRPG。","q":""},{"axis":"emotion","page":"console-eiyuden","kind":"pending","role":"関連候補","lens":"分析前","text":"幻想水滸伝スタッフによる百人の仲間集め。拠点育成と大河ドラマの正統派JRPG。","q":""},{"axis":"yoko","page":"console-ghostwire","kind":"pending","role":"関連候補","lens":"分析前","text":"人が消えた渋谷で、印を結ぶ「祓い」の一人称アクション。和製オカルトの空気が濃密。","q":""},{"axis":"immersion","page":"console-ghostwire","kind":"pending","role":"関連候補","lens":"分析前","text":"人が消えた渋谷で、印を結ぶ「祓い」の一人称アクション。和製オカルトの空気が濃密。","q":""},{"axis":"yoko","page":"console-miles-morales","kind":"pending","role":"関連候補","lens":"分析前","text":"新米スパイダーマンのマイルズが冬のNYで自分の力と居場所を見出す、快速スイングアクション。","q":""},{"axis":"immersion","page":"console-miles-morales","kind":"pending","role":"関連候補","lens":"分析前","text":"新米スパイダーマンのマイルズが冬のNYで自分の力と居場所を見出す、快速スイングアクション。","q":""},{"axis":"chunks","page":"console-prospi-console","kind":"pending","role":"関連候補","lens":"分析前","text":"5年ぶりのナンバリング。リアル志向の投打とスタープレイヤーの再現度が売りの本格野球ゲーム。","q":""},{"axis":"immersion","page":"console-prospi-console","kind":"pending","role":"関連候補","lens":"分析前","text":"5年ぶりのナンバリング。リアル志向の投打とスタープレイヤーの再現度が売りの本格野球ゲーム。","q":""},{"axis":"yoko","page":"console-hollow-knight","kind":"pending","role":"関連候補","lens":"分析前","text":"朽ちゆく虫の王国ハロウネストを探索する、手描きの暗鬱と歯応えのメトロイドヴァニア金字塔。","q":""},{"axis":"chunks","page":"console-hollow-knight","kind":"pending","role":"関連候補","lens":"分析前","text":"朽ちゆく虫の王国ハロウネストを探索する、手描きの暗鬱と歯応えのメトロイドヴァニア金字塔。","q":""},{"axis":"emotion","page":"console-hundred-line","kind":"pending","role":"関連候補","lens":"分析前","text":"ダンガンロンパ×ザンキゼロの座組による、100日間の絶望の学園防衛。100本超の分岐END。","q":""},{"axis":"meaning","page":"console-hundred-line","kind":"pending","role":"関連候補","lens":"分析前","text":"ダンガンロンパ×ザンキゼロの座組による、100日間の絶望の学園防衛。100本超の分岐END。","q":""},{"axis":"chunks","page":"console-saga-frontier","kind":"pending","role":"関連候補","lens":"分析前","text":"7人の主人公と自由な世界を巡る名作の復刻。未実装だったヒューズ編も追加。","q":""},{"axis":"yoko","page":"console-rematch","kind":"pending","role":"関連候補","lens":"分析前","text":"Sifu開発元による一人称視点の5vs5サッカー。1選手を操作し連携で魅せる対戦アクション。","q":""},{"axis":"chunks","page":"console-rematch","kind":"pending","role":"関連候補","lens":"分析前","text":"Sifu開発元による一人称視点の5vs5サッカー。1選手を操作し連携で魅せる対戦アクション。","q":""},{"axis":"immersion","page":"console-gow-ragnarok","kind":"pending","role":"関連候補","lens":"分析前","text":"北欧神話の終末を父子で駆ける続編。重厚な斧と刃のアクションと神話ドラマの集大成。","q":""},{"axis":"emotion","page":"console-gow-ragnarok","kind":"pending","role":"関連候補","lens":"分析前","text":"北欧神話の終末を父子で駆ける続編。重厚な斧と刃のアクションと神話ドラマの集大成。","q":""},{"axis":"chunks","page":"console-kirby-forgotten","kind":"pending","role":"関連候補","lens":"分析前","text":"カービィ初の本格3D。ほおばりヘンケイで車や自販機に変形し、新世界を冒険する。","q":""},{"axis":"immersion","page":"console-kirby-forgotten","kind":"pending","role":"関連候補","lens":"分析前","text":"カービィ初の本格3D。ほおばりヘンケイで車や自販機に変形し、新世界を冒険する。","q":""},{"axis":"cycle","page":"console-taskbar-hero","kind":"pending","role":"関連候補","lens":"分析前","text":"タスクバーの小窓で自動で育つドット放置ハクスラ。基本無料で一躍大ブームに。","q":""},{"axis":"viscosity","page":"console-taskbar-hero","kind":"pending","role":"関連候補","lens":"分析前","text":"タスクバーの小窓で自動で育つドット放置ハクスラ。基本無料で一躍大ブームに。","q":""},{"axis":"cycle","page":"console-babel-tower","kind":"pending","role":"関連候補","lens":"分析前","text":"ヴァンサバ meets ディアブロ。押し寄せる混沌を殲滅するアクションRPG。","q":""},{"axis":"incentive","page":"console-babel-tower","kind":"pending","role":"関連候補","lens":"分析前","text":"ヴァンサバ meets ディアブロ。押し寄せる混沌を殲滅するアクションRPG。","q":""}]};
+/* ═══ CONSOLE THEMES（2026-10-24）— 10軸ページ × 作品の双方向リンク
+   データ: CONSOLE_THEME_DATA（axes / works / links）。テーマ側・作品側は同じ links から生成する。※週次更新でも残す ═══ */
+(function(){
+  var D = CONSOLE_THEME_DATA, AX = {}, ORDER = D.axes.map(function(a){ return a.id; });
+  D.axes.forEach(function(a){ AX[a.id] = a; });
+  var STATUS = {done:'分析済み', wip:'分析中', candidate:'研究候補（未プレイ）'};
+  var KIND = {note:'観察仮説', excerpt:'作品分析より', pending:'分析前'};
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function axisPage(id){ return 'console-axis-' + id; }
+  function linksOfAxis(id){ return D.links.filter(function(l){ return l.axis === id; }); }
+  function linksOfWork(p){ return D.links.filter(function(l){ return l.page === p; }).sort(function(a,b){ return ORDER.indexOf(a.axis) - ORDER.indexOf(b.axis); }); }
+  function work(p){ return D.works[p] || {name:p}; }
+  function exists(id){ return !!document.getElementById('page-' + id); }
+  var main = document.querySelector('main.content') || document.querySelector('.content');
+
+  // ── theory blocks (各論) by number ──────────────────
+  var theory = document.getElementById('page-console-theory');
+  var blocks = {};
+  if (theory) theory.querySelectorAll('.con-axis').forEach(function(b){
+    var n = b.querySelector('.con-axis-num'); if (n) blocks[n.textContent.trim()] = b;
+  });
+
+  // ── sidebar: theme pages + candidates ───────────────
+  var cblock = document.querySelector('.sb-media-block[data-media="console"]');
+  if (cblock) {
+    var sec = document.createElement('div'); sec.className = 'sidebar-section';
+    sec.innerHTML = '<div class="sidebar-label">テーマ（10軸）</div>' + D.axes.map(function(a){
+      return '<button class="sidebar-btn" onclick="showPage(\'' + axisPage(a.id) + '\')" data-page="' + axisPage(a.id) + '">' + a.num + ' ' + esc(a.name) + '</button>';
+    }).join('');
+    var first = cblock.querySelector('.sidebar-section');
+    if (first && first.nextSibling) cblock.insertBefore(sec, first.nextSibling); else cblock.appendChild(sec);
+    var cands = Object.keys(D.works).filter(function(p){ return D.works[p].status === 'candidate'; });
+    var sec2 = document.createElement('div'); sec2.className = 'sidebar-section';
+    sec2.innerHTML = '<div class="sidebar-label">研究候補（未プレイ）</div>' + cands.map(function(p){
+      return '<button class="sidebar-btn" onclick="showPage(\'' + p + '\')" data-page="' + p + '">' + esc(work(p).emoji || '') + ' ' + esc(work(p).name) + '</button>';
+    }).join('');
+    cblock.appendChild(sec2);
+  }
+
+  // ── cards ───────────────────────────────────────────
+  function card(l){
+    var w = work(l.page), live = exists(l.page);
+    var inner = '<div class="ct-card-top"><span class="ct-card-name">' + esc(w.emoji ? w.emoji + ' ' : '') + esc(w.name) + '</span>'
+      + '<span class="ct-badge ct-b-' + l.kind + '">' + KIND[l.kind] + (l.kind === 'note' ? '・' + esc(l.role) : '') + '</span>'
+      + '<span class="ct-badge ct-b-' + w.status + '">' + STATUS[w.status] + '</span></div>'
+      + '<span class="ct-lens">' + esc(l.lens) + '</span>'
+      + '<p class="ct-text">' + esc(l.text) + '</p>'
+      + (l.q ? '<p class="ct-qa"><b>観察の問い</b>' + esc(l.q) + '</p>' : '')
+      + (live ? '<span class="ct-go">作品ページへ →</span>' : '');
+    return live ? '<a class="ct-card" href="#' + l.page + '" data-go="' + l.page + '">' + inner + '</a>' : '<div class="ct-card">' + inner + '</div>';
+  }
+
+  // ── candidate (P0) pages ────────────────────────────
+  Object.keys(D.works).forEach(function(p){
+    var w = D.works[p]; if (w.status !== 'candidate') return;
+    var page = document.createElement('div'); page.id = 'page-' + p; page.className = 'page';
+    var ls = linksOfWork(p);
+    page.innerHTML = '<div class="ct-page">'
+      + '<nav class="lab-crumb" aria-label="パンくずリスト"><a href="#lab-home" data-go="lab-home">研究所</a><span aria-hidden="true">›</span><a href="#overview-console" data-go="overview-console">コンシューマ</a><span aria-hidden="true">›</span><span>研究候補</span><span aria-hidden="true">›</span><span aria-current="page">' + esc(w.name) + '</span></nav>'
+      + '<header class="ct-cand-hero"><span class="em" aria-hidden="true">' + esc(w.emoji || '') + '</span><span class="ct-badge ct-b-candidate">研究候補（未プレイ）</span><h1>' + esc(w.name) + '</h1>'
+      + '<div class="ct-meta"><span>' + esc(w.dev) + '</span><span>' + esc(w.year) + '</span><span>' + esc(w.platform) + '</span></div>'
+      + '<p class="ct-text">研究テーマとしての着眼点：' + esc(w.summary) + '</p>'
+      + '<p class="ct-note">まだプレイしていない作品です。以下はテーマごとの観察仮説で、プレイ後に作品分析として追記・更新します。</p></header>'
+      + relSection(p, ls) + '</div>';
+    main.appendChild(page);
+  });
+
+  // ── axis pages ──────────────────────────────────────
+  D.axes.forEach(function(a, i){
+    var page = document.createElement('div'); page.id = 'page-' + axisPage(a.id); page.className = 'page';
+    var ls = linksOfAxis(a.id);
+    var notes = ls.filter(function(l){ return l.kind === 'note'; });
+    var prim = notes.filter(function(l){ return l.role === '主教材'; }), comp = notes.filter(function(l){ return l.role !== '主教材'; });
+    var exc = ls.filter(function(l){ return l.kind === 'excerpt'; }), pend = ls.filter(function(l){ return l.kind === 'pending'; });
+    var en = blocks[a.num] ? (blocks[a.num].querySelector('.con-axis-en') || {}).textContent || '' : '';
+    var prev = D.axes[i - 1], next = D.axes[i + 1];
+    var h = '<div class="ct-page">'
+      + '<nav class="lab-crumb" aria-label="パンくずリスト"><a href="#lab-home" data-go="lab-home">研究所</a><span aria-hidden="true">›</span><a href="#overview-console" data-go="overview-console">コンシューマ</a><span aria-hidden="true">›</span><a href="#console-theory" data-go="console-theory">10軸の骨格</a><span aria-hidden="true">›</span><span aria-current="page">' + a.num + ' ' + esc(a.name) + '</span></nav>'
+      + '<header class="ct-hero"><span class="ct-num">' + a.num + '</span><h1 class="ct-name">' + esc(a.name) + '</h1><p class="ct-q">' + esc(a.question) + '</p>'
+      + '<p class="ct-scope">' + (en ? '<span class="ct-lens">' + esc(en) + '</span><br>' : '') + '観察する範囲：' + esc(a.scope) + '</p></header>';
+    if (a.topics.length) h += '<h2 class="ct-h">このテーマで扱う研究課題 <small>RESEARCH QUESTIONS</small></h2><div class="ct-chips">' + a.topics.map(function(t){ return '<span class="ct-chip">' + esc(t) + '</span>'; }).join('') + '</div>';
+    h += '<h2 class="ct-h">理論 <small>THEORY</small></h2><div class="ct-theory" data-axis-num="' + a.num + '"></div>';
+    h += '<h2 class="ct-h">関連作品 <small>' + ls.length + ' TITLES</small></h2>'
+      + '<div class="ct-legend"><span><i class="ct-badge ct-b-note">観察仮説</i>テーマ固有の研究メモ（未検証）</span><span><i class="ct-badge ct-b-excerpt">作品分析より</i>作品ページの分析から抜粋</span><span><i class="ct-badge ct-b-pending">分析前</i>分析を書く前の関連候補</span></div>';
+    if (prim.length) h += '<p class="ct-group">主教材</p><div class="ct-grid">' + prim.map(card).join('') + '</div>';
+    if (comp.length) h += '<p class="ct-group">比較教材</p><div class="ct-grid">' + comp.map(card).join('') + '</div>';
+    if (exc.length) h += '<p class="ct-group">作品分析より</p><div class="ct-grid">' + exc.map(card).join('') + '</div>';
+    if (pend.length) h += '<p class="ct-group">関連候補（分析前）</p><div class="ct-pending">' + pend.map(function(l){ var w = work(l.page); return exists(l.page) ? '<a href="#' + l.page + '" data-go="' + l.page + '">' + esc(w.emoji || '') + ' ' + esc(w.name) + '</a>' : ''; }).join('') + '</div>';
+    var rep = prim.slice(0, 4);
+    if (rep.length >= 2) h += '<h2 class="ct-h">代表作の観察ポイント <small>COMPARE</small></h2><div class="ct-compare">' + rep.map(function(l){ return '<div><strong>' + esc(work(l.page).name) + '</strong><p>' + esc(l.lens) + '｜' + esc(l.q) + '</p></div>'; }).join('') + '</div><p class="ct-note">共通点・差分・反例は、実プレイ後の観察をもとに追記していく。</p>';
+    h += '<nav class="lab-pager" aria-label="前後のテーマ">'
+      + (prev ? '<a class="prev" href="#' + axisPage(prev.id) + '" data-go="' + axisPage(prev.id) + '"><small>← 前のテーマ</small><strong>' + prev.num + ' ' + esc(prev.name) + '</strong></a>' : '<span class="prev ghost"></span>')
+      + '<a class="list" href="#overview-console" data-go="overview-console"><small>LIST</small><strong>10軸の一覧へ</strong></a>'
+      + (next ? '<a class="next" href="#' + axisPage(next.id) + '" data-go="' + axisPage(next.id) + '"><small>次のテーマ →</small><strong>' + next.num + ' ' + esc(next.name) + '</strong></a>' : '<span class="next ghost"></span>')
+      + '</nav></div>';
+    page.innerHTML = h;
+    var slot = page.querySelector('.ct-theory');
+    if (blocks[a.num]) slot.appendChild(blocks[a.num].cloneNode(true));
+    main.appendChild(page);
+  });
+
+  // 「10軸の骨格」各論 → 各テーマページ
+  Object.keys(blocks).forEach(function(n){
+    var a = D.axes.find(function(x){ return x.num === n; }); if (!a) return;
+    var body = blocks[n].querySelector('.con-axis-body') || blocks[n];
+    var cnt = linksOfAxis(a.id).length;
+    var lk = document.createElement('a'); lk.className = 'ct-axis-link'; lk.href = '#' + axisPage(a.id); lk.setAttribute('data-go', axisPage(a.id));
+    lk.textContent = 'このテーマの関連作品（' + cnt + '）を見る →';
+    body.appendChild(lk);
+  });
+
+  function relSection(p, ls){
+    if (!ls.length) return '';
+    return '<section class="ct-rel"><h3>この作品が関連するテーマ</h3><p>テーマごとに、この作品が何の参考になるか。押すとテーマのページへ移動します。</p><div class="ct-rel-list">'
+      + ls.map(function(l){ var a = AX[l.axis];
+        var sub = l.kind === 'note' ? l.text : (l.kind === 'excerpt' ? 'この作品の分析より：' + l.lens : '関連候補（分析前）');
+        return '<a class="ct-rel-item" href="#' + axisPage(a.id) + '" data-go="' + axisPage(a.id) + '"><span class="ct-rel-num">' + a.num + '</span><span><strong>' + esc(a.name) + '</strong>' + (l.lens && l.kind !== 'pending' ? '<span class="ct-lens">　' + esc(l.lens) + '</span>' : '') + '<small>' + esc(sub) + '</small></span><em>テーマへ →</em></a>';
+      }).join('') + '</div></section>';
+  }
+
+  // ── existing title pages: append reverse links after render ──
+  if (typeof renderConsoleTitle === 'function') {
+    var _r = renderConsoleTitle;
+    window.renderConsoleTitle = renderConsoleTitle = function(id){
+      var out = _r.apply(this, arguments);
+      var p = 'console-' + id, page = document.getElementById('page-' + p);
+      if (page) { page.querySelectorAll('.ct-rel').forEach(function(e){ e.remove(); }); var ls = linksOfWork(p); if (ls.length) page.insertAdjacentHTML('beforeend', relSection(p, ls)); }
+      return out;
+    };
+  }
+
+  // ── console overview: axis cards → theme pages, add 03 コスト, candidates shelf ──
+  var ov = document.getElementById('page-overview-console');
+  if (ov) {
+    var NAME2ID = {}; D.axes.forEach(function(a){ NAME2ID[a.name] = a.id; }); NAME2ID['粘度'] = 'viscosity'; NAME2ID['横エネ'] = 'yoko';
+    var cards = Array.prototype.filter.call(ov.querySelectorAll('.con-cart[onclick]'), function(c){ return /console-theory/.test(c.getAttribute('onclick')); });
+    var after = null;
+    cards.forEach(function(c){
+      var nm = (c.querySelector('.con-cart-name') || {}).textContent; nm = nm ? nm.trim() : '';
+      var id = NAME2ID[nm]; if (!id) return;
+      c.setAttribute('onclick', "showPage('" + axisPage(id) + "')");
+      c.setAttribute('role', 'link'); c.tabIndex = 0;
+      c.addEventListener('keydown', function(e){ if (e.key === 'Enter') c.click(); });
+      if (id === 'incentive') after = c;
+    });
+    if (after && !Array.prototype.some.call(cards, function(c){ return /console-axis-cost/.test(c.getAttribute('onclick')); })) {
+      var cost = document.createElement('div'); cost.className = 'con-cart'; cost.style.setProperty('--cart-c', '#7a3b2e');
+      cost.setAttribute('onclick', "showPage('console-axis-cost')"); cost.setAttribute('role', 'link'); cost.tabIndex = 0;
+      cost.innerHTML = '<div class="con-cart-emoji">⚖️</div><div class="con-cart-name">コスト</div><div class="con-cart-en">COST</div><div class="con-cart-tagline">行為にどんな対価がかかるか</div>';
+      after.parentNode.insertBefore(cost, after.nextSibling);
+    }
+    var hint = Array.prototype.find.call(ov.querySelectorAll('p'), function(p){ return /各カードをクリック/.test(p.textContent); });
+    if (hint) hint.textContent = '▲ 各カードから、そのテーマの理論と関連作品へ移動できます';
+    // candidates shelf
+    var shelf = ov.querySelector('.con-shelf');
+    if (shelf) {
+      var cands = Object.keys(D.works).filter(function(p){ return D.works[p].status === 'candidate'; });
+      var wrap = document.createElement('div');
+      wrap.innerHTML = '<div class="con-shelf-label">━━ RESEARCH CANDIDATES · 研究候補（未プレイ・観察仮説）</div><div class="con-shelf-grid">' + cands.map(function(p){
+        var w = D.works[p], n = linksOfWork(p).length;
+        return '<a class="con-cart ct-cand-cart" href="#' + p + '" data-go="' + p + '" style="--cart-c:#3d4f8a;"><div class="con-cart-emoji">' + esc(w.emoji) + '</div><div class="con-cart-name">' + esc(w.name) + '</div><div class="con-cart-en">' + esc(w.dev) + ' / ' + esc(w.year) + '</div><div class="con-cart-tagline">' + esc(w.summary) + '</div><div class="con-cart-meta"><span class="con-cart-platform">研究候補</span><span>テーマ ' + n + '</span></div></a>';
+      }).join('') + '</div>';
+      wrap.style.marginTop = '22px';
+      shelf.appendChild(wrap);
+    }
+  }
+
+  // ── 点検用：ブラウザのコンソールで labThemeAudit() を実行すると、登録漏れ・重複・孤立・リンク切れを一覧できる ──
+  window.labThemeAudit = function(){
+    var seen = {}, dup = [], broken = [], orphan = [];
+    D.links.forEach(function(l){ var k = l.axis + '|' + l.page; if (seen[k]) dup.push(k); seen[k] = 1; if (!exists(l.page)) broken.push(l.page); if (!AX[l.axis]) broken.push('axis:' + l.axis); });
+    Object.keys(D.works).forEach(function(p){ if (!D.links.some(function(l){ return l.page === p; })) orphan.push(p); });
+    var shelf = Array.prototype.map.call(document.querySelectorAll('.sb-media-block[data-media="console"] .lab-works .sidebar-btn[data-page], .sb-media-block[data-media="console"] .sidebar-btn[data-page^="console-"]'), function(b){ return b.dataset.page; })
+      .filter(function(p){ return !/^console-(theory|template|axis-)/.test(p); });
+    var unregistered = shelf.filter(function(p, i){ return shelf.indexOf(p) === i && !D.works[p]; });
+    var perAxis = {}; D.axes.forEach(function(a){ perAxis[a.num + ' ' + a.name] = linksOfAxis(a.id).length; });
+    return {works: Object.keys(D.works).length, links: D.links.length, perAxis: perAxis, duplicates: dup, brokenLinks: broken, orphanWorks: orphan, unregisteredShelfTitles: unregistered};
+  };
+})();
+
+</script>
+<script>
 /* ═══ LAB SHELF & NAV（2026-10-19）— 作品棚／URLで開ける・戻れる／パンくず・前後移動／サイドバーの作品一覧を折りたたみ
    作品データ（GAMES / MEDIA_TITLES / サイドバーの作品ボタン）から自動生成。※週次更新でも残す ═══ */
 (function(){
@@ -24677,7 +24920,7 @@ var _UPD_SHEETS = (typeof _UPD_SHEETS !== 'undefined') ? _UPD_SHEETS : [];
   function workBtns(m){
     var block = document.querySelector('.sb-media-block[data-media="' + m + '"]');
     if (!block) return [];
-    var re = m === 'console' ? /showPage\('console-(?!theory'|template')/ : /showPage\('media-(?!template)/;
+    var re = m === 'console' ? /showPage\('console-(?!theory'|template'|axis-|cand-)/ : /showPage\('media-(?!template)/;
     return Array.prototype.filter.call(block.querySelectorAll('.sidebar-btn[onclick]'), function(b){ return re.test(b.getAttribute('onclick')); });
   }
   function worksOf(m){

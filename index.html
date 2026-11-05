@@ -396,7 +396,11 @@ document.querySelectorAll('.contact-copybtn').forEach(b=>b.addEventListener('cli
   var els = document.querySelectorAll('.reveal, .sh');
   if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('is-in'); }); }
   else {
-    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) { var t = en.target._rv || en.target; t.classList.add('is-in'); io.unobserve(en.target); count(t); } }); }, {threshold:.18, rootMargin:'0px 0px -8% 0px'});
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){
+      var t = en.target._rv || en.target;
+      if (en.isIntersecting && en.intersectionRatio >= .18) { if (!t.classList.contains('is-in')) { t.classList.add('is-in'); count(t); } }
+      else if (!en.isIntersecting) { t.classList.remove('is-in'); }   /* 画面外に出たらリセット → 戻ってきたら再生 */
+    }); }, {threshold:[0, .18], rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){ if (e.classList.contains('big-heading')) { e.parentElement._rv = e; io.observe(e.parentElement); } else io.observe(e); });
   }
   function count(root){
